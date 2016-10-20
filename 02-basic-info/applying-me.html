@@ -1,0 +1,78 @@
+---
+layout: application
+step: 2
+section: Who is applying?
+title: Give us some of your basic information
+---
+
+<div class="prompt">
+	<p class="prompt__primary-text"><label for="applicant-full-name">What is your full name?</label></p>
+</div>
+<div class="response">
+	<input type="text" id="applicant-full-name" required />
+</div>
+
+<div class="prompt">
+	<legend class="prompt__primary-text">When is your birthday?</legend>
+	<p class="prompt__secondary-text" id="dobHint">For example: 04 28 1986</p>
+</div>
+<div class="response" >
+	<div class="usa-date-of-birth">
+    <div class="usa-form-group usa-form-group-month">
+      <label for="applicant-dob-month">Month</label>
+      <input class="usa-input-inline" aria-describedby="dobHint" class="usa-form-control" id="applicant-dob-month" name="applicant-dob-month" pattern="0?[1-9]|1[012]" type="number" min="1" max="12" value="">
+    </div>
+    <div class="usa-form-group usa-form-group-day">
+      <label for="applicant-dob-day">Day</label>
+      <input class="usa-input-inline" aria-describedby="dobHint" class="usa-form-control" id="applicant-dob-day" name="applicant-dob-day" pattern="0?[1-9]|1[0-9]|2[0-9]|3[01]" type="number" min="1" max="31" value="">
+    </div>
+    <div class="usa-form-group usa-form-group-year">
+      <label for="applicant-dob-year">Year</label>
+      <input class="usa-input-inline" aria-describedby="dobHint" class="usa-form-control" id="applicant-dob-year" name="applicant-dob-year" pattern="[0-9]{4}" type="number" min="1900" max="2000" value="">
+    </div>
+  </div>
+ </div>
+
+ <fieldset>
+  <div class="prompt">
+    <legend class="prompt__primary-text">What is your sex?</legend>
+  </div>
+  <div class="response">
+    <ul class="usa-unstyled-list response__radiogroup--inline">
+      <li>
+        <input id="female" type="radio" name="applicant-sex" value="Female" required="">
+        <label for="female">Female</label>
+      </li>
+      <li>
+        <input id="male" type="radio" name="applicant-sex" value="Male" required="">
+        <label for="male">Male</label>
+      </li>
+      <li>
+        <input id="other" type="radio" name="applicant-sex" value="Other" required="">
+        <label for="other">Other</label>
+      </li>
+    </ul>
+  </div>
+</fieldset>
+
+<script>
+  $(document).ready(function() {
+    $(".usa-button-big").click(function() {
+        event.preventDefault();
+
+        var applicantFullName = $("#applicant-full-name").val();
+        var applicantDOBMonth = $("#applicant-dob-month").val();
+        var applicantDOBDay = $("#applicant-dob-day").val();
+        var applicantDOBYear = $("#applicant-dob-year").val();
+        var applicantSex = $("input[name='applicant-sex']:checked").val();
+
+        sessionStorage.setItem("applicantFullName", applicantFullName);
+        sessionStorage.setItem("applicantDOBMonth ", applicantDOBMonth);
+        sessionStorage.setItem("applicantDOBDay ", applicantDOBDay);
+        sessionStorage.setItem("applicantDOBYear ", applicantDOBYear);
+        sessionStorage.setItem("applicantDOBSex ", applicantSex);
+
+        window.location.href = "contact.html";
+    });
+  });
+</script>
