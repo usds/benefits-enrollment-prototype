@@ -1,0 +1,29 @@
+---
+# You don't need to edit this file, it's empty on purpose.
+# Edit theme's home layout instead if you wanna make some changes
+# See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
+layout: application
+---
+
+<div class="usa-grid card-wrap">
+	<form action="#" method="post">
+		<div class="card">
+			<div class="card__header">
+				<h1 class="card__primary-heading">NO CUNHAS ALLOWED!!!!</h1>
+			</div>
+			<div class="card__body">
+				<p>We don't like <span id="name"></span></p>
+			<div class="card__footer">
+				<button class="usa-button-big" type="submit">Continue</button>
+			</div>
+		</div>
+	</form>
+</div>
+
+<script>
+	$(document).ready(function() {
+		var firstname = sessionStorage.getItem("firstname");
+		var lastname = sessionStorage.getItem("lastname");
+		$('#name').text(firstname + " " + lastname);
+	});
+</script>
