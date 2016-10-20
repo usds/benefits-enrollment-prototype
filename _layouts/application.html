@@ -5,12 +5,26 @@
 		{% include _head.html %}
 	</head>
 	<body>
+		
+		<div class="progress">
+			<a href="#" class="progress__back">Back</a>
+			<p class="progress__current">Step {{ page.step }} of 11: {{ page.section }}</p>
+		</div>
 
-
-
-	
-
-		{{ content }}
-
+		<div class="usa-grid card-wrap">
+		<form action="#" method="post">
+			<div class="card">
+				<div class="card__header">
+					<h1 class="card__primary-heading">{{ page.title }}</h1>
+				</div>
+				<div class="card__body">
+					{{ content }}
+				</div>
+				<div class="card__footer">
+					<button class="usa-button-big" type="submit">{% if page.button_text %}{{ page.button_text }}{% else %}Continue{% endif %}</button>
+				</div>
+			</div>
+		</form>
+	</div>
 	</body>
 </html>
