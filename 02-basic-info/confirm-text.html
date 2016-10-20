@@ -1,0 +1,47 @@
+---
+layout: application
+step: 2
+section: Who is applying?
+title: Is the phone you've entered a cell phone?
+---
+
+<fieldset>
+	<div class="prompt">
+		<legend class="prompt__primary-text">Can we send texts to <span id="print-applicantPhone"></span>?</legend>
+	</div>
+	<div class="response">
+		<ul class="usa-unstyled-list response__radiogroup--inline">
+			<li>
+				<input id="confirm-text-yes" type="radio" name="confirm-text" value="yes" required>
+      	<label for="confirm-text-yes">Yes</label>
+			</li>
+			<li>
+				<input id="confirm-text-no" type="radio" name="confirm-text" value="no" required>
+      	<label for="confirm-text-no">No</label>
+			</li>
+		</ul>
+	</div>
+</fieldset>
+
+<script>
+	$(document).ready(function() {
+		
+		var applicantPhone = sessionStorage.getItem("applicantPhone");
+		$('#print-applicantPhone').text(applicantPhone);
+
+		$(".usa-button-big").click(function() {
+			event.preventDefault();
+
+			var confirmText = $("input[name='confirm-text']:checked").val();
+
+			if (confirmText == "yes") {
+		    window.location.href = "ssn.html";
+		  }
+
+		  else {
+		    window.location.href = "mobile-phone.html";
+		  }
+
+		});
+	});
+</script>
