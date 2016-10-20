@@ -1,0 +1,37 @@
+---
+layout: application
+step: 1
+section: Basic Screener
+title: It looks like you may be eligible for benefits
+button_text: Apply
+---
+
+
+<p class="usa-font-lead">You might be eligible for SNAP and Medicaid</p>
+
+<p>Zip Code: <span id="print-householdZipCode"></span></p>
+<p>Income: $<span id="print-householdIncome"></span></p>
+<p>People in household: <span id="print-householdLiveWith"></span></p>
+<p>People you share meals with: <span id="print-householdShareMeals"></span></p>
+
+
+
+<script>
+	$(document).ready(function() {
+		var householdZipCode = sessionStorage.getItem("householdZipCode");
+		var householdIncome = sessionStorage.getItem("householdIncome");
+		var householdLiveWith = sessionStorage.getItem("householdLiveWith");
+		var householdShareMeals = sessionStorage.getItem("householdShareMeals");
+		
+
+		$('#print-householdZipCode').text(householdZipCode);
+		$('#print-householdIncome').text(householdIncome);
+		$('#print-householdLiveWith').text(householdLiveWith);
+		$('#print-householdShareMeals').text(householdShareMeals);
+
+		$(".usa-button-big").click(function() {
+			event.preventDefault();
+			window.location.href = "../02-basic-info/who-is-applying.html";
+		});
+	});
+</script>

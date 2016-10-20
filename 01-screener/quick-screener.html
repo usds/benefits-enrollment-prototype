@@ -4,3 +4,153 @@ step: 1
 section: Basic Screener
 title: Let's get started
 ---
+
+<p class="usa-font-lead">We'll ask general info to find out if you <em>may</em> qualify.</p>
+<div class="prompt">
+	<p class="prompt__primary-text"><label for="household-zip-code">What is your zip code?</label></p>
+</div>
+<div class="response">
+	<input type="tel" id="household-zip-code" required/>
+</div>
+<div class="prompt">
+	<p class="prompt__primary-text"><label for="household-income">What is your household's total monthly income?</label></p>
+</div>
+<div class="response">
+	<div class="response__input-prefix" aria-hidden="true">$</div>
+	<input type="tel" id="household-income" required/>
+</div>
+
+<fieldset>
+	<div class="prompt">
+		<legend class="prompt__primary-text">How many people live with you and pay federal taxes?</legend>
+	</div>
+	<div class="response">
+		<ul class="usa-unstyled-list response__radiogroup--inline">
+			<li>
+				<input id="household-live-with-0" type="radio" name="household-live-with" value="0" required>
+      	<label for="household-live-with-0">0</label>
+			</li>
+			<li>
+				<input id="household-live-with-1" type="radio" name="household-live-with" value="1" required>
+      	<label for="household-live-with-1">1</label>
+			</li>
+			<li>
+				<input id="household-live-with-2" type="radio" name="household-live-with" value="2" required>
+      	<label for="household-live-with-2">2</label>
+			</li>
+			<li>
+				<input id="household-live-with-3" type="radio" name="household-live-with" value="3" required=>
+      	<label for="household-live-with-3">3</label>
+			</li>
+			<li>
+				<input id="household-live-with-4" type="radio" name="household-live-with" value="4" required=>
+      	<label for="household-live-with-4">4</label>
+			</li>
+			<li>
+				<input id="household-live-with-5" type="radio" name="household-live-with" value="5" required=>
+      	<label for="household-live-with-5">5</label>
+			</li>
+			<li>
+				<input id="household-live-with-6" type="radio" name="household-live-with" value="6" required=>
+      	<label for="household-live-with-6">6</label>
+			</li>
+			<li>
+				<input id="household-live-with-7" type="radio" name="household-live-with" value="7" required=>
+      	<label for="household-live-with-7">7</label>
+			</li>
+			<li>
+				<input id="household-live-with-8" type="radio" name="household-live-with" value="8" required=>
+      	<label for="household-live-with-8">8</label>
+			</li>
+			<li>
+				<input id="household-live-with-9" type="radio" name="household-live-with" value="9" required=>
+      	<label for="household-live-with-9">9</label>
+			</li>
+			<li>
+				<input id="household-live-with-10" type="radio" name="household-live-with" value="10" required=>
+      	<label for="household-live-with-10">10</label>
+			</li>
+		</ul>
+	</div>
+</fieldset>
+
+<fieldset>
+	<div class="prompt">
+		<legend class="prompt__primary-text">How many people in your house do you share meals with?</legend>
+	</div>
+	<div class="response">
+		<ul class="usa-unstyled-list response__radiogroup--inline">
+			<li>
+				<input id="household-share-meals-0" type="radio" name="household-share-meals" value="0" required>
+      	<label for="household-share-meals-0">0</label>
+			</li>
+			<li>
+				<input id="household-share-meals-1" type="radio" name="household-share-meals" value="1" required>
+      	<label for="household-share-meals-1">1</label>
+			</li>
+			<li>
+				<input id="household-share-meals-2" type="radio" name="household-share-meals" value="2" required>
+      	<label for="household-share-meals-2">2</label>
+			</li>
+			<li>
+				<input id="household-share-meals-3" type="radio" name="household-share-meals" value="3" required=>
+      	<label for="household-share-meals-3">3</label>
+			</li>
+			<li>
+				<input id="household-share-meals-4" type="radio" name="household-share-meals" value="4" required=>
+      	<label for="household-share-meals-4">4</label>
+			</li>
+			<li>
+				<input id="household-share-meals-5" type="radio" name="household-share-meals" value="5" required=>
+      	<label for="household-share-meals-5">5</label>
+			</li>
+			<li>
+				<input id="household-share-meals-6" type="radio" name="household-share-meals" value="6" required=>
+      	<label for="household-share-meals-6">6</label>
+			</li>
+			<li>
+				<input id="household-share-meals-7" type="radio" name="household-share-meals" value="7" required=>
+      	<label for="household-share-meals-7">7</label>
+			</li>
+			<li>
+				<input id="household-share-meals-8" type="radio" name="household-share-meals" value="8" required=>
+      	<label for="household-share-meals-8">8</label>
+			</li>
+			<li>
+				<input id="household-share-meals-9" type="radio" name="household-share-meals" value="9" required=>
+      	<label for="household-share-meals-9">9</label>
+			</li>
+			<li>
+				<input id="household-share-meals-10" type="radio" name="household-share-meals" value="10" required=>
+      	<label for="household-share-meals-10">10</label>
+			</li>
+		</ul>
+	</div>
+</fieldset>
+
+<script>
+	$(document).ready(function() {
+		$(".usa-button-big").click(function() {
+				event.preventDefault();
+		    var householdZipCode = $("#household-zip-code").val();
+		    var householdIncome = $("#household-income").val();
+		    var householdLiveWith = $("input[name='household-live-with']:checked").val();
+		    var householdShareMeals = $("input[name='household-share-meals']:checked").val();
+
+		    householdIncome = parseInt(householdIncome);
+
+		    sessionStorage.setItem("householdZipCode", householdZipCode);
+		    sessionStorage.setItem("householdIncome", householdIncome);
+		    sessionStorage.setItem("householdLiveWith", householdLiveWith);
+		    sessionStorage.setItem("householdShareMeals", householdShareMeals);
+
+		    if (householdIncome <= 10000) {
+			    window.location.href = "eligible.html";
+			  }
+
+			  else {
+			  	window.location.href = "not-eligible.html";
+			  }
+		});
+	});
+</script>

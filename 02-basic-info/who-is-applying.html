@@ -1,0 +1,49 @@
+---
+layout: application
+step: 2
+section: Who is applying?
+title: Tell us you is applying
+---
+
+<fieldset>
+	<div class="prompt">
+		<legend class="prompt__primary-text">Select who is applying. </legend>
+	</div>
+	<div class="response">
+		<ul class="usa-unstyled-list response__radiogroup">
+			<li>
+				<input id="who-is-applying-me" type="radio" name="who-is-applying" value="me" required>
+      	<label for="who-is-applying-me">Me</label>
+			</li>
+			<li>
+				<input id="who-is-applying-me-and-others" type="radio" name="who-is-applying" value="me-and-others" required>
+      	<label for="who-is-applying-me-and-others">Me and other(s)</label>
+			</li>
+			<li>
+				<input id="who-is-applying-for-someone-else" type="radio" name="who-is-applying" value="for-someone-else" required>
+      	<label for="who-is-applying-for-someone-else">For someone else</label>
+			</li>
+		</ul>
+	</div>
+</fieldset>
+
+<script>
+	$(document).ready(function() {
+		$(".usa-button-big").click(function() {
+				event.preventDefault();
+		    var whoIsApplying = $("input[name='who-is-applying']:checked").val();
+
+		    sessionStorage.setItem("whoIsApplying", whoIsApplying);
+
+		    if (whoIsApplying == "me") {
+			    window.location.href = "applying-me.html";
+			  }
+			  else if (whoIsApplying == "me-and-others") {
+			    window.location.href = "me-and-others.html";
+			  }
+			  else if (whoIsApplying == "for-someone-else") {
+			    window.location.href = "for-someone-else.html";
+			  }
+		});
+	});
+</script>

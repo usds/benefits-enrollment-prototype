@@ -1,42 +1,16 @@
 ---
 layout: application
-title: Tell us about yourself
 step: 1
 section: test
+title: Benefits application
+button_text: get started
 ---
-
-
-<div class="prompt">
-	<p class="prompt__primary-text"><label for="name-firstname">What is your first name</label></p>
-</div>
-<div class="response">
-	<input type="text" id="name-firstname" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
-</div>
-<div class="prompt">
-	<p class="prompt__primary-text"><label for="hname-lastname">What is your last name</label></p>
-</div>
-<div class="response">
-	<input type="text" id="name-lastname" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
-</div>
 
 <script>
 	$(document).ready(function() {
 		$(".usa-button-big").click(function() {
-				event.preventDefault();
-		    var firstname = $("#name-firstname").val();
-		    var lastname = $("#name-lastname").val();
-		    sessionStorage.setItem("firstname", firstname);
-		    sessionStorage.setItem("lastname", lastname);
-
-		    if (lastname == "Cunha") {
-			    window.location.href = "index2.html";
-			  }
-
-			  else {
-			  	window.location.href = "index3.html";
-			  }
-
-
+			event.preventDefault();
+	    window.location.href = "01-screener/quick-screener.html";
 		});
 	});
 </script>
