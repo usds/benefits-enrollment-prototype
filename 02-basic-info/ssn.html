@@ -1,0 +1,26 @@
+---
+layout: application
+step: 2
+section: Who is applying?
+title: Let's get that Social Security Number
+---
+
+<div class="prompt">
+	<p class="prompt__primary-text"><label for="applicant-ssn">Social Security Number (<abbr title="Social Security Number">SSN</abbr>)</label></p>
+</div>
+<div class="response">
+	<input type="tel" id="applicant-ssn" required />
+</div>
+
+<script>
+  $(document).ready(function() {
+    $(".usa-button-big").click(function() {
+        event.preventDefault();
+
+        var applicantSSN = $("#applicant-ssn").val();
+        sessionStorage.setItem("applicantSSN", applicantSSN);
+
+        window.location.href = "ssn.html";
+    });
+  });
+</script>
