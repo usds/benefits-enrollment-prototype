@@ -4,3 +4,78 @@ step: 2
 section: Who is applying?
 title: How would you like us to keep in touch with you?
 ---
+
+<fieldset>
+	<div class="prompt">
+		<legend class="prompt__primary-text">Select any method in which you want us to contact you. </legend>
+	</div>
+	<div class="response">
+		<ul class="usa-unstyled-list checkbox-group">
+			<li>
+				<input id="notification-preference-text" type="checkbox" name="notification-preference" value="Text">
+				<label for="notification-preference-text">Text</label>
+			</li>
+			<li>
+				<input id="notification-preference-call" type="checkbox" name="notification-preference" value="Call">
+				<label for="notification-preference-call">Call</label>
+			</li>
+			<li id="email-block">
+				<input id="notification-preference-email" type="checkbox" name="notification-preference" value="Email">
+				<label for="notification-preference-email">Email</label>
+			</li>
+			<li>
+				<input id="notification-preference-mail" type="checkbox" name="notification-preference" value="Mail">
+				<label for="notification-preference-mail">Mail</label>
+			</li>
+		</ul>
+	</div>
+</fieldset>
+
+
+<script>
+	$(document).ready(function() {
+		
+		var applicantEmail = sessionStorage.getItem("applicantEmail");
+		if (applicantEmail == "") {
+			$("#email-block").remove();
+		}
+
+
+		$(".usa-button-big").click(function() {
+			event.preventDefault();
+			var confirmText = false;
+
+			sessionStorage.setItem("notificationPreferenceText", "no");
+			sessionStorage.setItem("notificationPreferenceCall", "no");
+			sessionStorage.setItem("notificationPreferenceEmail", "no");
+			sessionStorage.setItem("notificationPreferenceMail", "no");
+
+			if ($('#notification-preference-text').is(':checked')) {
+				confirmText = true; 
+				sessionStorage.setItem("notificationPreferenceText", "yes");
+			}
+
+			if ($('#notification-preference-call').is(':checked')) {
+				sessionStorage.setItem("notificationPreferenceCall", "yes");
+			}
+
+			if ($('#notification-preference-email').is(':checked')) {
+				sessionStorage.setItem("notificationPreferenceEmail", "yes");
+			}
+
+			if ($('#notification-preference-mail').is(':checked')) {
+				sessionStorage.setItem("notificationPreferenceMail", "yes");
+			}
+
+			if (confirmText == true) {
+				window.location.href = "confirm-text.html";
+			}
+
+			else {
+				window.location.href = "ssn.html";
+			}
+
+			
+		});
+	});
+</script>
