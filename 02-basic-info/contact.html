@@ -9,7 +9,7 @@ title: Hello, <span id="print-applicantFullName"></span>! Can you provide us som
 <fieldset>
 
 	<div class="prompt">
-  	<legend class="prompt__primary-text">Mailing address</legend>
+  	<legend class="prompt__primary-text">What is a mailing address in which we can reach you?</legend>
   </div>
 
   <div class="response">
@@ -89,16 +89,49 @@ title: Hello, <span id="print-applicantFullName"></span>! Can you provide us som
   </div>
 </fieldset>
 
+<div class="prompt">
+	<p class="prompt__primary-text"><label for="applicant-email">What is your email address?</label></p>
+</div>
+<div class="response">
+	<input type="email" id="applicant-email" />
+</div>
+
+<div class="prompt">
+	<p class="prompt__primary-text"><label for="applicant-phone">What is your phone number?</label></p>
+</div>
+<div class="response">
+	<input type="tel" id="applicant-phone" />
+</div>
+
 <script>
 	$(document).ready(function() {
 		
-		var applicantFullName= sessionStorage.getItem("applicantFullName");
+		var applicantFullName = sessionStorage.getItem("applicantFullName");
+		var applicantZip = sessionStorage.getItem("householdZipCode");
 
 		$('#print-applicantFullName').text(applicantFullName);
+		$('#applicant-zip').val(applicantZip);
 
 		$(".usa-button-big").click(function() {
 			event.preventDefault();
-			window.location.href = "../02-basic-info/who-is-applying.html";
+
+			var applicantMailingAddress1 = $("#applicant-mailing-address-1").val();
+			var applicantMailingAddress2 = $("#applicant-mailing-address-2").val();
+			var applicantCity = $("#applicant-city").val();
+			var applicantState = $("#applicant-state").val();
+			var applicantZip = $("#applicant-zip").val();
+			var applicantEmail = $("#applicant-email").val();
+			var applicantPhone = $("#applicant-phone").val();
+
+			sessionStorage.setItem("applicantMailingAddress1", applicantMailingAddress1);
+			sessionStorage.setItem("applicantMailingAddress2", applicantMailingAddress2);
+			sessionStorage.setItem("applicantCity", applicantCity);
+			sessionStorage.setItem("applicantState", applicantState);
+			sessionStorage.setItem("applicantZip", applicantZip);
+			sessionStorage.setItem("applicantEmail", applicantEmail);
+			sessionStorage.setItem("applicantPhone", applicantPhone);
+
+			window.location.href = "notification-prefs.html";
 		});
 	});
 </script>
