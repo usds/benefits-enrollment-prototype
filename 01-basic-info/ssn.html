@@ -1,16 +1,33 @@
 ---
 layout: application
-step: 2
-section: Who is applying?
-title: Let's get that Social Security Number
+step: 1
+title: Now, a few more questions about you.
 ---
 
 <div class="prompt">
-	<p class="prompt__primary-text"><label for="applicant-ssn">Social Security Number (<abbr title="Social Security Number">SSN</abbr>)</label></p>
+	<p class="prompt__primary-text"><label for="applicant-ssn">What is your Social Security Number (SSN)?</label></p>
+  <p class="prompt__secondary-text">You can leave this blank if you don’t know it</p>
 </div>
 <div class="response">
-	<input type="tel" id="applicant-ssn" required />
+	<input type="tel" id="applicant-ssn" />
+  <div class="note note--has-icon">
+    <i class="fa fa-lock note__icon" aria-hidden="true"></i>
+    <p class="note__text">This information is kept confidential and secure as required by law</p>
+  </div>
 </div>
+
+<div class="prompt">
+  <div class="explainer">
+    <a href="#" class="explainer__toggle" aria-expanded="false" aria-controls="explainer-1">Why do we ask this?</a>
+    <div class="explainer__content" id="explainer-1">
+      <p>we use your social Security Number to check information about you to find out what you qualify for as we go through these steps. With your Social Security Number, we may be able to sign you up for services today.</p>
+      <p>You do not have to provide your Social Security Number right now, but if you choose not to, you will be asked to provide documents that proof things like your income sources.</p>
+    </div>
+  </div>
+</div>
+
+
+
 
 <script>
   $(document).ready(function() {

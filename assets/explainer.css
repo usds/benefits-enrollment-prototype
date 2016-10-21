@@ -15,6 +15,11 @@
 	width: 100%;
 }
 
+.explainer__toggle:hover {
+	color: white;
+	text-decoration: underline;
+}
+
 .explainer__toggle[aria-expanded="true"] {
 	background-image: url('minus.svg');
 }

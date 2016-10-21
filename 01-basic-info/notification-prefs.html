@@ -1,39 +1,62 @@
 ---
 layout: application
-step: 2
+step: 1
 section: Who is applying?
-title: How would you like us to keep in touch with you?
+title: Okay, tell us how you want to keep in touch.
 ---
 
 <fieldset>
 	<div class="prompt">
-		<legend class="prompt__primary-text">Select any method in which you want us to contact you. </legend>
+		<legend class="prompt__primary-text">Select all of the ways you’d like to be contacted about important updates:</legend>
 	</div>
 	<div class="response">
 		<ul class="usa-unstyled-list checkbox-group">
 			<li>
 				<input id="notification-preference-text" type="checkbox" name="notification-preference" value="Text">
-				<label for="notification-preference-text">Text</label>
+				<label for="notification-preference-text">Text me</label>
 			</li>
 			<li>
 				<input id="notification-preference-call" type="checkbox" name="notification-preference" value="Call">
-				<label for="notification-preference-call">Call</label>
+				<label for="notification-preference-call">Call me</label>
 			</li>
 			<li id="email-block">
 				<input id="notification-preference-email" type="checkbox" name="notification-preference" value="Email">
-				<label for="notification-preference-email">Email</label>
+				<label for="notification-preference-email">Email me</label>
 			</li>
 			<li>
 				<input id="notification-preference-mail" type="checkbox" name="notification-preference" value="Mail">
-				<label for="notification-preference-mail">Mail</label>
+				<label for="notification-preference-mail">Send me mail</label>
 			</li>
 		</ul>
 	</div>
 </fieldset>
 
+<div class="dependent-field usa-sr-only" aria-hidden="true">
+	<div class="prompt" > 
+		<p class="prompt__primary-text"><label for="applicant-phone">What is your number?</label></p>
+	</div>
+	<div class="response">
+		<input type="tel" id="applicant-phone" />
+	</div>
+</div>
+
+
 
 <script>
 	$(document).ready(function() {
+
+		$("#notification-preference-text, #notification-preference-call").on('change', function(){
+			if ($("#notification-preference-text").is(":checked") || $("#notification-preference-call").is(":checked")) {
+				$('.dependent-field').removeClass('usa-sr-only').attr("aria-hidden", "false");
+			}
+			else {
+				$('.dependent-field').addClass('usa-sr-only').attr("aria-hidden", "true");
+			}
+		});
+
+		if ($("#notification-preference-text").is(":checked") || $("#notification-preference-call").is(":checked")) {
+			$('.dependent-field').removeClass('usa-sr-only').attr("aria-hidden", "false");
+		}
 		
 		var applicantEmail = sessionStorage.getItem("applicantEmail");
 		if (applicantEmail == "") {
@@ -44,6 +67,13 @@ title: How would you like us to keep in touch with you?
 		$(".usa-button-big").click(function() {
 			event.preventDefault();
 			var confirmText = false;
+
+			var applicantPhone = $("#applicant-phone").val();
+
+			applicantPhone = applicantPhone.replace(/(\d{3})(\d{3})(\d{4})/, "$1-$2-$3");
+
+
+      sessionStorage.setItem("applicantPhone", applicantPhone);
 
 			sessionStorage.setItem("notificationPreferenceText", "no");
 			sessionStorage.setItem("notificationPreferenceCall", "no");

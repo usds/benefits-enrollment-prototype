@@ -1,23 +1,23 @@
 ---
 layout: application
-step: 2
+step: 1
 section: Who is applying?
-title: Tell us you is applying
+title: First, tell us who’s applying.
 ---
 
 <fieldset>
 	<div class="prompt">
-		<legend class="prompt__primary-text">Select who is applying. </legend>
+		<legend class="prompt__primary-text">Who are you applying for?</legend>
 	</div>
 	<div class="response">
 		<ul class="usa-unstyled-list response__radiogroup">
 			<li>
 				<input id="who-is-applying-me" type="radio" name="who-is-applying" value="me" required>
-      	<label for="who-is-applying-me">Me</label>
+      	<label for="who-is-applying-me">Myself</label>
 			</li>
 			<li>
-				<input id="who-is-applying-me-and-others" type="radio" name="who-is-applying" value="me-and-others" required>
-      	<label for="who-is-applying-me-and-others">Me and other(s)</label>
+				<input id="who-is-applying-me-and-someone-else" type="radio" name="who-is-applying" value="me-and-someone-else" required>
+      	<label for="who-is-applying-me-and-someone-else">Me and someone else</label>
 			</li>
 			<li>
 				<input id="who-is-applying-for-someone-else" type="radio" name="who-is-applying" value="for-someone-else" required>
@@ -35,14 +35,11 @@ title: Tell us you is applying
 
 		    sessionStorage.setItem("whoIsApplying", whoIsApplying);
 
-		    if (whoIsApplying == "me") {
-			    window.location.href = "applying-me.html";
-			  }
-			  else if (whoIsApplying == "me-and-others") {
-			    window.location.href = "me-and-others.html";
-			  }
-			  else if (whoIsApplying == "for-someone-else") {
+		    if (whoIsApplying == "for-someone-else") {
 			    window.location.href = "for-someone-else.html";
+			  }
+			  else {
+			    window.location.href = "applicant-name.html";
 			  }
 		});
 	});

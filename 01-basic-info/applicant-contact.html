@@ -1,15 +1,15 @@
 ---
 layout: application
-step: 2
+step: 1
 section: Who is applying?
-title: Hello, <span id="print-applicantFullName"></span>! Can you provide us some contact information?
+title: Tell us how to reach you.
 ---
 
 
 <fieldset>
 
 	<div class="prompt">
-  	<legend class="prompt__primary-text">What is a mailing address in which we can reach you?</legend>
+  	<legend class="prompt__primary-text">Where can we send you mail?</legend>
   </div>
 
   <div class="response">
@@ -96,12 +96,7 @@ title: Hello, <span id="print-applicantFullName"></span>! Can you provide us som
 	<input type="email" id="applicant-email" />
 </div>
 
-<div class="prompt">
-	<p class="prompt__primary-text"><label for="applicant-phone">What is your phone number?</label></p>
-</div>
-<div class="response">
-	<input type="tel" id="applicant-phone" />
-</div>
+
 
 <script>
 	$(document).ready(function() {
@@ -129,7 +124,6 @@ title: Hello, <span id="print-applicantFullName"></span>! Can you provide us som
 			sessionStorage.setItem("applicantState", applicantState);
 			sessionStorage.setItem("applicantZip", applicantZip);
 			sessionStorage.setItem("applicantEmail", applicantEmail);
-			sessionStorage.setItem("applicantPhone", applicantPhone);
 
 			window.location.href = "notification-prefs.html";
 		});

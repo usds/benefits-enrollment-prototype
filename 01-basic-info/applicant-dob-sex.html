@@ -1,16 +1,8 @@
 ---
 layout: application
-step: 2
-section: Who is applying?
-title: Give us some of your basic information
+step: 1
+title: Hello, <span id="print-applicantFirstName"></span>!
 ---
-
-<div class="prompt">
-	<p class="prompt__primary-text"><label for="applicant-full-name">What is your full name?</label></p>
-</div>
-<div class="response">
-	<input type="text" id="applicant-full-name" required />
-</div>
 
 <div class="prompt">
 	<legend class="prompt__primary-text">When is your birthday?</legend>
@@ -35,7 +27,7 @@ title: Give us some of your basic information
 
  <fieldset>
   <div class="prompt">
-    <legend class="prompt__primary-text">What is your sex?</legend>
+    <legend class="prompt__primary-text">What sex do you identify with?</legend>
   </div>
   <div class="response">
     <ul class="usa-unstyled-list response__radiogroup--inline">
@@ -47,32 +39,30 @@ title: Give us some of your basic information
         <input id="male" type="radio" name="applicant-sex" value="Male" required="">
         <label for="male">Male</label>
       </li>
-      <li>
-        <input id="other" type="radio" name="applicant-sex" value="Other" required="">
-        <label for="other">Other</label>
-      </li>
     </ul>
   </div>
 </fieldset>
 
 <script>
   $(document).ready(function() {
+
+  	var applicantFirstName = sessionStorage.getItem("applicantFirstName");
+  	$('#print-applicantFirstName').text(applicantFirstName);
+
     $(".usa-button-big").click(function() {
         event.preventDefault();
 
-        var applicantFullName = $("#applicant-full-name").val();
         var applicantDOBMonth = $("#applicant-dob-month").val();
         var applicantDOBDay = $("#applicant-dob-day").val();
         var applicantDOBYear = $("#applicant-dob-year").val();
         var applicantSex = $("input[name='applicant-sex']:checked").val();
 
-        sessionStorage.setItem("applicantFullName", applicantFullName);
         sessionStorage.setItem("applicantDOBMonth ", applicantDOBMonth);
         sessionStorage.setItem("applicantDOBDay ", applicantDOBDay);
         sessionStorage.setItem("applicantDOBYear ", applicantDOBYear);
         sessionStorage.setItem("applicantDOBSex ", applicantSex);
 
-        window.location.href = "contact.html";
+        window.location.href = "applicant-contact.html";
     });
   });
 </script>

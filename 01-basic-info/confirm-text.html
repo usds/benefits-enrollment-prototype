@@ -1,27 +1,10 @@
 ---
 layout: application
-step: 2
-section: Who is applying?
-title: Is the phone you've entered a cell phone?
+step: 1
+title: Great! You’ll receive a confirmation message
 ---
 
-<fieldset>
-	<div class="prompt">
-		<legend class="prompt__primary-text">Can we send texts to <span id="print-applicantPhone"></span>?</legend>
-	</div>
-	<div class="response">
-		<ul class="usa-unstyled-list response__radiogroup--inline">
-			<li>
-				<input id="confirm-text-yes" type="radio" name="confirm-text" value="yes" required>
-      	<label for="confirm-text-yes">Yes</label>
-			</li>
-			<li>
-				<input id="confirm-text-no" type="radio" name="confirm-text" value="no" required>
-      	<label for="confirm-text-no">No</label>
-			</li>
-		</ul>
-	</div>
-</fieldset>
+<p class="usa-font-lead">We’ll only send you important text messages to at <span id="print-applicantPhone"></span></p>
 
 <script>
 	$(document).ready(function() {
@@ -32,15 +15,7 @@ title: Is the phone you've entered a cell phone?
 		$(".usa-button-big").click(function() {
 			event.preventDefault();
 
-			var confirmText = $("input[name='confirm-text']:checked").val();
-
-			if (confirmText == "yes") {
-		    window.location.href = "ssn.html";
-		  }
-
-		  else {
-		    window.location.href = "mobile-phone.html";
-		  }
+			window.location.href = "ssn.html";
 
 		});
 	});
