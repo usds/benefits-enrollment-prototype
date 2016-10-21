@@ -1,0 +1,136 @@
+---
+layout: application
+step: 2
+title: Okay, let’s review some common cases that may apply to you.
+---
+
+<fieldset>
+	<div class="prompt">
+		<legend class="prompt__primary-text">Check all that are true</legend>
+		</div>
+		<div class="response">
+		<ul class="usa-unstyled-list checkbox-group">
+			<li class="female-only">
+				<input id="common-case-pregnant" type="checkbox" name="common-cases" value="Someone is pregnant">
+				<label for="common-case-pregnant">I am pregnant</label>
+			</li>
+			<li class="female-only">
+				<input id="common-case-had-baby" type="checkbox" name="common-cases" value="I have had a baby within the last 6 months">
+				<label for="common-case-had-baby">I have had a baby within the last 6 months</label>
+			</li>
+			<li>
+				<input id="common-case-student" type="checkbox" name="common-cases" value="I am a full time student">
+				<label for="common-case-student">I am a full time student</label>
+			</li>
+			<li>
+				<input id="common-case-military" type="checkbox" name="common-cases" value="I served in the military">
+				<label for="common-case-military">I served in the military</label>
+			</li>
+			<li>
+				<input id="common-case-foster" type="checkbox" name="common-cases" value="I was in foster care at age 18 or older">
+				<label for="common-case-foster">I was in foster care at age 18 or older</label>
+			</li>
+			<li>
+				<input id="common-case-disability" type="checkbox" name="common-cases" value="I has a disability">
+				<label for="common-case-disability">I have a disability (physical, emotional, or mental health condition)</label>
+			</li>
+			<li>
+				<input id="common-case-insurance" type="checkbox" name="common-cases" value="I have health insurance or Medicaid">
+				<label for="common-case-insurance">I have health insurance or Medicaid</label>
+			</li>
+			<li>
+				<input id="common-case-cash-assistance" type="checkbox" name="common-cases" value="I currently get cash assistance">
+				<label for="common-case-cash-assistance">I currently get cash assistance</label>
+			</li>
+			<li>
+				<input id="common-case-medical" type="checkbox" name="common-cases" value="I want help paying for medical bills from the past 3 months">
+				<label for="common-case-medical">I want help paying for medical bills from the past 3 months</label>
+			</li>
+			<li>
+				<input id="common-case-none" type="checkbox" name="common-cases" value="None of these apply to me">
+				<label for="common-case-none">None of these apply to me</label>
+			</li>
+		</ul>
+		<p class="response__note">We will now follow up with specific questions that may help you qualify for more benefits.</p>
+		</div>
+</fieldset>
+
+<script>
+	$(document).ready(function() {
+		var applicantSex = sessionStorage.getItem("applicantSex");
+  	if (applicantSex === "Male") {
+  		$('.female-only').remove();
+  	};
+
+  	$('#common-case-none').on('change', function(){
+  			if ($('#common-case-none').is(':checked')) {
+  				$('input:checkbox:not(#common-case-none)').removeAttr('checked');
+  			};
+  	});
+
+		$(".usa-button-big").click(function() {
+			event.preventDefault();
+
+			sessionStorage.setItem("commonCasePregnant", "no");
+			sessionStorage.setItem("commonCaseHadBaby", "no");
+			sessionStorage.setItem("commonCaseStudent", "no");
+			sessionStorage.setItem("commonCaseMilitary", "no");
+			sessionStorage.setItem("commonCaseFoster", "no");
+			sessionStorage.setItem("commonCaseDisability", "no");
+			sessionStorage.setItem("commonCaseInsurance", "no");
+			sessionStorage.setItem("commonCaseCashAssistance", "no");
+			sessionStorage.setItem("commonCaseMedical", "no");
+
+
+			if ($('#common-case-medical').is(':checked')) {
+				sessionStorage.setItem("commonCaseMedical", "yes");
+				window.location.href = "common-case-medical.html";
+			}
+
+			if ($('#common-case-cash-assistance').is(':checked')) {
+				sessionStorage.setItem("commonCaseMedical", "yes");
+				window.location.href = "common-case-medical.html";
+			}
+
+			if ($('#common-case-insurance').is(':checked')) {
+				sessionStorage.setItem("commonCaseInsurance", "yes");
+				window.location.href = "common-case-insurance.html";
+			}
+
+			if ($('#common-case-disability').is(':checked')) {
+				sessionStorage.setItem("commonCaseDisability", "yes");
+				window.location.href = "common-case-disability.html";
+			}
+			if ($('#common-case-foster').is(':checked')) {
+				sessionStorage.setItem("commonCaseFoster", "yes");
+				window.location.href = "common-case-foster.html";
+			}
+
+			if ($('#common-case-military').is(':checked')) {
+				sessionStorage.setItem("commonCaseMilitary", "yes");
+				window.location.href = "common-case-military.html";
+			}
+
+			if ($('#common-case-student').is(':checked')) {
+				sessionStorage.setItem("commonCaseStudent", "yes");
+				window.location.href = "common-case-student.html";
+			}
+
+			if ($('#common-case-had-baby').is(':checked')) {
+				sessionStorage.setItem("commonCaseHadBaby", "yes");
+				window.location.href = "common-case-had-baby.html";
+			}
+
+			if ($('#common-case-pregnant').is(':checked')) {
+				sessionStorage.setItem("commonCasePregnant", "yes");
+				window.location.href = "common-case-pregnant.html";
+			}
+
+			else if ($('input[name="common-cases"]:checked').length == 0 || $('#common-case-none').is(':checked')){
+				window.location.href = "../03-basic-family/index.html";
+			}
+
+			
+		});
+	});
+</script>

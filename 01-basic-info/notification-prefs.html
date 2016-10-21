@@ -57,12 +57,6 @@ title: Okay, tell us how you want to keep in touch.
 		if ($("#notification-preference-text").is(":checked") || $("#notification-preference-call").is(":checked")) {
 			$('.dependent-field').removeClass('usa-sr-only').attr("aria-hidden", "false");
 		}
-		
-		var applicantEmail = sessionStorage.getItem("applicantEmail");
-		if (applicantEmail == "") {
-			$("#email-block").remove();
-		}
-
 
 		$(".usa-button-big").click(function() {
 			event.preventDefault();

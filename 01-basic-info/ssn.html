@@ -35,9 +35,11 @@ title: Now, a few more questions about you.
         event.preventDefault();
 
         var applicantSSN = $("#applicant-ssn").val();
+        applicantSSN = applicantSSN.replace(/(\d{3})(\d{2})(\d{4})/, "$1-$2-$3");
+
         sessionStorage.setItem("applicantSSN", applicantSSN);
 
-        window.location.href = "ssn.html";
+        window.location.href = "../02-your-details/applicant-common-cases.html";
     });
   });
 </script>
