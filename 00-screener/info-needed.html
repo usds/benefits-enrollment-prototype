@@ -1,0 +1,34 @@
+---
+layout: application
+title: Before you apply, we’ll need some more info to see what you qualify for. 
+button_text: Get Started
+---
+
+<div class="prompt">
+	<p class="prompt__primary-text">We will ask for info about:</p>
+	<div class="prompt__secondary-text">
+		<ul class="">
+			<li>Your identiy</li>
+			<li>Your household (who you live and pay taxes with)</li>
+			<li>Your household income and expenses</li>
+			<li>Social security numbers for anyone you're applying for</li>
+			<li>Other benefits you use</li>
+			<li>Citizenship (your answer will not affect you or your family’s immigration status)</li>
+		</ul>
+		<div class="note note--has-icon">
+			<i class="fa fa-lock note__icon" aria-hidden="true"></i>
+			<p class="note__text">This information is kept confidential and secure as required by law</p>
+		</div>
+	</div>
+
+	<p class="use-lead-font">We'll take you through step by step. All of this info helps us get you benefits more quickly.</p>
+</div>
+
+<script>
+	$(document).ready(function() {
+		$(".usa-button-big").click(function() {
+			event.preventDefault();
+			window.location.href = "../01-basic-info/who-is-applying.html";
+		});
+	});
+</script>

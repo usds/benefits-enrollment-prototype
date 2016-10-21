@@ -1,0 +1,55 @@
+---
+layout: application
+title: It looks like you will likely qualify for SNAP and Medicaid!
+title_style: success
+button_text: Continue
+---
+
+
+<div class="data-list">
+	<h3 class="data-list__heading">Your monthly income</h3>
+	<p class="data-list__text"><i class="fa fa-money data-list__icon" aria-hidden="true"></i> $<span id="print-householdIncome"></span></p>
+	<h3 class="data-list__heading">Your household size</h3>
+	<p class="data-list__text"><i class="fa fa-users data-list__icon" aria-hidden="true"></i> <span id="print-householdLiveWith"></span></p>
+	<h3 class="data-list__heading">You share food with</h3>
+	<p class="data-list__text"><i class="fa fa-cutlery data-list__icon" aria-hidden="true"></i> <span id="print-householdShareMeals"></span></p>
+	<h3 class="data-list__heading">Your zip code</h3>
+	<p class="data-list__text"><i class="fa fa-home data-list__icon" aria-hidden="true"></i> <span id="print-householdZipCode"></span></p>
+</div>
+
+
+
+<script>
+	$(document).ready(function() {
+		var householdZipCode = sessionStorage.getItem("householdZipCode");
+		var householdIncome = sessionStorage.getItem("householdIncome");
+		var householdLiveWith = sessionStorage.getItem("householdLiveWith");
+		var householdShareMeals = sessionStorage.getItem("householdShareMeals");
+		
+
+		$('#print-householdZipCode').text(householdZipCode);
+		$('#print-householdIncome').text(householdIncome);
+		
+
+		if (householdLiveWith == 1) {
+			$('#print-householdLiveWith').text(householdLiveWith + " person");
+		}
+		else {
+			$('#print-householdLiveWith').text(householdLiveWith + " people");
+		}
+
+		if (householdShareMeals == 1) {
+			$('#print-householdShareMeals').text(householdShareMeals + " person");
+		}
+		else {
+			$('#print-householdShareMeals').text(householdShareMeals + " people");
+		}
+
+		
+
+		$(".usa-button-big").click(function() {
+			event.preventDefault();
+			window.location.href = "info-needed.html";
+		});
+	});
+</script>

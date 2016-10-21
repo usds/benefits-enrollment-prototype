@@ -1,0 +1,75 @@
+---
+layout: application
+title: Before we start, let’s see if you may qualify for SNAP and Medicaid.
+button_text: Do I Qualify?
+---
+
+<p class="usa-font-lead">We'll ask general info to find out if you <em>may</em> qualify.</p>
+<div class="prompt">
+	<p class="prompt__primary-text"><label for="household-zip-code">What is your zip code?</label></p>
+</div>
+<div class="response">
+	<input type="tel" id="household-zip-code" required/>
+</div>
+
+<div class="prompt">
+	<p class="prompt__primary-text"><label for="household-income">What is your total monthly income?</label></p>
+</div>
+<div class="response">
+	<div class="response__input-prefix" aria-hidden="true">$</div>
+	<input type="tel" id="household-income" required/>
+</div>
+
+<div class="prompt">
+	<p class="prompt__primary-text"><label for="household-live-with">How many people do you live with and/or file federal taxes with?</label></p>
+</div>
+<div class="response">
+	<input type="tel" id="household-live-with" required />
+</div>
+
+<div class="prompt">
+	<p class="prompt__primary-text"><label for="household-share-meals">How many people do you share food with in your house?</label></p>
+</div>
+<div class="response">
+	<input type="tel" id="household-share-meals" required />
+</div>
+
+
+
+<!--
+<div class="explainer">
+	<a href="#" class="explainer__toggle" aria-expanded="false" aria-controls="explainer-1">Why do we ask this?</a>
+	<div class="explainer__content" id="explainer-1">
+		<p>If you or someone in your household is not a citizen, you may still be able to receive some benefits. We ask about citizenship so that we can help you find out what programs you qualify for.</p>
+    <p>Applying and signup up for the these programs will not affect you or your family's immigration status</p>
+    <p>This info is private and confidential.</p>
+	</div>
+</div>
+-->
+
+<script>
+	$(document).ready(function() {
+		$(".usa-button-big").click(function() {
+				event.preventDefault();
+		    var householdZipCode = $("#household-zip-code").val();
+		    var householdIncome = $("#household-income").val();
+		    var householdLiveWith = parseInt($("#household-live-with").val()) + 1;
+		    var householdShareMeals = $("#household-share-meals").val();
+
+		    householdIncome = parseInt(householdIncome);
+
+		    sessionStorage.setItem("householdZipCode", householdZipCode);
+		    sessionStorage.setItem("householdIncome", householdIncome);
+		    sessionStorage.setItem("householdLiveWith", householdLiveWith);
+		    sessionStorage.setItem("householdShareMeals", householdShareMeals);
+
+		    if (householdIncome <= 10000) {
+			    window.location.href = "eligible.html";
+			  }
+
+			  else {
+			  	window.location.href = "not-eligible.html";
+			  }
+		});
+	});
+</script>

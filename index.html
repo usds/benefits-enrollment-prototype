@@ -1,16 +1,15 @@
 ---
 layout: application
-step: 1
-section: test
 title: Benefits application
 button_text: get started
 ---
 
 <script>
 	$(document).ready(function() {
+		sessionStorage.clear();
 		$(".usa-button-big").click(function() {
 			event.preventDefault();
-	    window.location.href = "01-screener/quick-screener.html";
+	    window.location.href = "00-screener/quick-screener.html";
 		});
 	});
 </script>
