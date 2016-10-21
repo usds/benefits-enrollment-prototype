@@ -1,0 +1,44 @@
+---
+layout: application
+step: 3
+title: Thanks, <span id="print-applicantFirstName"></span>. Now we need to learn about the people in your household. 
+button_text: Continue
+---
+
+<div class="prompt">
+  <div class="explainer">
+    <a href="#" class="explainer__toggle" aria-expanded="false" aria-controls="explainer-1">Why do we ask this?</a>
+    <div class="explainer__content" id="explainer-1">
+      <p class="prompt__primary-text">In order to find out which programs you qualify for, we need to know about your household.</p>
+		
+      <p class="prompt__primary-text">This is a list of who counts as part of your “household”:</p>
+
+      <div class="prompt__secondary-text">
+      	<ul>
+      		<li>Anyone you live with and share food/cook with, such as relatives and roommates.</li>
+      		<li>Anyone who you file federal taxes with.</li>
+      		<li>You spouse, if you are amarried and live with them.</li>
+      		<li>Your parents, if you are under 22 and live with them.</li>
+      		<li>Your kids, if they are under 22 and live with you.</li>
+      		<li>The other parent of your kids, if you live iwth them (even if you are separated or not married)</li>
+      	</ul>
+      </div>
+    </div>
+     
+  </div>
+
+  <p class="usa-font-lead"><strong>We'll now ask you for more information on the people you live with, file federal taxes with and/or share food with.</strong></p>
+</div>
+
+<script>
+  $(document).ready(function() {
+
+  	var applicantFirstName = sessionStorage.getItem("applicantFirstName");
+  	$('#print-applicantFirstName').text(applicantFirstName);
+
+    $(".usa-button-big").click(function() {
+        event.preventDefault();
+        window.location.href = "household-review.html";
+    });
+  });
+</script>
