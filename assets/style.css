@@ -7329,3 +7329,29 @@ legend {
 .read-only .summary__item .fake-input {
   line-height: auto;
 }
+
+/* line 1, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/benefit-selection.scss */
+.benefit-selection label {
+  color: #2e8540;
+  font-size: 2.4rem;
+  font-weight: 700 !important;
+  line-height: 1;
+}
+
+/* line 8, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/benefit-selection.scss */
+.benefit-name {
+  color: #323a45;
+  display: block;
+  font-size: 1.7rem;
+  line-height: 1.5;
+  margin-top: .5em;
+}
+
+/* line 16, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/benefit-selection.scss */
+.benefit-description {
+  color: #323a45;
+  display: block;
+  font-size: 1.7rem;
+  font-weight: 400;
+  line-height: 1.5;
+}

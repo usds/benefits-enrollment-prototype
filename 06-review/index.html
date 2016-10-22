@@ -153,8 +153,27 @@ button_text: Looks great!
 			<input id="applicantEmail" type="email" value="" disabled>
 		</div>
 		<div class="summary__item">
-			<label for="applicantSSN">Social Security Number</label>
+			<label for="applicantSSN">Social Security Number:</label>
 			<input id="applicantSSN" type="tel" value="" disabled>
+		</div>
+		<div class="summary__item">
+			<div class="fieldset-summary">
+				<h4 class="fake-label">U.S. Citizen?</h4>
+				<p class="fake-input" id="print-applicantCitizenship"></p>
+			</div>
+			<fieldset>
+				<legend class="prompt__primary-text">Sex:</legend>
+				<ul class="usa-unstyled-list response__radiogroup--inline">
+					<li>
+						<input id="applicantCitizenship-yes" type="radio" name="applicantCitizenship" value="Female" required="">
+	        	<label for="applicantCitizenship-yes">Yes</label>
+					</li>
+					<li>
+						<input id="applicantCitizenship-no" type="radio" name="applicantCitizenship" value="Male" required="" checked>
+	        	<label for="applicantCitizenship-no">No</label>
+					</li>
+				</ul>
+			</fieldset>
 		</div>
 	</div>
 	<button class="summary__update-btn" type="button">Update</button>
@@ -169,11 +188,27 @@ button_text: Looks great!
 	<div class="summary__data">
 		<div class="summary__item">
 			<label for="householdLiveWith"">Number of people you live with:</label>
-			<input type="tel" id="householdLiveWith" required />
+			<input type="tel" id="householdLiveWith" required disabled />
 		</div>
 		<div class="summary__item">
 			<label for="householdShareMeals"">Number of people you share meals with:</label>
-			<input type="tel" id="householdShareMeals" required />
+			<input type="tel" id="householdShareMeals" required disabled />
+		</div>
+		<div class="summary__item">
+			<label for="householdIncome"">Household Income: </label>
+			<input type="tel" id="householdIncome" required disabled />
+		</div>
+		<div class="summary__item">
+			<label for="householdSavings"">Savings: </label>
+			<input type="tel" id="householdSavings" required disabled />
+		</div>
+		<div class="summary__item">
+			<label for="householdRentMortgage"">Amount spent on rent/mortgage: </label>
+			<input type="tel" id="householdRentMortgage" required disabled />
+		</div>
+		<div class="summary__item">
+			<label for="householdUtilities"">Amount spent on utilities: </label>
+			<input type="tel" id="householdUtilities" required disabled />
 		</div>
 	</div>
 	<button class="summary__update-btn" type="button">Update</button>
@@ -228,16 +263,19 @@ button_text: Looks great!
 		$('#applicantPhone').val(applicantPhone);
 		$('#applicantEmail').val(applicantEmail);
 		$('#applicantSSN').val(applicantSSN);
+		$('#print-applicantCitizenship').text(applicantCitizenship);
 	
 		$('#householdLiveWith').val(parseInt(householdLiveWith));
 		$('#householdShareMeals').val(parseInt(householdShareMeals));
-
-  	$('#print-applicantFirstName').text(applicantFirstName);
+		$('#householdIncome').val("$" + householdIncome);
+		$('#householdSavings').val("$" + householdSavings);
+		$('#householdRentMortgage').val("$" + householdRentMortgage);
+		$('#householdUtilities').val("$" + householdUtilities);
 
     $(".usa-button-big").click(function() {
         event.preventDefault();
 
-        window.location.href = "notification-prefs.html";
+        window.location.href = "benefits.html";
     });
   });
 </script>
