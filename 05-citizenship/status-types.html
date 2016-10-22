@@ -1,0 +1,66 @@
+---
+layout: application
+step: 5
+title: Let’s get a little more info about this.
+button_text: Continue
+---
+
+<fieldset>
+	<div class="prompt">
+		<legend class="prompt__primary-text">Read through this list. Do you fit any of these immigrant categories?</legend>
+
+		<ul class="list-striped">
+			<li>Lawful Permanent Resident (LPR / Green Card Holder)</li>
+			<li>Asylee</li>
+			<li>Refugee</li>
+			<li>Cuban / Haitian entrant</li>
+			<li>Paroled into the U.S. for at least one year</li>
+			<li>Conditional entrant granted before 1980</li>
+			<li>Battered non-citizen, spouses, child, or parent</li>
+			<li>Victim of trafficking</li>
+			<li>A trafficking victim’s spouse, child, sibling, or parent</li>
+			<li>Have a pending application for a victim of trafficking visa</li>
+			<li>Granted witholding of deportation</li>
+			<li>Member of a federally recognized Indian tribe or American Indian born in Canada</li>
+		</ul>
+
+	</div>
+
+	<div class="response">
+    <ul class="usa-unstyled-list response__radiogroup">
+      <li>
+        <input id="yes" type="radio" name="applicant-listed-status" value="Status applies to item listed" required="">
+        <label for="yes">Yes, one of these applies to me</label>
+      </li>
+      <li>
+        <input id="no" type="radio" name="applicant-listed-status" value="Status does not apply to item listed" required="">
+        <label for="no">No, none of these apply to me</label>
+      </li>
+    </ul>
+    <div class="explainer">
+	    <a href="#" class="explainer__toggle" aria-expanded="false" aria-controls="explainer-1">Why do we ask this?</a>
+	    <div class="explainer__content" id="explainer-1">
+	      <p>Immigrants in these categores may qualify for some programs. We ask about your immigration status so that we can find out what you may qualify for.</p>
+	      <p>Applying signing up for these programs will not affect you or your family’s immigration status.</p>
+	      <p>This info is private and confidential.</p>
+	    </div>
+	  </div>
+  </div>
+<fieldset>
+
+<p class="usa-lead-font">To sign up for these services, we may need to ask for immigration document numbers later.</p>
+
+<script>
+  $(document).ready(function() {
+
+    $(".usa-button-big").click(function() {
+        event.preventDefault();
+
+        var applicantCitizenshipStatus = $("input[name='applicant-listed-status']:checked").val();
+        sessionStorage.setItem("applicantCitizenshipStatus", applicantCitizenshipStatus);
+        
+        window.location.href = "../06-review/index.html";
+    });
+  });
+</script>
+  
