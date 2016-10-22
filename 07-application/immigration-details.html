@@ -1,0 +1,53 @@
+---
+layout: application
+step: 7
+title: Finally, we need an immgration document number for you.
+button_text: Review my info
+---
+
+<div class="alert--positive">
+	<p>Remeber, giving us this info will <strong>not</strong> affect your immigration status</p>
+	<p>You <strong>do not</strong> have to be a citizen to qualify.</p>
+</div>
+
+<fieldset>
+	<div class="prompt">
+		<legend class="prompt__primary-text">Please select the document type.</legend>
+	</div>
+	<div class="response">
+		<ul class="usa-unstyled-list response__radiogroup">
+			<li>
+				<input id="applicantImmigrationDocument-alien-number" type="radio" name="applicantImmigrationDocument" value="Alien number" required>
+      	<label for="applicantImmigrationDocument-alien-number">Alien number</label>
+			</li>
+			<li>
+				<input id="applicantImmigrationDocument-sevis" type="radio" name="applicantImmigrationDocument" value="SEVIS ID" required>
+      	<label for="applicantImmigrationDocument-sevis">SEVIS ID</label>
+			</li>
+			<li>
+				<input id="applicantImmigrationDocument-card-passport" type="radio" name="applicantImmigrationDocument" value="Card or Passport" required>
+      	<label for="applicantImmigrationDocument-card-passport">Card or Passport</label>
+			</li>
+			<li>
+				<input id="applicantImmigrationDocument-other" type="radio" name="applicantImmigrationDocument" value="Other" required>
+      	<label for="applicantImmigrationDocument-other">Other</label>
+			</li>
+		</ul>
+	</div>
+</fieldset>
+
+<div class="prompt">
+	<p class="prompt__primary-text"><label for="applicantImmigrationDocNumber">Document number</label></p>
+</div>
+<div class="response">
+	<input type="text" id="applicantImmigrationDocNumber" required/>
+</div>
+
+<script>
+	$(document).ready(function() {
+		$(".usa-button-big").click(function() {
+			event.preventDefault();
+			window.location.href = "../08-submit/index.html";
+		});
+	});
+</script>

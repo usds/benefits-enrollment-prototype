@@ -1,0 +1,95 @@
+---
+layout: application
+step: 7
+title: Tell us more about you job(s).
+button_text: Continue
+---
+
+<div class="prompt">
+	<p class="usa-font-lead">Where do you currently work?</p>
+	<p class="prompt__primary-text"><label for="applicantEmployerName">Employer name</label></p>
+</div>
+	
+<div class="response">
+	<input type="text" id="applicantEmployerName" required />
+</div>
+
+<div class="prompt">
+	<p class="prompt__primary-text"><label for="applicantEmployerPhone">Employer phone number</label></p>
+</div>
+	
+<div class="response">
+	<input type="tel" id="applicantEmployerPhone" required />
+</div>
+
+<fieldset>
+	<div class="prompt">
+		<legend class="prompt__primary-text">How often do you get paid?</legend>
+	</div>
+	<div class="response">
+		<ul class="usa-unstyled-list response__radiogroup">
+			<li>
+				<input id="applicantPayFrequency-hourly" type="radio" name="applicantPayFrequency" value="me" required>
+      	<label for="applicantPayFrequency-hourly">Hourly</label>
+			</li>
+			<li>
+				<input id="applicantPayFrequency-weekly" type="radio" name="applicantPayFrequency" value="me" required>
+      	<label for="applicantPayFrequency-weekly">Weekly</label>
+			</li>
+			<li>
+				<input id="applicantPayFrequency-biweekly" type="radio" name="applicantPayFrequency" value="me" required>
+      	<label for="applicantPayFrequency-biweekly">Every 2 weeks</label>
+			</li>
+			<li>
+				<input id="applicantPayFrequency-twice-monthly" type="radio" name="applicantPayFrequency" value="me" required>
+      	<label for="applicantPayFrequency-twice-monthly">Twice a month</label>
+			</li>
+			<li>
+				<input id="applicantPayFrequency-monthly" type="radio" name="applicantPayFrequency" value="me" required>
+      	<label for="applicantPayFrequency-monthly">Monthly</label>
+			</li>
+			<li>
+				<input id="applicantPayFrequency-yearly" type="radio" name="applicantPayFrequency" value="me" required>
+      	<label for="applicantPayFrequency-yearly">Yearly</label>
+			</li>
+		</ul>
+	</div>
+</fieldset>
+
+<div class="prompt">
+	<p class="prompt__primary-text"><label for="applicantWages">Wages/tips (before taxes)</label></p>
+</div>
+<div class="response">
+	<div class="response__input-prefix" aria-hidden="true">$</div>
+	<input type="tel" id="applicantWages" required/>
+</div>
+
+<div class="prompt">
+	<p class="prompt__primary-text"><label for="applicantWorkHours">About how many hours do you work per week at this job?</label></p>
+</div>
+<div class="response">
+	<input type="tel" id="applicantWorkHours" required/>
+</div>
+
+<script>
+	$(document).ready(function() {
+		for (i = 0; i < sessionStorage.length; i++) {
+			if (sessionStorage.getItem(sessionStorage.key(i)) != "undefined") {
+		  	window[sessionStorage.key(i)] = sessionStorage.getItem(sessionStorage.key(i));
+		  }
+		  else {
+		  	window[sessionStorage.key(i)] = "";
+		  }
+		}
+
+		$(".usa-button-big").click(function() {
+			event.preventDefault();
+			if (applicantCitizenship == "no") {
+				window.location.href = "immigration-details.html";
+			}
+			else {
+				window.location.href = "../08-submit/index.html";
+			}
+		});
+	});
+</script>

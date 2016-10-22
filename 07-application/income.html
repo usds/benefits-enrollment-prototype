@@ -1,0 +1,70 @@
+---
+layout: application
+step: 7
+title: We need some details about your income.
+button_text: Continue
+---
+
+<fieldset>
+	<div class="prompt">
+		<legend class="prompt__primary-text">Check all your sources of income.</legend>
+		</div>
+		<div class="response">
+		<ul class="usa-unstyled-list checkbox-group">
+			<li>
+				<input id="incomeType-job" type="checkbox" name="incomeType" value="Someone is pregnant">
+				<label for="incomeType-job">I have one or more jobs</label>
+			</li>
+			<li>
+				<input id="incomeType-self" type="checkbox" name="incomeType" value="Someone is pregnant">
+				<label for="incomeType-self">I am self-employed</label>
+			</li>
+			<li>
+				<input id="incomeType-unemployment" type="checkbox" name="incomeType" value="Someone is pregnant">
+				<label for="incomeType-unemployment">I get unemployment benefits</label>
+			</li>
+			<li>
+				<input id="incomeType-social-security" type="checkbox" name="incomeType" value="Someone is pregnant">
+				<label for="incomeType-social-security">I get Social Security payments</label>
+			</li>
+			<li>
+				<input id="incomeType-retirement" type="checkbox" name="incomeType" value="Someone is pregnant">
+				<label for="incomeType-retirement">I get retirement payments</label>
+			</li>
+			<li>
+				<input id="incomeType-pension" type="checkbox" name="incomeType" value="Someone is pregnant">
+				<label for="incomeType-pension">I have a penion</label>
+			</li>
+			<li>
+				<input id="incomeType-alimony" type="checkbox" name="incomeType" value="Someone is pregnant">
+				<label for="incomeType-alimony">I get alimony</label>
+			</li>
+		</ul>
+		</div>
+</fieldset>
+
+<script>
+	$(document).ready(function() {
+		for (i = 0; i < sessionStorage.length; i++) {
+			if (sessionStorage.getItem(sessionStorage.key(i)) != "undefined") {
+		  	window[sessionStorage.key(i)] = sessionStorage.getItem(sessionStorage.key(i));
+		  }
+		  else {
+		  	window[sessionStorage.key(i)] = "";
+		  }
+		}
+
+		$(".usa-button-big").click(function() {
+			event.preventDefault();
+	    if ($('#incomeType-self').is(':checked') || $('#incomeType-job').is(':checked')) {
+				window.location.href = "job-details.html";
+			}
+			else if (applicantCitizenship == "no") {
+				window.location.href = "immigration-details.html";
+			}
+			else {
+				window.location.href = "../08-submit/index.html";
+			}
+		});
+	});
+</script>

@@ -1,0 +1,57 @@
+---
+layout: application-no-button
+title: Congrats, <span id="print-applicantFirstName"></span>! Your application has been submitted!
+title_style: success
+hide_button: true
+---
+
+<h2>What happens next?</h2>
+
+<div class="food-assistance">
+	<h3>SNAP</h3>
+	<p>Before you can get your SNAP benefits, you'll have to be interviewed over the phone or at a local SNAP office.</p>
+	<p>You will receive a letter/email/text with instructions for setting up your interview.</p>
+</div>
+<div class="health-assistance">
+	<h3>Medicaid</h3>
+	<p>In the 7 to 10 days, you will get a Medicaid card in the mail and your healthcare will begin. If you have any problems, call your local office at 555-555-5555</p>
+
+	<h4>Office Address</h4>
+	<p>1234 Main St.</p>
+	<p>Newark, NJ 12345</p>
+
+	<h4>Office Hours</h4>
+	<p>Mon: 9am-5pm</p>
+	<p>Tues: 9am-5pm</p>
+	<p>Wed: 9am-5pm</p>
+	<p>Thurs: 9am-5pm</p>
+	<p>Fri: 9am-5pm</p>
+	<p>Sat: 9am-5pm</p>
+	<p>Sun: 9am-5pm</p>
+</div>
+
+<p><a href="#">Print this page</a></p>
+<p><a href="#">Email to friend</a></p>
+<p><a href="#">Download as PDF</a></p>
+
+<script>
+	$(document).ready(function() {
+		for (i = 0; i < sessionStorage.length; i++) {
+			if (sessionStorage.getItem(sessionStorage.key(i)) != "undefined") {
+		  	window[sessionStorage.key(i)] = sessionStorage.getItem(sessionStorage.key(i));
+		  }
+		  else {
+		  	window[sessionStorage.key(i)] = "";
+		  }
+		}
+
+		if (benefitChoiceFoodAssistance == "no") {
+			$('.health-assistance').remove();
+		};
+
+		if (benefitChoiceHealthcare == "no") {
+			$('.hfood-assistance').remove();
+		};
+
+	});
+</script>

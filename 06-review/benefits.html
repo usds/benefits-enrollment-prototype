@@ -13,13 +13,32 @@ button_text: Complete my application
 	<div class="response">
 		<ul class="usa-unstyled-list checkbox-group benefit-selection">
 			<li>
-				<input id="benefitChoice-food-assistance" type="checkbox" name="benefitChoice" value="Text">
-				<label for="benefitChoice-food-assistance">Food Assistance <span class="benefit-name">SNAP</span> <span class="benefit-description">Money for food at supermarkets, famer’s market, and convenience stores.</span></label>
+				<input id="benefitChoiceFoodAssistance" type="checkbox" name="benefitChoice" value="Text">
+				<label for="benefitChoiceFoodAssistance">Food Assistance <span class="benefit-name">SNAP</span> <span class="benefit-description">Money for food at supermarkets, famer’s market, and convenience stores.</span></label>
 			</li>
 			<li>
-				<input id="benefitChoice-healthcare" type="checkbox" name="benefitChoice" value="Text">
-				<label for="benefitChoice-healthcare">Healthcare Coverage <span class="benefit-name">Medicaid</span> <span class="benefit-description">Free or low-cost heatlh coverage may help pay for medical bills, dr. visits ro even Medicare premiums.</span></label>
+				<input id="benefitChoiceHealthcare" type="checkbox" name="benefitChoice" value="Text">
+				<label for="benefitChoiceHealthcare">Healthcare Coverage <span class="benefit-name">Medicaid</span> <span class="benefit-description">Free or low-cost heatlh coverage may help pay for medical bills, dr. visits ro even Medicare premiums.</span></label>
 			</li>
 		</ul>
 	</div>
 </fieldset>
+
+<script>
+	$(document).ready(function() {
+		$(".usa-button-big").click(function() {
+				event.preventDefault();
+
+				sessionStorage.setItem("benefitChoiceHealthcare", "no");
+				sessionStorage.setItem("benefitChoiceFoodAssistance", "no");
+
+				if ($('#benefitChoiceHealthcare').is(':checked')) {
+					sessionStorage.setItem("benefitChoiceHealthcare", "yes");
+				}
+				if ($('#benefitChoiceFoodAssistance').is(':checked')) {
+					sessionStorage.setItem("benefitChoiceFoodAssistance", "yes");
+				}
+		    window.location.href = "../07-application/index.html";
+		});
+	});
+</script>

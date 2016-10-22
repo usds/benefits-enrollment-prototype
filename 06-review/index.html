@@ -219,10 +219,12 @@ button_text: Looks great!
 
   	$('.summary__edit-btn button').on('click', function(){
   		$(this).parent().parent().parent().removeClass('read-only');
+  		$(this).parent().parent().parent().find('input').removeAttr("disabled");
   	});
 
   	$('.summary__update-btn').on('click', function(){
   		$(this).parent().addClass('read-only');
+  		$(this).parent().find('input').attr("disabled", "true");
   	});
 
 		for (i = 0; i < sessionStorage.length; i++) {
