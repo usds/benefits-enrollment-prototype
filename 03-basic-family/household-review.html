@@ -23,7 +23,7 @@ button_text: Continue
   $(document).ready(function() {
 
   	var applicantFirstName = sessionStorage.getItem("applicantFirstName");
-    var householdLiveWith = sessionStorage.getItem("householdLiveWith") - 1;
+    var householdLiveWith = sessionStorage.getItem("householdLiveWith");
     var householdShareMeals = sessionStorage.getItem("householdShareMeals");
 
 
@@ -35,7 +35,7 @@ button_text: Continue
     $(".usa-button-big").click(function() {
         event.preventDefault();
 
-        var householdLiveWith = $('#applicant-household-live-with').val() + 1;
+        var householdLiveWith = parseInt($('#applicant-household-live-with').val());
         var householdShareMeals = $('#applicant-household-eat-with').val();
         sessionStorage.setItem("householdLiveWith", householdLiveWith);
         sessionStorage.setItem("householdShareMeals", householdShareMeals);
