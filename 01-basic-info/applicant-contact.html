@@ -1,15 +1,14 @@
 ---
 layout: application
 step: 1
-section: Who is applying?
-title: Tell us how to reach you.
+title: Where can we send you mail?
 ---
 
 
 <fieldset>
 
-	<div class="prompt">
-  	<legend class="prompt__primary-text">Where can we send you mail?</legend>
+	<div class="prompt usa-sr-only">
+  	<legend class="prompt__primary-text">What is your address and/or email</legend>
   </div>
 
   <div class="response">
@@ -125,7 +124,7 @@ title: Tell us how to reach you.
 			sessionStorage.setItem("applicantZip", applicantZip);
 			sessionStorage.setItem("applicantEmail", applicantEmail);
 
-			window.location.href = "notification-prefs.html";
+			window.location.href = "ssn.html";
 		});
 	});
 </script>

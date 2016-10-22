@@ -19,24 +19,28 @@ title: You said you have health insurance
 				<label for="insurance-medicaid">Medicaid</label>
 			</li>
 			<li>
-				<input id="insurance-other-public" type="checkbox" name="insurance" value="Other Public Heath Insurance">
-				<label for="insurance-other-public">Other Public Heath Insurance</label>
+				<input id="insurance-other-public" type="checkbox" name="insurance" value="Other public health insurance">
+				<label for="insurance-other-public">Other public health insurance</label>
 			</li>
 			<li>
-				<input id="insurance-va" type="checkbox" name="insurance" value="VA Healthcare or TRICARE">
-				<label for="insurance-va">VA Healthcare or TRICARE</label>
+				<input id="insurance-va" type="checkbox" name="insurance" value="VA gealthcare or TRICARE">
+				<label for="insurance-va">VA healthcare or TRICARE</label>
 			</li>
 			<li>
-				<input id="insurance-va" type="checkbox" name="insurance" value="VA Healthcare or TRICARE">
-				<label for="insurance-va">VA Healthcare or TRICARE</label>
+				<input id="insurance-employer" type="checkbox" name="insurance" value="Employer-based health insurance">
+				<label for="insurance-employer">Employer-based health insurance</label>
 			</li>
 			<li>
-				<input id="insurance-employer" type="checkbox" name="insurance" value="Employer-based Health Insurance">
-				<label for="insurance-employer">Employer-based Health Insurance</label>
+				<input id="insurance-private" type="checkbox" name="insurance" value="Private health insurance">
+				<label for="insurance-private">Private health insurance</label>
 			</li>
 			<li>
-				<input id="insurance-private" type="checkbox" name="insurance" value="Private Health Insurance">
-				<label for="insurance-private">Private Health Insurance</label>
+				<input id="insurance-peacecorps" type="checkbox" name="insurance" value="PeaceCorps">
+				<label for="insurance-peacecorps">PeaceCorps</label>
+			</li>
+			<li>
+				<input id="insurance-limited" type="checkbox" name="insurance" value="Limited-benefit plan (school accident policy)">
+				<label for="insurance-limited">Limited-benefit plan (school accident policy)</label>
 			</li>
 			<li>
 				<input id="insurance-unknown" type="checkbox" name="insurance" value="I don’t know">
@@ -62,26 +66,13 @@ title: You said you have health insurance
 		$(".usa-button-big").click(function() {
 			event.preventDefault();
 
-			var commonCaseCashAssistance = sessionStorage.getItem("commonCaseCashAssistance");
-			var commonCaseMedical = sessionStorage.getItem("commonCaseMedical");
-
 			var insuranceTypes = $('input[name="insurance"]:checked').map(function(){
 	      return $(this).val();
 	    }).get(); 
 
 			sessionStorage.setItem("applicantInsuranceTypes", insuranceTypes);
 
-			if (commonCaseMedical == "yes") {
-				window.location.href = "common-case-medical.html";
-			}
-
-			if (commonCaseCashAssistance == "yes") {
-				window.location.href = "common-case-cash-assistance.html";
-			}
-
-			else {
-				window.location.href = "../03-basic-family/index.html";
-			}
+			window.location.href = "../03-basic-family/index.html";
 			
 		});
 	});

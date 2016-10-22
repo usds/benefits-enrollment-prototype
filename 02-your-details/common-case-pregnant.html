@@ -1,0 +1,64 @@
+---
+layout: application
+step: 2
+title: A few questions about your pregnancy.
+---
+
+<div class="prompt">
+	<legend class="prompt__primary-text">When is your due date?</legend>
+	<p class="prompt__secondary-text" id="dueHint">For example: 04 28 1986</p>
+</div>
+<div class="response" >
+	<div class="usa-date-of-birth">
+    <div class="usa-form-group usa-form-group-month">
+      <label for="applicant-due-month">Month</label>
+      <input class="usa-input-inline" aria-describedby="dueHint" class="usa-form-control" id="applicant-due-month" name="applicant-due-month" pattern="0?[1-9]|1[012]" type="tel" min="1" max="12" value="">
+    </div>
+    <div class="usa-form-group usa-form-group-day">
+      <label for="applicant-due-day">Day</label>
+      <input class="usa-input-inline" aria-describedby="dueHint" class="usa-form-control" id="applicant-due-day" name="applicant-due-day" pattern="0?[1-9]|1[0-9]|2[0-9]|3[01]" type="tel" min="1" max="31" value="">
+    </div>
+    <div class="usa-form-group usa-form-group-year">
+      <label for="applicant-due-year">Year</label>
+      <input class="usa-input-inline" aria-describedby="dueHint" class="usa-form-control" id="applicant-due-year" name="applicant-due-year" pattern="[0-9]{4}" type="tel" min="1900" max="2000" value="">
+    </div>
+  </div>
+</div>
+
+<div class="prompt">
+	<p class="prompt__primary-text"><label for="babies-expected">How many babies are you expecting?</label></p>
+</div>
+<div class="response">
+	<input type="tel" id="babies-expected" required />
+</div>
+
+
+<script>
+	$(document).ready(function() {
+
+		var commonCaseInsurance = sessionStorage.getItem("commonCaseInsurance");
+
+		$(".usa-button-big").click(function() {
+			event.preventDefault();
+
+			var applicantDueMonth = $("#applicant-due-month").val();
+      var applicantDueDay = $("#applicant-due-day").val();
+      var applicantDueYear = $("#applicant-due-year").val();
+      var applicantBabiesExpected = $("#babies-expected").val();
+
+      sessionStorage.setItem("applicantDueMonth", applicantDueMonth);
+      sessionStorage.setItem("applicantDueDay", applicantDueDay);
+      sessionStorage.setItem("applicantDueYear", applicantDueYear);
+      sessionStorage.setItem("applicantBabiesExpected", applicantBabiesExpected);
+
+
+			if (commonCaseInsurance == "yes") {
+				window.location.href = "common-case-insurance.html";
+			}
+			else {
+				window.location.href = "../03-basic-family/index.html";
+			}
+			
+		});
+	});
+</script>

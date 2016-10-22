@@ -16,7 +16,7 @@ title: Okay, let’s review some common cases that may apply to you.
 			</li>
 			<li class="female-only">
 				<input id="common-case-had-baby" type="checkbox" name="common-cases" value="I have had a baby within the last 6 months">
-				<label for="common-case-had-baby">I have had a baby within the last 6 months</label>
+				<label for="common-case-had-baby">I had a baby within the last 6 months</label>
 			</li>
 			<li>
 				<input id="common-case-student" type="checkbox" name="common-cases" value="I am a full time student">
@@ -81,15 +81,14 @@ title: Okay, let’s review some common cases that may apply to you.
 			sessionStorage.setItem("commonCaseCashAssistance", "no");
 			sessionStorage.setItem("commonCaseMedical", "no");
 
+			window.location.href = "../03-basic-family/index.html";
 
 			if ($('#common-case-medical').is(':checked')) {
 				sessionStorage.setItem("commonCaseMedical", "yes");
-				window.location.href = "common-case-medical.html";
 			}
 
 			if ($('#common-case-cash-assistance').is(':checked')) {
-				sessionStorage.setItem("commonCaseMedical", "yes");
-				window.location.href = "common-case-medical.html";
+				sessionStorage.setItem("commonCaseCashAssistance", "yes");
 			}
 
 			if ($('#common-case-insurance').is(':checked')) {
@@ -99,26 +98,21 @@ title: Okay, let’s review some common cases that may apply to you.
 
 			if ($('#common-case-disability').is(':checked')) {
 				sessionStorage.setItem("commonCaseDisability", "yes");
-				window.location.href = "common-case-disability.html";
 			}
 			if ($('#common-case-foster').is(':checked')) {
 				sessionStorage.setItem("commonCaseFoster", "yes");
-				window.location.href = "common-case-foster.html";
 			}
 
 			if ($('#common-case-military').is(':checked')) {
 				sessionStorage.setItem("commonCaseMilitary", "yes");
-				window.location.href = "common-case-military.html";
 			}
 
 			if ($('#common-case-student').is(':checked')) {
 				sessionStorage.setItem("commonCaseStudent", "yes");
-				window.location.href = "common-case-student.html";
 			}
 
 			if ($('#common-case-had-baby').is(':checked')) {
 				sessionStorage.setItem("commonCaseHadBaby", "yes");
-				window.location.href = "common-case-had-baby.html";
 			}
 
 			if ($('#common-case-pregnant').is(':checked')) {
@@ -126,9 +120,6 @@ title: Okay, let’s review some common cases that may apply to you.
 				window.location.href = "common-case-pregnant.html";
 			}
 
-			else if ($('input[name="common-cases"]:checked').length == 0 || $('#common-case-none').is(':checked')){
-				window.location.href = "../03-basic-family/index.html";
-			}
 
 			
 		});

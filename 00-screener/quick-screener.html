@@ -1,6 +1,6 @@
 ---
 layout: application
-title: Before we start, let’s see if you may qualify for SNAP and Medicaid.
+title: Before we start, let’s see if you may qualify for <span class="highlight--positive">SNAP</span> and <span class="highlight--positive">Medicaid</span>.
 button_text: Do I Qualify?
 ---
 
@@ -13,7 +13,8 @@ button_text: Do I Qualify?
 </div>
 
 <div class="prompt">
-	<p class="prompt__primary-text"><label for="household-income">What is your total monthly income?</label></p>
+	<p class="prompt__primary-text"><label for="household-income">How much money do you earn each month?</label></p>
+	<p class="prompt__secondary-text">From a job, child support, benefits, etc.</p>
 </div>
 <div class="response">
 	<div class="response__input-prefix" aria-hidden="true">$</div>
@@ -21,14 +22,14 @@ button_text: Do I Qualify?
 </div>
 
 <div class="prompt">
-	<p class="prompt__primary-text"><label for="household-live-with">How many people do you live with and/or file federal taxes with?</label></p>
+	<p class="prompt__primary-text"><label for="household-live-with">How many people in your family do you live with and/or file federal taxes with?</label></p>
 </div>
 <div class="response">
 	<input type="tel" id="household-live-with" required />
 </div>
 
 <div class="prompt">
-	<p class="prompt__primary-text"><label for="household-share-meals">How many people do you share food with in your house?</label></p>
+	<p class="prompt__primary-text"><label for="household-share-meals">In your home, how many people do you share food with?</label></p>
 </div>
 <div class="response">
 	<input type="tel" id="household-share-meals" required />
