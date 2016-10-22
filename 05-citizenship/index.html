@@ -1,0 +1,40 @@
+---
+layout: application
+step: 5
+title: Now, tell us about your citizenship
+button_text: Continue
+---
+
+<div class="alert--positive">
+	<p>You <strong>do not</strong> have to be a citizen to qualify.</p>
+	<p>Answering this question will <strong>not</strong> affect your immigration status.</p>
+</div>
+
+<fieldset>
+  <div class="prompt">
+    <legend class="prompt__primary-text">Are you a U.S. citizen?</legend>
+  </div>
+  <div class="response">
+    <ul class="usa-unstyled-list response__radiogroup--inline">
+      <li>
+        <input id="yes" type="radio" name="applicant-sex" value="yes" required="">
+        <label for="yes">Yes</label>
+      </li>
+      <li>
+        <input id="no" type="radio" name="applicant-sex" value="no" required="">
+        <label for="no">No</label>
+      </li>
+    </ul>
+  </div>
+</fieldset>
+
+<div class="prompt">
+	 <div class="explainer">
+    <a href="#" class="explainer__toggle" aria-expanded="false" aria-controls="explainer-1">Why do we ask this?</a>
+    <div class="explainer__content" id="explainer-1">
+      <p>If you or someone in your household is not a citizen, you may still be able to receive some benefits. We ask about citizenship so that we can help you find out what programs you qualify for.</p>
+      <p>Applying and signing up for these programs will not affect you or your family’s immigration status</p>
+      <p>This info is private and confidential.</p>
+    </div>
+  </div>
+</div>
