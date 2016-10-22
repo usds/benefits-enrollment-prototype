@@ -1,0 +1,40 @@
+---
+layout: application
+step: 4
+title: Last money question. Tell us about your expenses.
+button_text: Continue
+---
+
+<div class="prompt">
+  <p class="prompt__primary-text"><label for="applicant-household-rent-mortgage">How much do you spend on rent or mortgage every month?</label></p>
+</div>
+<div class="response">
+	<div class="response__input-prefix" aria-hidden="true">$</div>
+  <input type="tel" id="applicant-household-rent-mortgage" required />
+</div>
+
+<div class="prompt">
+  <p class="prompt__primary-text"><label for="applicant-household-utilities">How much do you pay for utilities every month?</label></p>
+  <p class="prompt__secondary-text">Add up your heating, phone, water, and garbage bills.</p>
+</div>
+<div class="response">
+	<div class="response__input-prefix" aria-hidden="true">$</div>
+  <input type="tel" id="applicant-household-utilities" required />
+</div>
+
+<script>
+  $(document).ready(function() {
+
+
+    $(".usa-button-big").click(function() {
+        event.preventDefault();
+
+        var householdRentMortgage = $('#applicant-household-rent-mortgage').val();
+        var householdUtilities = $('#applicant-household-utilities').val();
+        sessionStorage.setItem("householdRentMortgage", householdRentMortgage);
+        sessionStorage.setItem("householdUtilities", householdUtilities);
+
+        window.location.href = "expenses.html";
+    });
+  });
+</script>
