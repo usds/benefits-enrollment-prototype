@@ -26,13 +26,21 @@ button_text: Continue
     var householdLiveWith = sessionStorage.getItem("householdLiveWith") - 1;
     var householdShareMeals = sessionStorage.getItem("householdShareMeals");
 
+
+
   	$('#print-applicantFirstName').text(applicantFirstName);
     $('#applicant-household-live-with').val(householdLiveWith);
     $('#applicant-household-eat-with').val(householdShareMeals);
 
     $(".usa-button-big").click(function() {
         event.preventDefault();
-        window.location.href = "household-review.html";
+
+        var householdLiveWith = $('#applicant-household-live-with').val() + 1;
+        var householdShareMeals = $('#applicant-household-eat-with').val();
+        sessionStorage.setItem("householdLiveWith", householdLiveWith);
+        sessionStorage.setItem("householdShareMeals", householdShareMeals);
+
+        window.location.href = "../04-finances/income.html";
     });
   });
 </script>
