@@ -6959,6 +6959,32 @@ legend {
   }
 }
 
+/* line 1, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_benefit-selection.scss */
+.benefit-selection label {
+  color: #2e8540;
+  font-size: 2.4rem;
+  font-weight: 700 !important;
+  line-height: 1;
+}
+
+/* line 8, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_benefit-selection.scss */
+.benefit-name {
+  color: #323a45;
+  display: block;
+  font-size: 1.7rem;
+  line-height: 1.5;
+  margin-top: .5em;
+}
+
+/* line 16, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_benefit-selection.scss */
+.benefit-description {
+  color: #323a45;
+  display: block;
+  font-size: 1.7rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
 /* line 1, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_cards.scss */
 .card-wrap {
   margin: 0 auto;
@@ -7330,28 +7356,38 @@ legend {
   line-height: auto;
 }
 
-/* line 1, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/benefit-selection.scss */
-.benefit-selection label {
+/* line 1, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_welome_page.scss */
+.hero {
+  background-color: #112e51;
+  border-top: 1px solid white;
+  color: white;
+  padding: 10rem 0;
+}
+/* line 7, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_welome_page.scss */
+.hero h1 {
+  margin-top: 0;
+}
+
+/* line 12, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_welome_page.scss */
+.panel {
+  background: white;
+  padding: 4rem 0 10rem 0;
+}
+
+/* line 17, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_welome_page.scss */
+.benefits-highlights {
+  border: 1px solid #2e8540;
+  padding: 2rem 5%;
+}
+/* line 20, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/uswds/lib/mixins/_clearfix.scss */
+.benefits-highlights::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+/* line 22, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_welome_page.scss */
+.benefits-highlights h2,
+.benefits-highlights h3 {
   color: #2e8540;
-  font-size: 2.4rem;
-  font-weight: 700 !important;
-  line-height: 1;
-}
-
-/* line 8, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/benefit-selection.scss */
-.benefit-name {
-  color: #323a45;
-  display: block;
-  font-size: 1.7rem;
-  line-height: 1.5;
-  margin-top: .5em;
-}
-
-/* line 16, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/benefit-selection.scss */
-.benefit-description {
-  color: #323a45;
-  display: block;
-  font-size: 1.7rem;
-  font-weight: 400;
-  line-height: 1.5;
+  margin-top: 0;
 }
