@@ -6939,21 +6939,37 @@ legend {
   color: white;
   padding: 1.5rem 2rem;
 }
+/* line 20, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/uswds/lib/mixins/_clearfix.scss */
+.application-header::after {
+  clear: both;
+  content: "";
+  display: block;
+}
 
-/* line 7, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_application-header.scss */
+/* line 8, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_application-header.scss */
+.application-header__seal {
+  display: inline-block;
+  margin-right: 1rem;
+  width: 30px;
+}
+
+/* line 14, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_application-header.scss */
 .application-header__primary-heading {
+  display: inline-block;
   font-family: "Merriweather", "Georgia", "Cambria", "Times New Roman", "Times", serif;
   font-size: 1.4rem;
   margin: 0;
+  position: relative;
+  top: -.8rem;
 }
 @media screen and (min-width: 600px) {
-  /* line 7, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_application-header.scss */
+  /* line 14, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_application-header.scss */
   .application-header__primary-heading {
     font-size: 1.6rem;
   }
 }
 @media screen and (min-width: 1201px) {
-  /* line 7, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_application-header.scss */
+  /* line 14, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_application-header.scss */
   .application-header__primary-heading {
     font-size: 1.8rem;
   }
