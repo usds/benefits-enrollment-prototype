@@ -5,29 +5,24 @@ title: Let’s start with the basics.
 ---
 
 <div class="prompt">
-	<p class="prompt__primary-text"><label for="applicant-first-name">What is your first name?</label></p>
+	<p class="prompt__primary-text"><label for="applicantFirstName">What is your first name?</label></p>
 </div>
 <div class="response">
-	<input type="text" id="applicant-first-name" required />
+	<input type="text" id="applicantFirstName" required />
 </div>
 
 <div class="prompt">
-	<p class="prompt__primary-text"><label for="applicant-last-name">What is your last name?</label></p>
+	<p class="prompt__primary-text"><label for="applicantLastName">What is your last name?</label></p>
 </div>
 <div class="response">
-	<input type="text" id="applicant-last-name" required />
+	<input type="text" id="applicantLastName" required />
 </div>
 
 <script>
   $(document).ready(function() {
     $(".usa-button-big").click(function() {
         event.preventDefault();
-
-        var applicantFirstName = $("#applicant-first-name").val();
-        var applicantLastName = $("#applicant-last-name").val();
-
-        sessionStorage.setItem("applicantFirstName", applicantFirstName);
-        sessionStorage.setItem("applicantLastName", applicantLastName );
+        storeData();
 
         window.location.href = "applicant-dob-sex.html";
     });

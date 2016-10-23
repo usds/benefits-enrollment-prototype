@@ -12,20 +12,20 @@ title: How would you like us to keep in touch?
 	<div class="response">
 		<ul class="usa-unstyled-list checkbox-group">
 			<li>
-				<input id="notification-preference-text" type="checkbox" name="notification-preference" value="Text">
-				<label for="notification-preference-text">Text me</label>
+				<input id="notificationPreferenceText" type="checkbox" name="notificationPreference" value="Text">
+				<label for="notificationPreferenceText">Text me</label>
 			</li>
 			<li>
-				<input id="notification-preference-call" type="checkbox" name="notification-preference" value="Call">
-				<label for="notification-preference-call">Call me</label>
+				<input id="notificationPreferenceCall" type="checkbox" name="notificationPreference" value="Call">
+				<label for="notificationPreferenceCall">Call me</label>
 			</li>
 			<li id="email-block">
-				<input id="notification-preference-email" type="checkbox" name="notification-preference" value="Email">
-				<label for="notification-preference-email">Email me</label>
+				<input id="notificationPreferenceEmail" type="checkbox" name="notificationPreference" value="Email">
+				<label for="notificationPreferenceEmail">Email me</label>
 			</li>
 			<li>
-				<input id="notification-preference-mail" type="checkbox" name="notification-preference" value="Mail">
-				<label for="notification-preference-mail">Send me mail</label>
+				<input id="notificationPreferenceMail" type="checkbox" name="notificationPreference" value="Mail">
+				<label for="notificationPreferenceMail">Send me mail</label>
 			</li>
 		</ul>
 	</div>
@@ -33,10 +33,10 @@ title: How would you like us to keep in touch?
 
 <div class="dependent-field usa-sr-only" aria-hidden="true">
 	<div class="prompt" > 
-		<p class="prompt__primary-text"><label for="applicant-phone">What is your number?</label></p>
+		<p class="prompt__primary-text"><label for="applicantPhone">What is your number?</label></p>
 	</div>
 	<div class="response">
-		<input type="tel" id="applicant-phone" />
+		<input type="tel" id="applicantPhone" />
 	</div>
 </div>
 
@@ -45,8 +45,8 @@ title: How would you like us to keep in touch?
 <script>
 	$(document).ready(function() {
 
-		$("#notification-preference-text, #notification-preference-call").on('change', function(){
-			if ($("#notification-preference-text").is(":checked") || $("#notification-preference-call").is(":checked")) {
+		$("#notificationPreferenceText, #notificationPreferenceCall").on('change', function(){
+			if ($("#notificationPreferenceText").is(":checked") || $("#notificationPreferenceCall").is(":checked")) {
 				$('.dependent-field').removeClass('usa-sr-only').attr("aria-hidden", "false");
 			}
 			else {
@@ -54,7 +54,7 @@ title: How would you like us to keep in touch?
 			}
 		});
 
-		if ($("#notification-preference-text").is(":checked") || $("#notification-preference-call").is(":checked")) {
+		if ($("#notificationPreferenceText").is(":checked") || $("#notificationPreferenceCall").is(":checked")) {
 			$('.dependent-field').removeClass('usa-sr-only').attr("aria-hidden", "false");
 		}
 
@@ -62,36 +62,14 @@ title: How would you like us to keep in touch?
 			event.preventDefault();
 			var confirmText = false;
 
-			var applicantPhone = $("#applicant-phone").val();
+			applicantPhone = $("#applicantPhone").val().replace(/(\d{3})(\d{3})(\d{4})/, "$1-$2-$3");
+			$("#applicantPhone").val(applicantPhone);
+			
+			storeData();
+			getData();
 
-			applicantPhone = applicantPhone.replace(/(\d{3})(\d{3})(\d{4})/, "$1-$2-$3");
 
-
-      sessionStorage.setItem("applicantPhone", applicantPhone);
-
-			sessionStorage.setItem("notificationPreferenceText", "no");
-			sessionStorage.setItem("notificationPreferenceCall", "no");
-			sessionStorage.setItem("notificationPreferenceEmail", "no");
-			sessionStorage.setItem("notificationPreferenceMail", "no");
-
-			if ($('#notification-preference-text').is(':checked')) {
-				confirmText = true; 
-				sessionStorage.setItem("notificationPreferenceText", "yes");
-			}
-
-			if ($('#notification-preference-call').is(':checked')) {
-				sessionStorage.setItem("notificationPreferenceCall", "yes");
-			}
-
-			if ($('#notification-preference-email').is(':checked')) {
-				sessionStorage.setItem("notificationPreferenceEmail", "yes");
-			}
-
-			if ($('#notification-preference-mail').is(':checked')) {
-				sessionStorage.setItem("notificationPreferenceMail", "yes");
-			}
-
-			if (confirmText == true) {
+			if (notificationPreferenceText == "yes") {
 				window.location.href = "confirm-text.html";
 			}
 

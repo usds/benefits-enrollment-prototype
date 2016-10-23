@@ -29,12 +29,12 @@ button_text: Continue
 	<div class="response">
     <ul class="usa-unstyled-list response__radiogroup">
       <li>
-        <input id="yes" type="radio" name="applicant-listed-status" value="Status applies to item listed" required="">
-        <label for="yes">Yes, one of these applies to me</label>
+        <input id="applicantCitizenshipStatusYes" type="radio" name="applicantCitizenshipStatus" value="Status applies to item listed" required="">
+        <label for="applicantCitizenshipStatusYes">Yes, one of these applies to me</label>
       </li>
       <li>
-        <input id="no" type="radio" name="applicant-listed-status" value="Status does not apply to item listed" required="">
-        <label for="no">No, none of these apply to me</label>
+        <input id="applicantCitizenshipStatusNo" type="radio" name="applicantCitizenshipStatus" value="Status does not apply to item listed" required="">
+        <label for="applicantCitizenshipStatusNo">No, none of these apply to me</label>
       </li>
     </ul>
     <div class="explainer">
@@ -56,8 +56,7 @@ button_text: Continue
     $(".usa-button-big").click(function() {
         event.preventDefault();
 
-        var applicantCitizenshipStatus = $("input[name='applicant-listed-status']:checked").val();
-        sessionStorage.setItem("applicantCitizenshipStatus", applicantCitizenshipStatus);
+        storeData();
         
         window.location.href = "../06-review/index.html";
     });

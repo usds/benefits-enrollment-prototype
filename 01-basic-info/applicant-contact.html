@@ -12,21 +12,21 @@ title: Where can we send you mail?
   </div>
 
   <div class="response">
-	  <label for="applicant-mailing-address-1">Street address 1</label>
-	  <input id="applicant-mailing-address-1" name="applicant-mailing-address-1" type="text">
+	  <label for="applicantMailingAddress1">Street address 1</label>
+	  <input id="applicantMailingAddress1" name="applicant-mailing-address-1" type="text">
 
-	  <label for="applicant-mailing-address-2">Street address 2 <span class="usa-additional_text">Optional</span></label>
-	  <input id="applicant-mailing-address-2" name="applicant-mailing-address-2" type="text">
+	  <label for="applicantMailingAddress2">Street address 2 <span class="usa-additional_text">Optional</span></label>
+	  <input id="applicantMailingAddress2" name="applicant-mailing-address-2" type="text">
 
 	  <div>
 	    <div class="usa-input-grid usa-input-grid-medium">
-	      <label for="applicant-city">City</label>
-	      <input id="applicant-city" name="applicant-city" type="text">
+	      <label for="applicantCity">City</label>
+	      <input id="applicantCity" name="applicant-city" type="text">
 	    </div>
 
 	    <div class="usa-input-grid usa-input-grid-small">
-	      <label for="applicant-state">State</label>
-	      <select id="applicant-state" name="applicant-state">
+	      <label for="applicantState">State</label>
+	      <select id="applicantState" name="applicant-state">
 	        <option value></option>
 	        <option value="AL">Alabama</option>
 	        <option value="AK">Alaska</option>
@@ -83,16 +83,16 @@ title: Where can we send you mail?
 	    </div>
 	  </div>
 
-	  <label for="applicant-zip">ZIP</label>
-	  <input class="usa-input-medium" id="applicant-zip" name="applicant-zip" type="text" pattern="[\d]{5}(-[\d]{4})?" data-grouplength="5,4" data-delimiter="-" data-politespace>
+	  <label for="applicantZip">ZIP</label>
+	  <input class="usa-input-medium" id="applicantZip" name="applicant-zip" type="text" pattern="[\d]{5}(-[\d]{4})?" data-grouplength="5,4" data-delimiter="-" data-politespace>
   </div>
 </fieldset>
 
 <div class="prompt">
-	<p class="prompt__primary-text"><label for="applicant-email">What is your email address?</label></p>
+	<p class="prompt__primary-text"><label for="applicantEmail">What is your email address?</label></p>
 </div>
 <div class="response">
-	<input type="email" id="applicant-email" />
+	<input type="email" id="applicantEmail" />
 </div>
 
 
@@ -100,29 +100,12 @@ title: Where can we send you mail?
 <script>
 	$(document).ready(function() {
 		
-		var applicantFullName = sessionStorage.getItem("applicantFullName");
-		var applicantZip = sessionStorage.getItem("householdZipCode");
-
-		$('#print-applicantFullName').text(applicantFullName);
-		$('#applicant-zip').val(applicantZip);
+		$('#applicantZip').val(householdZipCode);
 
 		$(".usa-button-big").click(function() {
 			event.preventDefault();
 
-			var applicantMailingAddress1 = $("#applicant-mailing-address-1").val();
-			var applicantMailingAddress2 = $("#applicant-mailing-address-2").val();
-			var applicantCity = $("#applicant-city").val();
-			var applicantState = $("#applicant-state").val();
-			var applicantZip = $("#applicant-zip").val();
-			var applicantEmail = $("#applicant-email").val();
-			var applicantPhone = $("#applicant-phone").val();
-
-			sessionStorage.setItem("applicantMailingAddress1", applicantMailingAddress1);
-			sessionStorage.setItem("applicantMailingAddress2", applicantMailingAddress2);
-			sessionStorage.setItem("applicantCity", applicantCity);
-			sessionStorage.setItem("applicantState", applicantState);
-			sessionStorage.setItem("applicantZip", applicantZip);
-			sessionStorage.setItem("applicantEmail", applicantEmail);
+			storeData();
 
 			window.location.href = "ssn.html";
 		});

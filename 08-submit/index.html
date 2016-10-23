@@ -1,73 +1,37 @@
 ---
 layout: application
-title: Last step! Review the terms and sign at the bottom
-button_text: Submit application
+title: Congrats! You may qualify for SNAP and Medicaid!
+title_style: success
+button_text: Complete my application
 ---
 
-<h3>Summary</h3>
-<ul >
-  <li>You have been honest on this application.</li>
-  <li>You understand that GetBenefits.org is a website run by Code for America, a non-profit organization that will
-    submit your Benefits application for you through <a href="#" target="_blank">www.mybenefitscalwin.org</a>
-    or <a href="#" target="_blank">www.c4yourself.com</a> (depending on where you live).
-  </li>
-  <li>Getting Benefits will not affect your or your family’s immigration status. Immigration information is private and
-    confidential.
-  </li>
-  <li>If you do not agree with these terms you can use other online applications found at
-    <a href="#" target="_blank">www.benefits.org</a>.</li>
-  <li>You can learn about family planning services in the <a href="#" target="_blank">Family Planning brochure</a>.
-  </li>
-  <li>You can register to vote online at <a href="#" target="_blank">www.registertovote.ca.gov</a> or ask
-    your Benefits worker to help you register during your interview.
-  </li>
-</ul>
-<h3>Details</h3>
-<p>I understand that by signing this application under penalty of perjury (making false statements), that:</p>
-<ul >
-  <li>I read, or had read to me, the information in the <a href="# target="_blank"">official CF-285 Benefits application</a>
-    and my answers to the questions in this application.
-  </li>
-  <li>My answers to the questions are true and complete to the best of my knowledge.</li>
-  <li>I read or had read to me and I understand and agree to the <a href="#" target="_blank">Rights and Responsibilities</a>
-    for the Benefits Program and the <a href="#" target="_blank">Benefits Program Rules and Penalties</a>.
-  </li>
-  <li>I understand that my county Benefits office may verify the information in this application with Federal, State and
-    local officials to determine if it is accurate.
-  </li>
-  <li>I understand that giving false or misleading statements or misrepresenting, hiding or withholding facts to
-    establish eligibility for Benefits is fraud. Fraud can cause a criminal case to be filed against me and/or I may be
-    barred for a period of time (or life) from getting Benefits benefits.
-  </li>
-  <li>I understand that illegally using or trafficking SNAP benefits is subject to the same penalties as above.</li>
-  <li>I understand that Social Security Numbers or immigration status for household members applying for benefits may be
-    shared with the appropriate government agencies as required by federal law.
-  </li>
-</ul>
-
-<div class="prompt">
-	<h2><label for="applicantSignature">Enter your full legal name to sign this application</label></h2>
-	<p>By writing your name, you agree that you want to apply for the benefits you’ve selected and that you have been honest on this application, and have read the legal terms on this page.</p>
-</div>
-
-<div class="response">
-	<input type="text" id="applicantSignature" required />
-</div>
+<fieldset>
+	<div class="prompt">
+		<p class="usa-lead-font">If you answer a few more questions, you can apply now. You may be able to sign up for some programs today!</p>
+		<legend class="prompt__primary-text">Check all the benefits you want to apply for:</legend>
+	</div>
+	<div class="response">
+		<ul class="usa-unstyled-list checkbox-group benefit-selection">
+			<li>
+				<input id="benefitChoiceFoodAssistance" type="checkbox" name="benefitChoice" value="Text">
+				<label for="benefitChoiceFoodAssistance">Food Assistance <span class="benefit-name">SNAP</span> <span class="benefit-description">Money for food at supermarkets, famer’s market, and convenience stores.</span></label>
+			</li>
+			<li>
+				<input id="benefitChoiceHealthcare" type="checkbox" name="benefitChoice" value="Text">
+				<label for="benefitChoiceHealthcare">Healthcare Coverage <span class="benefit-name">Medicaid</span> <span class="benefit-description">Free or low-cost heatlh coverage may help pay for medical bills, dr. visits ro even Medicare premiums.</span></label>
+			</li>
+		</ul>
+	</div>
+</fieldset>
 
 <script>
 	$(document).ready(function() {
-		for (i = 0; i < sessionStorage.length; i++) {
-			if (sessionStorage.getItem(sessionStorage.key(i)) != "undefined") {
-		  	window[sessionStorage.key(i)] = sessionStorage.getItem(sessionStorage.key(i));
-		  }
-		  else {
-		  	window[sessionStorage.key(i)] = "";
-		  }
-		}
-
 		$(".usa-button-big").click(function() {
-			event.preventDefault();
-	    window.location.href = "done.html";
+				event.preventDefault();
+
+				storeData();
+				
+		    window.location.href = "legal.html";
 		});
 	});
 </script>

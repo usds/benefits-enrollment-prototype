@@ -5,11 +5,11 @@ title: Now, a few more questions about you.
 ---
 
 <div class="prompt">
-	<p class="prompt__primary-text"><label for="applicant-ssn">What is your Social Security Number (SSN)?</label></p>
+	<p class="prompt__primary-text"><label for="applicantSSN">What is your Social Security Number (SSN)?</label></p>
   <p class="prompt__secondary-text">You can leave this blank if you don’t know it</p>
 </div>
 <div class="response">
-	<input type="tel" id="applicant-ssn" />
+	<input type="tel" id="applicantSSN" />
   <div class="note note--has-icon">
     <i class="fa fa-lock note__icon" aria-hidden="true"></i>
     <p class="note__text">This information is kept confidential and secure as required by law</p>
@@ -34,10 +34,10 @@ title: Now, a few more questions about you.
     $(".usa-button-big").click(function() {
         event.preventDefault();
 
-        var applicantSSN = $("#applicant-ssn").val();
-        applicantSSN = applicantSSN.replace(/(\d{3})(\d{2})(\d{4})/, "$1-$2-$3");
+        applicantSSN = $("#applicantSSN").val().replace(/(\d{3})(\d{2})(\d{4})/, "$1-$2-$3");
+        $("#applicantSSN").val(applicantSSN);
 
-        sessionStorage.setItem("applicantSSN", applicantSSN);
+        storeData();
 
         window.location.href = "../02-your-details/applicant-common-cases.html";
     });

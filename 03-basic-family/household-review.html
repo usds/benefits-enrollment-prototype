@@ -6,39 +6,31 @@ button_text: Continue
 ---
 
 <div class="prompt">
-  <p class="prompt__primary-text"><label for="applicant-household-live-with">How many people in your family do you live with and/or file federal taxes with?</label></p>
+  <p class="prompt__primary-text"><label for="householdLiveWith">How many people in your family do you live with and/or file federal taxes with?</label></p>
 </div>
 <div class="response">
-  <input type="tel" id="applicant-household-live-with" required />
+  <input type="tel" id="householdLiveWith" required />
 </div>
 
 <div class="prompt">
-  <p class="prompt__primary-text"><label for="applicant-household-eat-with">How many people do you share food with in your home?</label></p>
+  <p class="prompt__primary-text"><label for="householdShareMeals">How many people do you share food with in your home?</label></p>
 </div>
 <div class="response">
-  <input type="tel" id="applicant-household-eat-with" required />
+  <input type="tel" id="householdShareMeals" required />
 </div>
 
 <script>
   $(document).ready(function() {
 
-  	var applicantFirstName = sessionStorage.getItem("applicantFirstName");
-    var householdLiveWith = sessionStorage.getItem("householdLiveWith");
-    var householdShareMeals = sessionStorage.getItem("householdShareMeals");
-
-
 
   	$('#print-applicantFirstName').text(applicantFirstName);
-    $('#applicant-household-live-with').val(householdLiveWith);
-    $('#applicant-household-eat-with').val(householdShareMeals);
+    $('#householdLiveWith').val(householdLiveWith);
+    $('#householdShareMeals').val(householdShareMeals);
 
     $(".usa-button-big").click(function() {
         event.preventDefault();
 
-        var householdLiveWith = parseInt($('#applicant-household-live-with').val());
-        var householdShareMeals = $('#applicant-household-eat-with').val();
-        sessionStorage.setItem("householdLiveWith", householdLiveWith);
-        sessionStorage.setItem("householdShareMeals", householdShareMeals);
+        storeData();
 
         window.location.href = "../04-finances/income.html";
     });

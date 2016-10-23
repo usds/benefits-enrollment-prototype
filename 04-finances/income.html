@@ -6,7 +6,7 @@ button_text: Continue
 ---
 
 <div class="prompt">
-  <p class="prompt__primary-text"><label for="applicant-household-income">What is your household's monthly income</label></p>
+  <p class="prompt__primary-text"><label for="householdIncome">What is your household's monthly income</label></p>
   <div class="explainer">
     <a href="#" class="explainer__toggle" aria-expanded="false" aria-controls="explainer-1">What counts as income?</a>
     <div class="explainer__content" id="explainer-1">
@@ -41,31 +41,27 @@ button_text: Continue
 </div>
 <div class="response">
 	<div class="response__input-prefix" aria-hidden="true">$</div>
-  <input type="tel" id="applicant-household-income" required />
+  <input type="tel" id="householdIncome" required />
 </div>
 
 <div class="prompt">
-  <p class="prompt__primary-text"><label for="applicant-household-savings">How much money do you have on hand today?</label></p>
+  <p class="prompt__primary-text"><label for="householdSavings">How much money do you have on hand today?</label></p>
   <p class="prompt__secondary-text">This includes money in checking accounts, savings accounts, and any other cash you have available.</p>
 </div>
 <div class="response">
 	<div class="response__input-prefix" aria-hidden="true">$</div>
-  <input type="tel" id="applicant-household-savings" required />
+  <input type="tel" id="householdSavings" required />
 </div>
 
 <script>
   $(document).ready(function() {
 
-  	var householdIncome = sessionStorage.getItem("householdIncome");
-    $('#applicant-household-income').val(householdIncome);
+    $('#householdIncome').val(householdIncome);
 
     $(".usa-button-big").click(function() {
         event.preventDefault();
 
-        var householdIncome = $('#applicant-household-income').val();
-        var householdSavings = $('#applicant-household-savings').val();
-        sessionStorage.setItem("householdIncome", householdIncome);
-        sessionStorage.setItem("householdSavings", householdSavings);
+        storeData();
 
         window.location.href = "expenses.html";
     });

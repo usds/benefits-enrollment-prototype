@@ -12,32 +12,32 @@ button_text: Continue
 		<div class="response">
 		<ul class="usa-unstyled-list checkbox-group">
 			<li>
-				<input id="incomeType-job" type="checkbox" name="incomeType" value="Someone is pregnant">
-				<label for="incomeType-job">I have one or more jobs</label>
+				<input id="incomeTypeJob" type="checkbox" name="incomeType" value="Someone is pregnant">
+				<label for="incomeTypeJob">I have one or more jobs</label>
 			</li>
 			<li>
-				<input id="incomeType-self" type="checkbox" name="incomeType" value="Someone is pregnant">
-				<label for="incomeType-self">I am self-employed</label>
+				<input id="incomeTypeSelf" type="checkbox" name="incomeType" value="Someone is pregnant">
+				<label for="incomeTypeSelf">I am self-employed</label>
 			</li>
 			<li>
-				<input id="incomeType-unemployment" type="checkbox" name="incomeType" value="Someone is pregnant">
-				<label for="incomeType-unemployment">I get unemployment benefits</label>
+				<input id="incomeTypeUnemployment" type="checkbox" name="incomeType" value="Someone is pregnant">
+				<label for="incomeTypeUnemployment">I get unemployment benefits</label>
 			</li>
 			<li>
-				<input id="incomeType-social-security" type="checkbox" name="incomeType" value="Someone is pregnant">
-				<label for="incomeType-social-security">I get Social Security payments</label>
+				<input id="incomeTypeSocialSecurity" type="checkbox" name="incomeType" value="Someone is pregnant">
+				<label for="incomeTypeSocialSecurity">I get Social Security payments</label>
 			</li>
 			<li>
-				<input id="incomeType-retirement" type="checkbox" name="incomeType" value="Someone is pregnant">
-				<label for="incomeType-retirement">I get retirement payments</label>
+				<input id="incomeTypeRetirement" type="checkbox" name="incomeType" value="Someone is pregnant">
+				<label for="incomeTypeRetirement">I get retirement payments</label>
 			</li>
 			<li>
-				<input id="incomeType-pension" type="checkbox" name="incomeType" value="Someone is pregnant">
-				<label for="incomeType-pension">I have a penion</label>
+				<input id="incomeTypePension" type="checkbox" name="incomeType" value="Someone is pregnant">
+				<label for="incomeTypePension">I have a penion</label>
 			</li>
 			<li>
-				<input id="incomeType-alimony" type="checkbox" name="incomeType" value="Someone is pregnant">
-				<label for="incomeType-alimony">I get alimony</label>
+				<input id="incomeTypeAlimony" type="checkbox" name="incomeType" value="Someone is pregnant">
+				<label for="incomeTypeAlimony">I get alimony</label>
 			</li>
 		</ul>
 		</div>
@@ -45,18 +45,14 @@ button_text: Continue
 
 <script>
 	$(document).ready(function() {
-		for (i = 0; i < sessionStorage.length; i++) {
-			if (sessionStorage.getItem(sessionStorage.key(i)) != "undefined") {
-		  	window[sessionStorage.key(i)] = sessionStorage.getItem(sessionStorage.key(i));
-		  }
-		  else {
-		  	window[sessionStorage.key(i)] = "";
-		  }
-		}
 
 		$(".usa-button-big").click(function() {
 			event.preventDefault();
-	    if ($('#incomeType-self').is(':checked') || $('#incomeType-job').is(':checked')) {
+
+			storeData();
+			getData();
+
+	    if (incomeTypeSelf == "yes" || incomeTypeJob == "yes") {
 				window.location.href = "job-details.html";
 			}
 			else if (applicantCitizenship == "no") {

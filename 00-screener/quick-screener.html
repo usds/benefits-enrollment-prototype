@@ -6,50 +6,41 @@ button_text: Do I Qualify?
 
 <p class="usa-font-lead">We'll ask general info to find out if you <em>may</em> qualify.</p>
 <div class="prompt">
-	<p class="prompt__primary-text"><label for="household-zip-code">What is your zip code?</label></p>
+	<p class="prompt__primary-text"><label for="householdZipCode">What is your zip code?</label></p>
 </div>
 <div class="response">
-	<input type="tel" id="household-zip-code" required/>
+	<input type="tel" id="householdZipCode" required/>
 </div>
 
 <div class="prompt">
-	<p class="prompt__primary-text"><label for="household-income">How much money do you earn each month?</label></p>
+	<p class="prompt__primary-text"><label for="householdIncome">How much money do you earn each month?</label></p>
 	<p class="prompt__secondary-text">From a job, child support, benefits, etc.</p>
 </div>
 <div class="response">
 	<div class="response__input-prefix" aria-hidden="true">$</div>
-	<input type="tel" id="household-income" required/>
+	<input type="tel" id="householdIncome" required/>
 </div>
 
 <div class="prompt">
-	<p class="prompt__primary-text"><label for="household-live-with">How many people in your family do you live with and/or file federal taxes with?</label></p>
+	<p class="prompt__primary-text"><label for="householdLiveWith">How many people in your family do you live with and/or file federal taxes with?</label></p>
 </div>
 <div class="response">
-	<input type="tel" id="household-live-with" required />
+	<input type="tel" id="householdLiveWith" required />
 </div>
 
 <div class="prompt">
-	<p class="prompt__primary-text"><label for="household-share-meals">In your home, how many people do you share food with?</label></p>
+	<p class="prompt__primary-text"><label for="householdShareMeals">In your home, how many people do you share food with?</label></p>
 </div>
 <div class="response">
-	<input type="tel" id="household-share-meals" required />
+	<input type="tel" id="householdShareMeals" required />
 </div>
 
 <script>
 	$(document).ready(function() {
 		$(".usa-button-big").click(function() {
 				event.preventDefault();
-		    var householdZipCode = $("#household-zip-code").val();
-		    var householdIncome = $("#household-income").val();
-		    var householdLiveWith = parseInt($("#household-live-with").val());
-		    var householdShareMeals = $("#household-share-meals").val();
-
-		    householdIncome = parseInt(householdIncome);
-
-		    sessionStorage.setItem("householdZipCode", householdZipCode);
-		    sessionStorage.setItem("householdIncome", householdIncome);
-		    sessionStorage.setItem("householdLiveWith", householdLiveWith);
-		    sessionStorage.setItem("householdShareMeals", householdShareMeals);
+				storeData();
+				getData();
 
 		    if (householdIncome <= 10000) {
 			    window.location.href = "eligible.html";
