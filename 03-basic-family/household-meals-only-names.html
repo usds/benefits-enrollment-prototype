@@ -1,0 +1,90 @@
+---
+layout: application
+step: 3
+title: Tell us about the <span id="print-householdShareMeals"></span> who you share food with.
+button_text: Continue
+---
+
+<div id="person-1">
+  <div class="prompt">
+    <p class="prompt__primary-text"><label for="householdMealOnlyName1">Person 1 Full Name</label></p>
+  </div>
+  <div class="response">
+    <input type="text" id="householdMealOnlyName1" required />
+  </div>
+</div>
+
+<div id="person-2">
+  <div class="prompt">
+    <p class="prompt__primary-text"><label for="householdMealOnlyName2">Person 2 Full Name</label></p>
+  </div>
+  <div class="response">
+    <input type="text" id="householdMealOnlyName2" required />
+  </div>
+</div>
+
+<div id="person-3">
+  <div class="prompt">
+    <p class="prompt__primary-text"><label for="householdMealOnlyName3">Person 3 Full Name</label></p>
+  </div>
+  <div class="response">
+    <input type="text" id="householdMealOnlyName3" required />
+  </div>
+</div>
+
+<div id="person-4">
+  <div class="prompt">
+    <p class="prompt__primary-text"><label for="householdMealOnlyName4">Person 4 Full Name</label></p>
+  </div>
+  <div class="response">
+    <input type="text" id="householdMealOnlyName4" required />
+  </div>
+</div>
+
+<div id="person-5">
+  <div class="prompt">
+    <p class="prompt__primary-text"><label for="householdMealOnlyName5">Person 5 Full Name</label></p>
+  </div>
+  <div class="response">
+    <input type="text" id="householdMealOnlyName5" required />
+  </div>
+</div>
+
+<div id="person-6">
+  <div class="prompt">
+    <p class="prompt__primary-text"><label for="householdMealOnlyName6">Person 6 Full Name</label></p>
+  </div>
+  <div class="response">
+    <input type="text" id="householdMealOnlyName6" required />
+  </div>
+</div>
+
+<script>
+  $(document).ready(function() {
+
+    if (householdLiveWith == 1) {
+      $('#print-householdShareMeals').text("person");
+    }
+    else {
+      $('#print-householdShareMeals').text(householdShareMeals + " people");
+    }
+
+    for(x = 6; x > parseInt(householdShareMeals); x--) {
+      $('#person-' + x).remove();
+    }
+  	
+    $(".usa-button-big").click(function() {
+        event.preventDefault();
+
+        storeData();
+        getData();
+
+        if (householdShareMeals > 0) {
+          window.location.href = "household-share-meals-from-names.html";
+        }
+        else {
+          window.location.href = "household-member-details.html"
+        }
+    });
+  });
+</script>

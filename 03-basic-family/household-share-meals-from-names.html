@@ -1,0 +1,100 @@
+---
+layout: application
+step: 3
+title: Do you share food with any of those people?
+button_text: Continue
+---
+
+<fieldset>
+	<div class="prompt">
+		<legend class="prompt__primary-text">Check all that are true</legend>
+		</div>
+		<div class="response">
+		<ul class="usa-unstyled-list checkbox-group">
+			<li id="person-1">
+				<input id="shareMealsWithPerson1" type="checkbox" name="shareMealsWith">
+				<label for="shareMealsWithPerson1"><span id="print-householdMemberName1"></span></label>
+			</li>
+			<li id="person-2">
+				<input id="shareMealsWithPerson2" type="checkbox" name="shareMealsWith">
+				<label for="shareMealsWithPerson2"><span id="print-householdMemberName2"></span></label>
+			</li>
+			<li id="person-3">
+				<input id="shareMealsWithPerson3" type="checkbox" name="shareMealsWith">
+				<label for="shareMealsWithPerson3"><span id="print-householdMemberName3"></span></label>
+			</li>
+			<li id="person-4">
+				<input id="shareMealsWithPerson4" type="checkbox" name="shareMealsWith">
+				<label for="shareMealsWithPerson4"><span id="print-householdMemberName4"></span></label>
+			</li>
+			<li id="person-5">
+				<input id="shareMealsWithPerson5" type="checkbox" name="shareMealsWith">
+				<label for="shareMealsWithPerson5"><span id="print-householdMemberName5"></span></label>
+			</li>
+			<li id="person-6">
+				<input id="shareMealsWithPerson6" type="checkbox" name="shareMealsWith">
+				<label for="shareMealsWithPerson6"><span id="print-householdMemberName6"></span></label>
+			</li>
+		</ul>
+		</div>
+</fieldset>
+
+<p class="prompt__primary-text">Do you share food with anyone else?</p>
+<div class="prompt">
+  <p class="prompt__primary-text"><label for="householShareMealsAddedName1">Full name</label></p>
+</div>
+<div class="response">
+  <input type="text" id="householShareMealsAddedName1" required />
+</div>
+<div class="prompt">
+  <p class="prompt__primary-text"><label for="householShareMealsAddedName2">Full name</label></p>
+</div>
+<div class="response">
+  <input type="text" id="householShareMealsAddedName2" required />
+</div>
+<div class="prompt">
+  <p class="prompt__primary-text"><label for="householShareMealsAddedName3">Full name</label></p>
+</div>
+<div class="response">
+  <input type="text" id="householShareMealsAddedName3" required />
+</div>
+
+
+<script>
+  $(document).ready(function() {
+
+    if (householdLiveWith == 1) {
+      $('#print-householdLiveWith').text("person");
+    }
+    else {
+      $('#print-householdLiveWith').text(householdLiveWith + " people");
+    }
+
+    for(x = 6; x > parseInt(householdLiveWith); x--) { 
+      $('#person-' + x).remove();
+    }
+
+    for(i = 1; i < parseInt(householdLiveWith)+1; i++) {
+    	var name = "householdMemberName" + i;
+      $('#print-householdMemberName' + i).text(window[name]);
+    }
+  	
+    $(".usa-button-big").click(function() {
+        event.preventDefault();
+
+        var existingPeople = $("input[name=shareMealsWith]:checked").length;
+        var newPeople = 0;
+        for(i = 1; i <= 3; i++) {
+		    	var $input = $('input[id="householShareMealsAddedName'+i+'"]');
+		      if ($input.val().length > 0) {
+		      	newPeople++;
+		      }
+		    }
+
+        storeData();
+        getData();
+
+        window.location.href = "household-people-details.html";
+    });
+  });
+</script>

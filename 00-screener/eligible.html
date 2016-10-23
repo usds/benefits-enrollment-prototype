@@ -9,7 +9,7 @@ button_text: Continue
 <div class="data-list">
 	<h3 class="data-list__heading">Your monthly income</h3>
 	<p class="data-list__text"><i class="fa fa-money data-list__icon" aria-hidden="true"></i> $<span id="print-householdIncome"></span></p>
-	<h3 class="data-list__heading">Your household size</h3>
+	<h3 class="data-list__heading">Your household size (including you)</h3>
 	<p class="data-list__text"><i class="fa fa-users data-list__icon" aria-hidden="true"></i> <span id="print-householdLiveWith"></span></p>
 	<h3 class="data-list__heading">You share food with</h3>
 	<p class="data-list__text"><i class="fa fa-cutlery data-list__icon" aria-hidden="true"></i> <span id="print-householdShareMeals"></span></p>
@@ -32,7 +32,7 @@ button_text: Continue
 		
 		householdLiveWith = parseInt(householdLiveWith) + 1;
 
-		if ((householdLiveWith + 1) == 1) {
+		if (householdLiveWith == 1) {
 			$('#print-householdLiveWith').text(householdLiveWith + " person");
 		}
 		else {

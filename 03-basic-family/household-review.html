@@ -31,8 +31,17 @@ button_text: Continue
         event.preventDefault();
 
         storeData();
+        getData();
 
-        window.location.href = "../04-finances/income.html";
+        if (householdLiveWith > 0 ) {
+          window.location.href = "household-names.html";
+        }
+        else if ((householdLiveWith == 0) && (householdShareMeals > 0)) {
+          window.location.href = "household-meals-only-names.html";
+        }
+        else {
+          window.location.href = "../04-finances/income.html";
+        }
     });
   });
 </script>
