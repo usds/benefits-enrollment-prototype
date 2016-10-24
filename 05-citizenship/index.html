@@ -42,7 +42,13 @@ button_text: Continue
 <script>
   $(document).ready(function() {
 
-    $(".usa-button-big").click(function() {
+    $('form').on('submit', function() {
+
+        if ($('form').get(0).checkValidity() == false) {
+          return false;
+        }
+
+        else {
         event.preventDefault();
 
         storeData();
@@ -54,7 +60,7 @@ button_text: Continue
         else {
         	window.location.href = "status-types.html";
         }
-        
+        }
     });
   });
 </script>

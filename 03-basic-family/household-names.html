@@ -75,7 +75,13 @@ button_text: Continue
       $('#person-' + x).remove();
     }
   	
-    $(".usa-button-big").click(function() {
+    $('form').on('submit', function() {
+
+        if ($('form').get(0).checkValidity() == false) {
+          return false;
+        }
+
+        else {
         event.preventDefault();
 
         storeData();
@@ -87,6 +93,7 @@ button_text: Continue
         else {
           window.location.href = "household-member-details.html"
         }
+      }
     });
   });
 </script>

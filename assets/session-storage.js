@@ -1,5 +1,12 @@
 $(document).ready(function() {
 
+	$('form').on( "submit", function( event ) {
+      if ( this.checkValidity && !this.checkValidity() ) {
+          $( this ).find( ":invalid" ).first().focus().addClass('input-error');
+          event.preventDefault();
+      }
+  });
+
 	// Get Data
 	getData = function() {
 		for (i = 0; i < sessionStorage.length; i++) {
