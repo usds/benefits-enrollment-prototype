@@ -37,17 +37,24 @@ button_text: Do I Qualify?
 
 <script>
 	$(document).ready(function() {
-		$(".usa-button-big").click(function() {
-				event.preventDefault();
-				storeData();
-				getData();
+		$('form').on('submit', function() {
 
-		    if (householdIncome <= 10000) {
-			    window.location.href = "eligible.html";
-			  }
+				if ($('form').get(0).checkValidity() == false) {
+        	return false;
+    		}
 
-			  else {
-			  	window.location.href = "not-eligible.html";
+    		else {
+    			event.preventDefault();
+					storeData();
+					getData();
+
+			    if (householdIncome <= 10000) {
+				    window.location.href = "eligible.html";
+				  }
+
+				  else {
+				  	window.location.href = "not-eligible.html";
+				  }
 			  }
 		});
 	});

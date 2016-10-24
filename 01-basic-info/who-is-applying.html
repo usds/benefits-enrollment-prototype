@@ -29,7 +29,13 @@ title: First, tell us who’s applying.
 
 <script>
 	$(document).ready(function() {
-		$(".usa-button-big").click(function() {
+		$('form').on('submit', function() {
+
+				if ($('form').get(0).checkValidity() == false) {
+        	return false;
+    		}
+
+    		else {
 				event.preventDefault();
 				storeData();
 				getData();
@@ -40,6 +46,7 @@ title: First, tell us who’s applying.
 			  else {
 			    window.location.href = "applicant-name.html";
 			  }
+			}
 		});
 	});
 </script>

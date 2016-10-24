@@ -20,11 +20,19 @@ title: Let’s start with the basics.
 
 <script>
   $(document).ready(function() {
-    $(".usa-button-big").click(function() {
+    $('form').on('submit', function() {
+
+        if ($('form').get(0).checkValidity() == false) {
+          return false;
+        }
+
+        else {
         event.preventDefault();
         storeData();
 
         window.location.href = "applicant-dob-sex.html";
+
+      }
     });
   });
 </script>
