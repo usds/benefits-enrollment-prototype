@@ -7374,7 +7374,7 @@ legend {
 
 /* line 1, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_welome_page.scss */
 .hero {
-  background-color: #112e51;
+  background-color: #0071bc;
   border-top: 1px solid white;
   color: white;
   padding: 10rem 0;
@@ -7391,8 +7391,16 @@ legend {
 }
 
 /* line 17, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_welome_page.scss */
+.benefits-highlights-header {
+  color: #4aa564;
+  font-size: 1.8rem;
+  margin: 0 0 2rem;
+}
+
+/* line 22, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_welome_page.scss */
 .benefits-highlights {
-  border: 1px solid #2e8540;
+  background: #4aa564;
+  color: white;
   padding: 2rem 5%;
 }
 /* line 20, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/uswds/lib/mixins/_clearfix.scss */
@@ -7401,9 +7409,43 @@ legend {
   content: "";
   display: block;
 }
-/* line 22, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_welome_page.scss */
+/* line 28, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_welome_page.scss */
 .benefits-highlights h2,
 .benefits-highlights h3 {
-  color: #2e8540;
   margin-top: 0;
+}
+
+/* line 34, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_welome_page.scss */
+.styled-numbered-list {
+  margin: 0;
+  padding: 1rem 0 0 0;
+  list-style-type: none;
+}
+/* line 39, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_welome_page.scss */
+.styled-numbered-list > li {
+  counter-increment: step-counter;
+  position: relative;
+  padding-left: 5.2rem;
+  margin-bottom: 3rem;
+}
+/* line 45, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_welome_page.scss */
+.styled-numbered-list > li:before {
+  border-radius: 50%;
+  content: counter(step-counter);
+  display: block;
+  font-size: 2rem;
+  background-color: #fdb81e;
+  color: white;
+  position: absolute;
+  left: 0;
+  text-align: center;
+  line-height: 40px;
+  width: 40px;
+  height: 40px;
+}
+@media screen and (min-width: 600px) {
+  /* line 45, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_welome_page.scss */
+  .styled-numbered-list > li:before {
+    top: -1rem;
+  }
 }
