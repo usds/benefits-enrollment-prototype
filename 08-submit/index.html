@@ -1,37 +1,65 @@
 ---
 layout: application
-title: Congrats! You may qualify for SNAP and Medicaid!
-title_style: success
-button_text: Complete my application
+title: Please review the terms and sign below, then you’re done!
+button_text: Submit application
 ---
 
-<fieldset>
-	<div class="prompt">
-		<p class="usa-lead-font">If you answer a few more questions, you can apply now. You may be able to sign up for some programs today!</p>
-		<legend class="prompt__primary-text">Check all the benefits you want to apply for:</legend>
-	</div>
-	<div class="response">
-		<ul class="usa-unstyled-list checkbox-group benefit-selection">
-			<li>
-				<input id="benefitChoiceFoodAssistance" type="checkbox" name="benefitChoice" value="Text">
-				<label for="benefitChoiceFoodAssistance">Food Assistance <span class="benefit-name">SNAP</span> <span class="benefit-description">Money for food at supermarkets, famer’s market, and convenience stores.</span></label>
-			</li>
-			<li>
-				<input id="benefitChoiceHealthcare" type="checkbox" name="benefitChoice" value="Text">
-				<label for="benefitChoiceHealthcare">Healthcare Coverage <span class="benefit-name">Medicaid</span> <span class="benefit-description">Free or low-cost heatlh coverage may help pay for medical bills, doctor visits ro even Medicare premiums.</span></label>
-			</li>
+<p class="usa-font-lead">
+	Scroll down to agree and sign below
+</p>
+
+<div class="card__box">
+	<h2>Summary</h2>
+	<div class="prompt__secondary-text">
+		<ul>
+			<li>You have been honest on this application</li>
+			<li>You understand that you are getting SNAP and Medicaid</li>
+			<li>Getting SNAP and Medicaid will not affect you or  your family’s immgration status. Immgration information is private and confidential.</li>
+			<li>If you do not aggree to these terms you can use other online applications.</li>
+			<li>You can learn about family planning services in the Family Planning brochure.</li>
+			<li>You can register to vote online.</li>
 		</ul>
 	</div>
+</div>
+
+<fieldset>
+  <div class="prompt usa-sr-only">
+    <legend class="prompt__primary-text">Do you agree to the terms above?</legend>
+  </div>
+  <div class="response">
+    <ul class="usa-unstyled-list response__radiogroup--inline">
+      <li>
+        <input id="agreeToTermsYes" type="radio" name="agreeToTerms" value="Yes" required="">
+        <label for="agreeToTermsYes">I agree</label>
+      </li>
+      <li>
+        <input id="agreeToTermsNo" type="radio" name="agreeToTerms" value="No" required="">
+        <label for="agreeToTermsNo">I do not agree</label>
+      </li>
+    </ul>
+  </div>
 </fieldset>
 
-<script>
-	$(document).ready(function() {
-		$(".usa-button-big").click(function() {
-				event.preventDefault();
+<div class="prompt">
+	<h2><label for="applicantSignature">Enter your full legal name to sign this application</label></h2>
+	<p>By entering you name, you agree that you want to apply for SNAP and Medicaid, that you have been honest on this application, and that you have read and agreed to the terms.</p>
+</div>
 
-				storeData();
-				
-		    window.location.href = "legal.html";
+<div class="response">
+	<input type="text" id="applicantSignature" required />
+	<div class="note note--has-icon">
+    <i class="fa fa-lock note__icon" aria-hidden="true"></i>
+    <p class="note__text">This information is kept confidential and secure as required by law</p>
+  </div>
+</div>
+
+<script>
+	$(document).ready(function() {		
+
+		$(".usa-button-big").click(function() {
+			event.preventDefault();
+			storeData();
+	    window.location.href = "done.html";
 		});
 	});
 </script>
