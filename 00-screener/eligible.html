@@ -30,7 +30,7 @@ button_text: Continue
 		$('#print-householdZipCode').text(householdZipCode);
 		$('#print-householdIncome').text(householdIncome);
 		
-		householdLiveWith = parseInt(householdLiveWith) + 1;
+		householdLiveWith = parseInt(householdLiveWith);
 
 		if (householdLiveWith == 1) {
 			$('#print-householdLiveWith').text(householdLiveWith + " person");
