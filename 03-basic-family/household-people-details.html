@@ -248,8 +248,9 @@ button_text: Continue
     }
 
     for(i = 1; i < parseInt(householdLiveWith)+1; i++) {
-    	var name = "householdMemberName" + i;
-      $('.print-householdMemberName' + i).text(window[name]);
+    	var firstName = "householdMemberFirstName" + i;
+    	var lastName = "householdMemberLastName" + i;
+      $('.print-householdMemberName' + i).text(window[firstName] + " " + window[lastName]);
     }
   	
     $(".usa-button-big").click(function() {
