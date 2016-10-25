@@ -6788,6 +6788,11 @@ legend {
   font-size: 1em;
 }
 
+/* line 5, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/elements/_forms.scss */
+input.input--short {
+  width: 25%;
+}
+
 /* Highlight */
 /* line 2, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/elements/_typography.scss */
 .highlight--positive {
