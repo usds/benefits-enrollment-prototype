@@ -6,7 +6,7 @@ button_text: Continue
 ---
 
 <div class="prompt">
-  <p class="prompt__primary-text"><label for="householdLiveWith">How many people in your family do you live with and/or file federal taxes with?</label></p>
+  <p class="prompt__primary-text"><label for="householdLiveWith">How many people are in household, including yourself?</label></p>
 </div>
 <div class="response">
   <input type="tel" id="householdLiveWith" required />
@@ -33,10 +33,10 @@ button_text: Continue
         storeData();
         getData();
 
-        if (householdLiveWith > 0 ) {
+        if (householdLiveWith > 1 ) {
           window.location.href = "household-names.html";
         }
-        else if ((householdLiveWith == 0) && (householdShareMeals > 0)) {
+        else if ((householdLiveWith == 1) && (householdShareMeals > 0)) {
           window.location.href = "household-meals-only-names.html";
         }
         else {

@@ -70,7 +70,7 @@ button_text: Continue
       $('#print-householdLiveWith').text(householdLiveWith + " people");
     }
 
-    for(x = 6; x > parseInt(householdLiveWith); x--) { 
+    for(x = 6; x > parseInt(householdLiveWith)-1; x--) { 
       $('#person-' + x).remove();
     }
 

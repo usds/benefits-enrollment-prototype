@@ -64,14 +64,14 @@ button_text: Continue
 <script>
   $(document).ready(function() {
 
-    if (householdLiveWith == 1) {
-      $('#print-householdLiveWith').text("person");
+    if (householdLiveWith == 2) {
+      $('#print-householdLiveWith').text("other person");
     }
     else {
-      $('#print-householdLiveWith').text(householdLiveWith + " people");
+      $('#print-householdLiveWith').text(parseInt(householdLiveWith)-1 + " people");
     }
 
-    for(x = 6; x > parseInt(householdLiveWith); x--) {
+    for(x = 6; x > parseInt(householdLiveWith-1); x--) {
       $('#person-' + x).remove();
     }
   	
