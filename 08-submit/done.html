@@ -1,6 +1,6 @@
 ---
 layout: application-no-button
-title: Congrats, <span id="print-applicantFirstName"></span>! You've successfully completed your applications to SNAP and Medicaid!
+title: Congrats, <span id="print-applicantFirstName"></span>! You've successfully completed your applications!
 title_style: success
 hide_button: true
 ---
@@ -49,6 +49,14 @@ hide_button: true
 
 <script>
 	$(document).ready(function() {
+
+		if (benefitChoiceFoodAssistance == "no") {
+			$('.food-assistance').remove();
+		}
+
+		if (benefitChoiceHealthcare == "no") {
+			$('.health-assistance').remove();
+		}
 
 		var today = new Date();
 		var dd = today.getDate();
