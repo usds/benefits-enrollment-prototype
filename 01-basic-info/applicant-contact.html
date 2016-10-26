@@ -29,21 +29,39 @@ title: Where can we send you mail?
 	    </div>
 	  </div>
 		<div class="usa-input-grid usa-input-grid-small">
-	  <label for="applicantZip">ZIP</label>
+	  <label for="applicantZip">Zip code</label>
 	  <input class="usa-input-medium" id="applicantZip" name="applicant-zip" type="text" pattern="[\d]{5}(-[\d]{4})?" data-grouplength="5,4" data-delimiter="-" data-politespace >
 	  </div>
   </div>
 </fieldset>
 
+<fieldset>
+  <div class="prompt">
+    <legend class="prompt__primary-text">Is this the same as your home address?</legend>
+  </div>
+  <div class="response">
+    <ul class="usa-unstyled-list response__radiogroup--inline">
+      <li>
+        <input id="isMailAndHomeTheSameYes" type="radio" name="isMailAndHomeTheSame" value="Yes" required="">
+        <label for="isMailAndHomeTheSameYes">Yes</label>
+      </li>
+      <li>
+        <input id="isMailAndHomeTheSameNo" type="radio" name="isMailAndHomeTheSame" value="No" required="">
+        <label for="isMailAndHomeTheSameNo">No</label>
+      </li>
+    </ul>
+  </div>
+</fieldset>
+
 <div class="prompt">
-	<p class="prompt__primary-text"><label for="applicantPhone">What is your phone number?</label></p>
+	<p class="prompt__primary-text"><label for="applicantPhone">Phone?</label></p>
 </div>
 <div class="response">
 	<input type="tel" id="applicantPhone" />
 </div>
 
 <div class="prompt">
-	<p class="prompt__primary-text"><label for="applicantEmail">What is your email address?</label></p>
+	<p class="prompt__primary-text"><label for="applicantEmail">Email</label></p>
 </div>
 <div class="response">
 	<input type="email" id="applicantEmail" />
@@ -69,8 +87,14 @@ title: Where can we send you mail?
 			$("#applicantPhone").val(applicantPhone);
 
 			storeData();
+			getData();
 
-			window.location.href = "notification-prefs.html";
+			if (isMailAndHomeTheSame == "Yes") {
+				window.location.href = "notification-prefs.html";
+			}
+			else {
+				window.location.href = "home-address.html";
+			}
 		}
 		});
 	});

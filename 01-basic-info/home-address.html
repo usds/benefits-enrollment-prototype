@@ -1,0 +1,75 @@
+---
+layout: application
+step: 1
+title: What is your home address?
+---
+
+
+<fieldset>
+
+	<div class="prompt usa-sr-only">
+  	<legend class="prompt__primary-text">What is your address and/or email</legend>
+  </div>
+
+  <div class="response">
+	  <label for="applicantHomeAddress1">Street address 1</label>
+	  <input id="applicantHomeAddress1" name="applicant-home-address-1" type="text" >
+
+	  <label for="applicantHomeAddress2">Street address 2 <span class="usa-additional_text">Optional</span></label>
+	  <input id="applicantHomeAddress2" name="applicant-home-address-2" type="text">
+
+	  <div>
+	    <div class="usa-input-grid usa-input-grid-medium">
+	      <label for="applicantHomeCity">City</label>
+	      <input id="applicantHomeCity" name="applicant-home-city" type="text" >
+	    </div>
+
+	    <div class="usa-input-grid usa-input-grid-small">
+	      
+	    </div>
+	  </div>
+		<div class="usa-input-grid usa-input-grid-small">
+	  <label for="applicantHomeZip">Zip code</label>
+	  <input class="usa-input-medium" id="applicantHomeZip" name="applicant-zip" type="text" pattern="[\d]{5}(-[\d]{4})?" data-grouplength="5,4" data-delimiter="-" data-politespace >
+	  </div>
+  </div>
+</fieldset>
+
+<fieldset>
+		<div class="prompt">
+			<legend class="prompt__primary-text usa-sr-only">If you do not have stable housing…</legend>
+		</div>
+		<div class="response">
+		<ul class="usa-unstyled-list checkbox-group">
+			<li class="female-only">
+				<input id="housingIsNotStable" type="checkbox" name="housingIsNotStable" value="No">
+				<label for="housingIsNotStable">Check if you do currently do not have stable housing.</label>
+			</li>
+		</ul>
+		</div>
+</fieldset>
+
+
+<script>
+	$(document).ready(function() {
+		
+		$('#applicantZip').val(householdZipCode);
+
+		$('form').on('submit', function() {
+
+				if ($('form').get(0).checkValidity() == false) {
+        	return false;
+    		}
+
+    		else {
+			event.preventDefault();
+
+
+			storeData();
+			getData();
+
+			window.location.href = "notification-prefs.html";
+		}
+		});
+	});
+</script>

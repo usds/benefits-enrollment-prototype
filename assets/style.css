@@ -7255,12 +7255,28 @@ input.input--short {
 
 /* Checkbox Group ----------------------------------------------*/
 /* line 109, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_prompt-and-response.scss */
-.checkbox-group label {
+.checkbox-group .prompt,
+.checkbox-group .response {
+  margin-top: 0;
+  padding-left: 3rem;
+}
+/* line 114, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_prompt-and-response.scss */
+.checkbox-group .prompt label,
+.checkbox-group .prompt .prompt__primary-text,
+.checkbox-group .prompt .prompt__secondary-text,
+.checkbox-group .response label,
+.checkbox-group .response .prompt__primary-text,
+.checkbox-group .response .prompt__secondary-text {
+  margin-top: 0;
+}
+
+/* line 121, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_prompt-and-response.scss */
+.checkbox-group li > label {
   padding-left: 3rem;
   position: relative;
 }
-/* line 113, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_prompt-and-response.scss */
-.checkbox-group label:before {
+/* line 125, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_prompt-and-response.scss */
+.checkbox-group li > label:before {
   left: 0;
   position: absolute;
   top: .3rem;

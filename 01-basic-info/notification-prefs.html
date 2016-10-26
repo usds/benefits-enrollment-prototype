@@ -12,12 +12,29 @@ title: How would you like us to keep in touch?
 	<div class="response">
 		<ul class="usa-unstyled-list checkbox-group">
 			<li>
-				<input id="notificationPreferenceText" type="checkbox" name="notificationPreference" value="Text">
+				<input id="notificationPreferenceText" class="open-dependent" type="checkbox" name="notificationPreference" value="Text">
 				<label for="notificationPreferenceText">Text me</label>
+
+				<div class="dependent-field usa-sr-only" aria-hidden="true">
+					<div class="prompt" > 
+						<p class="prompt__secondary-text"><label for="applicantSMSPhone">What is your phone number for text messages?</label></p>
+					</div>
+					<div class="response">
+						<input type="tel" id="applicantSMSPhone" />
+					</div>
+				</div>
 			</li>
 			<li>
-				<input id="notificationPreferenceCall" type="checkbox" name="notificationPreference" value="Call">
+				<input id="notificationPreferenceCall" class="open-dependent"  type="checkbox" name="notificationPreference" value="Call">
 				<label for="notificationPreferenceCall">Call me</label>
+				<div class="dependent-field usa-sr-only" aria-hidden="true">
+					<div class="prompt" > 
+						<p class="prompt__secondary-text"><label for="applicantPhone">What is your phone number?</label></p>
+					</div>
+					<div class="response">
+						<input type="tel" id="applicantPhone" />
+					</div>
+				</div>
 			</li>
 			<li id="email-block">
 				<input id="notificationPreferenceEmail" type="checkbox" name="notificationPreference" value="Email">
@@ -31,34 +48,29 @@ title: How would you like us to keep in touch?
 	</div>
 </fieldset>
 
-<div class="dependent-field usa-sr-only" aria-hidden="true">
-	<div class="prompt" > 
-		<p class="prompt__primary-text"><label for="applicantPhone">What is your phone number?</label></p>
-	</div>
-	<div class="response">
-		<input type="tel" id="applicantPhone" />
-	</div>
-</div>
-
 
 
 <script>
 	$(document).ready(function() {
 
-		$("#notificationPreferenceText, #notificationPreferenceCall").on('change', function(){
-			if ($("#notificationPreferenceText").is(":checked") || $("#notificationPreferenceCall").is(":checked")) {
-				$('.dependent-field').removeClass('usa-sr-only').attr("aria-hidden", "false");
+		$("input.open-dependent").on('change', function(){
+			if ($(this).is(":checked")) {
+				$(this).siblings('.dependent-field').removeClass('usa-sr-only').attr("aria-hidden", "false");
 			}
 			else {
-				$('.dependent-field').addClass('usa-sr-only').attr("aria-hidden", "true");
+				$(this).siblings('.dependent-field').addClass('usa-sr-only').attr("aria-hidden", "true");
 			}
 		});
 
-		if ($("#notificationPreferenceText").is(":checked") || $("#notificationPreferenceCall").is(":checked")) {
-			$('.dependent-field').removeClass('usa-sr-only').attr("aria-hidden", "false");
-		}
+		$("input.open-dependent").each(function(){
+			if ($(this).is(":checked")) {
+				$(this).siblings('.dependent-field').removeClass('usa-sr-only').attr("aria-hidden", "false");
+			}
+		});
+		
 
 		$('#applicantPhone').val(applicantPhone);
+		$('#applicantSMSPhone').val(applicantPhone);
 
 		$(".usa-button-big").click(function() {
 			event.preventDefault();
@@ -67,6 +79,9 @@ title: How would you like us to keep in touch?
 			applicantPhone = $("#applicantPhone").val().replace(/(\d{3})(\d{3})(\d{4})/, "$1-$2-$3");
 			$("#applicantPhone").val(applicantPhone);
 			
+			applicantSMSPhone = $("#applicantSMSPhone").val().replace(/(\d{3})(\d{3})(\d{4})/, "$1-$2-$3");
+			$("#applicantSMSPhone").val(applicantSMSPhone);
+
 			storeData();
 			getData();
 
