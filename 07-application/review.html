@@ -64,7 +64,7 @@ button_text: See what I qualify for
 		</div>
 		<div class="summary__item">
 			<div class="fieldset-summary">
-				<h4 class="fake-label">Birthday:</h4>
+				<h4 class="fake-label">Address:</h4>
 				<p class="fake-input"><span id="print-applicantMailingAddress1"> </span><span id="print-applicantMailingAddress2"></span> <span id="print-applicantCity"></span>, <span id="print-applicantState"></span> <span id="print-applicantZip"></span></p>
 			</div>
 			<fieldset>
@@ -155,8 +155,42 @@ button_text: See what I qualify for
 			<input type="tel" id="householdRentMortgage" required disabled />
 		</div>
 		<div class="summary__item">
-			<label for="householdUtilities"">Amount spent on utilities: </label>
-			<input type="tel" id="householdUtilities" required disabled />
+			<div class="fieldset-summary">
+				<h4 class="fake-label">Spend money on heating and cooling.</h4>
+				<p class="fake-input" id="print-heatingCoolingExpenses"></p>
+			</div>
+			<fieldset>
+				<legend class="prompt__primary-text">Do you spend money on heating and cooling?</legend>
+				<ul class="usa-unstyled-list response__radiogroup--inline">
+					<li>
+						<input id="heatingCoolingExpensesYes" type="radio" name="heatingCoolingExpenses" value="Yes" required="">
+	        	<label for="heatingCoolingExpensesYes">Yes</label>
+					</li>
+					<li>
+						<input id="heatingCoolingExpensesNo" type="radio" name="heatingCoolingExpenses" value="No" required="" checked>
+	        	<label for="heatingCoolingExpensesNo">No</label>
+					</li>
+				</ul>
+			</fieldset>
+		</div>
+		<div class="summary__item">
+			<div class="fieldset-summary">
+				<h4 class="fake-label">Spend money on other Utilities:</h4>
+				<p class="fake-input" id="print-otherUtilities"></p>
+			</div>
+			<fieldset>
+				<legend class="prompt__primary-text">Do you spend money on heating and cooling?</legend>
+				<ul class="usa-unstyled-list response__radiogroup--inline">
+					<li>
+						<input id="otherUtilitiesYes" type="radio" name="otherUtilities" value="Yes" required="">
+	        	<label for="otherUtilitiesYes">Yes</label>
+					</li>
+					<li>
+						<input id="otherUtilitiesNo" type="radio" name="otherUtilities" value="No" required="" checked>
+	        	<label for="otherUtilitiesNo">No</label>
+					</li>
+				</ul>
+			</fieldset>
 		</div>
 	</div>
 	<button class="summary__update-btn" type="button">Update</button>
@@ -218,7 +252,8 @@ button_text: See what I qualify for
 		$('#householdIncome').val("$" + householdIncome);
 		$('#householdSavings').val("$" + householdSavings);
 		$('#householdRentMortgage').val("$" + householdRentMortgage);
-		$('#householdUtilities').val("$" + householdUtilities);
+		$('#print-heatingCoolingExpenses').text(heatingCoolingExpenses);
+		$('#print-otherUtilities').text(otherUtilities);
 
     $(".usa-button-big").click(function() {
         event.preventDefault();

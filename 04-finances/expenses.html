@@ -6,22 +6,50 @@ button_text: Continue
 ---
 
 <div class="prompt">
-  <p class="prompt__primary-text"><label for="householdRentMortgage">How much do you spend on rent or mortgage every month?</label></p>
+  <p class="prompt__primary-text"><label for="householdRentMortgage">What is your monthly rent or mortgage?</label></p>
+  <p class="prompt__secondary-text">This can include mortgage and home association fees.</p>
 </div>
 <div class="response">
 	<div class="response__input-prefix" aria-hidden="true">$</div>
   <input type="tel" id="householdRentMortgage" required />
 </div>
 
-<div class="prompt">
-  <p class="prompt__primary-text"><label for="householdUtilities">How much do you pay for utilities every month?</label></p>
-  <p class="prompt__secondary-text">Add up your heating, phone, water, and garbage bills.</p>
-</div>
-<div class="response">
-	<div class="response__input-prefix" aria-hidden="true">$</div>
-  <input type="tel" id="householdUtilities" required />
-</div>
+<fieldset>
+  <div class="prompt">
+    <legend class="prompt__primary-text">Do you pay for heating and/or cooling utilities?</legend>
+  </div>
+  <div class="response">
+    <ul class="usa-unstyled-list response__radiogroup--inline">
+      <li>
+        <input id="heatingCoolingYes" type="radio" name="heatingCoolingExpenses" value="Yes" required="">
+        <label for="heatingCoolingYes">Yes</label>
+      </li>
+      <li>
+        <input id="heatingCoolingNo" type="radio" name="heatingCoolingExpenses" value="No" required="">
+        <label for="heatingCoolingNo">No</label>
+      </li>
+    </ul>
+  </div>
+</fieldset>
 
+<fieldset>
+  <div class="prompt">
+    <legend class="prompt__primary-text">Do you pay for any other utilities?</legend>
+    <p class="prompt__secondary-text">Such as gas, electricity, water, sewer.</p>
+  </div>
+  <div class="response">
+    <ul class="usa-unstyled-list response__radiogroup--inline">
+      <li>
+        <input id="otherUtilitiesYes" type="radio" name="otherUtilities" value="Yes" required="">
+        <label for="otherUtilitiesYes">Yes</label>
+      </li>
+      <li>
+        <input id="otherUtilitiesNo" type="radio" name="otherUtilities" value="No" required="">
+        <label for="otherUtilitiesNo">No</label>
+      </li>
+    </ul>
+  </div>
+</fieldset>
 <script>
   $(document).ready(function() {
 
