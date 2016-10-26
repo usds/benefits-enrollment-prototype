@@ -7115,6 +7115,17 @@ input.input--short {
   padding-top: 3rem;
 }
 
+/* line 77, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_cards.scss */
+.card__box {
+  border: 1px solid #d6d7d9;
+  max-height: 30rem;
+  margin: 1.5rem 0 3rem;
+  padding: 0 2rem;
+  overflow-y: scroll;
+  /* has to be scroll, not auto */
+  -webkit-overflow-scrolling: touch;
+}
+
 /* line 1, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_prompt-and-response.scss */
 .prompt {
   margin: 3rem 0 0;
