@@ -58,6 +58,8 @@ title: How would you like us to keep in touch?
 			$('.dependent-field').removeClass('usa-sr-only').attr("aria-hidden", "false");
 		}
 
+		$('#applicantPhone').val(applicantPhone);
+
 		$(".usa-button-big").click(function() {
 			event.preventDefault();
 			var confirmText = false;
@@ -74,7 +76,7 @@ title: How would you like us to keep in touch?
 			}
 
 			else {
-				window.location.href = "applicant-contact.html";
+				window.location.href = "ssn.html";
 			}
 
 			

@@ -65,9 +65,12 @@ title: Where can we send you mail?
     		else {
 			event.preventDefault();
 
+			applicantPhone = $("#applicantPhone").val().replace(/(\d{3})(\d{3})(\d{4})/, "$1-$2-$3");
+			$("#applicantPhone").val(applicantPhone);
+
 			storeData();
 
-			window.location.href = "ssn.html";
+			window.location.href = "notification-prefs.html";
 		}
 		});
 	});
