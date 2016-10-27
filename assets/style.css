@@ -6786,14 +6786,20 @@ body {
 /* line 1, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/elements/_forms.scss */
 legend {
   font-size: 1em;
+  font-weight: 400;
 }
 
-/* line 5, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/elements/_forms.scss */
+/* line 6, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/elements/_forms.scss */
 input.input--short {
   width: 25%;
 }
 
-/* line 9, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/elements/_forms.scss */
+/* line 10, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/elements/_forms.scss */
+input.input--medium {
+  width: 50%;
+}
+
+/* line 14, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/elements/_forms.scss */
 input.contains-error {
   border: 3px solid #cd2026;
 }
@@ -7276,7 +7282,7 @@ input.contains-error {
 .checkbox-group .prompt,
 .checkbox-group .response {
   margin-top: 0;
-  padding-left: 3rem;
+  margin-left: 1.5rem;
 }
 /* line 126, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_prompt-and-response.scss */
 .checkbox-group .prompt label,
@@ -7289,11 +7295,17 @@ input.contains-error {
 }
 
 /* line 133, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_prompt-and-response.scss */
+.checkbox-group .dependent-field {
+  border-left: 3px solid #e4e2e0;
+  margin-left: 3rem;
+}
+
+/* line 138, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_prompt-and-response.scss */
 .checkbox-group li > label {
   padding-left: 3rem;
   position: relative;
 }
-/* line 137, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_prompt-and-response.scss */
+/* line 142, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_prompt-and-response.scss */
 .checkbox-group li > label:before {
   left: 0;
   position: absolute;

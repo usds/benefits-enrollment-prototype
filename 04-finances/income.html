@@ -1,65 +1,20 @@
 ---
 layout: application
 step: 4
-title: Now, a few questions about your finances.
-button_text: Continue
+title: Now a few questions about your finances.
 ---
 
 <div class="prompt">
-  <p class="prompt__primary-text"><label for="householdIncome">On average, how much money did you earn in the last 30 days before taxes?</label></p>
-  <p class="prompt__secondary-text">Give your best estimate. Include all sources of earned and unearned income such as a job, social security retirement benefits, unemployment and other benefits.</p>
-  <div class="explainer">
-    <a href="#" class="explainer__toggle" aria-expanded="false" aria-controls="explainer-1">What counts as income?</a>
-    <div class="explainer__content" id="explainer-1">
-      <p class="prompt__primary-text">We need to know how much money you and your household gets each month.</p>
-      <p class="prompt__primary-text">Add up all the money you earn from any of these sources.</p>
-      <div class="prompt__secondary-text">
-      	<ul>
-      		<li>
-      			<h3>Working</h3>
-      			<p>(One or more jobs, self-employment, informal work like babysitting, sick benefits, worker’s compensation, etc.)</p>
-      		</li>
-      		<li>
-      			<h3>Social programs</h3>
-      			<p>(Social Security retirement benefits, Veteran’s benefits, Supplemental Security Income (SSI), Disability benefits, etc.)</p>
-      		</li>
-      		<li>
-      			<h3>Loans</h3>
-      		</li>
-      		<li>
-      			<h3>Guardian fees</h3>
-      		</li>
-      		<li>
-      			<h3>Pensions</h3>
-      		</li>
-      		<li>
-      			<h3>Gambling</h3>
-      		</li>
-      	</ul>
-      </div>
-    </div>
-  </div>
+  <p class="prompt__primary-text"><label for="householdSavings">How much money do you have on hand</label></p>
+  <p class="prompt__secondary-text">Give your best estimate. This includes money in checking accoutns, savings accounts, and any other cash you have available.</p>
 </div>
 <div class="response">
 	<div class="response__input-prefix" aria-hidden="true">$</div>
-  <input type="tel" id="householdIncome"  />
-</div>
-
-<div class="prompt">
-  <p class="prompt__primary-text"><label for="householdSavings">How much money do you have on hand today?</label></p>
-  <p class="prompt__secondary-text">This includes money in checking accounts, savings accounts, and any other cash you have available.</p>
-</div>
-<div class="response">
-	<div class="response__input-prefix" aria-hidden="true">$</div>
-  <input type="tel" id="householdSavings" />
+  <input type="tel" class="input" id="householdSavings" />
 </div>
 
 <script>
   $(document).ready(function() {
-
-    if ( householdIncome != "[object HTMLInputElement]" ) {
-      $('#householdIncome').val(householdIncome);
-    }
 
     $('form').on('submit', function() {
 
