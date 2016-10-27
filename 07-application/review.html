@@ -135,8 +135,8 @@ button_text: Looks great!
 	</div>
 	<div class="summary__data">
 		<div class="summary__item">
-			<label for="householdLiveWith"">Number of people you live with:</label>
-			<input type="tel" id="householdLiveWith" required disabled />
+			<label for="householdSize"">Number of people you live with:</label>
+			<input type="tel" id="householdSize" required disabled />
 		</div>
 		<div class="summary__item">
 			<label for="householdShareMeals"">Number of people you share meals with:</label>
@@ -245,7 +245,7 @@ button_text: Looks great!
 		$('#applicantSSN').val(applicantSSN1+"-"+applicantSSN2+"-"+applicantSSN3);
 		$('#print-applicantCitizenship').text(applicantCitizenship);
 	
-		$('#householdLiveWith').val(parseInt(householdLiveWith));
+		$('#householdSize').val(parseInt(householdSize));
 		$('#householdShareMeals').val(parseInt(householdShareMeals));
 		$('#householdIncome').val("$" + householdIncome);
 		$('#householdSavings').val("$" + householdSavings);
