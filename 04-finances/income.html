@@ -42,7 +42,7 @@ button_text: Continue
 </div>
 <div class="response">
 	<div class="response__input-prefix" aria-hidden="true">$</div>
-  <input type="tel" id="householdIncome" required />
+  <input type="tel" id="householdIncome"  />
 </div>
 
 <div class="prompt">
@@ -51,13 +51,15 @@ button_text: Continue
 </div>
 <div class="response">
 	<div class="response__input-prefix" aria-hidden="true">$</div>
-  <input type="tel" id="householdSavings" required />
+  <input type="tel" id="householdSavings" />
 </div>
 
 <script>
   $(document).ready(function() {
 
-    $('#householdIncome').val(householdIncome);
+    if ( householdIncome != "[object HTMLInputElement]" ) {
+      $('#householdIncome').val(householdIncome);
+    }
 
     $('form').on('submit', function() {
 
