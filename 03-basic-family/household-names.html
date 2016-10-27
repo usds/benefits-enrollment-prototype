@@ -14,10 +14,20 @@ button_text: Continue
     <input type="text" id="householdMemberFirstName1" required />
   </div>
   <div class="prompt">
-    <p class="prompt__primary-text"><label for="householdMemberLastName1">Legal last name</label></p>
+    <p class="prompt__primary-text"><label for="householdMemberLastName1">Last name</label></p>
   </div>
   <div class="response">
     <input type="text" id="householdMemberLastName1" required />
+  </div>
+  <div class="potential-recipient">
+    <div class="response">
+      <ul class="usa-unstyled-list checkbox-group">
+        <li>
+          <input id="applyForHouseholdMember1" type="checkbox" name="applyForHouseholdMember1" value="Yes">
+          <label for="applyForHouseholdMember1">I am applying for this person.</label>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
 
@@ -30,10 +40,20 @@ button_text: Continue
     <input type="text" id="householdMemberFirstName2" required />
   </div>
   <div class="prompt">
-    <p class="prompt__primary-text"><label for="householdMemberLastName2">Legal last name</label></p>
+    <p class="prompt__primary-text"><label for="householdMemberLastName2">Last name</label></p>
   </div>
   <div class="response">
     <input type="text" id="householdMemberLastName2" required />
+  </div>
+  <div class="potential-recipient">
+    <div class="response">
+      <ul class="usa-unstyled-list checkbox-group">
+        <li>
+          <input id="applyForHouseholdMember2" type="checkbox" name="applyForHouseholdMember2" value="Yes">
+          <label for="applyForHouseholdMember2">I am applying for this person.</label>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
 
@@ -46,10 +66,20 @@ button_text: Continue
     <input type="text" id="householdMemberFirstName3" required />
   </div>
   <div class="prompt">
-    <p class="prompt__primary-text"><label for="householdMemberLastName3">Legal last name</label></p>
+    <p class="prompt__primary-text"><label for="householdMemberLastName3">Last name</label></p>
   </div>
   <div class="response">
     <input type="text" id="householdMemberLastName3" required />
+  </div>
+  <div class="potential-recipient">
+    <div class="response">
+      <ul class="usa-unstyled-list checkbox-group">
+        <li>
+          <input id="applyForHouseholdMember3" type="checkbox" name="applyForHouseholdMember3" value="Yes">
+          <label for="applyForHouseholdMember3">I am applying for this person.</label>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
 
@@ -62,10 +92,20 @@ button_text: Continue
     <input type="text" id="householdMemberFirstName4" required />
   </div>
   <div class="prompt">
-    <p class="prompt__primary-text"><label for="householdMemberLastName4">Legal last name</label></p>
+    <p class="prompt__primary-text"><label for="householdMemberLastName4">Last name</label></p>
   </div>
   <div class="response">
     <input type="text" id="householdMemberLastName4" required />
+  </div>
+  <div class="potential-recipient">
+    <div class="response">
+      <ul class="usa-unstyled-list checkbox-group">
+        <li>
+          <input id="applyForHouseholdMember4" type="checkbox" name="applyForHouseholdMember4" value="Yes">
+          <label for="applyForHouseholdMember4">I am applying for this person.</label>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
 
@@ -78,10 +118,20 @@ button_text: Continue
     <input type="text" id="householdMemberFirstName5" required />
   </div>
   <div class="prompt">
-    <p class="prompt__primary-text"><label for="householdMemberLastName5">Legal last name</label></p>
+    <p class="prompt__primary-text"><label for="householdMemberLastName5">Last name</label></p>
   </div>
   <div class="response">
     <input type="text" id="householdMemberLastName5" required />
+  </div>
+  <div class="potential-recipient">
+    <div class="response">
+      <ul class="usa-unstyled-list checkbox-group">
+        <li>
+          <input id="applyForHouseholdMember5" type="checkbox" name="applyForHouseholdMember5" value="Yes">
+          <label for="applyForHouseholdMember5">I am applying for this person.</label>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
 
@@ -94,10 +144,20 @@ button_text: Continue
     <input type="text" id="householdMemberFirstName6" required />
   </div>
   <div class="prompt">
-    <p class="prompt__primary-text"><label for="householdMemberLastName6">Legal last name</label></p>
+    <p class="prompt__primary-text"><label for="householdMemberLastName6">Last name</label></p>
   </div>
   <div class="response">
     <input type="text" id="householdMemberLastName6" required />
+  </div>
+  <div class="potential-recipient">
+    <div class="response">
+      <ul class="usa-unstyled-list checkbox-group">
+        <li>
+          <input id="applyForHouseholdMember6" type="checkbox" name="applyForHouseholdMember6" value="Yes">
+          <label for="applyForHouseholdMember6">I am applying for this person.</label>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
 
@@ -110,6 +170,10 @@ button_text: Continue
     }
     else {
       $('#print-householdLiveWith').text(parseInt(householdLiveWith)-1 + " people");
+    }
+
+    if (applyingFor != "Me and someone else") {
+      $('.potential-recipient').remove();
     }
 
     for(x = 6; x > parseInt(householdLiveWith-1); x--) {
