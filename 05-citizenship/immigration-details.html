@@ -15,35 +15,79 @@ button_text: Continue
 		<legend class="prompt__primary-text">Please select the document type.</legend>
 	</div>
 	<div class="response">
-		<ul class="usa-unstyled-list response__radiogroup">
+		<ul class="usa-unstyled-list response__radio-group--unstyled">
 			<li>
-				<input id="applicantImmigrationDocumentAlienNumber" type="radio" name="applicantImmigrationDocument" value="Alien number" required>
+				<input id="applicantImmigrationDocumentAlienNumber" type="radio" name="applicantImmigrationDocument" value="Alien number" class="open-dependent" required>
       	<label for="applicantImmigrationDocumentAlienNumber">Alien number</label>
+      	<div class="dependent-field usa-sr-only" aria-hidden="true">
+      		<div class="prompt">
+						<p class="prompt__secondary-text"><label for="alienNumberNumber">Document number</label></p>
+					</div>
+					<div class="response">
+						<input type="text" id="alienNumberNumber" required/>
+					</div>
+      	</div>
 			</li>
 			<li>
-				<input id="applicantImmigrationDocumentSevis" type="radio" name="applicantImmigrationDocument" value="SEVIS ID" required>
+				<input id="applicantImmigrationDocumentSevis" type="radio" name="applicantImmigrationDocument" class="open-dependent" value="SEVIS ID" required>
       	<label for="applicantImmigrationDocumentSevis">SEVIS ID</label>
+      	<div class="dependent-field usa-sr-only" aria-hidden="true">
+      		<div class="prompt">
+						<p class="prompt__secondary-text"><label for="sevisNumber">Document number</label></p>
+					</div>
+					<div class="response">
+						<input type="text" id="sevisNumber" required/>
+					</div>
+      	</div>
 			</li>
 			<li>
-				<input id="applicantImmigrationDocumentCardPassport" type="radio" name="applicantImmigrationDocument" value="Card or Passport" required>
+				<input id="applicantImmigrationDocumentCardPassport" type="radio" name="applicantImmigrationDocument" value="Card or Passport" class="open-dependent" required>
       	<label for="applicantImmigrationDocumentCardPassport">U.S. Passport Card number</label>
+      	<div class="dependent-field usa-sr-only" aria-hidden="true">
+      		<div class="prompt">
+						<p class="prompt__secondary-text"><label for="passportNumber">Document number</label></p>
+					</div>
+					<div class="response">
+						<input type="text" id="passportNumber" required/>
+					</div>
+      	</div>
 			</li>
 			<li>
-				<input id="applicantImmigrationDocumentOther" type="radio" name="applicantImmigrationDocument" value="Other" required>
+				<input id="applicantImmigrationDocumentOther" type="radio" name="applicantImmigrationDocument" class="open-dependent" value="Other" required>
       	<label for="applicantImmigrationDocumentOther">Other</label>
+      	<div class="dependent-field usa-sr-only" aria-hidden="true">
+      		<div class="prompt">
+						<p class="prompt__secondary-text"><label for="otherImmigrationType">Document type</label></p>
+					</div>
+					<div class="response">
+						<input type="text" id="otherImmigrationType" required/>
+					</div>
+      		<div class="prompt">
+						<p class="prompt__secondary-text"><label for="otherImmigrationNumber">Document number</label></p>
+					</div>
+					<div class="response">
+						<input type="text" id="otherImmigrationNumber" required/>
+					</div>
+      	</div>
 			</li>
 		</ul>
 	</div>
 </fieldset>
 
-<div class="prompt">
-	<p class="prompt__primary-text"><label for="applicantImmigrationDocNumber">Document number</label></p>
-</div>
-<div class="response">
-	<input type="text" id="applicantImmigrationDocNumber" required/>
-</div>
-
 <script>
+
+		$("input.open-dependent").on('change', function(){
+			$('.dependent-field').addClass('usa-sr-only').attr("aria-hidden", "true");
+			if ($(this).is(":checked")) {
+				$(this).siblings('.dependent-field').removeClass('usa-sr-only').attr("aria-hidden", "false");
+			}
+		});
+
+		$("input.open-dependent").each(function(){
+			if ($(this).is(":checked")) {
+				$(this).siblings('.dependent-field').removeClass('usa-sr-only').attr("aria-hidden", "false");
+			}
+		});
 
 	$(document).ready(function() {
 		$(".usa-button-big").click(function() {
