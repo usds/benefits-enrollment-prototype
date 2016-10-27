@@ -6,12 +6,21 @@ button_text: Continue
 ---
 
 <div class="prompt">
-  <p class="prompt__primary-text"><label for="householdRentMortgage">What is your monthly rent or mortgage?</label></p>
-  <p class="prompt__secondary-text">This can include mortgage and home association fees.</p>
+  <p class="prompt__primary-text"><label for="householdRentMortgage">How much rent or mortgage do you pay each month?</label></p>
 </div>
 <div class="response">
 	<div class="response__input-prefix" aria-hidden="true">$</div>
   <input type="tel" id="householdRentMortgage" required />
+</div>
+
+<div id="if-shares-meals">
+  <div class="prompt">
+    <p class="prompt__primary-text"><label for="expensesPeopleWhoShareFoodWith">How much rent or mortgage do people you purchase and prepare food with pay each month?</label></p>
+  </div>
+  <div class="response">
+    <div class="response__input-prefix" aria-hidden="true">$</div>
+    <input type="tel" id="expensesPeopleWhoShareFoodWith" required />
+  </div>
 </div>
 
 <fieldset>
@@ -52,6 +61,10 @@ button_text: Continue
 </fieldset>
 <script>
   $(document).ready(function() {
+
+    if (householdShareMeals == 0) {
+      $('#if-shares-meals').remove();
+    }
 
 
     $('form').on('submit', function() {
