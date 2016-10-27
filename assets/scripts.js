@@ -29,11 +29,13 @@ $(function() {
 var digitsPerBox = 2;
 
 /// EACH INPUT
-$(".auto-advance, .auto-advance-4").on("input",function(e) {
+$(".auto-advance, .auto-advance-4, .auto-advance-3").on("input",function(e) {
     if ($(this).is(".auto-advance-4")) {
       digitsPerBox = 4;
     }
-
+    else if ($(this).is(".auto-advance-3")) {
+      digitsPerBox = 3;
+    }
     else {
       digitsPerBox = 2;
     }
