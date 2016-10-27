@@ -1,9 +1,11 @@
 ---
 layout: application
 step: 3
-title: Tell us about the <span id="print-householdLiveWith"></span> who you live with and/or file taxes with.
+title: Okay <span id="print-applicantFirstName"></span>, you file federal taxes with <span id="print-householdSize"></span>.
 button_text: Continue
 ---
+
+<p class="usa-lead-font">Who are they?</p>
 
 <div id="person-1">
   <h2>Person 1</h2>
@@ -165,18 +167,20 @@ button_text: Continue
 <script>
   $(document).ready(function() {
 
-    if (householdLiveWith == 2) {
-      $('#print-householdLiveWith').text("other person");
+    $('#print-applicantFirstName').text(applicantFirstName);
+
+    if (householdSize == 2) {
+      $('#print-householdSize').text("other person");
     }
     else {
-      $('#print-householdLiveWith').text(parseInt(householdLiveWith)-1 + " people");
+      $('#print-householdSize').text(parseInt(householdSize)-1 + " people");
     }
 
     if (applyingFor != "Me and someone else") {
       $('.potential-recipient').remove();
     }
 
-    for(x = 6; x > parseInt(householdLiveWith-1); x--) {
+    for(x = 6; x > parseInt(householdSize-1); x--) {
       $('#person-' + x).remove();
     }
   	
@@ -193,7 +197,7 @@ button_text: Continue
         getData();
 
         if (householdShareMeals > 0) {
-          window.location.href = "household-share-meals-from-names.html";
+          window.location.href = "household-mealshare-review.html";
         }
         else {
           window.location.href = "household-people-details.html"

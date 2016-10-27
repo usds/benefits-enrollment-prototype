@@ -1,13 +1,13 @@
 ---
 layout: application
 step: 3
-title: Do you share food with any of those people?
+title: Okay <span id="print-applicantFirstName"></span>, you share meals with <span id="print-householdShareMeals"></span>
 button_text: Continue
 ---
 
 <fieldset>
 	<div class="prompt">
-		<legend class="prompt__primary-text">Check all that are true</legend>
+		<legend class="prompt__primary-text">Who are they?</legend>
 		</div>
 		<div class="response">
 		<ul class="usa-unstyled-list checkbox-group">
@@ -39,7 +39,7 @@ button_text: Continue
 		</div>
 </fieldset>
 
-<p class="prompt__primary-text">Do you share food with anyone else?</p>
+<p class="prompt__primary-text">And/or anyone else?</p>
 <div id="person-1">
 	<h2>Person 1</h2>
 	<div class="prompt">
@@ -90,18 +90,18 @@ button_text: Continue
 <script>
   $(document).ready(function() {
 
-    if (householdLiveWith == 1) {
-      $('#print-householdLiveWith').text("person");
+    if (householdShareMeals == 1) {
+      $('#print-householdShareMeals').text("person");
     }
     else {
-      $('#print-householdLiveWith').text(householdLiveWith + " people");
+      $('#print-householdShareMeals').text(householdShareMeals + " people");
     }
 
-    for(x = 6; x > parseInt(householdLiveWith)-1; x--) { 
+    for(x = 6; x > parseInt(householdSize)-1; x--) { 
       $('#person-' + x).remove();
     }
 
-    for(i = 1; i < parseInt(householdLiveWith)+1; i++) {
+    for(i = 1; i < parseInt(householdSize)+1; i++) {
     	var firstName = "householdMemberFirstName" + i;
     	var lastName = "householdMemberLastName" + i;
 

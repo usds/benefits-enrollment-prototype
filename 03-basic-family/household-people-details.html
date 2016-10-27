@@ -320,12 +320,18 @@ button_text: Continue
 <script>
   $(document).ready(function() {
 
-
-    for(x = 6; x > parseInt(householdLiveWith)-1; x--) { 
-      $('#person-' + x).remove();
+  	if (householdSize > 1){
+	    for(x = 6; x > parseInt(householdSize)-1; x--) { 
+	      $('#person-' + x).remove();
+	    }
+    }
+    else {
+    	for(x = 6; x > parseInt(householdShareMeals); x--) { 
+	      $('#person-' + x).remove();
+	    }
     }
 
-    for(i = 1; i < parseInt(householdLiveWith)+1; i++) {
+    for(i = 1; i < parseInt(householdSize)+1; i++) {
     	var firstName = "householdMemberFirstName" + i;
     	var lastName = "householdMemberLastName" + i;
       $('.print-householdMemberName' + i).text(window[firstName] + " " + window[lastName]);

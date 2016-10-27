@@ -10,7 +10,7 @@ button_text: Start the application
 	<h3 class="data-list__heading">Your monthly income</h3>
 	<p class="data-list__text"><i class="fa fa-money data-list__icon" aria-hidden="true"></i> $<span id="print-householdIncome"></span></p>
 	<h3 class="data-list__heading">Your household size (including you)</h3>
-	<p class="data-list__text"><i class="fa fa-users data-list__icon" aria-hidden="true"></i> <span id="print-householdLiveWith"></span></p>
+	<p class="data-list__text"><i class="fa fa-users data-list__icon" aria-hidden="true"></i> <span id="print-householdSize"></span></p>
 	<h3 class="data-list__heading">You regularly buy and prepare food with</h3>
 	<p class="data-list__text"><i class="fa fa-cutlery data-list__icon" aria-hidden="true"></i> <span id="print-householdShareMeals"></span></p>
 	<h3 class="data-list__heading">Your zip code</h3>
@@ -23,20 +23,20 @@ button_text: Start the application
 	$(document).ready(function() {
 		var householdZipCode = sessionStorage.getItem("householdZipCode");
 		var householdIncome = sessionStorage.getItem("householdIncome");
-		var householdLiveWith = sessionStorage.getItem("householdLiveWith");
+		var householdSize = sessionStorage.getItem("householdSize");
 		var householdShareMeals = sessionStorage.getItem("householdShareMeals");
 		
 
 		$('#print-householdZipCode').text(householdZipCode);
 		$('#print-householdIncome').text(householdIncome);
 		
-		householdLiveWith = parseInt(householdLiveWith);
+		householdSize = parseInt(householdSize);
 
-		if (householdLiveWith == 1) {
-			$('#print-householdLiveWith').text(householdLiveWith + " person");
+		if (householdSize == 1) {
+			$('#print-householdSize').text(householdSize + " person");
 		}
 		else {
-			$('#print-householdLiveWith').text(householdLiveWith + " people");
+			$('#print-householdSize').text(householdSize + " people");
 		}
 
 		if (householdShareMeals == 1) {
