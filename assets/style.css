@@ -7137,6 +7137,20 @@ input.contains-error {
   -webkit-overflow-scrolling: touch;
 }
 
+/* Sectioned Items */
+/* line 87, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_cards.scss */
+.sectioned-item + .sectioned-item {
+  border-top: 1px dashed #aeb0b5;
+  margin-top: 6rem;
+  padding-top: 1.5rem;
+}
+
+/* line 93, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_cards.scss */
+.sectioned-item__heading {
+  font-size: 1.8rem;
+  color: #323a45;
+}
+
 /* line 1, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_prompt-and-response.scss */
 .prompt {
   margin: 3rem 0 0;

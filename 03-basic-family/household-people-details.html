@@ -5,8 +5,8 @@ title: Great, now that we know who’s in your household, we need some info abou
 button_text: Continue
 ---
 
-<div id="person-1">
-	<h2><span class="print-householdMemberName1"></span></h2>
+<div id="person-1" class="sectioned-item">
+	<h2 class="sectioned-item__heading"><span class="print-householdMemberName1"></span></h2>
 	<div class="prompt">
 		<p class="prompt__primary-text"><label for="householdMemberName1Relationship">Relationship to you?</label></p>
 	</div>
@@ -57,8 +57,8 @@ button_text: Continue
 	 </div>
 </div>
 
-<div id="person-2">
-	<h2><span class="print-householdMemberName2"></span></h2>
+<div id="person-2" class="sectioned-item">
+	<h2 class="sectioned-item__heading"><span class="print-householdMemberName2"></span></h2>
 	<div class="prompt">
 		<p class="prompt__primary-text"><label for="householdMemberName2Relationship">Relationship to you?</label></p>
 	</div>
@@ -109,8 +109,8 @@ button_text: Continue
 	 </div>
 </div>
 
-<div id="person-3">
-	<h2><span class="print-householdMemberName3"></span></h2>
+<div id="person-3" class="sectioned-item">
+	<h2 class="sectioned-item__heading"><span class="print-householdMemberName3"></span></h2>
 	<div class="prompt">
 		<p class="prompt__primary-text"><label for="householdMemberName3Relationship">Relationship to you?</label></p>
 	</div>
@@ -161,8 +161,8 @@ button_text: Continue
 	 </div>
 </div>
 
-<div id="person-4">
-	<h2><span class="print-householdMemberName4"></span></h2>
+<div id="person-4" class="sectioned-item">
+	<h2 class="sectioned-item__heading"><span class="print-householdMemberName4"></span></h2>
 	<div class="prompt">
 		<p class="prompt__primary-text"><label for="householdMemberName4Relationship">Relationship to you?</label></p>
 	</div>
@@ -213,8 +213,8 @@ button_text: Continue
 	 </div>
 </div>
 
-<div id="person-5">
-	<h2><span class="print-householdMemberName5"></span></h2>
+<div id="person-5" class="sectioned-item">
+	<h2 class="sectioned-item__heading"><span class="print-householdMemberName5"></span></h2>
 	<div class="prompt">
 		<p class="prompt__primary-text"><label for="householdMemberName5Relationship">Relationship to you?</label></p>
 	</div>
@@ -265,8 +265,8 @@ button_text: Continue
 	 </div>
 </div>
 
-<div id="person-6">
-	<h2><span class="print-householdMemberName6"></span></h2>
+<div id="person-6" class="sectioned-item">
+	<h2 class="sectioned-item__heading"><span class="print-householdMemberName6"></span></h2>
 	<div class="prompt">
 		<p class="prompt__primary-text"><label for="householdMemberName6Relationship">Relationship to you?</label></p>
 	</div>
@@ -324,18 +324,24 @@ button_text: Continue
 	    for(x = 6; x > parseInt(householdSize)-1; x--) { 
 	      $('#person-' + x).remove();
 	    }
+	    for(i = 1; i < parseInt(householdSize)+1; i++) {
+	    	var firstName = "householdMemberFirstName" + i;
+	    	var lastName = "householdMemberLastName" + i;
+	      $('.print-householdMemberName' + i).text(window[firstName] + " " + window[lastName]);
+	    }
     }
     else {
     	for(x = 6; x > parseInt(householdShareMeals); x--) { 
 	      $('#person-' + x).remove();
 	    }
+	    for(i = 1; i < parseInt(householdShareMeals)+1; i++) {
+	    	var firstName = "householdMealOnlyFirst" + i;
+	    	var lastName = "householdMealOnlyLast" + i;
+	      $('.print-householdMemberName' + i).text(window[firstName] + " " + window[lastName]);
+	    }
     }
 
-    for(i = 1; i < parseInt(householdSize)+1; i++) {
-    	var firstName = "householdMemberFirstName" + i;
-    	var lastName = "householdMemberLastName" + i;
-      $('.print-householdMemberName' + i).text(window[firstName] + " " + window[lastName]);
-    }
+    
 
     $("select").on('change', function(){
 			if ($(this).val() == "Other") {
