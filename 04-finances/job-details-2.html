@@ -1,17 +1,17 @@
 ---
 layout: application
 step: 4
-title: Tell us more about your job(s).
+title: Tell us more about your other job.
 button_text: Continue
 ---
 
 <div class="prompt">
 	<p class="usa-font-lead">Where do you currently work?</p>
-	<p class="prompt__primary-text"><label for="employerName">Employer name</label></p>
+	<p class="prompt__primary-text"><label for="employerName2">Employer name</label></p>
 </div>
 	
 <div class="response">
-	<input type="text" id="employerName" required />
+	<input type="text" id="employerName2" required />
 </div>
 
 <fieldset>
@@ -20,18 +20,18 @@ button_text: Continue
   </div>
 
   <div class="response">
-	  <label for="EmployerAddress" class="prompt__primary-text">Employer Address</label>
-	  <input id="EmployerAddress" name="EmployerAddress" type="text" >
+	  <label for="EmployerAddress2" class="prompt__primary-text">Employer Address</label>
+	  <input id="EmployerAddress2" name="EmployerAddress2" type="text" >
 
 	  <div>
         <div class="usa-input-grid usa-input-grid-medium">
-          <label for="employerCity" class="prompt__primary-text">City</label>
-          <input id="employerCity" name="employerCity" type="text">
+          <label for="employerCity2" class="prompt__primary-text">City</label>
+          <input id="employerCit2y" name="employerCity2" type="text">
         </div>
 
         <div class="usa-input-grid usa-input-grid-small">
-          <label for="employerState" class="prompt__primary-text">State</label>
-          <select id="employerState" name="employerState">
+          <label for="employerState2" class="prompt__primary-text">State</label>
+          <select id="employerState2" name="employerState2">
             <option value></option>
             <option value="AL">Alabama</option>
             <option value="AK">Alaska</option>
@@ -88,18 +88,18 @@ button_text: Continue
         </div>
       </div>
 		<div class="usa-input-grid usa-input-grid-small">
-	  <label for="employerZip" class="prompt__primary-text">Zip code</label>
-	  <input class="usa-input-medium" id="employerZip" name="employerZip" type="text" pattern="[\d]{5}(-[\d]{4})?" data-grouplength="5,4" data-delimiter="-" data-politespace >
+	  <label for="employerZip2" class="prompt__primary-text">Zip code</label>
+	  <input class="usa-input-medium" id="employerZip2" name="employerZip2" type="text" pattern="[\d]{5}(-[\d]{4})?" data-grouplength="5,4" data-delimiter="-" data-politespace >
 	  </div>
   </div>
 </fieldset>
 
 <div class="prompt">
-	<p class="prompt__primary-text"><label for="employerPhone">Employer phone number</label></p>
+	<p class="prompt__primary-text"><label for="employerPhone2">Employer phone number</label></p>
 </div>
 	
 <div class="response">
-	<input type="tel" id="employerPhone" required />
+	<input type="tel" id="employerPhone2" required />
 </div>
 
 <fieldset>
@@ -109,46 +109,46 @@ button_text: Continue
 	<div class="response">
 		<ul class="usa-unstyled-list response__radiogroup--two-cols">
 			<li>
-				<input id="applicantPayFrequencyDaily" type="radio" name="employerPayFrequency" value="Daily" required>
-      	<label for="applicantPayFrequencyDaily">Daily</label>
+				<input id="applicantPayFrequencyDaily2" type="radio" name="employerPayFrequency2" value="Daily" required>
+      	<label for="applicantPayFrequencyDaily2">Daily</label>
 			</li>
 			<li>
-				<input id="applicantPayFrequencyWeekly" type="radio" name="employerPayFrequency" value="Weekly" required>
-      	<label for="applicantPayFrequencyWeekly">Weekly</label>
+				<input id="applicantPayFrequencyWeekly2" type="radio" name="employerPayFrequency2" value="Weekly" required>
+      	<label for="applicantPayFrequencyWeekly2">Weekly</label>
 			</li>
 			<li>
-				<input id="applicantPayFrequencyBiweekly" type="radio" name="employerPayFrequency" value="Every 2 weeks" required>
-      	<label for="applicantPayFrequencyBiweekly">Every 2 weeks</label>
+				<input id="applicantPayFrequencyBiweekly2" type="radio" name="employerPayFrequency2" value="Every 2 weeks" required>
+      	<label for="applicantPayFrequencyBiweekly2">Every 2 weeks</label>
 			</li>
 			<li>
-				<input id="applicantPayFrequencyTwiceMonthly" type="radio" name="employerPayFrequency" value="Twice a month" required>
-      	<label for="applicantPayFrequencyTwiceMonthly">Twice a month</label>
+				<input id="applicantPayFrequencyTwiceMonthly2" type="radio" name="employerPayFrequency2" value="Twice a month" required>
+      	<label for="applicantPayFrequencyTwiceMonthly2">Twice a month</label>
 			</li>
 			<li>
-				<input id="applicantPayFrequencyMonthly" type="radio" name="employerPayFrequency" value="Monthly" required>
-      	<label for="applicantPayFrequencyMonthly">Monthly</label>
+				<input id="applicantPayFrequencyMonthly2" type="radio" name="employerPayFrequency2" value="Monthly" required>
+      	<label for="applicantPayFrequencyMonthly2">Monthly</label>
 			</li>
 			<li>
-				<input id="applicantPayFrequencyYearly" type="radio" name="employerPayFrequency" value="Yearly" required>
-      	<label for="applicantPayFrequencyYearly">Yearly</label>
+				<input id="applicantPayFrequencyYearly2" type="radio" name="employerPayFrequency2" value="Yearly" required>
+      	<label for="applicantPayFrequencyYearly2">Yearly</label>
 			</li>
 		</ul>
 	</div>
 </fieldset>
 
 <div class="prompt">
-	<p class="prompt__primary-text"><label for="employerWages">How much do you make <span id="print-employerPayFrequency"></span> (before taxes)?</label></p>
+	<p class="prompt__primary-text"><label for="employerWages2">How much do you make <span id="print-employerPayFrequency2"></span> (before taxes)?</label></p>
 </div>
 <div class="response">
 	<div class="response__input-prefix" aria-hidden="true">$</div>
-	<input type="tel" id="employerWages" required/>
+	<input type="tel" id="employerWages2" required/>
 </div>
 
 <div class="prompt">
-	<p class="prompt__primary-text"><label for="employerWorkHours">On average, how many hours do you work a week at this job?</label></p>
+	<p class="prompt__primary-text"><label for="employerWorkHours2">On average, how many hours do you work a week at this job?</label></p>
 </div>
 <div class="response">
-	<input type="tel" class="input--short" id="employerWorkHours" required/>
+	<input type="tel" class="input--short" id="employerWorkHours2" required/>
 </div>
 
 <fieldset>
@@ -158,12 +158,12 @@ button_text: Continue
 	<div class="response">
 		<ul class="usa-unstyled-list response__radiogroup--inline">
 			<li>
-				<input id="haveSecondJobYes" type="radio" name="haveSecondJob" value="Yes" required>
-      	<label for="haveSecondJobYes">Yes</label>
+				<input id="haveThirdJobYes" type="radio" name="haveThirdJob" value="Yes" required>
+      	<label for="haveThirdJobYes">Yes</label>
 			</li>
 			<li>
-				<input id="haveSecondJobNo" type="radio" name="haveSecondJob" value="No" required>
-      	<label for="haveSecondJobNo">No</label>
+				<input id="haveThirdJobNo" type="radio" name="haveThirdJob" value="No" required>
+      	<label for="haveThirdJobNo">No</label>
 			</li>
 		</ul>
 	</div>
@@ -172,9 +172,9 @@ button_text: Continue
 <script>
 	$(document).ready(function() {
 
-		$('input[name="employerPayFrequency"]').on('change', function(){
+		$('input[name="employerPayFrequency2"]').on('change', function(){
 			var v = $(this).val().toLowerCase();
-			$("#print-employerPayFrequency").text(v);
+			$("#print-employerPayFrequency2").text(v);
 		});		
 
 		$(".usa-button-big").click(function() {
@@ -183,8 +183,8 @@ button_text: Continue
 			storeData();
 			getData();
 
-			if (haveSecondJob == "Yes") {
-				window.location.href = "job-details-2.html";
+			if (haveThirdJob == "Yes") {
+				window.location.href = "job-details-3.html";
 			}
 			else {
 				window.location.href = "expenses.html";
