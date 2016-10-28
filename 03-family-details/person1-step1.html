@@ -78,7 +78,7 @@ button_text: Continue
   </div>
   <div class="response">
     <div>
-      <div class="usa-form-group usa-form-group-month">
+      <div class="usa-form-group usa-form-group-year">
         <label class="usa-sr-only" for="householdMember1SSN1">Social Security Number First 3 Numbers</label>
         <input class="usa-input-inline auto-advance-3" class="usa-form-control" id="householdMember1SSN1" pattern="[0-9]{3}" type="password">
       </div>
@@ -107,9 +107,11 @@ button_text: Continue
   	$('.print-householdMember1FirstName').text(householdMember1FirstName);
   	$('.print-householdMember1LastName').text(householdMember1LastName);
 
-    if (applyForHouseholdMember1 == "no") {
+ 
+    if ((typeof applyForHouseholdMember1 == 'undefined') || (applyForHouseholdMember1 == "no")) {
       $('.applicant-only').remove();
     }
+    
 
   	$("select").on('change', function(){
 			if ($(this).val() == "Other") {

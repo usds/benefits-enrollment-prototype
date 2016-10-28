@@ -78,13 +78,13 @@ title: <span class="everyone-else">Okay, let’s review some common cases that m
   		$('.female-only').remove();
   	};
 
-  	if (applyForHouseholdMember4 == "no") {
+  	if ((typeof applyForHouseholdMember4 == 'undefined') || (applyForHouseholdMember4 == "no")) {
       $('.applicant-only').remove();
     }
 
-    if ((householdMember4Sex === "Male") && (applyForHouseholdMember4 == "no"))  {
-  		$('.everyone-else').remove();
-  	}
+    if (((typeof applyForHouseholdMember4 == 'undefined') || (applyForHouseholdMember4 == "no")) && (householdMember4Sex === "Male")) {
+    	$('.everyone-else').remove();
+    }
   	else {
   		$('.male-non-applicant').remove();
   	}

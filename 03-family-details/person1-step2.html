@@ -74,17 +74,17 @@ title: <span class="everyone-else">Okay, let’s review some common cases that m
 
 		$('.print-householdMember1FirstName').text(householdMember1FirstName);
 
-  	if (householdMember1Sex === "Male") {
+		if (householdMember1Sex === "Male") {
   		$('.female-only').remove();
   	};
 
-  	if (applyForHouseholdMember1 == "no") {
+  	if ((typeof applyForHouseholdMember1 == 'undefined') || (applyForHouseholdMember1 == "no")) {
       $('.applicant-only').remove();
     }
 
-    if ((householdMember1Sex === "Male") && (applyForHouseholdMember1 == "no"))  {
-  		$('.everyone-else').remove();
-  	}
+    if (((typeof applyForHouseholdMember1 == 'undefined') || (applyForHouseholdMember1 == "no")) && (householdMember1Sex === "Male")) {
+    	$('.everyone-else').remove();
+    }
   	else {
   		$('.male-non-applicant').remove();
   	}

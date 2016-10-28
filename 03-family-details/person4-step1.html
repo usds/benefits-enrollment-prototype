@@ -107,7 +107,7 @@ button_text: Continue
   	$('.print-householdMember4FirstName').text(householdMember4FirstName);
   	$('.print-householdMember4LastName').text(householdMember4LastName);
 
-    if (applyForHouseholdMember4 == "no") {
+    if ((typeof applyForHouseholdMember4 == 'undefined') || (applyForHouseholdMember4 == "no")) {
       $('.applicant-only').remove();
     }
 
