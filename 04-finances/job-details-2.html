@@ -11,7 +11,7 @@ button_text: Continue
 </div>
 	
 <div class="response">
-	<input type="text" id="employerName2" required />
+	<input type="text" id="employerName2"  />
 </div>
 
 <fieldset>
@@ -99,7 +99,7 @@ button_text: Continue
 </div>
 	
 <div class="response">
-	<input type="tel" id="employerPhone2" required />
+	<input type="tel" id="employerPhone2" />
 </div>
 
 <fieldset>
@@ -109,27 +109,27 @@ button_text: Continue
 	<div class="response">
 		<ul class="usa-unstyled-list response__radiogroup--two-cols">
 			<li>
-				<input id="applicantPayFrequencyDaily2" type="radio" name="employerPayFrequency2" value="Daily" required>
+				<input id="applicantPayFrequencyDaily2" type="radio" name="employerPayFrequency2" value="Daily" >
       	<label for="applicantPayFrequencyDaily2">Daily</label>
 			</li>
 			<li>
-				<input id="applicantPayFrequencyWeekly2" type="radio" name="employerPayFrequency2" value="Weekly" required>
+				<input id="applicantPayFrequencyWeekly2" type="radio" name="employerPayFrequency2" value="Weekly" >
       	<label for="applicantPayFrequencyWeekly2">Weekly</label>
 			</li>
 			<li>
-				<input id="applicantPayFrequencyBiweekly2" type="radio" name="employerPayFrequency2" value="Every 2 weeks" required>
+				<input id="applicantPayFrequencyBiweekly2" type="radio" name="employerPayFrequency2" value="Every 2 weeks">
       	<label for="applicantPayFrequencyBiweekly2">Every 2 weeks</label>
 			</li>
 			<li>
-				<input id="applicantPayFrequencyTwiceMonthly2" type="radio" name="employerPayFrequency2" value="Twice a month" required>
+				<input id="applicantPayFrequencyTwiceMonthly2" type="radio" name="employerPayFrequency2" value="Twice a month" >
       	<label for="applicantPayFrequencyTwiceMonthly2">Twice a month</label>
 			</li>
 			<li>
-				<input id="applicantPayFrequencyMonthly2" type="radio" name="employerPayFrequency2" value="Monthly" required>
+				<input id="applicantPayFrequencyMonthly2" type="radio" name="employerPayFrequency2" value="Monthly" >
       	<label for="applicantPayFrequencyMonthly2">Monthly</label>
 			</li>
 			<li>
-				<input id="applicantPayFrequencyYearly2" type="radio" name="employerPayFrequency2" value="Yearly" required>
+				<input id="applicantPayFrequencyYearly2" type="radio" name="employerPayFrequency2" value="Yearly">
       	<label for="applicantPayFrequencyYearly2">Yearly</label>
 			</li>
 		</ul>
@@ -141,14 +141,14 @@ button_text: Continue
 </div>
 <div class="response">
 	<div class="response__input-prefix" aria-hidden="true">$</div>
-	<input type="tel" id="employerWages2" required/>
+	<input type="tel" id="employerWages2"/>
 </div>
 
 <div class="prompt">
 	<p class="prompt__primary-text"><label for="employerWorkHours2">On average, how many hours do you work a week at this job?</label></p>
 </div>
 <div class="response">
-	<input type="tel" class="input--short" id="employerWorkHours2" required/>
+	<input type="tel" class="input--short" id="employerWorkHours2"/>
 </div>
 
 <fieldset>
@@ -177,18 +177,31 @@ button_text: Continue
 			$("#print-employerPayFrequency2").text(v);
 		});		
 
-		$(".usa-button-big").click(function() {
-			event.preventDefault();
+		$('form').on('submit', function() {
 
-			storeData();
-			getData();
+        if ($('form').get(0).checkValidity() == false) {
+          return false;
+        }
 
-			if (haveThirdJob == "Yes") {
-				window.location.href = "job-details-3.html";
-			}
-			else {
-				window.location.href = "expenses.html";
-			}
+        else {
+        	event.preventDefault();
+
+					storeData();
+					getData();
+
+					if (haveThirdJob == "Yes") {
+						window.location.href = "job-details-3.html";
+					}
+					
+					else if (typeof applyForHouseholdMember1 != 'undefined' ) {
+						window.location.href = "person1.html";
+					}
+
+					else {
+						window.location.href = "expenses.html";
+					}
+
+				}
 			
 		});
 	});

@@ -1,0 +1,64 @@
+---
+layout: application
+step: 4
+title: Now, we need to ask you some money questions.
+---
+
+<p class="usa-lead-font">In this section, we will ask for info about icome, jobs, and expenses for you and your household.</p>
+
+<p>Here is info we need from you:</p>
+
+<ul>
+  <li>Wages and tips from any jobs</li>
+  <li>Money from government benefits</li>
+  <li>Money from any other sources</li>
+  <li>Employer contact info</li>
+  <li>Medical and housing expenses</li>
+</ul>
+
+<div class="household-members-only">
+  <p>For everyone else in your household, we only need:</p>
+
+  <ul>
+    <li>Wages and tips from any jobs</li>
+    <li>Money from goverment benefits</li>
+    <li>Money from any other sources</li>
+  </ul>
+</div>
+
+<div class="prompt">
+  <div class="explainer">
+    <a href="#" class="explainer__toggle" aria-expanded="false" aria-controls="explainer-1">Why do we ask this?</a>
+    <div class="explainer__content" id="explainer-1">
+      <p>How much money you earn and spend on basic needs helps us figure out what programs you qualify for and how much support you can get.</p>
+    </div>
+  </div>
+</div>
+
+<div class="household-members-only alert--positive">
+  <p>We ask about your household members, even if you’re not applying for them, because their situation could qualify you for more benefits.</p>
+</div>
+
+<script>
+  $(document).ready(function() {
+
+    if(householdSize == 1) {
+      $('.household-members-only').remove();
+    }
+
+    $('form').on('submit', function() {
+
+        if ($('form').get(0).checkValidity() == false) {
+          return false;
+        }
+
+        else {
+        event.preventDefault();
+
+        storeData();
+
+        window.location.href = "applicant-income.html";
+      }
+    });
+  });
+</script>
