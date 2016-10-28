@@ -102,8 +102,8 @@ button_text: Continue
     }
 
     for(i = 1; i < parseInt(householdSize)+1; i++) {
-    	var firstName = "householdMemberFirstName" + i;
-    	var lastName = "householdMemberLastName" + i;
+    	var firstName = "householdMember" + i + "FirstName";
+    	var lastName = "householdMember" + i + "LastName"; 
 
       $('#print-householdMemberName' + i).text(window[firstName] + " " + window[lastName]);
     }
@@ -123,7 +123,7 @@ button_text: Continue
         storeData();
         getData();
 
-        window.location.href = "household-people-details.html";
+        window.location.href = "../03-family-details/index.html";
     });
   });
 </script>

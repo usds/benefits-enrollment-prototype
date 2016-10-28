@@ -1,0 +1,59 @@
+---
+layout: application
+step: 2
+title: A few questions about  <span class="print-householdMember4FirstName"></span>’s pregnancy.
+---
+
+<div class="prompt">
+	<legend class="prompt__primary-text">When is <span class="print-householdMember4FirstName"></span>’s due date?</legend>
+	<p class="prompt__secondary-text" id="dueHint">For example: 04 28 1986</p>
+</div>
+<div class="response" >
+	<div class="usa-date-of-birth">
+    <div class="usa-form-group usa-form-group-month">
+      <label for="householdMember4DueMonth">Month</label>
+      <input class="usa-input-inline auto-advance" aria-describedby="dueHint" id="householdMember4DueMonth" name="householdMember4DueMonth" pattern="0?[1-9]|1[012]" type="tel" min="1" max="12" value="">
+    </div>
+    <div class="usa-form-group usa-form-group-day">
+      <label for="householdMember4DueDay">Day</label>
+      <input class="usa-input-inline auto-advance" aria-describedby="dueHint" id="householdMember4DueDay" name="householdMember4DueDay" pattern="0?[1-9]|1[0-9]|2[0-9]|3[01]" type="tel" min="1" max="31" value="">
+    </div>
+    <div class="usa-form-group usa-form-group-year">
+      <label for="householdMember4DueYear">Year</label>
+      <input class="usa-input-inline auto-advance-4" aria-describedby="dueHint" id="householdMember4DueYear" name="householdMember4DueYear" pattern="[0-9]{4}" type="tel" min="1900" max="2000" value="">
+    </div>
+  </div>
+</div>
+
+<div class="prompt">
+	<p class="prompt__primary-text"><label for="householdMember4BabiesExpected">How many babies is <span class="print-householdMember4FirstName"></span> expecting?</label></p>
+</div>
+<div class="response">
+	<input class="input--short" type="tel" id="householdMember4BabiesExpected" required />
+</div>
+
+
+<script>
+	$(document).ready(function() {
+
+		$('.print-householdMember4FirstName').text(householdMember4FirstName);
+
+
+		$(".usa-button-big").click(function() {
+			event.preventDefault();
+
+      storeData();
+
+      window.location.href = "../03-family-member-address/person1.html";
+
+      if (typeof applyForHouseholdMember5 != 'undefined' ) {
+				window.location.href = "person5-step1.html";
+			}
+
+			if (householdMember4CaseInsurance == "yes") {
+				window.location.href = "person4-step3-insurance.html";
+			}
+			
+		});
+	});
+</script>

@@ -1,0 +1,52 @@
+---
+layout: application
+step: 3
+title: Now we'll need some info about each person.
+button_text: Continue
+---
+
+<h2>We will ask about the following from the people you listed so far:</h2>
+<ul>
+	<li>How you are related</li>
+	<li>Date of Birth</li>
+	<li>Sex</li>
+	<li>Address</li>
+	<li>Disability</li>
+	<li>Pregnancy (for women)</li>
+</ul>
+
+<div class="applicants-only">
+	<h2>We need additional information from any applicants you’ve listed.</h2>
+	<p>For the folling people:</p>
+	<ul class="applicants-listed">
+	</ul>
+	<p>We’ll also ask you tell us about:</p>
+	<ul>
+		<li>SSN</li>
+	</ul>
+</div>
+
+<script>
+  $(document).ready(function() {
+
+  	var haveApplicants = 0;
+  	for (x =1; x < 6; x++) {
+  		if (window["applyForHouseholdMember"+x] == "yes"){
+  			haveApplicants++;
+  			$('.applicants-listed').append('<li>' + window["householdMember" + x + "FirstName"] + " " + window["householdMember" + x + "LastName"] + '</li>')
+  		};
+  	};
+
+  	if (haveApplicants == 0) {
+  		$('.applicants-only').remove();
+  	}
+  	
+    $(".usa-button-big").click(function() {
+        event.preventDefault();
+
+        storeData();
+
+        window.location.href = "person1-step1.html";
+    });
+  });
+</script>

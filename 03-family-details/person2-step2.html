@@ -1,0 +1,114 @@
+---
+layout: application
+step: 3
+title: <span class="everyone-else">Okay, let’s review some common cases that may apply to <span class="print-householdMember2FirstName"></span></span><span class="male-non-applicant">Okay, another question about <span class="print-householdMember2FirstName"></span></span>.
+---
+
+<fieldset class="everyone-else">
+		<div class="prompt">
+			<legend class="prompt__primary-text">Check all that are true</legend>
+		</div>
+		<div class="response">
+		<ul class="usa-unstyled-list checkbox-group">
+			<li class="female-only">
+				<input id="householdMember2CasePregnant" type="checkbox" name="householdMember2-case" value="Is pregnant">
+				<label for="householdMember2CasePregnant">Is pregnant</label>
+			</li>
+			<li class="female-only">
+				<input id="householdMember2CaseHadBaby" type="checkbox" name="householdMember2-case" value="Had a baby within the last 6 months">
+				<label for="householdMember2CaseHadBaby">Had a baby within the last 6 months</label>
+			</li>
+			<li class="applicant-only">
+				<input id="householdMember2CaseStudent" type="checkbox" name="householdMember2-case" value="Isa full-time student">
+				<label for="householdMember2CaseStudent">Is a full-time student</label>
+			</li>
+			<li class="applicant-only">
+				<input id="householdMember2CaseMilitary" type="checkbox" name="householdMember2-case" value="Has or is serving in the military">
+				<label for="householdMember2CaseMilitary">Has or is serving in the military</label>
+			</li>
+			<li class="applicant-only">
+				<input id="householdMember2CaseFoster" type="checkbox" name="householdMember2-case" value="Was in foster care at age 18 or older">
+				<label for="householdMember2CaseFoster">Was in foster care at age 18 or older</label>
+			</li>
+			<li>
+				<input id="householdMember2CaseDisability" type="checkbox" name="householdMember2-case" value="Has a disability (physical, emotional, or mental health condition) or live in a medical facility or nursing home">
+				<label for="householdMember2CaseDisability">Has a disability (physical, emotional, or mental health condition) or live in a medical facility or nursing home</label>
+			</li>
+			<li class="applicant-only">
+				<input id="householdMember2CaseInsurance" type="checkbox" name="householdMember2-case" value="Has health insurance or Medicaid">
+				<label for="householdMember2CaseInsurance">Has health insurance or Medicaid</label>
+			</li>
+			<li class="applicant-only">
+				<input id="householdMember2CaseCashAssistance" type="checkbox" name="householdMember2-case" value="Currently gets cash assistance">
+				<label for="householdMember2CaseCashAssistance">Currently gets Cash Assistance (also know as TANF or XX)</label>
+			</li>
+			<li class="applicant-only">
+				<input id="householdMember2CaseMedical" type="checkbox" name="householdMember2-case" value="Wants help paying for medical bills from the past 3 months">
+				<label for="householdMember2CaseMedical">Wants help paying for medical bills from the past 3 months</label>
+			</li>
+		</ul>
+		<p class="prompt__primary-text">We will now follow up with specific questions that may help <span class="print-householdMember2FirstName"></span> qualify for more benefits.</p>
+		</div>
+</fieldset>
+
+ <fieldset class="male-non-applicant">
+  <div class="prompt">
+    <legend class="prompt__primary-text">Does <span class="print-householdMember2FirstName"></span> have a disablity (physical, emotional, or mental health condition) or live in a medical facility or nursing home?</legend>
+  </div>
+  <div class="response">
+    <ul class="usa-unstyled-list response__radiogroup--inline">
+      <li>
+        <input id="yes" type="radio" name="householdMember2CaseDisability" value="yes" required="">
+        <label for="yes">Yes</label>
+      </li>
+      <li>
+        <input id="no" type="radio" name="householdMember2CaseDisability" value="no" required="">
+        <label for="no">No</label>
+      </li>
+    </ul>
+  </div>
+</fieldset>
+
+<script>
+	$(document).ready(function() {
+
+		$('.print-householdMember2FirstName').text(householdMember2FirstName);
+
+  	if (householdMember2Sex === "Male") {
+  		$('.female-only').remove();
+  	};
+
+  	if (applyForHouseholdMember2 == "no") {
+      $('.applicant-only').remove();
+    }
+
+    if ((householdMember2Sex === "Male") && (applyForHouseholdMember2 == "no"))  {
+  		$('.everyone-else').remove();
+  	}
+  	else {
+  		$('.male-non-applicant').remove();
+  	}
+
+		$(".usa-button-big").click(function() {
+			event.preventDefault();
+
+			storeData();
+			getData();
+
+			window.location.href = "../03-family-member-address/person1.html";
+
+			if (typeof applyForHouseholdMember3 != 'undefined' ) {
+				window.location.href = "person3-step1.html";
+			}
+
+			if ($('#householdMember2CaseInsurance').is(':checked')) {
+				window.location.href = "person2-step3-insurance.html";
+			}
+
+			if ($('#householdMember2CasePregnant').is(':checked')) {
+				window.location.href = "person2-step3-pregnant.html";
+			}
+			
+		});
+	});
+</script>
