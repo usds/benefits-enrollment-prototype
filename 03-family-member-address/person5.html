@@ -1,18 +1,18 @@
 ---
 layout: application
 step: 3
-title: Where does <span class="print-householdMember1FirstName"></span> live?
+title: Where does <span class="print-householdMember5FirstName"></span> live?
 button_text: Continue
 ---
 
 <div class="prompt">
-	<p  class="prompt__primary-text">Does <span class="print-householdMember1FirstName"></span> live at the same address as you?</p>
+	<p  class="prompt__primary-text">Does <span class="print-householdMember5FirstName"></span> live at the same address as you?</p>
 </div>
 <div class="response">
   <ul class="usa-unstyled-list checkbox-group">
     <li>
-      <input id="householdMember1SameAddress" type="checkbox" name="householdMember1SameAddress" value="Yes">
-      <label for="householdMember1SameAddress">Yes, <span class="print-householdMember1FirstName"></span> lives with me.</label>
+      <input id="householdMember5SameAddress" type="checkbox" name="householdMember5SameAddress" value="Yes">
+      <label for="householdMember5SameAddress">Yes, <span class="print-householdMember5FirstName"></span> lives with me.</label>
     </li>
   </ul>
 </div>
@@ -23,21 +23,21 @@ button_text: Continue
   </div>
 
   <div class="response">
-	  <label for="householdMember1Address1" class="prompt__primary-text">Address 1</label>
-	  <input id="householdMember1Address1" name="householdMember1Address" type="text" >
+	  <label for="householdMember5Address1" class="prompt__primary-text">Address 1</label>
+	  <input id="householdMember5Address1" name="householdMember5Address" type="text" >
 
-	  <label for="householdMember1Address2" class="prompt__primary-text">Address 2</label>
-	  <input id="householdMember1Address2" name="householdMember1Address" type="text" >
+	  <label for="householdMember5Address2" class="prompt__primary-text">Address 2</label>
+	  <input id="householdMember5Address2" name="householdMember5Address" type="text" >
 
 	  <div>
         <div class="usa-input-grid usa-input-grid-medium">
-          <label for="householdMember1City" class="prompt__primary-text">City</label>
-          <input id="householdMember1City" name="householdMember1City" type="text">
+          <label for="householdMember5City" class="prompt__primary-text">City</label>
+          <input id="householdMember5City" name="householdMember5City" type="text">
         </div>
 
         <div class="usa-input-grid usa-input-grid-small">
-          <label for="householdMember1State" class="prompt__primary-text">State</label>
-          <select id="ouseholdMember1State" name="ouseholdMember1State">
+          <label for="householdMember5State" class="prompt__primary-text">State</label>
+          <select id="ouseholdMember5State" name="ouseholdMember5State">
             <option value></option>
             <option value="AL">Alabama</option>
             <option value="AK">Alaska</option>
@@ -94,8 +94,8 @@ button_text: Continue
         </div>
       </div>
 		<div class="usa-input-grid usa-input-grid-small">
-	  <label for="householdMember1Zip" class="prompt__primary-text">Zip code</label>
-	  <input class="usa-input-medium" id="householdMember1Zip" name="ouseholdMember1Zip" type="text" pattern="[\d]{5}(-[\d]{4})?" data-grouplength="5,4" data-delimiter="-" data-politespace >
+	  <label for="householdMember5Zip" class="prompt__primary-text">Zip code</label>
+	  <input class="usa-input-medium" id="householdMember5Zip" name="ouseholdMember5Zip" type="text" pattern="[\d]{5}(-[\d]{4})?" data-grouplength="5,4" data-delimiter="-" data-politespace >
 	  </div>
   </div>
 </fieldset>
@@ -104,20 +104,20 @@ button_text: Continue
 <script>
 	$(document).ready(function() {
 
-		$('.print-householdMember1FirstName').text(householdMember1FirstName);
+		$('.print-householdMember5FirstName').text(householdMember5FirstName);
 
-		$('#householdMember1SameAddress').on('change', function(){
+		$('#householdMember5SameAddress').on('change', function(){
 			if ($(this).is(':checked')) {
-				$('#householdMember1Address1').val(applicantMailingAddress1);
-				$('#householdMember1Address2').val(applicantMailingAddress2);
-				$('#householdMember1City').val(applicantCity);
-				$('#householdMember1Zip').val(applicantZip);
+				$('#householdMember5Address1').val(applicantMailingAddress1);
+				$('#householdMember5Address2').val(applicantMailingAddress2);
+				$('#householdMember5City').val(applicantCity);
+				$('#householdMember5Zip').val(applicantZip);
 			}
 			else {
-				$('#householdMember1Address1').val("");
-				$('#householdMember1Address2').val("");
-				$('#householdMember1City').val("");
-				$('#householdMember1Zip').val("");
+				$('#householdMember5Address1').val("");
+				$('#householdMember5Address2').val("");
+				$('#householdMember5City').val("");
+				$('#householdMember5Zip').val("");
 			}
 		})
 		
@@ -127,8 +127,8 @@ button_text: Continue
 			storeData();
 			getData();
 
-			if (typeof applyForHouseholdMember2 != 'undefined' ) {
-				window.location.href = "person2.html";
+			if (typeof applyForHouseholdMember6 != 'undefined' ) {
+				window.location.href = "person6.html";
 			}
 			else {
 				window.location.href = "../04-finances/income.html";
