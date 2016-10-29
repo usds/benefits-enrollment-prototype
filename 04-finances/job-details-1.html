@@ -15,22 +15,23 @@ button_text: Continue
 </div>
 
 <fieldset>
-	<div class="prompt usa-sr-only">
+	<div class="prompt">
   	<legend class="prompt__primary-text">Employer Address</legend>
   </div>
 
   <div class="response">
-	  <label for="EmployerAddress" class="prompt__primary-text">Employer Address</label>
+	  <label for="EmployerAddress">Address 1</label>
 	  <input id="EmployerAddress" name="EmployerAddress" type="text" >
-
+    <label for="EmployerAddress_2">Address 2 <span class="usa-additional_text">Optional</span></label>
+    <input id="EmployerAddress_2" name="EmployerAddress2" type="text" >
 	  <div>
         <div class="usa-input-grid usa-input-grid-medium">
-          <label for="employerCity" class="prompt__primary-text">City</label>
+          <label for="employerCity">City</label>
           <input id="employerCity" name="employerCity" type="text">
         </div>
 
         <div class="usa-input-grid usa-input-grid-small">
-          <label for="employerState" class="prompt__primary-text">State</label>
+          <label for="employerState">State</label>
           <select id="employerState" name="employerState">
             <option value></option>
             <option value="AL">Alabama</option>
@@ -88,7 +89,7 @@ button_text: Continue
         </div>
       </div>
 		<div class="usa-input-grid usa-input-grid-small">
-	  <label for="employerZip" class="prompt__primary-text">Zip code</label>
+	  <label for="employerZip">Zip code</label>
 	  <input class="usa-input-medium" id="employerZip" name="employerZip" type="text" pattern="[\d]{5}(-[\d]{4})?" data-grouplength="5,4" data-delimiter="-" data-politespace >
 	  </div>
   </div>

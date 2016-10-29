@@ -15,22 +15,24 @@ button_text: Continue
 </div>
 
 <fieldset>
-	<div class="prompt usa-sr-only">
+	<div class="prompt">
   	<legend class="prompt__primary-text">Employer Address</legend>
   </div>
 
   <div class="response">
-	  <label for="EmployerAddress2" class="prompt__primary-text">Employer Address</label>
+	  <label for="EmployerAddress2">Address 1</label>
 	  <input id="EmployerAddress2" name="EmployerAddress2" type="text" >
+	  <label for="EmployerAddress2_2">Address 2 <span class="usa-additional_text">Optional</span></label>
+    <input id="EmployerAddress2_2" name="EmployerAddress2_2" type="text" >
 
 	  <div>
         <div class="usa-input-grid usa-input-grid-medium">
-          <label for="employerCity2" class="prompt__primary-text">City</label>
-          <input id="employerCit2y" name="employerCity2" type="text">
+          <label for="employerCity2" >City</label>
+          <input id="employerCity2" name="employerCity2" type="text">
         </div>
 
         <div class="usa-input-grid usa-input-grid-small">
-          <label for="employerState2" class="prompt__primary-text">State</label>
+          <label for="employerState2">State</label>
           <select id="employerState2" name="employerState2">
             <option value></option>
             <option value="AL">Alabama</option>
@@ -88,7 +90,7 @@ button_text: Continue
         </div>
       </div>
 		<div class="usa-input-grid usa-input-grid-small">
-	  <label for="employerZip2" class="prompt__primary-text">Zip code</label>
+	  <label for="employerZip2">Zip code</label>
 	  <input class="usa-input-medium" id="employerZip2" name="employerZip2" type="text" pattern="[\d]{5}(-[\d]{4})?" data-grouplength="5,4" data-delimiter="-" data-politespace >
 	  </div>
   </div>
