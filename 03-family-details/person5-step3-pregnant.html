@@ -50,7 +50,7 @@ title: A few questions about  <span class="print-householdMember5FirstName"></sp
 				window.location.href = "person6-step1.html";
 			}
 
-			if (householdMember5CaseInsurance == "yes") {
+			if ((typeof householdMember5CaseInsurance != 'undefined') && (householdMember5CaseInsurance == "yes")) {
 				window.location.href = "person5-step3-insurance.html";
 			}
 			
