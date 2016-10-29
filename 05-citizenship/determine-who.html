@@ -1,0 +1,108 @@
+---
+layout: application
+step: 5
+title: Who is not a U.S. citizen or U.S. national?
+---
+
+<fieldset>
+    <div class="prompt">
+      <legend class="prompt__primary-text">Check all.</legend>
+    </div>
+    <div class="response">
+      <ul class="usa-unstyled-list checkbox-group">
+        <li>
+          <input id="immigrant_me" type="checkbox" name="immigrant" value="Yes">
+          <label for="immigrant_me">Me</label>
+        </li>
+        <li id="person-1">
+          <input id="immigrant_householdMember1" type="checkbox" name="immigrant" value="Yes">
+          <label for="immigrant_householdMember1"><span id="print-householdMemberName1"></span></label>
+        </li>
+        <li id="person-2">
+          <input id="immigrant_householdMember2" type="checkbox" name="immigrant" value="Yes">
+          <label for="immigrant_householdMember2"><span id="print-householdMemberName2"></span></label>
+        </li>
+        <li id="person-3">
+          <input id="immigrant_householdMember3" type="checkbox" name="immigrant" value="Yes">
+          <label for="immigrant_householdMember3"><span id="print-householdMemberName3"></span></label>
+        </li>
+        <li id="person-4">
+          <input id="immigrant_householdMember4" type="checkbox" name="immigrant" value="Yes">
+          <label for="immigrant_householdMember4"><span id="print-householdMemberName4"></span></label>
+        </li>
+        <li id="person-5">
+          <input id="immigrant_householdMember5" type="checkbox" name="immigrant" value="Yes">
+          <label for="immigrant_householdMember5"><span id="print-householdMemberName5"></span></label>
+        </li>
+        <li id="person-6">
+          <input id="immigrant_householdMember6" type="checkbox" name="immigrant" value="Yes">
+          <label for="immigrant_householdMember6"><span id="print-householdMemberName6"></span></label>
+        </li>
+      </ul>
+    </div>
+</fieldset>
+
+
+
+
+<script>
+  $(document).ready(function() {
+
+    for(x = 6; x > parseInt(householdSize)-1; x--) { 
+      $('#person-' + x).remove();
+    }
+
+    for(i = 1; i < parseInt(householdSize)+1; i++) {
+      var firstName = "householdMember" + i + "FirstName";
+      var lastName = "householdMember" + i + "LastName"; 
+
+      $('#print-householdMemberName' + i).text(window[firstName] + " " + window[lastName]);
+    }
+
+    $('form').on('submit', function() {
+
+        if ($('form').get(0).checkValidity() == false) {
+          return false;
+        }
+
+        else {
+          event.preventDefault();
+
+          storeData();
+          getData();
+
+          if ((typeof immigrant_me != 'undefined' ) && (immigrant_me == 'yes')) {
+            window.location.href = "applicant-follow-up.html";
+          }
+
+          else if ((typeof immigrant_householdMember1 != 'undefined' ) && (immigrant_householdMember1 == 'yes')) {
+            window.location.href = "person1-follow-up.html";
+          }
+
+          else if ((typeof immigrant_householdMember2 != 'undefined' ) && (immigrant_householdMember2 == 'yes')) {
+            window.location.href = "person2-follow-up.html";
+          }
+
+          else if ((typeof immigrant_householdMember3 != 'undefined' ) && (immigrant_householdMember3 == 'yes')) {
+            window.location.href = "person3-follow-up.html";
+          }
+
+          else if ((typeof immigrant_householdMember4 != 'undefined' ) && (immigrant_householdMember4 == 'yes')) {
+            window.location.href = "person4-follow-up.html";
+          }
+
+          else if ((typeof immigrant_householdMember5 != 'undefined' ) && (immigrant_householdMember5 == 'yes')) {
+            window.location.href = "person5-follow-up.html";
+          }
+
+          else if ((typeof immigrant_householdMember6 != 'undefined' ) && (immigrant_householdMember6 == 'yes')) {
+            window.location.href = "person6-follow-up.html";
+          }
+
+          else {
+            window.location.href = "../07-application/review.html";
+          }
+        }
+    });
+  });
+</script>

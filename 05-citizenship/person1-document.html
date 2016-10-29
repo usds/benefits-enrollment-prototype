@@ -1,0 +1,128 @@
+---
+layout: application
+step: 5
+title: We need an immigration document number for <span class="print-householdMember1FirstName"></span>.
+button_text: Continue
+---
+
+<div class="alert--positive">
+	<p>Remember, giving us this info will <strong>not</strong> affect your immigration status.</p>
+	<p>You <strong>do not</strong> have to be a citizen to qualify for all benefits.</p>
+</div>
+
+<fieldset>
+	<div class="prompt">
+		<legend class="prompt__primary-text">Please select the document type.</legend>
+	</div>
+	<div class="response">
+		<ul class="usa-unstyled-list response__radio-group--unstyled">
+			<li>
+				<input id="householdMember1ImmigrationDocumentAlienNumber" type="radio" name="householdMember1ImmigrationDocument" value="Alien number" class="open-dependent" required>
+      	<label for="householdMember1ImmigrationDocumentAlienNumber">Alien number</label>
+      	<div class="dependent-field usa-sr-only" aria-hidden="true">
+      		<div class="prompt">
+						<p class="prompt__secondary-text"><label for="alienNumberNumber">What is your alien number?</label></p>
+					</div>
+					<div class="response">
+						<input type="text" id="alienNumberNumber" required/>
+					</div>
+      	</div>
+			</li>
+			<li>
+				<input id="householdMember1ImmigrationDocumentSevis" type="radio" name="householdMember1ImmigrationDocument" class="open-dependent" value="SEVIS ID" required>
+      	<label for="householdMember1ImmigrationDocumentSevis">SEVIS ID</label>
+      	<div class="dependent-field usa-sr-only" aria-hidden="true">
+      		<div class="prompt">
+						<p class="prompt__secondary-text"><label for="sevisNumber">What is your document number?</label></p>
+					</div>
+					<div class="response">
+						<input type="text" id="sevisNumber" required/>
+					</div>
+      	</div>
+			</li>
+			<li>
+				<input id="householdMember1ImmigrationDocumentCardPassport" type="radio" name="householdMember1ImmigrationDocument" value="Card or Passport" class="open-dependent" required>
+      	<label for="householdMember1ImmigrationDocumentCardPassport">U.S. Passport Card number</label>
+      	<div class="dependent-field usa-sr-only" aria-hidden="true">
+      		<div class="prompt">
+						<p class="prompt__secondary-text"><label for="passportNumber">What is your passport number?</label></p>
+					</div>
+					<div class="response">
+						<input type="text" id="passportNumber" required/>
+					</div>
+      	</div>
+			</li>
+			<li>
+				<input id="householdMember1ImmigrationDocumentOther" type="radio" name="householdMember1ImmigrationDocument" class="open-dependent" value="Other" required>
+      	<label for="householdMember1ImmigrationDocumentOther">Other</label>
+      	<div class="dependent-field usa-sr-only" aria-hidden="true">
+      		<div class="prompt">
+						<p class="prompt__secondary-text"><label for="otherImmigrationType">List the document type</label></p>
+					</div>
+					<div class="response">
+						<input type="text" id="otherImmigrationType" required/>
+					</div>
+      		<div class="prompt">
+						<p class="prompt__secondary-text"><label for="otherImmigrationNumber">What is your document number?</label></p>
+					</div>
+					<div class="response">
+						<input type="text" id="otherImmigrationNumber" required/>
+					</div>
+      	</div>
+			</li>
+		</ul>
+	</div>
+</fieldset>
+
+<script>
+
+		$("input.open-dependent").on('change', function(){
+			$('.dependent-field').addClass('usa-sr-only').attr("aria-hidden", "true");
+			if ($(this).is(":checked")) {
+				$(this).siblings('.dependent-field').removeClass('usa-sr-only').attr("aria-hidden", "false");
+			}
+		});
+
+		$("input.open-dependent").each(function(){
+			if ($(this).is(":checked")) {
+				$(this).siblings('.dependent-field').removeClass('usa-sr-only').attr("aria-hidden", "false");
+			}
+		});
+
+	$(document).ready(function() {
+
+		$('.print-householdMember1FirstName').text(householdMember1FirstName);
+
+		$(".usa-button-big").click(function() {
+			event.preventDefault();
+
+			storeData();
+			getData();
+
+      if ((typeof immigrant_householdMember2 != 'undefined' ) && (immigrant_householdMember2 == 'yes')) {
+        window.location.href = "person2-follow-up.html";
+      }
+
+      else if ((typeof immigrant_householdMember3 != 'undefined' ) && (immigrant_householdMember3 == 'yes')) {
+        window.location.href = "person3-follow-up.html";
+      }
+
+      else if ((typeof immigrant_householdMember4 != 'undefined' ) && (immigrant_householdMember4 == 'yes')) {
+        window.location.href = "person4-follow-up.html";
+      }
+
+      else if ((typeof immigrant_householdMember5 != 'undefined' ) && (immigrant_householdMember5 == 'yes')) {
+        window.location.href = "person5-follow-up.html";
+      }
+
+      else if ((typeof immigrant_householdMember6 != 'undefined' ) && (immigrant_householdMember6 == 'yes')) {
+        window.location.href = "person6-follow-up.html";
+      }
+
+      else {
+        window.location.href = "../07-application/review.html";
+      }
+
+		});
+	});
+</script>

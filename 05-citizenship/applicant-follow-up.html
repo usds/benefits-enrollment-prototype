@@ -1,0 +1,94 @@
+---
+layout: application
+step: 5
+title: Now, tell us about your citizenship and immigration status.
+button_text: Continue
+---
+
+<fieldset>
+	<div class="prompt">
+		<legend class="prompt__primary-text">Read through this list. Do you fit any of these immigration categories?</legend>
+
+		<ul class="list-striped">
+			<li>Lawful Permanent Resident (LPR / Green Card Holder)</li>
+			<li>Asylee</li>
+			<li>Refugee</li>
+			<li>Cuban / Haitian entrant</li>
+			<li>Paroled into the U.S. for at least one year</li>
+			<li>Conditional entrant granted before 1980</li>
+			<li>Non-citizen spouse, child, or parent survivor of domestic violence.</li>
+			<li>Victim of trafficking</li>
+			<li>A trafficking victim’s spouse, child, sibling, or parent</li>
+			<li>Have a pending application for a victim of trafficking visa</li>
+			<li>Granted witholding of deportation</li>
+			<li>Member of a federally recognized Indian tribe or American Indian born in Canada</li>
+		</ul>
+
+	</div>
+
+	<div class="response">
+    <ul class="usa-unstyled-list response__radiogroup">
+      <li>
+        <input id="applicantCitizenshipStatusYes" type="radio" name="applicantCitizenshipStatus" value="Yes" required="">
+        <label for="applicantCitizenshipStatusYes">Yes, one of these applies to me</label>
+      </li>
+      <li>
+        <input id="applicantCitizenshipStatusNo" type="radio" name="applicantCitizenshipStatus" value="No" required="">
+        <label for="applicantCitizenshipStatusNo">No, none of these apply to me</label>
+      </li>
+    </ul>
+    <div class="explainer">
+	    <a href="#" class="explainer__toggle" aria-expanded="false" aria-controls="explainer-1">Why do we ask this?</a>
+	    <div class="explainer__content" id="explainer-1">
+	      <p>Immigrants in these categories may qualify for some programs. We ask about your immigration status so that we can find out what you may qualify for.</p>
+	      <p>Applying signing up for these programs will not affect your or your family’s immigration status.</p>
+	      <p>This information is private and kept confidential. It will not be shared with any agency for any reason other than checking your eligibility.</p>
+	    </div>
+	  </div>
+  </div>
+<fieldset>
+
+<script>
+  $(document).ready(function() {
+
+    $(".usa-button-big").click(function() {
+        event.preventDefault();
+
+        storeData();
+        getData();
+        
+        if ( applicantCitizenshipStatus == 'Yes') {
+          window.location.href = "applicant-document.html";
+        }
+
+        else if ((typeof immigrant_householdMember1 != 'undefined' ) && (immigrant_householdMember1 == 'yes')) {
+          window.location.href = "person1-follow-up.html";
+        }
+
+        else if ((typeof immigrant_householdMember2 != 'undefined' ) && (immigrant_householdMember2 == 'yes')) {
+          window.location.href = "person2-follow-up.html";
+        }
+
+        else if ((typeof immigrant_householdMember3 != 'undefined' ) && (immigrant_householdMember3 == 'yes')) {
+          window.location.href = "person3-follow-up.html";
+        }
+
+        else if ((typeof immigrant_householdMember4 != 'undefined' ) && (immigrant_householdMember4 == 'yes')) {
+          window.location.href = "person4-follow-up.html";
+        }
+
+        else if ((typeof immigrant_householdMember5 != 'undefined' ) && (immigrant_householdMember5 == 'yes')) {
+          window.location.href = "person5-follow-up.html";
+        }
+
+        else if ((typeof immigrant_householdMember6 != 'undefined' ) && (immigrant_householdMember6 == 'yes')) {
+          window.location.href = "person6-follow-up.html";
+        }
+
+        else {
+          window.location.href = "../07-application/review.html";
+        }
+    });
+  });
+</script>
+  

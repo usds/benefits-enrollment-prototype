@@ -1,7 +1,7 @@
 ---
 layout: application
 step: 5
-title: Finally, we need an immigration document number for you.
+title: We need an immigration document number for you.
 button_text: Continue
 ---
 
@@ -94,7 +94,35 @@ button_text: Continue
 			event.preventDefault();
 
 			storeData();
-			window.location.href = "../07-application/review.html";
+			getData();
+
+      if ((typeof immigrant_householdMember1 != 'undefined' ) && (immigrant_householdMember1 == 'yes')) {
+        window.location.href = "person1-follow-up.html";
+      }
+
+      else if ((typeof immigrant_householdMember2 != 'undefined' ) && (immigrant_householdMember2 == 'yes')) {
+        window.location.href = "person2-follow-up.html";
+      }
+
+      else if ((typeof immigrant_householdMember3 != 'undefined' ) && (immigrant_householdMember3 == 'yes')) {
+        window.location.href = "person3-follow-up.html";
+      }
+
+      else if ((typeof immigrant_householdMember4 != 'undefined' ) && (immigrant_householdMember4 == 'yes')) {
+        window.location.href = "person4-follow-up.html";
+      }
+
+      else if ((typeof immigrant_householdMember5 != 'undefined' ) && (immigrant_householdMember5 == 'yes')) {
+        window.location.href = "person5-follow-up.html";
+      }
+
+      else if ((typeof immigrant_householdMember6 != 'undefined' ) && (immigrant_householdMember6 == 'yes')) {
+        window.location.href = "person6-follow-up.html";
+      }
+
+      else {
+        window.location.href = "../07-application/review.html";
+      }
 
 		});
 	});

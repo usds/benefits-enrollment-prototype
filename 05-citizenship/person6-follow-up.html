@@ -1,13 +1,13 @@
 ---
 layout: application
 step: 5
-title: Now, tell us about your citizenship and immigration status.
+title: Now, tell us about <span class="print-householdMember6FirstName"></span>’s citizenship and immigration status.
 button_text: Continue
 ---
 
 <fieldset>
 	<div class="prompt">
-		<legend class="prompt__primary-text">Read through this list. Do you fit any of these immigration categories?</legend>
+		<legend class="prompt__primary-text">Does <span class="print-householdMember6FirstName"></span> fit any of these immigration categories?</legend>
 
 		<ul class="list-striped">
 			<li>Lawful Permanent Resident (LPR / Green Card Holder)</li>
@@ -29,12 +29,12 @@ button_text: Continue
 	<div class="response">
     <ul class="usa-unstyled-list response__radiogroup">
       <li>
-        <input id="applicantCitizenshipStatusYes" type="radio" name="applicantCitizenshipStatus" value="Status applies to item listed" required="">
-        <label for="applicantCitizenshipStatusYes">Yes, one of these applies to me</label>
+        <input id="householdMember6CitizenshipStatusYes" type="radio" name="householdMember6CitizenshipStatus" value="Yes" required="">
+        <label for="householdMember6CitizenshipStatusYes">Yes, one of these applies to <span class="print-householdMember6FirstName"></span></label>
       </li>
       <li>
-        <input id="applicantCitizenshipStatusNo" type="radio" name="applicantCitizenshipStatus" value="Status does not apply to item listed" required="">
-        <label for="applicantCitizenshipStatusNo">No, none of these apply to me</label>
+        <input id="householdMember6CitizenshipStatusNo" type="radio" name="householdMember6CitizenshipStatus" value="No" required="">
+        <label for="householdMember6CitizenshipStatusNo">No, none of these apply to <span class="print-householdMember6FirstName"></span></label>
       </li>
     </ul>
     <div class="explainer">
@@ -51,12 +51,21 @@ button_text: Continue
 <script>
   $(document).ready(function() {
 
+    $('.print-householdMember6FirstName').text(householdMember6FirstName);
+
     $(".usa-button-big").click(function() {
         event.preventDefault();
 
         storeData();
+        getData();
         
-        window.location.href = "immigration-details.html";
+        if ( householdMember6CitizenshipStatus == 'Yes') {
+          window.location.href = "person6-document.html";
+        }
+
+        else {
+          window.location.href = "../07-application/review.html";
+        }
     });
   });
 </script>
