@@ -24,7 +24,7 @@ title: Okay, let’s review some common cases that may apply to you.
 			</li>
 			<li>
 				<input id="commonCaseMilitary" type="checkbox" name="common-cases" value="I served in the military">
-				<label for="commonCaseMilitary">I served in the military</label>
+				<label for="commonCaseMilitary">I served or am serving in the military</label>
 			</li>
 			<li>
 				<input id="commonCaseFoster" type="checkbox" name="common-cases" value="I was in foster care at age 18 or older">
@@ -32,7 +32,7 @@ title: Okay, let’s review some common cases that may apply to you.
 			</li>
 			<li>
 				<input id="commonCaseDisability" type="checkbox" name="common-cases" value="I has a disability">
-				<label for="commonCaseDisability">I have a disability (physical, emotional, or mental health condition)</label>
+				<label for="commonCaseDisability">I have a disability (physical, emotional, or mental health condition) or live in a medical facility or nursing home</label>
 			</li>
 			<li>
 				<input id="commonCaseInsurance" type="checkbox" name="common-cases" value="I have health insurance or Medicaid">
@@ -46,10 +46,6 @@ title: Okay, let’s review some common cases that may apply to you.
 				<input id="commonCaseMedical" type="checkbox" name="common-cases" value="I want help paying for medical bills from the past 3 months">
 				<label for="commonCaseMedical">I want help paying for medical bills from the past 3 months</label>
 			</li>
-			<li>
-				<input id="commonCaseNone" type="checkbox" name="common-cases" value="None of these apply to me">
-				<label for="commonCaseNone">None of these apply to me</label>
-			</li>
 		</ul>
 		<p class="prompt__primary-text">We will now follow up with specific questions that may help you qualify for more benefits.</p>
 		</div>
@@ -61,12 +57,6 @@ title: Okay, let’s review some common cases that may apply to you.
   	if (applicantSex === "Male") {
   		$('.female-only').remove();
   	};
-
-  	$('#commonCaseNone').on('change', function(){
-  			if ($('#commonCaseNone').is(':checked')) {
-  				$('input:checkbox:not(#commonCaseNone)').removeAttr('checked');
-  			};
-  	});
 
 		$(".usa-button-big").click(function() {
 			event.preventDefault();
