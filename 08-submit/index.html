@@ -164,7 +164,14 @@ button_text: Submit application
 
 <div class="prompt">
 	<h2><label for="applicantSignature">Enter your full legal name to sign this application</label></h2>
-	<p>By entering you name, you agree that you want to apply for SNAP and Medicaid, that you have been honest on this application, and that you have read and agreed to the terms.</p>
+	<p>By entering your name, you agree that:</p>
+  <div class="prompt__secondary-text">
+    <ul>
+      <li>You want to apply for <span id="print-nextStepsText"></span>.</li>
+      <li>You have been honest on this application.</li>
+      <li>You have read and agreed to the terms.</li>
+    </ul>
+  </div>
 </div>
 
 <div class="response">
@@ -177,6 +184,17 @@ button_text: Submit application
 
 <script>
   $(document).ready(function() {
+
+    if ((benefitChoiceHealthcare == "yes") && (benefitChoiceFoodAssistance == "yes")) {
+      $('#print-nextStepsText').text("SNAP and Medicaid")
+    }
+    if ((benefitChoiceHealthcare == "no") && (benefitChoiceFoodAssistance == "yes")) {
+      $('#print-nextStepsText').text("SNAP")
+    }
+    if ((benefitChoiceHealthcare == "yes") && (benefitChoiceFoodAssistance == "no")) {
+      $('#print-nextStepsText').text("Medicaid")
+    }
+
     $('form').on('submit', function() {
 
         if ($('form').get(0).checkValidity() == false) {
