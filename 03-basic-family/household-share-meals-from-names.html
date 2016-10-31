@@ -1,7 +1,7 @@
 ---
 layout: application
 step: 3
-title: Okay <span id="print-applicantFirstName"></span>, you share meals with <span id="print-householdShareMeals">.</span>
+title: Ok <span id="print-applicantFirstName"></span>, you share meals with <span id="print-householdShareMeals">.</span>
 button_text: Continue
 ---
 
@@ -89,6 +89,8 @@ button_text: Continue
 
 <script>
   $(document).ready(function() {
+
+  	$('#print-applicantFirstName').text(applicantFirstName);
 
     if (householdShareMeals == 1) {
       $('#print-householdShareMeals').text("one person");
