@@ -155,7 +155,7 @@ button_text: Submit application
         <label for="agreeToTermsYes">I agree</label>
       </li>
       <li>
-        <input id="agreeToTermsNo" type="radio" name="agreeToTerms" value="No" required="">
+        <input id="agreeToTermsNo" type="radio" name="agreeToTerms" value="No">
         <label for="agreeToTermsNo">I do not agree</label>
       </li>
     </ul>
@@ -176,12 +176,25 @@ button_text: Submit application
 </div>
 
 <script>
-	$(document).ready(function() {		
+  $(document).ready(function() {
+    $('form').on('submit', function() {
 
-		$(".usa-button-big").click(function() {
-			event.preventDefault();
-			storeData();
-	    window.location.href = "done.html";
-		});
-	});
+        if ($('form').get(0).checkValidity() == false) {
+          return false;
+        }
+
+        else {
+          event.preventDefault();
+          storeData();
+          getData();
+
+          if (agreeToTerms == "Yes") {
+            window.location.href = "done.html";
+          }
+          else {
+            alert("You must agree to the terms.")
+          }
+        }
+    });
+  });
 </script>
