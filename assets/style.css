@@ -7171,6 +7171,157 @@ input.contains-error {
   color: #323a45;
 }
 
+/* line 1, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_hero.scss */
+.hero,
+.hero--darker {
+  background-color: #0071bc;
+  border-top: 1px solid white;
+  color: white;
+  padding: 10rem 0;
+}
+/* line 8, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_hero.scss */
+.hero h1,
+.hero--darker h1 {
+  margin-top: 0;
+}
+
+/* line 13, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_hero.scss */
+.hero--darker {
+  background-color: #323a45;
+  border-top: 0;
+  font-family: "Merriweather", "Georgia", "Cambria", "Times New Roman", "Times", serif;
+  padding: 6rem 0;
+}
+/* line 19, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_hero.scss */
+.hero--darker a {
+  color: #02bfe7;
+  text-decoration: none;
+}
+/* line 23, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_hero.scss */
+.hero--darker a:hover {
+  text-decoration: underline;
+}
+/* line 28, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_hero.scss */
+.hero--darker h1 {
+  font-family: "Merriweather", "Georgia", "Cambria", "Times New Roman", "Times", serif;
+  font-size: 3rem;
+  font-weight: 400;
+  margin-bottom: 1em;
+}
+/* line 35, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_hero.scss */
+.hero--darker p {
+  line-height: 1.7;
+  margin: 3rem 0;
+}
+
+/* line 1, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_labels.scss */
+.label,
+.label-big {
+  background: #02bfe7;
+  color: #323a45;
+  display: inline-block;
+  font-family: "Source Sans Pro", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  font-weight: 700;
+  margin: 0 0 3rem;
+  padding: .5em 1em;
+  text-transform: uppercase;
+}
+/* line 12, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_labels.scss */
+.label a,
+.label-big a {
+  color: #323a45;
+}
+
+/* line 1, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_landing_page.scss */
+.landing-page {
+  font-family: "Merriweather", "Georgia", "Cambria", "Times New Roman", "Times", serif;
+}
+/* line 4, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_landing_page.scss */
+.landing-page h1,
+.landing-page h2,
+.landing-page h3,
+.landing-page p,
+.landing-page ul,
+.landing-page ol {
+  max-width: 77rem;
+}
+/* line 13, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_landing_page.scss */
+.landing-page h2 {
+  border-bottom: 5px solid;
+  color: #e31c3d;
+  display: inline-block;
+  font-size: 2rem;
+  min-width: 18rem;
+  padding-bottom: .2em;
+}
+/* line 22, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_landing_page.scss */
+.landing-page p {
+  line-height: 1.8;
+  margin: 2em 0;
+}
+/* line 27, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_landing_page.scss */
+.landing-page strong {
+  border-bottom: 5px solid #02bfe7;
+  font-weight: normal;
+  text-decoration: none;
+}
+
+/* line 36, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_landing_page.scss */
+.design-principles h3 {
+  font-family: "Merriweather", "Georgia", "Cambria", "Times New Roman", "Times", serif;
+  font-size: 1.7rem;
+  line-height: 1.8;
+  margin-bottom: 0;
+}
+/* line 42, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_landing_page.scss */
+.design-principles h3 + p {
+  margin-top: 0;
+}
+
+@media screen and (min-width: 600px) {
+  /* line 48, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_landing_page.scss */
+  .design-principles__item {
+    padding-right: 2em;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  /* line 55, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_landing_page.scss */
+  .design-principle__number {
+    border-bottom: 5px solid;
+    display: block;
+    line-height: 1.5;
+    margin-bottom: 1em;
+    width: 33%;
+  }
+}
+
+/* line 1, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_panels.scss */
+.panel,
+.panel--light-gray,
+.panel--dark-gray {
+  padding: 4rem 0;
+}
+
+/* line 7, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_panels.scss */
+.panel--light-gray {
+  background-color: #f1f1f1;
+}
+
+/* line 11, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_panels.scss */
+.panel--dark-gray {
+  background-color: #323a45;
+  color: white;
+}
+/* line 15, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_panels.scss */
+.panel--dark-gray h2 {
+  color: white;
+}
+/* line 19, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_panels.scss */
+.panel--dark-gray h3 {
+  color: #02bfe7;
+}
+
 /* line 1, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_prompt-and-response.scss */
 .prompt {
   margin: 3rem 0 0;
@@ -7476,31 +7627,19 @@ input.contains-error {
 }
 
 /* line 1, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_welome_page.scss */
-.hero {
-  background-color: #0071bc;
-  border-top: 1px solid white;
-  color: white;
-  padding: 10rem 0;
-}
-/* line 7, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_welome_page.scss */
-.hero h1 {
-  margin-top: 0;
-}
-
-/* line 12, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_welome_page.scss */
 .panel {
   background: white;
   padding: 4rem 0 10rem 0;
 }
 
-/* line 17, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_welome_page.scss */
+/* line 6, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_welome_page.scss */
 .benefits-highlights-header {
   color: #4aa564;
   font-size: 1.8rem;
   margin: 0 0 2rem;
 }
 
-/* line 23, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_welome_page.scss */
+/* line 12, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_welome_page.scss */
 .benefits-highlights {
   background: #4aa564;
   color: white;
@@ -7512,48 +7651,48 @@ input.contains-error {
   content: "";
   display: block;
 }
-/* line 29, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_welome_page.scss */
+/* line 18, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_welome_page.scss */
 .benefits-highlights > div + div {
   border-top: 1px solid rgba(255, 255, 255, 0.2);
   margin-top: 3rem;
   padding-top: 3rem;
 }
 @media screen and (min-width: 600px) {
-  /* line 29, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_welome_page.scss */
+  /* line 18, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_welome_page.scss */
   .benefits-highlights > div + div {
     border-top: none;
     margin-top: 0;
     padding-top: 0;
   }
 }
-/* line 41, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_welome_page.scss */
+/* line 30, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_welome_page.scss */
 .benefits-highlights h2,
 .benefits-highlights h3 {
   margin-top: 0;
 }
-/* line 46, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_welome_page.scss */
+/* line 35, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_welome_page.scss */
 .benefits-highlights h3 {
   margin-bottom: 0;
 }
-/* line 49, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_welome_page.scss */
+/* line 38, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_welome_page.scss */
 .benefits-highlights h3 + p {
   margin-top: 0;
 }
 
-/* line 55, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_welome_page.scss */
+/* line 44, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_welome_page.scss */
 .styled-numbered-list {
   margin: 0;
   padding: 1rem 0 0 0;
   list-style-type: none;
 }
-/* line 60, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_welome_page.scss */
+/* line 49, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_welome_page.scss */
 .styled-numbered-list > li {
   counter-increment: step-counter;
   position: relative;
   padding-left: 5.2rem;
   margin-bottom: 3rem;
 }
-/* line 66, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_welome_page.scss */
+/* line 55, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_welome_page.scss */
 .styled-numbered-list > li:before {
   border-radius: 50%;
   content: counter(step-counter);
@@ -7569,7 +7708,7 @@ input.contains-error {
   height: 40px;
 }
 @media screen and (min-width: 600px) {
-  /* line 66, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_welome_page.scss */
+  /* line 55, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_welome_page.scss */
   .styled-numbered-list > li:before {
     top: -1rem;
   }
