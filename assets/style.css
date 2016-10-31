@@ -6991,6 +6991,26 @@ input.contains-error {
   }
 }
 
+/* line 1, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_benefit-info.scss */
+.benefit-info__primary-heading {
+  border-bottom: 1rem solid #2e8540;
+  color: #2e8540;
+}
+
+/* line 6, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_benefit-info.scss */
+.benefit-info > h3 {
+  margin-bottom: 0;
+}
+/* line 9, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_benefit-info.scss */
+.benefit-info > h3 + p {
+  margin-top: 0;
+}
+
+/* line 14, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_benefit-info.scss */
+.benefit-info > ul {
+  color: #5b616b;
+}
+
 /* line 1, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_benefit-selection.scss */
 .benefit-selection label {
   color: #2e8540;
