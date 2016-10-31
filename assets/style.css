@@ -7240,19 +7240,28 @@ input.contains-error {
 .landing-page h1,
 .landing-page h2,
 .landing-page h3,
+.landing-page h4,
 .landing-page p,
 .landing-page ul,
 .landing-page ol {
   max-width: 77rem;
 }
 /* line 13, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_landing_page.scss */
+.landing-page h1 {
+  font-size: 4rem;
+}
+/* line 13, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_landing_page.scss */
 .landing-page h2 {
   border-bottom: 5px solid;
   color: #e31c3d;
   display: inline-block;
-  font-size: 2rem;
+  font-size: 1.7rem;
   min-width: 18rem;
   padding-bottom: .2em;
+}
+/* line 13, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_landing_page.scss */
+.landing-page h4 {
+  font-weight:400;
 }
 /* line 22, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_landing_page.scss */
 .landing-page p {
