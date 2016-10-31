@@ -1,7 +1,7 @@
 ---
 layout: application
 step: 7
-title: Almost done! Please review your information.
+title: Almost done, <span class="print-applicantFirstName"></span>! Please review your information.
 button_text: Looks great!
 ---
 
@@ -218,7 +218,7 @@ button_text: Looks great!
 	    }
 		}
 		
-
+		$('.print-applicantFirstName').text(applicantFirstName);
 		$('#name-1').val(applicantFirstName);
 		$('#name-2').val(applicantLastName);
 		$('#print-applicantSex').text(applicantSex);
