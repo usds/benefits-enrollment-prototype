@@ -23,11 +23,12 @@ title: Let’s start with you
         }
 
         else {
-        event.preventDefault();
 
         storeData();
 
         window.location.href = "applicant-details.html";
+
+        return false;
       }
     });
   });

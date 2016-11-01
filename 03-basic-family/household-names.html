@@ -190,7 +190,6 @@ title: OK <span id="print-applicantFirstName"></span>, you file federal taxes wi
         }
 
         else {
-        event.preventDefault();
 
         storeData();
         getData();
@@ -201,6 +200,7 @@ title: OK <span id="print-applicantFirstName"></span>, you file federal taxes wi
         else {
           window.location.href = "../03-family-details/index.html";
         }
+        return false;
       }
     });
   });

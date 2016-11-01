@@ -81,7 +81,6 @@ title: Tell us more about <span class="print-householdMember1FirstName"></span>â
         }
 
         else {
-        	event.preventDefault();
 
 					storeData();
 					getData();
@@ -97,6 +96,7 @@ title: Tell us more about <span class="print-householdMember1FirstName"></span>â
 					else {
 						window.location.href = "expenses.html";
 					}
+					return false;
 				}
 			
 		});

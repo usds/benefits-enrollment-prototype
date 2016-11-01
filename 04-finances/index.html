@@ -59,11 +59,12 @@ title: Now, we need to ask you some money questions.
         }
 
         else {
-        event.preventDefault();
 
         storeData();
 
         window.location.href = "applicant-income.html";
+
+        return false;
       }
     });
   });

@@ -128,12 +128,13 @@ title: Great! Let’s get more info about <span class="print-householdMember1Fir
         }
 
         else {
-          event.preventDefault();
 
           storeData();
 
           window.location.href = "person1-step2.html";
+          return false;
         }
+
     });
   });
 </script>

@@ -126,11 +126,12 @@ title: Great! Let’s get more info about <span class="print-householdMember4Fir
         }
 
         else {
-          event.preventDefault();
 
           storeData();
 
           window.location.href = "person4-step2.html";
+
+          return false;
         }
     });
   });

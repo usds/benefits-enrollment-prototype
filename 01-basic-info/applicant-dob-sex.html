@@ -56,10 +56,11 @@ title: Hello, <span id="print-applicantFirstName"></span>!
         }
 
         else {
-        event.preventDefault();
         storeData();
 
         window.location.href = "applicant-contact.html";
+
+        return false;
       }
     });
   });

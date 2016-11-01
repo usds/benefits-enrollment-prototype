@@ -50,7 +50,6 @@ title: Now, tell us about your citizenship and immigration status.
         }
 
         else {
-        event.preventDefault();
 
         storeData();
         getData();
@@ -61,6 +60,7 @@ title: Now, tell us about your citizenship and immigration status.
         else {
         	window.location.href = "determine-who.html";
         }
+        return false;
         }
     });
   });

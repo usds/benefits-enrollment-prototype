@@ -136,7 +136,6 @@ title: Where can we send you mail?
     		}
 
     		else {
-			event.preventDefault();
 
 			applicantPhone = $("#applicantPhone").val().replace(/(\d{3})(\d{3})(\d{4})/, "$1-$2-$3");
 			$("#applicantPhone").val(applicantPhone);
@@ -150,6 +149,8 @@ title: Where can we send you mail?
 			else {
 				window.location.href = "home-address.html";
 			}
+
+            return false;
 		}
 		});
 	});

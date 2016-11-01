@@ -76,7 +76,6 @@ button_text: Submit application
         }
 
         else {
-          event.preventDefault();
           storeData();
           getData();
 
@@ -86,6 +85,7 @@ button_text: Submit application
           else {
             alert("You must agree to the terms.")
           }
+          return false;
         }
     });
   });

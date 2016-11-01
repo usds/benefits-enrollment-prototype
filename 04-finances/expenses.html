@@ -73,11 +73,12 @@ title: Last money question. Tell us about your expenses.
         }
 
         else {
-        event.preventDefault();
 
         storeData();
 
         window.location.href = "../05-citizenship/index.html";
+
+        return false;
       }
     });
   });

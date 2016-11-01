@@ -184,7 +184,6 @@ title: Tell us more about your job(s).
         }
 
         else {
-        	event.preventDefault();
 
 					storeData();
 					getData();
@@ -200,6 +199,8 @@ title: Tell us more about your job(s).
 					else {
 						window.location.href = "expenses.html";
 					}
+
+          return false;
 				}
 		});
 	});

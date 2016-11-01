@@ -36,7 +36,6 @@ title: First, tell us who’s applying.
     		}
 
     		else {
-				event.preventDefault();
 				storeData();
 				getData();
 
@@ -46,6 +45,7 @@ title: First, tell us who’s applying.
 			  else {
 			    window.location.href = "applicant-name.html";
 			  }
+			  return false;
 			}
 		});
 	});

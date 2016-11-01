@@ -168,7 +168,6 @@ title: Tell us more about your other job.
         }
 
         else {
-          event.preventDefault();
 
     			storeData();
     			getData();
@@ -180,6 +179,8 @@ title: Tell us more about your other job.
           else {
             window.location.href = "expenses.html";
           }
+
+          return false;
         }
 			
 		});

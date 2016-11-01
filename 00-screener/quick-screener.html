@@ -45,7 +45,7 @@ button_text: Next
     		}
 
     		else {
-    			event.preventDefault();
+    			//event.preventDefault();
 					storeData();
 					getData();
 
@@ -56,6 +56,7 @@ button_text: Next
 				  else {
 				  	window.location.href = "not-eligible.html";
 				  }
+				  return false;
 			  }
 		});
 	});

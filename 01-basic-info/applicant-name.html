@@ -28,10 +28,11 @@ title: Let’s start with the basics.
         }
 
         else {
-        event.preventDefault();
         storeData();
 
         window.location.href = "applicant-dob-sex.html";
+
+        return false;
 
       }
     });
