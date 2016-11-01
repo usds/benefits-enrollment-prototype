@@ -21,7 +21,7 @@ section: test
 
 <script>
 	$(document).ready(function() {
-		$(".usa-button-big").click(function() {
+		$(".usa-button-big").click(function(event) {
 				event.preventDefault();
 		    var firstname = $("#name-firstname").val();
 		    var lastname = $("#name-lastname").val();

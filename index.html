@@ -94,7 +94,7 @@ layout: landing
 <script>
 	$(document).ready(function() {
 		sessionStorage.clear();
-		$(".usa-button-big").click(function() {
+		$(".usa-button-big").click(function(event) {
 			event.preventDefault();
 	    window.location.href = "welcome.html";
 		});

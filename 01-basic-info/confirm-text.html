@@ -12,7 +12,7 @@ title: Great! You’ll receive a confirmation message
 		var applicantPhone = sessionStorage.getItem("applicantPhone");
 		$('#print-applicantSMSPhone').text(applicantSMSPhone);
 
-		$(".usa-button-big").click(function() {
+		$(".usa-button-big").click(function(event) {
 			event.preventDefault();
 
 			window.location.href = "ssn.html";

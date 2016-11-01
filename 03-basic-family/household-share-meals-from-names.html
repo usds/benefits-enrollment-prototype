@@ -109,7 +109,7 @@ title: OK <span id="print-applicantFirstName"></span>, you share meals with <spa
       $('#print-householdMemberName' + i).text(window[firstName] + " " + window[lastName]);
     }
   	
-    $(".usa-button-big").click(function() {
+    $(".usa-button-big").click(function(event) {
         event.preventDefault();
 
         var existingPeople = $('input[name="shareMealsWith"]:checked').length;

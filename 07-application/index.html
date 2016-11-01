@@ -33,7 +33,7 @@ button_text: Finish my application
 		if (applicantCitizenship == "yes") {
 			$('.immgration-only').remove();
 		}
-		$(".usa-button-big").click(function() {
+		$(".usa-button-big").click(function(event) {
 				event.preventDefault();
 		    window.location.href = "income.html";
 		});
