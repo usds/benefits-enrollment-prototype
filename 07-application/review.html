@@ -65,7 +65,7 @@ button_text: Looks great!
 		<div class="summary__item">
 			<div class="fieldset-summary">
 				<h4 class="fake-label">Address:</h4>
-				<p class="fake-input"><span id="print-applicantMailingAddress1"> </span><span id="print-applicantMailingAddress2"></span> <span id="print-applicantCity"></span>, <span id="print-applicantState"></span> <span id="print-applicantZip"></span></p>
+				<p class="fake-input"><span id="print-applicantMailingAddress1"> </span><br><span id="print-applicantMailingAddress2"></span><br><span id="print-applicantCity"></span>, <span id="print-applicantState"></span> <span id="print-applicantZip"></span></p>
 			</div>
 			<fieldset>
 		  	<legend class="prompt__primary-text">What is your address</legend>
@@ -99,10 +99,6 @@ button_text: Looks great!
 		<div class="summary__item">
 			<label for="applicantEmail">Email Address:</label>
 			<input id="applicantEmail" type="email" value="" disabled>
-		</div>
-		<div class="summary__item">
-			<label for="applicantSSN">Social Security Number:</label>
-			<input id="applicantSSN" type="tel" value="" disabled>
 		</div>
 		<div class="summary__item">
 			<div class="fieldset-summary">
@@ -233,16 +229,17 @@ button_text: Looks great!
 		$('#print-applicantMailingAddress1').text(applicantMailingAddress1);
 		$('#print-applicantMailingAddress2').text(applicantMailingAddress2);
 		$('#print-applicantCity').text(applicantCity);
+		$('#print-applicantState').text(applicantState);
 		$('#print-applicantZip').text(applicantZip);
 
 		$('#applicant-mailing-address-1').val(applicantMailingAddress1);
 		$('#applicant-mailing-address-2').val(applicantMailingAddress2);
 		$('#applicant-city').val(applicantCity);
+		$('#applicant-state').val(applicantState);
 		$('#applicant-zip').val(applicantZip);
 
 		$('#applicantPhone').val(applicantPhone);
 		$('#applicantEmail').val(applicantEmail);
-		$('#applicantSSN').val(applicantSSN1+"-"+applicantSSN2+"-"+applicantSSN3);
 		$('#print-applicantCitizenship').text(applicantCitizenship);
 	
 		$('#householdSize').val(parseInt(householdSize));
