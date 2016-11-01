@@ -1,7 +1,7 @@
 ---
 layout: application
 step: 3
-title: OK <span id="print-applicantFirstName"></span>, you share meals with <span id="print-householdShareMeals">.</span>
+title: OK <span id="print-applicantFirstName"></span>, you share meals with <span id="print-householdShareMeals"></span>.
 ---
 
 <fieldset>
@@ -39,8 +39,8 @@ title: OK <span id="print-applicantFirstName"></span>, you share meals with <spa
 </fieldset>
 
 <p class="prompt__primary-text">And/or anyone else?</p>
-<div id="person-1">
-	<h2>Person 1</h2>
+<div id="persona-1" class="sectioned-item">
+	<h2 class="sectioned-item__heading">Person 1</h2>
 	<div class="prompt">
 	  <p class="prompt__primary-text"><label for="householShareMealsAddedFirst1">Legal first name</label></p>
 	</div>
@@ -54,8 +54,8 @@ title: OK <span id="print-applicantFirstName"></span>, you share meals with <spa
 	  <input type="text" id="householShareMealsAddedLast1"/>
 	</div>
 </div>
-<div id="person-2">
-	<h2>Person 2</h2>
+<div id="persona-2" class="sectioned-item">
+	<h2 class="sectioned-item__heading">Person 2</h2>
 	<div class="prompt">
 	  <p class="prompt__primary-text"><label for="householShareMealsAddedFirst2">Legal first name</label></p>
 	</div>
@@ -69,8 +69,8 @@ title: OK <span id="print-applicantFirstName"></span>, you share meals with <spa
 	  <input type="text" id="householShareMealsAddedLast2"/>
 	</div>
 </div>
-<div id="person-2">
-	<h2>Person 3</h2>
+<div id="persona-3" class="sectioned-item">
+	<h2 class="sectioned-item__heading">Person 3</h2>
 	<div class="prompt">
 	  <p class="prompt__primary-text"><label for="householShareMealsAddedFirst3">Legal first name</label></p>
 	</div>
@@ -82,6 +82,54 @@ title: OK <span id="print-applicantFirstName"></span>, you share meals with <spa
 	</div>
 	<div class="response">
 	  <input type="text" id="householShareMealsAddedLast3"/>
+	</div>
+</div>
+
+<div id="persona-4" class="sectioned-item">
+	<h2 class="sectioned-item__heading">Person 4</h2>
+	<div class="prompt">
+	  <p class="prompt__primary-text"><label for="householShareMealsAddedFirst4">Legal first name</label></p>
+	</div>
+	<div class="response">
+	  <input type="text" id="householShareMealsAddedFirst4" />
+	</div>
+	<div class="prompt">
+	  <p class="prompt__primary-text"><label for="householShareMealsAddedLast4">Last name</label></p>
+	</div>
+	<div class="response">
+	  <input type="text" id="householShareMealsAddedLast4"/>
+	</div>
+</div>
+
+<div id="persona-5" class="sectioned-item">
+	<h2 class="sectioned-item__heading">Person 5</h2>
+	<div class="prompt">
+	  <p class="prompt__primary-text"><label for="householShareMealsAddedFirst5">Legal first name</label></p>
+	</div>
+	<div class="response">
+	  <input type="text" id="householShareMealsAddedFirst5" />
+	</div>
+	<div class="prompt">
+	  <p class="prompt__primary-text"><label for="householShareMealsAddedLast5">Last name</label></p>
+	</div>
+	<div class="response">
+	  <input type="text" id="householShareMealsAddedLast5"/>
+	</div>
+</div>
+
+<div id="persona-6" class="sectioned-item">
+	<h2 class="sectioned-item__heading">Person 6</h2>
+	<div class="prompt">
+	  <p class="prompt__primary-text"><label for="householShareMealsAddedFirst6">Legal first name</label></p>
+	</div>
+	<div class="response">
+	  <input type="text" id="householShareMealsAddedFirst6" />
+	</div>
+	<div class="prompt">
+	  <p class="prompt__primary-text"><label for="householShareMealsAddedLast6">Last name</label></p>
+	</div>
+	<div class="response">
+	  <input type="text" id="householShareMealsAddedLast6"/>
 	</div>
 </div>
 
@@ -108,6 +156,10 @@ title: OK <span id="print-applicantFirstName"></span>, you share meals with <spa
 
       $('#print-householdMemberName' + i).text(window[firstName] + " " + window[lastName]);
     }
+
+    for(x = 6; x > parseInt(householdShareMeals); x--) { 
+	      $('#persona-' + x).remove();
+	    }
   	
     $(".usa-button-big").click(function(event) {
         event.preventDefault();
