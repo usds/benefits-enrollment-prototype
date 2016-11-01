@@ -1,9 +1,17 @@
+<!-- _includes/base.html -->
+{% assign base = '' %}
+{% assign depth = page.url | split: '/' | size | minus: 1 %}
+{% if    depth <= 1 %}{% assign base = '.' %}
+{% elsif depth == 2 %}{% assign base = '..' %}
+{% elsif depth == 3 %}{% assign base = '../..' %}
+{% elsif depth == 4 %}{% assign base = '../../..' %}{% endif %}
+
 <div class="usa-disclaimer">
   <div class="usa-disclaimer-official">
-    <p>This site is under development. <a href="{{relative}}">Learn more</a>.</p>
+    <p>This site is under development. <a href="{{ base }}">Learn more</a>.</p>
   </div>
 </div>
 
 <header class="application-header">
-  <h1 class="application-header__primary-heading"><a href="{{relative}}/welcome.html">Benefits application demo</a></h1>
+  <h1 class="application-header__primary-heading"><a href="{{ base }}/welcome.html">Benefits application demo</a></h1>
 </header>
