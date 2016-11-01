@@ -26,7 +26,11 @@ title: Now tell us about the people you share food with.
         storeData();
         getData();
 
-        if (householdSize > 1 ) {
+        if (householdShareMeals == 0) {
+          window.location.href = "../03-family-details/index.html";
+        }
+
+        else if (householdSize > 1 ) {
           window.location.href = "household-share-meals-from-names.html";
         }
         else {
