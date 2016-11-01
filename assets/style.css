@@ -7581,40 +7581,46 @@ input.contains-error {
 .summary__item {
   margin: 1.5rem 0;
 }
+/* line 38, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_summary.scss */
+.summary__item input[disabled] {
+  color: #212121;
+  -webkit-text-fill-color: #212121;
+  -webkit-opacity: 1;
+}
 
 /* Read Only Properties */
-/* line 42, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_summary.scss */
+/* line 48, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_summary.scss */
 .read-only .summary__edit-btn {
   display: block;
 }
-/* line 46, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_summary.scss */
+/* line 52, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_summary.scss */
 .read-only .summary__update-btn {
   display: none;
 }
-/* line 50, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_summary.scss */
+/* line 56, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_summary.scss */
 .read-only .summary__data {
   border: 1px solid #d6d7d9;
 }
-/* line 54, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_summary.scss */
+/* line 60, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_summary.scss */
 .read-only .summary__item {
   height: 1%;
   margin: 0;
   overflow: hidden;
   padding: 1rem 2rem;
 }
-/* line 60, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_summary.scss */
+/* line 66, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_summary.scss */
 .read-only .summary__item:nth-child(odd) {
   background: #f1f1f1;
 }
-/* line 64, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_summary.scss */
+/* line 70, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_summary.scss */
 .read-only .summary__item fieldset {
   display: none;
 }
-/* line 68, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_summary.scss */
+/* line 74, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_summary.scss */
 .read-only .summary__item .fieldset-summary {
   display: block;
 }
-/* line 72, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_summary.scss */
+/* line 78, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_summary.scss */
 .read-only .summary__item label,
 .read-only .summary__item .fake-label {
   font-size: 1.7rem;
@@ -7623,7 +7629,7 @@ input.contains-error {
   margin-top: 0;
 }
 @media screen and (min-width: 600px) {
-  /* line 72, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_summary.scss */
+  /* line 78, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_summary.scss */
   .read-only .summary__item label,
   .read-only .summary__item .fake-label {
     display: inline-block;
@@ -7632,7 +7638,7 @@ input.contains-error {
     width: 40%;
   }
 }
-/* line 87, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_summary.scss */
+/* line 93, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_summary.scss */
 .read-only .summary__item input[type="text"],
 .read-only .summary__item input[type="email"],
 .read-only .summary__item input[type="tel"],
@@ -7647,7 +7653,7 @@ input.contains-error {
   width: 50%;
 }
 @media screen and (min-width: 600px) {
-  /* line 87, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_summary.scss */
+  /* line 93, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_summary.scss */
   .read-only .summary__item input[type="text"],
   .read-only .summary__item input[type="email"],
   .read-only .summary__item input[type="tel"],
@@ -7656,7 +7662,7 @@ input.contains-error {
     display: inline-block;
   }
 }
-/* line 105, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_summary.scss */
+/* line 111, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_summary.scss */
 .read-only .summary__item .fake-input {
   line-height: auto;
 }
