@@ -7,7 +7,7 @@ $(function() {
   $explainerContent.attr("aria-hidden", "true").addClass("hide");
 
   $explainerToggle.on('click', function(){
-    event.preventDefault();
+    
     var attr = $(this).attr('aria-expanded');
     if (typeof attr !== typeof undefined && attr == "false") {
       $(this).next().attr("aria-hidden", "false").removeClass("hide");
@@ -18,6 +18,7 @@ $(function() {
       $(this).next().attr("aria-hidden", "true").addClass("hide");
       $(this).attr("aria-expanded", "false");
     }
+    return false;
     
   });
 
