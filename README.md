@@ -21,7 +21,7 @@ More info: [Using Jekyll as a static site generator with GitHub Pages](https://h
 
 Building on the work of Medicaid modernization, the [Centers for Medicaid and Medicare](https://www.cms.gov) and the [U.S. Digital Service](https://www.usds.gov) have been working to use the tools of technology and design to *improve how benefit applicants get access to critical services.*
 
-Our team began by exploring the current state of benefit enrollment and delivery across agencies and states in an extensive qualitative user research field study. [See the report of our findings.](/)
+Our team began by exploring the current state of benefit enrollment and delivery across agencies and states in an extensive qualitative user research field study. [See the report of our findings.]("https://github.com/usds/benefits-enrollment-prototype/blob/master/assets/discovery-findings-mapping-enrollment-Nov2016.pptx?raw=true")
 
 From here, our team began working closely with local benefit program administrators to identify tools to help accelerate their program modernization efforts.
 
