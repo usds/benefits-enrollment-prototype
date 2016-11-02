@@ -43,8 +43,14 @@ step: 1
 				event.preventDefault();
 
 				storeData();
-				
-		    window.location.href = "quick-screener.html";
+
+				if ($('input:checked').length) {
+					window.location.href = "quick-screener.html";
+				}
+				else {
+					alert("Please select one benefit you'd like to apply for. ");
+				}
+		    
 		});
 	});
 </script>
