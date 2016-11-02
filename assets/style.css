@@ -7262,13 +7262,17 @@ input.contains-error {
   text-decoration: underline;
 }
 /* line 48, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_hero.scss */
+.hero--darker .usa-button-secondary {
+  color: white;
+}
+/* line 52, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_hero.scss */
 .hero--darker h1 {
   font-family: "Merriweather", "Georgia", "Cambria", "Times New Roman", "Times", serif;
   font-size: 3rem;
   font-weight: 400;
   margin-bottom: 1em;
 }
-/* line 55, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_hero.scss */
+/* line 59, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_hero.scss */
 .hero--darker p {
   line-height: 1.7;
   margin: 3rem 0;
@@ -7571,6 +7575,11 @@ input.contains-error {
   left: 0;
   position: absolute;
   top: .3rem;
+}
+
+/* line 155, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_prompt-and-response.scss */
+.checkbox-group .explainer {
+  margin-left: 3rem;
 }
 
 /* line 1, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_summary.scss */
