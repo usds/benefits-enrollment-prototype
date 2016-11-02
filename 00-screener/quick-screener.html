@@ -47,7 +47,7 @@ button_text: Next
 
 			
 
-				if ($('form').get(0).checkValidity() == false) {
+				if ((typeof checkValidity != "undefined") && ($('form').get(0).checkValidity() == false)) {
         	return false;
     		}
 
