@@ -103,6 +103,34 @@ title: Tell us about the <span id="print-householdShareMeals"></span> who you sh
 <script>
   $(document).ready(function() {
 
+    if (benefitChoiceHealthcare == "no") {
+      $('#householdMealOnlyFirst1').attr("id", "householdMember1FirstName");
+      $('#householdMealOnlyFirst2').attr("id", "householdMember2FirstName");
+      $('#householdMealOnlyFirst3').attr("id", "householdMember3FirstName");
+      $('#householdMealOnlyFirst4').attr("id", "householdMember4FirstName");
+      $('#householdMealOnlyFirst5').attr("id", "householdMember5FirstName");
+      $('#householdMealOnlyFirst6').attr("id", "householdMember6FirstName");
+      $('label[for="householdMealOnlyFirst1"]').attr("for", "householdMember1FirstName");
+      $('label[for="householdMealOnlyFirst2"]').attr("for", "householdMember2FirstName");
+      $('label[for="householdMealOnlyFirst3"]').attr("for", "householdMember3FirstName");
+      $('label[for="householdMealOnlyFirst4"]').attr("for", "householdMember4FirstName");
+      $('label[for="householdMealOnlyFirst5"]').attr("for", "householdMember5FirstName");
+      $('label[for="householdMealOnlyFirst6"]').attr("for", "householdMember6FirstName");
+
+      $('#householdMealOnlyLast1').attr("id", "householdMember1LastName");
+      $('#householdMealOnlyLast2').attr("id", "householdMember2LastName");
+      $('#householdMealOnlyLast3').attr("id", "householdMember3LastName");
+      $('#householdMealOnlyLast4').attr("id", "householdMember4LastName");
+      $('#householdMealOnlyLast5').attr("id", "householdMember5LastName");
+      $('#householdMealOnlyLast6').attr("id", "householdMember6LastName");
+      $('label[for="householdMealOnlyLast1"]').attr("for", "householdMember1LastName");
+      $('label[for="householdMealOnlyLast2"]').attr("for", "householdMember2LastName");
+      $('label[for="householdMealOnlyLast3"]').attr("for", "householdMember3LastName");
+      $('label[for="householdMealOnlyLast4"]').attr("for", "householdMember4LastName");
+      $('label[for="householdMealOnlyLast5"]').attr("for", "householdMember5LastName");
+      $('label[for="householdMealOnlyLast6"]').attr("for", "householdMember6LastName");
+    }
+
     if (householdShareMeals == 1) {
       $('#print-householdShareMeals').text("person");
     }

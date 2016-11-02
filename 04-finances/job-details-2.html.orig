@@ -1,0 +1,216 @@
+---
+layout: application
+step: 4
+title: Tell us more about your other job.
+---
+
+<div class="prompt">
+	<p class="usa-font-lead">Where do you currently work?</p>
+	<p class="prompt__primary-text"><label for="employerName2">Employer name</label></p>
+</div>
+	
+<div class="response">
+	<input type="text" id="employerName2"  />
+</div>
+
+<fieldset>
+	<div class="prompt">
+  	<legend class="prompt__primary-text">Employer Address</legend>
+  </div>
+
+  <div class="response">
+	  <label for="EmployerAddress2">Address 1</label>
+	  <input id="EmployerAddress2" name="EmployerAddress2" type="text" >
+	  <label for="EmployerAddress2_2">Address 2 <span class="usa-additional_text">Optional</span></label>
+    <input id="EmployerAddress2_2" name="EmployerAddress2_2" type="text" >
+
+	  <div>
+        <div class="usa-input-grid usa-input-grid-medium">
+          <label for="employerCity2" >City</label>
+          <input id="employerCity2" name="employerCity2" type="text">
+        </div>
+
+        <div class="usa-input-grid usa-input-grid-small">
+          <label for="employerState2">State</label>
+          <select id="employerState2" name="employerState2">
+            <option value></option>
+            <option value="AL">Alabama</option>
+            <option value="AK">Alaska</option>
+            <option value="AZ">Arizona</option>
+            <option value="AR">Arkansas</option>
+            <option value="CA">California</option>
+            <option value="CO">Colorado</option>
+            <option value="CT">Connecticut</option>
+            <option value="DE">Delaware</option>
+            <option value="DC">District of Columbia</option>
+            <option value="FL">Florida</option>
+            <option value="GA">Georgia</option>
+            <option value="HI">Hawaii</option>
+            <option value="ID">Idaho</option>
+            <option value="IL">Illinois</option>
+            <option value="IN">Indiana</option>
+            <option value="IA">Iowa</option>
+            <option value="KS">Kansas</option>
+            <option value="KY">Kentucky</option>
+            <option value="LA">Louisiana</option>
+            <option value="ME">Maine</option>
+            <option value="MD">Maryland</option>
+            <option value="MA">Massachusetts</option>
+            <option value="MI">Michigan</option>
+            <option value="MN">Minnesota</option>
+            <option value="MS">Mississippi</option>
+            <option value="MO">Missouri</option>
+            <option value="MT">Montana</option>
+            <option value="NE">Nebraska</option>
+            <option value="NV">Nevada</option>
+            <option value="NH">New Hampshire</option>
+            <option value="NJ">New Jersey</option>
+            <option value="NM">New Mexico</option>
+            <option value="NY">New York</option>
+            <option value="NC">North Carolina</option>
+            <option value="ND">North Dakota</option>
+            <option value="OH">Ohio</option>
+            <option value="OK">Oklahoma</option>
+            <option value="OR">Oregon</option>
+            <option value="PA">Pennsylvania</option>
+            <option value="RI">Rhode Island</option>
+            <option value="SC">South Carolina</option>
+            <option value="SD">South Dakota</option>
+            <option value="TN">Tennessee</option>
+            <option value="TX">Texas</option>
+            <option value="UT">Utah</option>
+            <option value="VT">Vermont</option>
+            <option value="VA">Virginia</option>
+            <option value="WA">Washington</option>
+            <option value="WV">West Virginia</option>
+            <option value="WI">Wisconsin</option>
+            <option value="WY">Wyoming</option>
+          </select>
+        </div>
+      </div>
+		<div class="usa-input-grid usa-input-grid-small">
+	  <label for="employerZip2">Zip code</label>
+	  <input class="usa-input-medium" id="employerZip2" name="employerZip2" type="text" pattern="[\d]{5}(-[\d]{4})?" data-grouplength="5,4" data-delimiter="-" data-politespace >
+	  </div>
+  </div>
+</fieldset>
+
+<div class="prompt">
+	<p class="prompt__primary-text"><label for="employerPhone2">Employer phone number</label></p>
+</div>
+	
+<div class="response">
+	<input type="tel" id="employerPhone2" />
+</div>
+
+<fieldset>
+	<div class="prompt">
+		<legend class="prompt__primary-text">How often do you get paid?</legend>
+	</div>
+	<div class="response">
+		<ul class="usa-unstyled-list response__radiogroup--two-cols">
+			<li>
+				<input id="applicantPayFrequencyDaily2" type="radio" name="employerPayFrequency2" value="Daily" >
+      	<label for="applicantPayFrequencyDaily2">Daily</label>
+			</li>
+			<li>
+				<input id="applicantPayFrequencyWeekly2" type="radio" name="employerPayFrequency2" value="Weekly" >
+      	<label for="applicantPayFrequencyWeekly2">Weekly</label>
+			</li>
+			<li>
+				<input id="applicantPayFrequencyBiweekly2" type="radio" name="employerPayFrequency2" value="Every 2 weeks">
+      	<label for="applicantPayFrequencyBiweekly2">Every 2 weeks</label>
+			</li>
+			<li>
+				<input id="applicantPayFrequencyTwiceMonthly2" type="radio" name="employerPayFrequency2" value="Twice a month" >
+      	<label for="applicantPayFrequencyTwiceMonthly2">Twice a month</label>
+			</li>
+			<li>
+				<input id="applicantPayFrequencyMonthly2" type="radio" name="employerPayFrequency2" value="Monthly" >
+      	<label for="applicantPayFrequencyMonthly2">Monthly</label>
+			</li>
+			<li>
+				<input id="applicantPayFrequencyYearly2" type="radio" name="employerPayFrequency2" value="Yearly">
+      	<label for="applicantPayFrequencyYearly2">Yearly</label>
+			</li>
+		</ul>
+	</div>
+</fieldset>
+
+<div class="prompt">
+	<p class="prompt__primary-text"><label for="employerWages2">How much do you make <span id="print-employerPayFrequency2"></span> (before taxes)?</label></p>
+</div>
+<div class="response">
+	<div class="response__input-prefix" aria-hidden="true">$</div>
+	<input type="tel" id="employerWages2"/>
+</div>
+
+<div class="prompt">
+	<p class="prompt__primary-text"><label for="employerWorkHours2">On average, how many hours do you work a week at this job?</label></p>
+</div>
+<div class="response">
+	<input type="tel" class="input--short" id="employerWorkHours2"/>
+</div>
+
+<fieldset>
+	<div class="prompt">
+		<legend class="prompt__primary-text">Do you have another job?</legend>
+	</div>
+	<div class="response">
+		<ul class="usa-unstyled-list response__radiogroup--inline">
+			<li>
+				<input id="haveThirdJobYes" type="radio" name="haveThirdJob" value="Yes" required>
+      	<label for="haveThirdJobYes">Yes</label>
+			</li>
+			<li>
+				<input id="haveThirdJobNo" type="radio" name="haveThirdJob" value="No" required>
+      	<label for="haveThirdJobNo">No</label>
+			</li>
+		</ul>
+	</div>
+</fieldset>
+
+<script>
+	$(document).ready(function() {
+
+		$('input[name="employerPayFrequency2"]').on('change', function(){
+			var v = $(this).val().toLowerCase();
+			$("#print-employerPayFrequency2").text(v);
+		});		
+
+		$('form').on('submit', function() {
+
+<<<<<<< HEAD
+	if (!checkValidityIfSupported($('form').get(0))) {
+          return false;
+        }
+=======
+        if ((typeof checkValidity != "undefined") && ($('form').get(0).checkValidity() == false)) {
+        	return false;
+    		}
+>>>>>>> master
+
+        else {
+
+					storeData();
+					getData();
+
+					if (haveThirdJob == "Yes") {
+						window.location.href = "job-details-3.html";
+					}
+					
+					else if (typeof applyForHouseholdMember1 != 'undefined' ) {
+						window.location.href = "person1.html";
+					}
+
+					else {
+						window.location.href = "expenses.html";
+					}
+
+					return false;
+
+				}
+			
+		});
+	});
+</script>

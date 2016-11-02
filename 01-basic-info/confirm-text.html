@@ -15,8 +15,13 @@ title: Great! You’ll receive a confirmation message.
 		$(".usa-button-big").click(function(event) {
 			event.preventDefault();
 
-			window.location.href = "ssn.html";
+			if (benefitChoiceHealthcare == "no") {
+				window.location.href = "shortcut.html";
+			}
 
+			else {
+				window.location.href = "ssn.html";
+			}
 		});
 	});
 </script>

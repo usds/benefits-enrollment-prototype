@@ -1,0 +1,89 @@
+---
+layout: application
+title: First, let’s see if you may qualify.
+button_text: Next
+---
+
+<div class="prompt">
+	<p class="prompt__primary-text"><label for="householdZipCode">What is your zip code?</label></p>
+</div>
+<div class="response">
+	<input class="input--medium" type="tel" id="householdZipCode" required/>
+</div>
+
+<div class="prompt">
+	<p class="prompt__primary-text"><label for="householdIncome">About how much money did your household make in the last 30 days?</label></p>
+	<p class="prompt__secondary-text">Give your best estimate. Add up income from things like your job, social security, unemployment and other benefits.</p>
+</div>
+<div class="response">
+	<div class="response__input-prefix" aria-hidden="true">$</div>
+	<input type="tel" id="householdIncome" class="input--medium" />
+</div>
+
+<div class="medicaid-only">
+	<div class="prompt">
+		<p class="prompt__primary-text"><label for="householdSize">How many people do you file federal taxes with, including yourself?</label></p>
+		<p class="prompt__secondary-text">This is usually family members who you live with.</p>
+	</div>
+	<div class="response">
+		<input class="input--short" type="tel" id="householdSize" required />
+	</div>
+</div>
+
+<div class="snap-only">
+	<div class="prompt">
+		<p class="prompt__primary-text"><label for="householdShareMeals">In your home, how many people do you regularly buy food for and prepare meals with?</label></p>
+		<p class="prompt__secondary-text">Count your roommates if you often buy food and cook together.</p>
+	</div>
+	<div class="response">
+		<input type="tel" class="input--short" id="householdShareMeals" required />
+	</div>
+</div>
+
+<script>
+	$(document).ready(function() {
+
+		$('form').on('submit', function() {
+
+<<<<<<< HEAD
+
+                if (!checkValidityIfSupported($('form').get(0))) {
+          	  return false;
+=======
+			 
+
+				if ((typeof checkValidity != "undefined") && ($('form').get(0).checkValidity() == false)) {
+        	return false;
+>>>>>>> master
+    		}
+
+    		else {
+
+    			var householdShareMeals = $('#householdShareMeals').val();
+
+    			if (typeof householdSize == "undefined") {
+    				householdSize = householdShareMeals;
+    				sessionStorage.setItem("householdSize", householdSize);
+    			}
+
+    			if (typeof householdShareMeals == "undefined") {
+    				householdShareMeals = 0;
+    				sessionStorage.setItem("householdShareMeals", householdShareMeals);
+    			}
+
+
+					storeData();
+					getData();
+
+			    if (householdIncome <= 10000) {
+				    window.location.href = "eligible.html";
+				  }
+
+				  else {
+				  	window.location.href = "not-eligible.html";
+				  }
+				  return false;
+			  }
+		});
+	});
+</script>

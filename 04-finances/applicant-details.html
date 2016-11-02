@@ -60,6 +60,33 @@ title: We need some details about your income.
 					</div>
 				</div>
 			</li>
+			<li class="snap-only">
+				<input id="applicant_incomeTypeDisability" type="checkbox" name="applicant_incomeType" value="I get Social Security payments" class="open-dependent">
+				<label for="applicant_incomeTypeDisability">I get disability reimbursements</label>
+				<div class="dependent-field usa-sr-only" aria-hidden="true">
+					<div class="prompt" > 
+						<p class="prompt__secondary-text"><label for="applicant_DisabilityAmount">How much?</label></p>
+					</div>
+					<div class="response">
+						<div class="response__input-prefix" aria-hidden="true">$</div>
+						<input type="tel" id="applicant_DisabilityAmount" />
+					</div>
+					<div class="prompt">
+						<label for="applicant_DisabilityFrequency" class="prompt__secondary-text">How often?</label>
+					</div>
+					<div class="response">
+						<select id="applicant_DisabilityFrequency">
+							<option value=""></option>
+							<option value="Daily">Daily</option>
+							<option value="Weekly">Weekly</option>
+							<option value="Every 2 weeks">Every 2 weeks</option>
+							<option value="Twice a month">Twice a month</option>
+							<option value="Monthly">Monthly</option>
+							<option value="Yearly">Yearly</option>
+						</select>
+					</div>
+				</div>
+			</li>
 			<li>
 				<input id="applicant_incomeTypeSocialSecurity" type="checkbox" name="applicant_incomeType" value="I get Social Security payments" class="open-dependent">
 				<label for="applicant_incomeTypeSocialSecurity">I get Social Security payments</label>

@@ -23,10 +23,6 @@ title: OK, let’s review some common cases that may apply to you.
 				<label for="commonCaseStudent">I am a full-time student</label>
 			</li>
 			<li>
-				<input id="commonCaseMilitary" type="checkbox" name="common-cases" value="I served in the military">
-				<label for="commonCaseMilitary">I served or am serving in the military</label>
-			</li>
-			<li>
 				<input id="commonCaseFoster" type="checkbox" name="common-cases" value="I was in foster care at age 18 or older">
 				<label for="commonCaseFoster">I was in foster care at age 18 or older</label>
 			</li>
@@ -36,9 +32,9 @@ title: OK, let’s review some common cases that may apply to you.
 			</li>
 			<li>
 				<input id="commonCaseInsurance" type="checkbox" name="common-cases" value="I have health insurance or Medicaid">
-				<label for="commonCaseInsurance">I have health insurance or Medicaid</label>
+				<label for="commonCaseInsurance">I have health insurance</label>
 			</li>
-			<li>
+			<li class="medicaid-only">
 				<input id="commonCaseCashAssistance" type="checkbox" name="common-cases" value="I currently get cash assistance">
 				<label for="commonCaseCashAssistance">I currently get Cash Assistance (also known as TANF or XX)</label>
 			</li>
@@ -64,18 +60,26 @@ title: OK, let’s review some common cases that may apply to you.
 			storeData();
 			getData();
 
-			window.location.href = "../03-basic-family/household-members-review.html";
+			
 
 			if ((applyingFor == "Myself") && ((householdSize == 1) && (householdShareMeals == 0))) {
 				window.location.href = "../04-finances/index.html";
 			}
 
-			if ($('#commonCaseInsurance').is(':checked')) {
+			else if (benefitChoiceHealthcare == "no") {
+				window.location.href = "../03-basic-family/household-mealshare-review.html";
+			}
+
+			else if ($('#commonCaseInsurance').is(':checked')) {
 				window.location.href = "common-case-insurance.html";
 			}
 
-			if ($('#commonCasePregnant').is(':checked')) {
+			else if ($('#commonCasePregnant').is(':checked')) {
 				window.location.href = "common-case-pregnant.html";
+			}
+
+			else {
+				window.location.href = "../03-basic-family/household-members-review.html";
 			}
 			
 		});

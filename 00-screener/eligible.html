@@ -1,6 +1,6 @@
 ---
 layout: application
-title: Great! It looks like you <em>may qualify</em> for food assistance (SNAP) and healthcare coverage (Medicaid).
+title: Great! It looks like you <em>may qualify</em> for <span id="print-benefits"></span>.
 title_style: success
 button_text: Start the application
 ---
@@ -9,10 +9,14 @@ button_text: Start the application
 <div class="data-list">
 	<h3 class="data-list__heading">Your monthly income</h3>
 	<p class="data-list__text"><i class="fa fa-money data-list__icon" aria-hidden="true"></i> $<span id="print-householdIncome"></span></p>
-	<h3 class="data-list__heading">Your household size (including you)</h3>
-	<p class="data-list__text"><i class="fa fa-users data-list__icon" aria-hidden="true"></i> <span id="print-householdSize"></span></p>
-	<h3 class="data-list__heading">You regularly buy and prepare food with</h3>
-	<p class="data-list__text"><i class="fa fa-cutlery data-list__icon" aria-hidden="true"></i> <span id="print-householdShareMeals"></span></p>
+	<div class="medicaid-only">
+		<h3 class="data-list__heading">Your household size (including you)</h3>
+		<p class="data-list__text"><i class="fa fa-users data-list__icon" aria-hidden="true"></i> <span id="print-householdSize"></span></p>
+	</div>
+	<div class="snap-only">
+		<h3 class="data-list__heading">You regularly buy and prepare food with</h3>
+		<p class="data-list__text"><i class="fa fa-cutlery data-list__icon" aria-hidden="true"></i> <span id="print-householdShareMeals"></span></p>
+	</div>
 	<h3 class="data-list__heading">Your zip code</h3>
 	<p class="data-list__text"><i class="fa fa-home data-list__icon" aria-hidden="true"></i> <span id="print-householdZipCode"></span></p>
 </div>
@@ -29,6 +33,16 @@ button_text: Start the application
 
 		$('#print-householdZipCode').text(householdZipCode);
 		$('#print-householdIncome').text(householdIncome);
+
+		if ((benefitChoiceHealthcare == "yes") && (benefitChoiceFoodAssistance == "yes")) {
+			$('#print-benefits').text("food assistance (SNAP) and healthcare coverage (Medicaid)")
+		}
+		if ((benefitChoiceHealthcare == "no") && (benefitChoiceFoodAssistance == "yes")) {
+			$('#print-benefits').text("food assistance (SNAP)")
+		}
+		if ((benefitChoiceHealthcare == "yes") && (benefitChoiceFoodAssistance == "no")) {
+			$('#print-benefits').text("healthcare coverage (Medicaid)")
+		}
 		
 		householdSize = parseInt(householdSize);
 

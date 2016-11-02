@@ -1,6 +1,6 @@
 ---
 layout: application-no-button
-title: Congrats, <span id="print-applicantFirstName"></span>! You've successfully completed your applications.
+title: Congrats, <span id="print-applicantFirstName"></span>! You've successfully completed your application for <span class="print-nextStepsText"></span>.
 title_style: success
 hide_button: true
 ---
@@ -16,7 +16,7 @@ hide_button: true
 <p><a href="#"><i class="fa fa-download" aria-hidden="true"></i> Download copy</a></p>
 <p><a href="#"><i class="fa fa-print" aria-hidden="true"></i> Print a copy</a></p>
 
-<h2>You applied for <span id="print-nextStepsText"></span>. Here’s what you need to know about next steps:</h2>
+<h2>You applied for <span class="print-nextStepsText"></span>. Here’s what you need to know about next steps:</h2>
 
 <div class="food-assistance benefit-info">
 	<h2 class="benefit-info__primary-heading">SNAP <i class="fa fa-cutlery data-list__icon" aria-hidden="true"></i> </h2>
@@ -100,13 +100,13 @@ hide_button: true
 		}
 
 		if ((benefitChoiceHealthcare == "yes") && (benefitChoiceFoodAssistance == "yes")) {
-			$('#print-nextStepsText').text("SNAP and Medicaid")
+			$('.print-nextStepsText').text("SNAP and Medicaid")
 		}
 		if ((benefitChoiceHealthcare == "no") && (benefitChoiceFoodAssistance == "yes")) {
-			$('#print-nextStepsText').text("SNAP")
+			$('.print-nextStepsText').text("SNAP")
 		}
 		if ((benefitChoiceHealthcare == "yes") && (benefitChoiceFoodAssistance == "no")) {
-			$('#print-nextStepsText').text("Medicaid")
+			$('.print-nextStepsText').text("Medicaid")
 		}
 
 		var today = new Date();

@@ -5,7 +5,7 @@ title: Hello, <span id="print-applicantFirstName"></span>!
 ---
 
 <div class="prompt">
-	<legend class="prompt__primary-text">What is date of birth?</legend>
+	<legend class="prompt__primary-text">What is your date of birth?</legend>
 	<p class="prompt__secondary-text" id="dobHint">For example: 12 28 1986</p>
 </div>
 <div class="response" >
@@ -27,7 +27,7 @@ title: Hello, <span id="print-applicantFirstName"></span>!
 
  <fieldset>
   <div class="prompt">
-    <legend class="prompt__primary-text">What is your sex?</legend>
+    <legend class="prompt__primary-text">Sex?</legend>
     <p class="prompt__secondary-text">As shown on legal documents such as a birth certificate.</p>
   </div>
   <div class="response">
@@ -49,7 +49,7 @@ title: Hello, <span id="print-applicantFirstName"></span>!
 
   	$('#print-applicantFirstName').text(applicantFirstName);
 
-        $('form').on('submit', function() {
+    $('form').on('submit', function() {
 
         if (!checkValidityIfSupported($('form').get(0))) {
           return false;

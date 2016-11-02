@@ -1,0 +1,214 @@
+---
+layout: application
+step: 3
+title: OK <span id="print-applicantFirstName"></span>, you file federal taxes with <span id="print-householdSize"></span>.
+---
+
+<p class="usa-lead-font">Who are they?</p>
+
+<div id="person-1" class="sectioned-item">
+  <h2 class="sectioned-item__heading">Person 1</h2>
+  <div class="prompt">
+    <p class="prompt__primary-text"><label for="householdMember1FirstName">Legal first name</label></p>
+  </div>
+  <div class="response">
+    <input type="text" id="householdMember1FirstName" required />
+  </div>
+  <div class="prompt">
+    <p class="prompt__primary-text"><label for="householdMember1LastName">Last name</label></p>
+  </div>
+  <div class="response">
+    <input type="text" id="householdMember1LastName" required />
+  </div>
+  <div class="potential-recipient">
+    <div class="response">
+      <ul class="usa-unstyled-list checkbox-group">
+        <li>
+          <input id="applyForHouseholdMember1" type="checkbox" name="applyForHouseholdMember1" value="Yes">
+          <label for="applyForHouseholdMember1">I am applying for this person.</label>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div id="person-2" class="sectioned-item">
+  <h2 class="sectioned-item__heading">Person 2</h2>
+  <div class="prompt">
+    <p class="prompt__primary-text"><label for="householdMember2FirstName">Legal first name</label></p>
+  </div>
+  <div class="response">
+    <input type="text" id="householdMember2FirstName" required />
+  </div>
+  <div class="prompt">
+    <p class="prompt__primary-text"><label for="householdMember2LastName">Last name</label></p>
+  </div>
+  <div class="response">
+    <input type="text" id="householdMember2LastName" required />
+  </div>
+  <div class="potential-recipient">
+    <div class="response">
+      <ul class="usa-unstyled-list checkbox-group">
+        <li>
+          <input id="applyForHouseholdMember2" type="checkbox" name="applyForHouseholdMember2" value="Yes">
+          <label for="applyForHouseholdMember2">I am applying for this person.</label>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div id="person-3" class="sectioned-item">
+  <h2 class="sectioned-item__heading">Person 3</h2>
+  <div class="prompt">
+    <p class="prompt__primary-text"><label for="householdMember3FirstName">Legal first name</label></p>
+  </div>
+  <div class="response">
+    <input type="text" id="householdMember3FirstName" required />
+  </div>
+  <div class="prompt">
+    <p class="prompt__primary-text"><label for="householdMember3LastName">Last name</label></p>
+  </div>
+  <div class="response">
+    <input type="text" id="householdMember3LastName" required />
+  </div>
+  <div class="potential-recipient">
+    <div class="response">
+      <ul class="usa-unstyled-list checkbox-group">
+        <li>
+          <input id="applyForHouseholdMember3" type="checkbox" name="applyForHouseholdMember3" value="Yes">
+          <label for="applyForHouseholdMember3">I am applying for this person.</label>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div id="person-4" class="sectioned-item">
+  <h2 class="sectioned-item__heading">Person 4</h2>
+  <div class="prompt">
+    <p class="prompt__primary-text"><label for="householdMember4FirstName">Legal first name</label></p>
+  </div>
+  <div class="response">
+    <input type="text" id="householdMember4FirstName" required />
+  </div>
+  <div class="prompt">
+    <p class="prompt__primary-text"><label for="householdMember4LastName">Last name</label></p>
+  </div>
+  <div class="response">
+    <input type="text" id="householdMember4LastName" required />
+  </div>
+  <div class="potential-recipient">
+    <div class="response">
+      <ul class="usa-unstyled-list checkbox-group">
+        <li>
+          <input id="applyForHouseholdMember4" type="checkbox" name="applyForHouseholdMember4" value="Yes">
+          <label for="applyForHouseholdMember4">I am applying for this person.</label>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div id="person-5" class="sectioned-item">
+  <h2 class="sectioned-item__heading">Person 5</h2>
+  <div class="prompt">
+    <p class="prompt__primary-text"><label for="householdMember5FirstName">Legal first name</label></p>
+  </div>
+  <div class="response">
+    <input type="text" id="householdMember5FirstName" required />
+  </div>
+  <div class="prompt">
+    <p class="prompt__primary-text"><label for="householdMember5LastName">Last name</label></p>
+  </div>
+  <div class="response">
+    <input type="text" id="householdMember5LastName" required />
+  </div>
+  <div class="potential-recipient">
+    <div class="response">
+      <ul class="usa-unstyled-list checkbox-group">
+        <li>
+          <input id="applyForHouseholdMember5" type="checkbox" name="applyForHouseholdMember5" value="Yes">
+          <label for="applyForHouseholdMember5">I am applying for this person.</label>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div id="person-6" class="sectioned-item">
+  <h2 class="sectioned-item__heading">Person 6</h2>
+  <div class="prompt">
+    <p class="prompt__primary-text"><label for="householdMember6FirstName">Legal first name</label></p>
+  </div>
+  <div class="response">
+    <input type="text" id="householdMember6FirstName" required />
+  </div>
+  <div class="prompt">
+    <p class="prompt__primary-text"><label for="householdMember6LastName">Last name</label></p>
+  </div>
+  <div class="response">
+    <input type="text" id="householdMember6LastName" required />
+  </div>
+  <div class="potential-recipient">
+    <div class="response">
+      <ul class="usa-unstyled-list checkbox-group">
+        <li>
+          <input id="applyForHouseholdMember6" type="checkbox" name="applyForHouseholdMember6" value="Yes">
+          <label for="applyForHouseholdMember6">I am applying for this person.</label>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  $(document).ready(function() {
+
+    $('#print-applicantFirstName').text(applicantFirstName);
+
+    if (householdSize == 2) {
+      $('#print-householdSize').text("one other person");
+    }
+    else {
+      $('#print-householdSize').text(parseInt(householdSize)-1 + " people");
+    }
+
+    if (applyingFor != "Me and someone else") {
+      $('.potential-recipient').remove();
+    }
+
+    for(x = 6; x > parseInt(householdSize-1); x--) {
+      $('#person-' + x).remove();
+    }
+  	
+    $('form').on('submit', function() {
+
+<<<<<<< HEAD
+        if (!checkValidityIfSupported($('form').get(0))) {
+=======
+       if ((typeof checkValidity != "undefined") && ($('form').get(0).checkValidity() == false)) {
+>>>>>>> master
+          return false;
+        }
+
+        else {
+
+        storeData();
+        getData();
+
+        if ((householdShareMeals > 0) && (benefitChoiceFoodAssistance == "yes")) {
+          window.location.href = "household-mealshare-review.html";
+        }
+        else if (benefitChoiceFoodAssistance == "no") {
+           window.location.href = "../03-family-details/index.html";
+        }
+        else {
+          window.location.href = "../03-family-details/index.html";
+        }
+        return false;
+      }
+    });
+  });
+</script>
