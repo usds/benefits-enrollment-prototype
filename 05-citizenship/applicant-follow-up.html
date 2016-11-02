@@ -53,8 +53,13 @@ title: Now, tell us about your citizenship and immigration status.
 <script>
   $(document).ready(function() {
 
-    $(".usa-button-big").click(function(event) {
-        event.preventDefault();
+    $('form').on('submit', function() {
+
+        if (!checkValidityIfSupported($('form').get(0))) {
+          return false;
+        }
+
+        else {
 
         storeData();
         getData();
@@ -90,6 +95,9 @@ title: Now, tell us about your citizenship and immigration status.
         else {
           window.location.href = "../07-application/review.html";
         }
+
+        return false;
+      }
     });
   });
 </script>

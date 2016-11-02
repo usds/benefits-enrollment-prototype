@@ -52,8 +52,13 @@ title: Now, tell us about <span class="print-householdMember5FirstName"></span>â
 
     $('.print-householdMember5FirstName').text(householdMember5FirstName);
 
-    $(".usa-button-big").click(function(event) {
-        event.preventDefault();
+    $('form').on('submit', function() {
+
+        if (!checkValidityIfSupported($('form').get(0))) {
+          return false;
+        }
+
+        else {
 
         storeData();
         getData();
@@ -69,6 +74,9 @@ title: Now, tell us about <span class="print-householdMember5FirstName"></span>â
         else {
           window.location.href = "../07-application/review.html";
         }
+
+        return false;
+      }
     });
   });
 </script>
