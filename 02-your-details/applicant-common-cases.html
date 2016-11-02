@@ -60,22 +60,26 @@ title: OK, let’s review some common cases that may apply to you.
 			storeData();
 			getData();
 
-			window.location.href = "../03-basic-family/household-members-review.html";
+			
 
 			if ((applyingFor == "Myself") && ((householdSize == 1) && (householdShareMeals == 0))) {
 				window.location.href = "../04-finances/index.html";
 			}
 
-			if (benefitChoiceHealthcare == "no") {
+			else if (benefitChoiceHealthcare == "no") {
 				window.location.href = "../03-basic-family/household-mealshare-review.html";
 			}
 
-			if ($('#commonCaseInsurance').is(':checked')) {
+			else if ($('#commonCaseInsurance').is(':checked')) {
 				window.location.href = "common-case-insurance.html";
 			}
 
-			if ($('#commonCasePregnant').is(':checked')) {
+			else if ($('#commonCasePregnant').is(':checked')) {
 				window.location.href = "common-case-pregnant.html";
+			}
+
+			else {
+				window.location.href = "../03-basic-family/household-members-review.html";
 			}
 			
 		});

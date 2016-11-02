@@ -194,7 +194,7 @@ title: OK <span id="print-applicantFirstName"></span>, you file federal taxes wi
         storeData();
         getData();
 
-        if (householdShareMeals > 0) {
+        if ((householdShareMeals > 0) && (benefitChoiceFoodAssistance == "yes")) {
           window.location.href = "household-mealshare-review.html";
         }
         else if (benefitChoiceFoodAssistance == "no") {
