@@ -26,7 +26,11 @@ title: Now tell us about the people you share food with.
         storeData();
         getData();
 
-        if (householdShareMeals == 0) {
+        if ((householdShareMeals == 0) && (benefitChoiceHealthcare == "no")) {
+          window.location.href = "../04-finances/index.html";
+        }
+
+        else if (householdShareMeals == 0) {
           window.location.href = "../03-family-details/index.html";
         }
 

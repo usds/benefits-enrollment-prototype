@@ -17,6 +17,16 @@ $(document).ready(function() {
 	    	window[sessionStorage.key(i)] = "";
 	    }
 		}
+		// Remove Benefits if not applying to them
+		if ((typeof benefitChoiceFoodAssistance != "undefined") && (typeof benefitChoiceHealthcare != "undefined")) {
+			if (benefitChoiceFoodAssistance == "no") {
+			  $('.snap-only').remove();
+			}
+
+			if (benefitChoiceHealthcare == "no") {
+			  $('.medicaid-only').remove();
+			}
+		}
 	}
 
 	getData();

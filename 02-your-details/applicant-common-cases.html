@@ -38,7 +38,7 @@ title: OK, let’s review some common cases that may apply to you.
 				<input id="commonCaseInsurance" type="checkbox" name="common-cases" value="I have health insurance or Medicaid">
 				<label for="commonCaseInsurance">I have health insurance or Medicaid</label>
 			</li>
-			<li>
+			<li class="medicaid-only">
 				<input id="commonCaseCashAssistance" type="checkbox" name="common-cases" value="I currently get cash assistance">
 				<label for="commonCaseCashAssistance">I currently get Cash Assistance (also known as TANF or XX)</label>
 			</li>
@@ -68,6 +68,10 @@ title: OK, let’s review some common cases that may apply to you.
 
 			if ((applyingFor == "Myself") && ((householdSize == 1) && (householdShareMeals == 0))) {
 				window.location.href = "../04-finances/index.html";
+			}
+
+			if (benefitChoiceHealthcare == "no") {
+				window.location.href = "../03-basic-family/household-mealshare-review.html";
 			}
 
 			if ($('#commonCaseInsurance').is(':checked')) {

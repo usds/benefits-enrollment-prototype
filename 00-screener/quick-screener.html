@@ -20,32 +20,50 @@ button_text: Next
 	<input type="tel" id="householdIncome" class="input--medium" />
 </div>
 
-<div class="prompt">
-	<p class="prompt__primary-text"><label for="householdSize">How many people do you file federal taxes with, including yourself?</label></p>
-	<p class="prompt__secondary-text">This is usually family members who you live with.</p>
-</div>
-<div class="response">
-	<input class="input--short" type="tel" id="householdSize" required />
+<div class="medicaid-only">
+	<div class="prompt">
+		<p class="prompt__primary-text"><label for="householdSize">How many people do you file federal taxes with, including yourself?</label></p>
+		<p class="prompt__secondary-text">This is usually family members who you live with.</p>
+	</div>
+	<div class="response">
+		<input class="input--short" type="tel" id="householdSize" required />
+	</div>
 </div>
 
-<div class="prompt">
-	<p class="prompt__primary-text"><label for="householdShareMeals">In your home, how many people do you regularly buy food for and prepare meals with?</label></p>
-	<p class="prompt__secondary-text">Count your roommates if you often buy food and cook together.</p>
-</div>
-<div class="response">
-	<input type="tel" class="input--short" id="householdShareMeals" required />
+<div class="snap-only">
+	<div class="prompt">
+		<p class="prompt__primary-text"><label for="householdShareMeals">In your home, how many people do you regularly buy food for and prepare meals with?</label></p>
+		<p class="prompt__secondary-text">Count your roommates if you often buy food and cook together.</p>
+	</div>
+	<div class="response">
+		<input type="tel" class="input--short" id="householdShareMeals" required />
+	</div>
 </div>
 
 <script>
 	$(document).ready(function() {
+
 		$('form').on('submit', function() {
+
+			
 
 				if ($('form').get(0).checkValidity() == false) {
         	return false;
     		}
 
     		else {
-    			//event.preventDefault();
+
+    			if (typeof householdSize == "undefined") {
+    				householdSize = householdShareMeals;
+    				sessionStorage.setItem("householdSize", householdSize);
+    			}
+
+    			if (typeof householdShareMeals == "undefined") {
+    				householdShareMeals = 0;
+    				sessionStorage.setItem("householdShareMeals", householdShareMeals);
+    			}
+
+
 					storeData();
 					getData();
 

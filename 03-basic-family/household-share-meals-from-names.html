@@ -8,7 +8,7 @@ title: OK <span id="print-applicantFirstName"></span>, you share meals with <spa
 	<div class="prompt">
 		<legend class="prompt__primary-text">Who are they?</legend>
 		</div>
-		<div class="response">
+		<div class="response medicaid-only">
 		<ul class="usa-unstyled-list checkbox-group">
 			<li id="person-1">
 				<input id="shareMealsWithPerson1" type="checkbox" name="shareMealsWith">
@@ -38,7 +38,7 @@ title: OK <span id="print-applicantFirstName"></span>, you share meals with <spa
 		</div>
 </fieldset>
 
-<p class="prompt__primary-text">And/or anyone else?</p>
+<p class="prompt__primary-text medicaid-only">And/or anyone else?</p>
 <div id="persona-1" class="sectioned-item">
 	<h2 class="sectioned-item__heading">Person 1</h2>
 	<div class="prompt">
@@ -137,6 +137,34 @@ title: OK <span id="print-applicantFirstName"></span>, you share meals with <spa
 <script>
   $(document).ready(function() {
 
+  	if (benefitChoiceHealthcare == "no") {
+	  	$('#householShareMealsAddedFirst1').attr("id", "householdMember1FirstName");
+	  	$('#householShareMealsAddedFirst2').attr("id", "householdMember2FirstName");
+	  	$('#householShareMealsAddedFirst3').attr("id", "householdMember3FirstName");
+	  	$('#householShareMealsAddedFirst4').attr("id", "householdMember4FirstName");
+	  	$('#householShareMealsAddedFirst5').attr("id", "householdMember5FirstName");
+	  	$('#householShareMealsAddedFirst6').attr("id", "householdMember6FirstName");
+	  	$('label[for="householShareMealsAddedFirst1"]').attr("for", "householdMember1FirstName");
+	  	$('label[for="householShareMealsAddedFirst2"]').attr("for", "householdMember2FirstName");
+	  	$('label[for="householShareMealsAddedFirst3"]').attr("for", "householdMember3FirstName");
+	  	$('label[for="householShareMealsAddedFirst4"]').attr("for", "householdMember4FirstName");
+	  	$('label[for="householShareMealsAddedFirst5"]').attr("for", "householdMember5FirstName");
+	  	$('label[for="householShareMealsAddedFirst6"]').attr("for", "householdMember6FirstName");
+
+	  	$('#householShareMealsAddedLast1').attr("id", "householdMember1LastName");
+	  	$('#householShareMealsAddedLast2').attr("id", "householdMember2LastName");
+	  	$('#householShareMealsAddedLast3').attr("id", "householdMember3LastName");
+	  	$('#householShareMealsAddedLast4').attr("id", "householdMember4LastName");
+	  	$('#householShareMealsAddedLast5').attr("id", "householdMember5LastName");
+	  	$('#householShareMealsAddedLast6').attr("id", "householdMember6LastName");
+	  	$('label[for="householShareMealsAddedLast1"]').attr("for", "householdMember1LastName");
+	  	$('label[for="householShareMealsAddedLast2"]').attr("for", "householdMember2LastName");
+	  	$('label[for="householShareMealsAddedLast3"]').attr("for", "householdMember3LastName");
+	  	$('label[for="householShareMealsAddedLast4"]').attr("for", "householdMember4LastName");
+	  	$('label[for="householShareMealsAddedLast5"]').attr("for", "householdMember5LastName");
+	  	$('label[for="householShareMealsAddedLast6"]').attr("for", "householdMember6LastName");
+	  }
+
   	$('#print-applicantFirstName').text(applicantFirstName);
 
     if (householdShareMeals == 1) {
@@ -158,8 +186,10 @@ title: OK <span id="print-applicantFirstName"></span>, you share meals with <spa
     }
 
     for(x = 6; x > parseInt(householdShareMeals); x--) { 
-	      $('#persona-' + x).remove();
-	    }
+	    $('#persona-' + x).remove();
+	   }
+
+	  
   	
     $(".usa-button-big").click(function(event) {
         event.preventDefault();
