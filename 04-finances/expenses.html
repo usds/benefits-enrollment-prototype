@@ -80,7 +80,7 @@ title: Last money question. Tell us about your expenses.
 
     $('form').on('submit', function() {
 
-        if ((typeof checkValidity != "undefined") && ($('form').get(0).checkValidity() == false)) {
+        if (!checkValidityIfSupported($('form').get(0))) {
           return false;
         }
 

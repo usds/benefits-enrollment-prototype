@@ -45,10 +45,9 @@ button_text: Next
 
 		$('form').on('submit', function() {
 
-			 
 
-				if ((typeof checkValidity != "undefined") && ($('form').get(0).checkValidity() == false)) {
-        	return false;
+                if (!checkValidityIfSupported($('form').get(0))) {
+          	  return false;
     		}
 
     		else {

@@ -61,7 +61,7 @@ title: Who is not a U.S. citizen or U.S. national?
 
     $('form').on('submit', function() {
 
-        if ((typeof checkValidity != "undefined") && ($('form').get(0).checkValidity() == false)) {
+        if (!checkValidityIfSupported($('form').get(0))) {
           return false;
         }
 
