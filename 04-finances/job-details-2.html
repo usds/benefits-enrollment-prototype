@@ -180,9 +180,9 @@ title: Tell us more about your other job.
 
 		$('form').on('submit', function() {
 
-        if ($('form').get(0).checkValidity() == false) {
-          return false;
-        }
+        if ((typeof checkValidity != "undefined") && ($('form').get(0).checkValidity() == false)) {
+        	return false;
+    		}
 
         else {
 

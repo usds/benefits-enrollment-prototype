@@ -18,7 +18,7 @@ title: Let’s start with you.
 
     $('form').on('submit', function() {
 
-        if ($('form').get(0).checkValidity() == false) {
+        if ((typeof checkValidity != "undefined") && ($('form').get(0).checkValidity() == false)) {
           return false;
         }
 

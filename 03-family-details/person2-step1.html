@@ -121,7 +121,7 @@ title: Great! Let’s get more info about <span class="print-householdMember2Fir
   	
     $('form').on('submit', function() {
 
-        if ($('form').get(0).checkValidity() == false) {
+        if ((typeof checkValidity != "undefined") && ($('form').get(0).checkValidity() == false)) {
           return false;
         }
 

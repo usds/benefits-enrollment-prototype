@@ -45,13 +45,15 @@ button_text: Next
 
 		$('form').on('submit', function() {
 
-			
+			 
 
 				if ((typeof checkValidity != "undefined") && ($('form').get(0).checkValidity() == false)) {
         	return false;
     		}
 
     		else {
+
+    			var householdShareMeals = $('#householdShareMeals').val();
 
     			if (typeof householdSize == "undefined") {
     				householdSize = householdShareMeals;

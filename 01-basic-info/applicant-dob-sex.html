@@ -5,7 +5,7 @@ title: Hello, <span id="print-applicantFirstName"></span>!
 ---
 
 <div class="prompt">
-	<legend class="prompt__primary-text">What is date of birth?</legend>
+	<legend class="prompt__primary-text">What is your date of birth?</legend>
 	<p class="prompt__secondary-text" id="dobHint">For example: 12 28 1986</p>
 </div>
 <div class="response" >
@@ -51,7 +51,7 @@ title: Hello, <span id="print-applicantFirstName"></span>!
 
     $('form').on('submit', function() {
 
-        if ($('form').get(0).checkValidity() == false) {
+        if ((typeof checkValidity != "undefined") && ($('form').get(0).checkValidity() == false)) {
           return false;
         }
 

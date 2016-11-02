@@ -58,9 +58,9 @@ title: Tell us more about <span class="print-householdMember3FirstName"></span>â
 
 		$('form').on('submit', function() {
 
-        if ($('form').get(0).checkValidity() == false) {
-          return false;
-        }
+        if ((typeof checkValidity != "undefined") && ($('form').get(0).checkValidity() == false)) {
+        	return false;
+    		}
 
         else {
 
