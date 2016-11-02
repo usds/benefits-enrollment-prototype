@@ -122,9 +122,10 @@ To appeal your benefits eligibility results, visit the website, local office, ca
       $('#print-nextStepsText').text("Medicaid")
     }
 
+
     $('form').on('submit', function() {
 
-        if ($('form').get(0).checkValidity() == false) {
+        if (!checkValidityIfSupported($('form').get(0))) {
           return false;
         }
 

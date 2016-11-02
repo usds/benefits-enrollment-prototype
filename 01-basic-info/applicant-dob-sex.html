@@ -49,9 +49,9 @@ title: Hello, <span id="print-applicantFirstName"></span>!
 
   	$('#print-applicantFirstName').text(applicantFirstName);
 
-    $('form').on('submit', function() {
+        $('form').on('submit', function() {
 
-        if ($('form').get(0).checkValidity() == false) {
+        if (!checkValidityIfSupported($('form').get(0))) {
           return false;
         }
 

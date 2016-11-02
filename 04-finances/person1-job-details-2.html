@@ -76,7 +76,7 @@ title: Tell us more about <span class="print-householdMember1FirstName"></span>â
 
 		$('form').on('submit', function() {
 
-        if ($('form').get(0).checkValidity() == false) {
+	if (!checkValidityIfSupported($('form').get(0))) {
           return false;
         }
 

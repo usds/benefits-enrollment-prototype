@@ -45,7 +45,7 @@ title: Now, tell us about your citizenship and immigration status.
 
     $('form').on('submit', function() {
 
-        if ($('form').get(0).checkValidity() == false) {
+        if (!checkValidityIfSupported($('form').get(0))) {
           return false;
         }
 

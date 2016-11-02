@@ -40,8 +40,9 @@ button_text: Next
 	$(document).ready(function() {
 		$('form').on('submit', function() {
 
-				if ($('form').get(0).checkValidity() == false) {
-        	return false;
+
+                if (!checkValidityIfSupported($('form').get(0))) {
+          	  return false;
     		}
 
     		else {
