@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<head>
+	{% include _head.html %}
+</head>
+<body>
+	
+	
+
+	
+	{% include _header.html %}
+	
+
+	<div class="usa-grid card-wrap">
+		<form action="#" method="post">
+			<div class="card">
+			
+				{% if page.title_style %}
+				<div class="card__header--success-message">
+					<h1 class="card__primary-heading">{{ page.title }}</h1>
+				</div>
+				{% else %}
+				<div class="card__header">
+					{% if page.step %}
+					<p class="current-step">Step {{ page.step }} of 7</p>
+					{% endif %}
+					<h1 class="card__primary-heading">{{ page.title }}</h1>
+				</div>
+				{% endif %}
+
+				<div class="card__body">
+					{{ content }}
+				</div>
+				<div class="card__footer">
+					<button class="usa-button-big" type="submit">{% if page.button_text %}{{ page.button_text }}{% else %}Next{% endif %}</button>
+					<p><a href="../08-submit/index.html">Stop working and submit application now</a></p>
+				</div>
+			</div>
+		</form>
+	</div>
+</body>
+</html>
