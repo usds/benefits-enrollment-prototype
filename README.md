@@ -32,4 +32,6 @@ In our research, we saw a common need from state programs for an online applicat
 
 The alpha version of the prototype is designed to model how one or more applicants can apply for SNAP and/or Medicaid — two of the largest programs with demographic eligibility overlap.
 
+### A note about the code
 
+This prototype is built with static pages and does not use a database of any sort, using `sessionStorage` instead. Therefore, there is heavy use of Javascript to handle tasks normally done in the application layer. These tasks will read from `sessionStorage` and manipulate the DOM and use conditional logic to link to the next part of the form. These scripts are located towards the bottom of each page in a `<script>` tag, and should not be included in a production build. The HTML is intended to be easily customizeable and resuable. Further documentation is pending.
