@@ -68,23 +68,25 @@ To appeal your benefits eligibility results, visit the website, local office, ca
 </ul>
 </div>
 
-<fieldset>
-  <div class="question usa-sr-only">
-    <legend class="question__primary-text">Do you agree to the terms above?</legend>
-  </div>
-  <div class="response">
-    <ul class="usa-unstyled-list response__radiogroup--inline">
-      <li>
-        <input id="agreeToTermsYes" type="radio" name="agreeToTerms" value="Yes" required="">
-        <label for="agreeToTermsYes">I agree</label>
-      </li>
-      <li>
-        <input id="agreeToTermsNo" type="radio" name="agreeToTerms" value="No">
-        <label for="agreeToTermsNo">I do not agree</label>
-      </li>
-    </ul>
-  </div>
-</fieldset>
+<div class="field-group">
+  <fieldset>
+    <div class="question usa-sr-only">
+      <legend class="question__primary-text">Do you agree to the terms above?</legend>
+    </div>
+    <div class="response">
+      <ul class="usa-unstyled-list response__radiogroup--inline">
+        <li>
+          <input id="agreeToTermsYes" type="radio" name="agreeToTerms" value="Yes" required="">
+          <label for="agreeToTermsYes">I agree</label>
+        </li>
+        <li>
+          <input id="agreeToTermsNo" type="radio" name="agreeToTerms" value="No">
+          <label for="agreeToTermsNo">I do not agree</label>
+        </li>
+      </ul>
+    </div>
+  </fieldset>
+</div>
 
 <div class="question">
 	<h2><label for="applicantSignature">Enter your full legal name to sign this application</label></h2>
@@ -103,11 +105,12 @@ To appeal your benefits eligibility results, visit the website, local office, ca
 <div class="field-group">
   <div class="question">
   	<input type="text" id="applicantSignature" required />
-  	<div class="note note--has-icon">
-      <i class="fa fa-lock note__icon" aria-hidden="true"></i>
-      <p class="note__text">This information is kept confidential and secure as required by law. <a href="https://www.cms.gov/about-cms/agency-information/aboutwebsite/privacy-policy.html" target="_blank">Learn more.</a></p>
-    </div>
   </div>
+</div>
+
+<div class="note note--has-icon">
+  <i class="fa fa-lock note__icon" aria-hidden="true"></i>
+  <p class="note__text">This information is kept confidential and secure as required by law. <a href="https://www.cms.gov/about-cms/agency-information/aboutwebsite/privacy-policy.html" target="_blank">Learn more.</a></p>
 </div>
 
 <script>
