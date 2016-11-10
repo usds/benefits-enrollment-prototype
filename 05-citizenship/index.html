@@ -9,36 +9,37 @@ title: Now, tell us about your citizenship and immigration status.
 	<p>Answering these questions will <strong>not</strong> affect your immigration status.</p>
 </div>
 
-<fieldset>
-  <div class="prompt">
-    <legend class="prompt__primary-text">Is everyone in your household a U.S. citizen or U.S. national?</legend>
-  </div>
-  <div class="response">
-    <ul class="usa-unstyled-list response__radiogroup--inline">
-      <li>
-        <input id="applicantCitizenshipYes" type="radio" name="applicantCitizenship" value="yes" required="">
-        <label for="applicantCitizenshipYes">Yes</label>
-      </li>
-      <li>
-        <input id="applicantCitizenshipNo" type="radio" name="applicantCitizenship" value="no" required="">
-        <label for="applicantCitizenshipNo">No</label>
-      </li>
-    </ul>
-  </div>
-</fieldset>
-
-<div class="prompt">
-	 <div class="explainer">
-    <a href="#" class="explainer__toggle" aria-expanded="false" aria-controls="explainer-1">Why do we ask this?</a>
-    <div class="explainer__content" id="explainer-1">
-      <p>If you or someone in your household is not a citizen, you may still be able to receive some benefits. We ask about citizenship so that we can help you find out what programs you qualify for.</p>
-      <p>Applying for these programs will not affect your or your family's immigration status.</p>
-      <p>This information is private and kept confidential. It will not be shared with any agency for any reason other than checking your eligibility.</p>
+<div class="field-group">
+  <fieldset>
+    <div class="question">
+      <legend class="question__primary-text">Is everyone in your household a U.S. citizen or U.S. national?</legend>
     </div>
-  </div>
-
-  <p>To sign up for these services, we may need to ask for immigration document numbers. </p>
+    <div class="response">
+      <ul class="usa-unstyled-list response__radiogroup--inline">
+        <li>
+          <input id="applicantCitizenshipYes" type="radio" name="applicantCitizenship" value="yes" required="">
+          <label for="applicantCitizenshipYes">Yes</label>
+        </li>
+        <li>
+          <input id="applicantCitizenshipNo" type="radio" name="applicantCitizenship" value="no" required="">
+          <label for="applicantCitizenshipNo">No</label>
+        </li>
+      </ul>
+    </div>
+  </fieldset>
 </div>
+
+<div class="explainer">
+  <a href="#" class="explainer__toggle" aria-expanded="false" aria-controls="explainer-1">Why do we ask this?</a>
+  <div class="explainer__content" id="explainer-1">
+    <p>If you or someone in your household is not a citizen, you may still be able to receive some benefits. We ask about citizenship so that we can help you find out what programs you qualify for.</p>
+    <p>Applying for these programs will not affect your or your family's immigration status.</p>
+    <p>This information is private and kept confidential. It will not be shared with any agency for any reason other than checking your eligibility.</p>
+  </div>
+</div>
+
+<p>To sign up for these services, we may need to ask for immigration document numbers. </p>
+
 
 <script>
   $(document).ready(function() {

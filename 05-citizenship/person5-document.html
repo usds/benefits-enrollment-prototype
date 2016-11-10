@@ -9,69 +9,71 @@ title: We need an immigration document number for <span class="print-householdMe
 	<p>You <strong>do not</strong> have to be a citizen to qualify for all benefits.</p>
 </div>
 
-<fieldset>
-	<div class="prompt">
-		<legend class="prompt__primary-text">Please select the document type.</legend>
-	</div>
-	<div class="response">
-		<ul class="usa-unstyled-list response__radio-group--unstyled">
-			<li>
-				<input id="householdMember5ImmigrationDocumentAlienNumber" type="radio" name="householdMember5ImmigrationDocument" value="Alien number" class="open-dependent" required>
-      	<label for="householdMember5ImmigrationDocumentAlienNumber">Alien number</label>
-      	<div class="dependent-field usa-sr-only" aria-hidden="true">
-      		<div class="prompt">
-						<p class="prompt__secondary-text"><label for="alienNumberNumber">What is your alien number?</label></p>
-					</div>
-					<div class="response">
-						<input type="text" id="alienNumberNumber" required/>
-					</div>
-      	</div>
-			</li>
-			<li>
-				<input id="householdMember5ImmigrationDocumentSevis" type="radio" name="householdMember5ImmigrationDocument" class="open-dependent" value="SEVIS ID" required>
-      	<label for="householdMember5ImmigrationDocumentSevis">SEVIS ID</label>
-      	<div class="dependent-field usa-sr-only" aria-hidden="true">
-      		<div class="prompt">
-						<p class="prompt__secondary-text"><label for="sevisNumber">What is your document number?</label></p>
-					</div>
-					<div class="response">
-						<input type="text" id="sevisNumber" required/>
-					</div>
-      	</div>
-			</li>
-			<li>
-				<input id="householdMember5ImmigrationDocumentCardPassport" type="radio" name="householdMember5ImmigrationDocument" value="Card or Passport" class="open-dependent" required>
-      	<label for="householdMember5ImmigrationDocumentCardPassport">U.S. Passport Card number</label>
-      	<div class="dependent-field usa-sr-only" aria-hidden="true">
-      		<div class="prompt">
-						<p class="prompt__secondary-text"><label for="passportNumber">What is your passport number?</label></p>
-					</div>
-					<div class="response">
-						<input type="text" id="passportNumber" required/>
-					</div>
-      	</div>
-			</li>
-			<li>
-				<input id="householdMember5ImmigrationDocumentOther" type="radio" name="householdMember5ImmigrationDocument" class="open-dependent" value="Other" required>
-      	<label for="householdMember5ImmigrationDocumentOther">Other</label>
-      	<div class="dependent-field usa-sr-only" aria-hidden="true">
-      		<div class="prompt">
-						<p class="prompt__secondary-text"><label for="otherImmigrationType">List the document type</label></p>
-					</div>
-					<div class="response">
-						<input type="text" id="otherImmigrationType" required/>
-					</div>
-      		<div class="prompt">
-						<p class="prompt__secondary-text"><label for="otherImmigrationNumber">What is your document number?</label></p>
-					</div>
-					<div class="response">
-						<input type="text" id="otherImmigrationNumber" required/>
-					</div>
-      	</div>
-			</li>
-		</ul>
-	</div>
-</fieldset>
+<div class="field-group">
+	<fieldset>
+		<div class="question">
+			<legend class="question__primary-text">Please select the document type.</legend>
+		</div>
+		<div class="response">
+			<ul class="usa-unstyled-list response__radio-group--unstyled">
+				<li>
+					<input id="householdMember5ImmigrationDocumentAlienNumber" type="radio" name="householdMember5ImmigrationDocument" value="Alien number" class="open-dependent" required>
+	      	<label for="householdMember5ImmigrationDocumentAlienNumber">Alien number</label>
+	      	<div class="dependent-field usa-sr-only" aria-hidden="true">
+	      		<div class="question">
+							<p class="question__secondary-text"><label for="alienNumberNumber">What is your alien number?</label></p>
+						</div>
+						<div class="response">
+							<input type="text" id="alienNumberNumber" required/>
+						</div>
+	      	</div>
+				</li>
+				<li>
+					<input id="householdMember5ImmigrationDocumentSevis" type="radio" name="householdMember5ImmigrationDocument" class="open-dependent" value="SEVIS ID" required>
+	      	<label for="householdMember5ImmigrationDocumentSevis">SEVIS ID</label>
+	      	<div class="dependent-field usa-sr-only" aria-hidden="true">
+	      		<div class="question">
+							<p class="question__secondary-text"><label for="sevisNumber">What is your document number?</label></p>
+						</div>
+						<div class="response">
+							<input type="text" id="sevisNumber" required/>
+						</div>
+	      	</div>
+				</li>
+				<li>
+					<input id="householdMember5ImmigrationDocumentCardPassport" type="radio" name="householdMember5ImmigrationDocument" value="Card or Passport" class="open-dependent" required>
+	      	<label for="householdMember5ImmigrationDocumentCardPassport">U.S. Passport Card number</label>
+	      	<div class="dependent-field usa-sr-only" aria-hidden="true">
+	      		<div class="question">
+							<p class="question__secondary-text"><label for="passportNumber">What is your passport number?</label></p>
+						</div>
+						<div class="response">
+							<input type="text" id="passportNumber" required/>
+						</div>
+	      	</div>
+				</li>
+				<li>
+					<input id="householdMember5ImmigrationDocumentOther" type="radio" name="householdMember5ImmigrationDocument" class="open-dependent" value="Other" required>
+	      	<label for="householdMember5ImmigrationDocumentOther">Other</label>
+	      	<div class="dependent-field usa-sr-only" aria-hidden="true">
+	      		<div class="question">
+							<p class="question__secondary-text"><label for="otherImmigrationType">List the document type</label></p>
+						</div>
+						<div class="response">
+							<input type="text" id="otherImmigrationType" required/>
+						</div>
+	      		<div class="question">
+							<p class="question__secondary-text"><label for="otherImmigrationNumber">What is your document number?</label></p>
+						</div>
+						<div class="response">
+							<input type="text" id="otherImmigrationNumber" required/>
+						</div>
+	      	</div>
+				</li>
+			</ul>
+		</div>
+	</fieldset>
+</div>
 
 <script>
 

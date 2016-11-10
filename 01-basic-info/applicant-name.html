@@ -4,20 +4,24 @@ step: 1
 title: Let’s start with the basics.
 ---
 
-<div class="prompt">
-	<p class="prompt__primary-text"><label for="applicantFirstName">What is your legal first name?</label></p>
-  <p class="prompt__secondary-text">As shown on legal documents such as a birth certificate. This helps us verify who you are.</p>
-</div>
-<div class="response">
-	<input type="text" id="applicantFirstName" required />
+<div class="field-group">
+  <div class="question">
+  	<p class="question__primary-text"><label for="applicantFirstName">What is your legal first name?</label></p>
+    <p class="question__secondary-text">As shown on legal documents such as a birth certificate. This helps us verify who you are.</p>
+  </div>
+  <div class="response">
+  	<input type="text" id="applicantFirstName" required />
+  </div>
 </div>
 
-<div class="prompt">
-	<p class="prompt__primary-text"><label for="applicantLastName">What is your last name?</label></p>
-</div>
-<div class="response">
-	<input type="text" id="applicantLastName" required />
-</div>
+<div class="field-group">
+  <div class="question">
+  	<p class="question__primary-text"><label for="applicantLastName">What is your last name?</label></p>
+  </div>
+  <div class="response">
+  	<input type="text" id="applicantLastName" required />
+  </div>
+<div class="field-group">
 
 <script>
   $(document).ready(function() {

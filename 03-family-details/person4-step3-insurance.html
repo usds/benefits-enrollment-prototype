@@ -3,52 +3,53 @@ layout: application
 step: 3
 title: You said <span class="print-householdMember4FirstName"></span> has health insurance.
 ---
-
-<fieldset>
-	<div class="prompt">
-		<legend class="prompt__primary-text">What kind of insurance do you have?</legend>
-		</div>
-		<div class="response">
-		<ul class="usa-unstyled-list checkbox-group">
-			<li>
-				<input id="householdMember4-Medicare" type="checkbox" name="householdMember4-insurance" value="Medicare">
-				<label for="householdMember4-Medicare">Medicare</label>
-			</li>
-			<li>
-				<input id="householdMember4-insuranceMedicaid" type="checkbox" name="householdMember4-insurance" value="Medicaid">
-				<label for="householdMember4-insuranceMedicaid">Medicaid (You also may know this as XX Care)</label>
-			</li>
-			<li>
-				<input id="householdMember4-insuranceOtherPublic" type="checkbox" name="householdMember4-insurance" value="Other public health insurance">
-				<label for="householdMember4-insuranceOtherPublic">Other public health insurance</label>
-			</li>
-			<li>
-				<input id="householdMember4-insuranceVA" type="checkbox" name="householdMember4-insurance" value="VA gealthcare or TRICARE">
-				<label for="householdMember4-insuranceVA">VA healthcare or TRICARE</label>
-			</li>
-			<li>
-				<input id="householdMember4-insuranceEmployer" type="checkbox" name="householdMember4-insurance" value="Employer-based health insurance">
-				<label for="householdMember4-insuranceEmployer">Employer-based health insurance</label>
-			</li>
-			<li>
-				<input id="householdMember4-insurancePrivate" type="checkbox" name="householdMember4-insurance" value="Private health insurance">
-				<label for="householdMember4-insurancePrivate">Private health insurance</label>
-			</li>
-			<li>
-				<input id="householdMember4-insurancePeacecorps" type="checkbox" name="householdMember4-insurance" value="PeaceCorps">
-				<label for="householdMember4-insurancePeacecorps">PeaceCorps</label>
-			</li>
-			<li>
-				<input id="householdMember4-insuranceLimited" type="checkbox" name="householdMember4-insurance" value="Limited-benefit plan (school accident policy)">
-				<label for="householdMember4-insuranceLimited">Limited-benefit plan (school accident policy)</label>
-			</li>
-			<li>
-				<input id="householdMember4-insuranceUnknown" type="checkbox" name="householdMember4-insurance" value="I don’t know">
-				<label for="householdMember4-insuranceUnknown">I don’t know</label>
-			</li>
-		</ul>
-		</div>
-</fieldset>
+<div class="field-group">
+	<fieldset>
+		<div class="question">
+			<legend class="question__primary-text">What kind of insurance do you have?</legend>
+			</div>
+			<div class="response">
+			<ul class="usa-unstyled-list checkbox-group">
+				<li>
+					<input id="householdMember4-Medicare" type="checkbox" name="householdMember4-insurance" value="Medicare">
+					<label for="householdMember4-Medicare">Medicare</label>
+				</li>
+				<li>
+					<input id="householdMember4-insuranceMedicaid" type="checkbox" name="householdMember4-insurance" value="Medicaid">
+					<label for="householdMember4-insuranceMedicaid">Medicaid (You also may know this as XX Care)</label>
+				</li>
+				<li>
+					<input id="householdMember4-insuranceOtherPublic" type="checkbox" name="householdMember4-insurance" value="Other public health insurance">
+					<label for="householdMember4-insuranceOtherPublic">Other public health insurance</label>
+				</li>
+				<li>
+					<input id="householdMember4-insuranceVA" type="checkbox" name="householdMember4-insurance" value="VA gealthcare or TRICARE">
+					<label for="householdMember4-insuranceVA">VA healthcare or TRICARE</label>
+				</li>
+				<li>
+					<input id="householdMember4-insuranceEmployer" type="checkbox" name="householdMember4-insurance" value="Employer-based health insurance">
+					<label for="householdMember4-insuranceEmployer">Employer-based health insurance</label>
+				</li>
+				<li>
+					<input id="householdMember4-insurancePrivate" type="checkbox" name="householdMember4-insurance" value="Private health insurance">
+					<label for="householdMember4-insurancePrivate">Private health insurance</label>
+				</li>
+				<li>
+					<input id="householdMember4-insurancePeacecorps" type="checkbox" name="householdMember4-insurance" value="PeaceCorps">
+					<label for="householdMember4-insurancePeacecorps">PeaceCorps</label>
+				</li>
+				<li>
+					<input id="householdMember4-insuranceLimited" type="checkbox" name="householdMember4-insurance" value="Limited-benefit plan (school accident policy)">
+					<label for="householdMember4-insuranceLimited">Limited-benefit plan (school accident policy)</label>
+				</li>
+				<li>
+					<input id="householdMember4-insuranceUnknown" type="checkbox" name="householdMember4-insurance" value="I don’t know">
+					<label for="householdMember4-insuranceUnknown">I don’t know</label>
+				</li>
+			</ul>
+			</div>
+	</fieldset>
+</div>
 
 <script>
 	$(document).ready(function() {

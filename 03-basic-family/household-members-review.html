@@ -4,34 +4,30 @@ step: 3
 title: Great! Let’s find out more about your household.
 ---
 
-<p></p>
 
 <div class="explainer">
   <a href="#" class="explainer__toggle" aria-expanded="false" aria-controls="explainer-1">Why do we ask this?</a>
   <div class="explainer__content" id="explainer-1">
     <p>In order to find out which programs you qualify for, we need to know about the family you live with and/or file federal taxes with.</p>
-  
     <p>This is a list of who we need to know about:</p>
+    <ul class="bulleted-list">
+      <li>Anyone who you file federal taxes with.</li>
+      <li>Your spouse, if you are married and live together.</li>
+      <li>Your parents, if you are under 22 and live with them.</li>
+      <li>Your kids, if they are under 22 and live with you.</li>
+      <li>The other parent of your kids, and if you live together (even if you are separated or not married).</li>
+    </ul>
+  </div> 
+</div>
 
-    <div class="prompt__secondary-text">
-      <ul>
-        <li>Anyone who you file federal taxes with.</li>
-        <li>Your spouse, if you are married and live together.</li>
-        <li>Your parents, if you are under 22 and live with them.</li>
-        <li>Your kids, if they are under 22 and live with you.</li>
-        <li>The other parent of your kids, and if you live together (even if you are separated or not married).</li>
-      </ul>
-    </div>
+<div class="field-group">
+  <div class="question">
+    <p class="question__primary-text"><label for="householdSize">How many family members do you live with and/or file federal taxes with, including yourself?</label></p>
+    <p class="question__secondary-text">Include yourself, your spouse/partner, children who live with you, and/or anyone on your same federal income tax return.</p>
   </div>
-   
-</div>
-
-<div class="prompt">
-  <p class="prompt__primary-text"><label for="householdSize">How many family members do you live with and/or file federal taxes with, including yourself?</label></p>
-  <p class="prompt__secondary-text">Include yourself, your spouse/partner, children who live with you, and/or anyone on your same federal income tax return.</p>
-</div>
-<div class="response">
-  <input class="input--short" type="tel" id="householdSize" required />
+  <div class="response">
+    <input class="input--short" type="tel" id="householdSize" required />
+  </div>
 </div>
 
 <script>

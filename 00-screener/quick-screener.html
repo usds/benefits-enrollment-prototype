@@ -4,39 +4,47 @@ title: First, let’s see if you may qualify.
 button_text: Next
 ---
 
-<div class="prompt">
-	<p class="prompt__primary-text"><label for="householdZipCode">What is your zip code?</label></p>
-</div>
-<div class="response">
-	<input class="input--medium" type="tel" id="householdZipCode" required/>
+<div class="field-group">
+	<div class="question">
+		<p class="question__primary-text"><label for="householdZipCode">What is your zip code?</label></p>
+	</div>
+	<div class="response">
+		<input class="input--medium" type="tel" id="householdZipCode" required/>
+	</div>
 </div>
 
-<div class="prompt">
-	<p class="prompt__primary-text"><label for="householdIncome">About how much money did your household make in the last 30 days?</label></p>
-	<p class="prompt__secondary-text">Give your best estimate. Add up income from things like your job, social security, unemployment and other benefits.</p>
-</div>
-<div class="response">
-	<div class="response__input-prefix" aria-hidden="true">$</div>
-	<input type="tel" id="householdIncome" class="input--medium" />
+<div class="field-group">
+	<div class="question">
+		<p class="question__primary-text"><label for="householdIncome">About how much money did your household make in the last 30 days?</label></p>
+		<p class="question__secondary-text">Give your best estimate. Add up income from things like your job, social security, unemployment and other benefits.</p>
+	</div>
+	<div class="response">
+		<div class="response__input-prefix" aria-hidden="true">$</div>
+		<input type="tel" id="householdIncome" class="input--medium" />
+	</div>
 </div>
 
 <div class="medicaid-only">
-	<div class="prompt">
-		<p class="prompt__primary-text"><label for="householdSize">How many people do you file federal taxes with, including yourself?</label></p>
-		<p class="prompt__secondary-text">This is usually family members who you live with.</p>
-	</div>
-	<div class="response">
-		<input class="input--short" type="tel" id="householdSize" required />
+	<div class="field-group">
+		<div class="question">
+			<p class="question__primary-text"><label for="householdSize">How many people do you file federal taxes with, including yourself?</label></p>
+			<p class="question__secondary-text">This is usually family members who you live with.</p>
+		</div>
+		<div class="response">
+			<input class="input--short" type="tel" id="householdSize" required />
+		</div>
 	</div>
 </div>
 
 <div class="snap-only">
-	<div class="prompt">
-		<p class="prompt__primary-text"><label for="householdShareMeals">In your home, how many people do you regularly buy food for and prepare meals with?</label></p>
-		<p class="prompt__secondary-text">Count your roommates if you often buy food and cook together.</p>
-	</div>
-	<div class="response">
-		<input type="tel" class="input--short" id="householdShareMeals" required />
+	<div class="field-group">
+		<div class="question">
+			<p class="question__primary-text"><label for="householdShareMeals">In your home, how many people do you regularly buy food for and prepare meals with?</label></p>
+			<p class="question__secondary-text">Count your roommates if you often buy food and cook together.</p>
+		</div>
+		<div class="response">
+			<input type="tel" class="input--short" id="householdShareMeals" required />
+		</div>
 	</div>
 </div>
 

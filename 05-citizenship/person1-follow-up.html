@@ -4,51 +4,53 @@ step: 5
 title: Now, tell us about <span class="print-householdMember1FirstName"></span>’s citizenship and immigration status.
 ---
 
-<fieldset>
-	<div class="prompt">
-		<legend class="prompt__primary-text">Does <span class="print-householdMember1FirstName"></span> fit any of these immigration categories?</legend>
+<div class="field-group">
+  <fieldset>
+  	<div class="question">
+  		<legend class="question__primary-text">Does <span class="print-householdMember1FirstName"></span> fit any of these immigration categories?</legend>
 
-		<ul class="list-striped">
-			<li>Lawful Permanent Resident (LPR / Green Card Holder)</li>
-			<li>Asylee</li>
-			<li>Refugee</li>
-			<li>Cuban / Haitian entrant</li>
-			<li>Paroled into the U.S. for at least one year</li>
-			<li>Conditional entrant granted before 1980</li>
-			<li>Non-citizen spouse, child, or parent survivor of domestic violence</li>
-			<li>Victim of trafficking</li>
-			<li>A trafficking victim’s spouse, child, sibling, or parent</li>
-			<li>Have a pending application for a victim of trafficking visa</li>
-			<li>Granted witholding of deportation</li>
-			<li>Member of a federally recognized Indian tribe or American Indian born in Canada</li>
-			<li>Honorably discharged veteran or active service member of the U.S. military</li>
-			<li>Spouse or parent of an honorably discharged veteran or active service member of the U.S. military</li>
-      <li>Lived in the U.S. since 1996</li>
-		</ul>
+  		<ul class="list-striped">
+  			<li>Lawful Permanent Resident (LPR / Green Card Holder)</li>
+  			<li>Asylee</li>
+  			<li>Refugee</li>
+  			<li>Cuban / Haitian entrant</li>
+  			<li>Paroled into the U.S. for at least one year</li>
+  			<li>Conditional entrant granted before 1980</li>
+  			<li>Non-citizen spouse, child, or parent survivor of domestic violence</li>
+  			<li>Victim of trafficking</li>
+  			<li>A trafficking victim’s spouse, child, sibling, or parent</li>
+  			<li>Have a pending application for a victim of trafficking visa</li>
+  			<li>Granted witholding of deportation</li>
+  			<li>Member of a federally recognized Indian tribe or American Indian born in Canada</li>
+  			<li>Honorably discharged veteran or active service member of the U.S. military</li>
+  			<li>Spouse or parent of an honorably discharged veteran or active service member of the U.S. military</li>
+        <li>Lived in the U.S. since 1996</li>
+  		</ul>
 
-	</div>
+  	</div>
 
-	<div class="response">
-    <ul class="usa-unstyled-list response__radiogroup">
-      <li>
-        <input id="householdMember1CitizenshipStatusYes" type="radio" name="householdMember1CitizenshipStatus" value="Yes" required="">
-        <label for="householdMember1CitizenshipStatusYes">Yes, one of these applies to <span class="print-householdMember1FirstName"></span></label>
-      </li>
-      <li>
-        <input id="householdMember1CitizenshipStatusNo" type="radio" name="householdMember1CitizenshipStatus" value="No" required="">
-        <label for="householdMember1CitizenshipStatusNo">No, none of these apply to <span class="print-householdMember1FirstName"></span></label>
-      </li>
-    </ul>
-    <div class="explainer">
-	    <a href="#" class="explainer__toggle" aria-expanded="false" aria-controls="explainer-1">Why do we ask this?</a>
-	    <div class="explainer__content" id="explainer-1">
-	      <p>Immigrants in these categories may qualify for some programs. We ask about your immigration status so that we can find out what you may qualify for.</p>
-	      <p>Applying for these programs will not affect your or your family's immigration status.</p>
-	      <p>This information is private and kept confidential. It will not be shared with any agency for any reason other than checking your eligibility.</p>
-	    </div>
-	  </div>
-  </div>
-<fieldset>
+  	<div class="response">
+      <ul class="usa-unstyled-list response__radiogroup">
+        <li>
+          <input id="householdMember1CitizenshipStatusYes" type="radio" name="householdMember1CitizenshipStatus" value="Yes" required="">
+          <label for="householdMember1CitizenshipStatusYes">Yes, one of these applies to <span class="print-householdMember1FirstName"></span></label>
+        </li>
+        <li>
+          <input id="householdMember1CitizenshipStatusNo" type="radio" name="householdMember1CitizenshipStatus" value="No" required="">
+          <label for="householdMember1CitizenshipStatusNo">No, none of these apply to <span class="print-householdMember1FirstName"></span></label>
+        </li>
+      </ul>
+      <div class="explainer">
+  	    <a href="#" class="explainer__toggle" aria-expanded="false" aria-controls="explainer-1">Why do we ask this?</a>
+  	    <div class="explainer__content" id="explainer-1">
+  	      <p>Immigrants in these categories may qualify for some programs. We ask about your immigration status so that we can find out what you may qualify for.</p>
+  	      <p>Applying for these programs will not affect your or your family's immigration status.</p>
+  	      <p>This information is private and kept confidential. It will not be shared with any agency for any reason other than checking your eligibility.</p>
+  	    </div>
+  	  </div>
+    </div>
+  </fieldset>
+</div>
 
 <script>
   $(document).ready(function() {

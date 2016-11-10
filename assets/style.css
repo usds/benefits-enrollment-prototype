@@ -7069,13 +7069,16 @@ input.contains-error {
   line-height: 1.5;
 }
 
-/* line 1, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_cards.scss */
+/* =============================================
+  Card Wrapper
+===============================================*/
+/* line 4, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_cards.scss */
 .card-wrap {
   margin: 0 auto;
   padding: 0;
 }
 @media screen and (min-width: 600px) {
-  /* line 1, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_cards.scss */
+  /* line 4, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_cards.scss */
   .card-wrap {
     float: left;
     display: block;
@@ -7089,13 +7092,13 @@ input.contains-error {
   .card-wrap:last-child {
     margin-right: 0;
   }
-  /* line 11, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_cards.scss */
+  /* line 14, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_cards.scss */
   .card-wrap:last-child {
     margin-right: auto;
   }
 }
 @media screen and (min-width: 1201px) {
-  /* line 1, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_cards.scss */
+  /* line 4, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_cards.scss */
   .card-wrap {
     float: left;
     display: block;
@@ -7108,19 +7111,20 @@ input.contains-error {
   .card-wrap:last-child {
     margin-right: 0;
   }
-  /* line 20, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_cards.scss */
+  /* line 23, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_cards.scss */
   .card-wrap:last-child {
     margin-right: auto;
   }
 }
 
-/* line 26, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_cards.scss */
+/* Card =========================================*/
+/* line 30, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_cards.scss */
 .card {
   background: white;
   padding: 0 2rem;
 }
 @media screen and (min-width: 600px) {
-  /* line 26, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_cards.scss */
+  /* line 30, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_cards.scss */
   .card {
     border: 1px solid #d6d7d9;
     margin: 1rem 0;
@@ -7128,7 +7132,8 @@ input.contains-error {
   }
 }
 
-/* line 37, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_cards.scss */
+/* Card Headers*/
+/* line 42, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_cards.scss */
 .card__header,
 .card__header--success-message {
   border-bottom: 1px solid #d6d7d9;
@@ -7136,33 +7141,38 @@ input.contains-error {
   padding-top: 3rem;
 }
 
-/* line 44, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_cards.scss */
+/* line 49, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_cards.scss */
 .card__primary-heading {
   font-size: 3rem;
   margin: 0;
 }
 @media screen and (min-width: 600px) {
-  /* line 44, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_cards.scss */
+  /* line 49, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_cards.scss */
   .card__primary-heading {
     font-size: 4rem;
   }
 }
 
-/* line 53, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_cards.scss */
+/* line 58, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_cards.scss */
 .card__header--success-message {
   border-bottom: none;
 }
 
-/* line 57, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_cards.scss */
+/* line 62, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_cards.scss */
 .card__header--success-message .card__primary-heading {
   background: #2e8540;
   color: white;
   padding: .75em;
 }
 
-/* line 63, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_cards.scss */
+/* Card Body =========================================*/
+/* line 69, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_cards.scss */
 .card__body {
   max-width: 53rem;
+}
+/* line 72, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_cards.scss */
+.card__body fieldset {
+  max-width: 46rem;
 }
 /* line 20, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/uswds/lib/mixins/_clearfix.scss */
 .card__body fieldset::after {
@@ -7170,15 +7180,39 @@ input.contains-error {
   content: "";
   display: block;
 }
+/* line 77, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_cards.scss */
+.card__body .bulleted-list {
+  color: #5b616b;
+  list-style: none;
+  padding: 0 0 0 2rem;
+}
+/* line 82, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_cards.scss */
+.card__body .bulleted-list > li {
+  padding-left: 1em;
+  position: relative;
+}
+/* line 86, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_cards.scss */
+.card__body .bulleted-list > li:before {
+  background-color: #2e8540;
+  border-radius: 50%;
+  content: "";
+  display: block;
+  height: 8px;
+  left: 0;
+  position: absolute;
+  top: .5em;
+  width: 8px;
+}
 
-/* line 71, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_cards.scss */
+/* Card Footer =========================================*/
+/* line 102, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_cards.scss */
 .card__footer {
   clear: both;
   padding-bottom: 3rem;
   padding-top: 3rem;
 }
 
-/* line 77, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_cards.scss */
+/* line 108, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_cards.scss */
 .card__box {
   border: 1px solid #d6d7d9;
   max-height: 30rem;
@@ -7189,16 +7223,21 @@ input.contains-error {
   -webkit-overflow-scrolling: touch;
 }
 
-/* Sectioned Items */
-/* line 87, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_cards.scss */
-.sectioned-item + .sectioned-item {
+/* ============================================= 
+  Sectioned Items 
+  Note: These will be become card__panels
+===============================================*/
+/* line 121, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_cards.scss */
+.sectioned-item + .sectioned-item,
+.card__panel + .card__panel {
   border-top: 1px dashed #aeb0b5;
   margin-top: 6rem;
   padding-top: 1.5rem;
 }
 
-/* line 93, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_cards.scss */
-.sectioned-item__heading {
+/* line 128, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_cards.scss */
+.sectioned-item__heading,
+.card__panel__heading {
   font-size: 1.8rem;
   color: #323a45;
 }
@@ -7395,36 +7434,57 @@ input.contains-error {
   color: #02bfe7;
 }
 
-/* line 1, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_prompt-and-response.scss */
-.prompt {
-  margin: 3rem 0 0;
+/* 
+  Note:
+  We'll be replacing the name "prompt" with quesitons. 
+*/
+/* line 6, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_question-and-response.scss */
+.field-group {
+  margin: 4rem 0;
 }
 
-/* line 5, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_prompt-and-response.scss */
-.prompt__primary-text {
+/* line 10, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_question-and-response.scss */
+.question {
+  margin: 0;
+}
+
+/* line 14, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_question-and-response.scss */
+.prompt {
+  margin-top: 3rem;
+}
+
+/* line 18, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_question-and-response.scss */
+.prompt__primary-text,
+.question__primary-text,
+legend {
   font-size: 2rem;
   font-weight: 700;
   line-height: 1.5;
-  margin-bottom: 1em;
-  margin-top: 1em;
+  margin-bottom: .5rem;
+  margin-top: 0;
 }
 
-/* line 13, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_prompt-and-response.scss */
-.prompt__secondary-text {
+/* line 28, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_question-and-response.scss */
+.prompt__secondary-text,
+.question__secondary-text {
   color: #5b616b;
+  margin-top: 0;
 }
-/* line 16, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_prompt-and-response.scss */
-.prompt__secondary-text ul {
+/* line 33, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_question-and-response.scss */
+.prompt__secondary-text ul,
+.question__secondary-text ul {
   list-style: none;
   padding: 0 0 0 2rem;
 }
-/* line 20, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_prompt-and-response.scss */
-.prompt__secondary-text ul > li {
+/* line 37, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_question-and-response.scss */
+.prompt__secondary-text ul > li,
+.question__secondary-text ul > li {
   padding-left: 1em;
   position: relative;
 }
-/* line 24, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_prompt-and-response.scss */
-.prompt__secondary-text ul > li:before {
+/* line 41, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_question-and-response.scss */
+.prompt__secondary-text ul > li:before,
+.question__secondary-text ul > li:before {
   background-color: #2e8540;
   border-radius: 50%;
   content: "";
@@ -7436,14 +7496,8 @@ input.contains-error {
   width: 8px;
 }
 
-/* line 39, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_prompt-and-response.scss */
-.prompt__flag--optional {
-  color: #5b616b;
-}
-
-/* line 43, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_prompt-and-response.scss */
+/* line 56, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_question-and-response.scss */
 .response {
-  margin: 0 0 3rem;
   position: relative;
 }
 /* line 20, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/uswds/lib/mixins/_clearfix.scss */
@@ -7453,7 +7507,7 @@ input.contains-error {
   display: block;
 }
 
-/* line 49, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_prompt-and-response.scss */
+/* line 61, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_question-and-response.scss */
 .response__input-prefix {
   color: #2e8540;
   font-size: 2.4rem;
@@ -7462,12 +7516,12 @@ input.contains-error {
   top: .4rem;
   position: absolute;
 }
-/* line 57, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_prompt-and-response.scss */
+/* line 69, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_question-and-response.scss */
 .response__input-prefix + input {
   padding-left: 3rem;
 }
 
-/* line 62, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_prompt-and-response.scss */
+/* line 74, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_question-and-response.scss */
 .response__note {
   color: #5b616b;
   font-style: italic;
@@ -7475,12 +7529,19 @@ input.contains-error {
 }
 
 /* Radio Groups ----------------------------------------------*/
-/* line 69, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_prompt-and-response.scss */
+/* line 81, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_question-and-response.scss */
+.response__radiogroup,
+.response__radiogroup--inline,
+.response__radiogroup--two-cols {
+  margin-top: 1rem;
+}
+
+/* line 87, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_question-and-response.scss */
 .response__radiogroup > li {
   margin: 0;
 }
 
-/* line 73, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_prompt-and-response.scss */
+/* line 91, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_question-and-response.scss */
 .response__radiogroup label,
 .response__radiogroup--inline label,
 .response__radiogroup--two-cols label {
@@ -7492,10 +7553,10 @@ input.contains-error {
   border-radius: 4px;
   margin-top: 0;
   margin-bottom: .5em;
-  padding: 1em 1rem 1.5rem 4.5rem;
+  padding: 1em 2rem 1.5rem 4.5rem;
   position: relative;
 }
-/* line 85, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_prompt-and-response.scss */
+/* line 103, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_question-and-response.scss */
 .response__radiogroup label:before,
 .response__radiogroup--inline label:before,
 .response__radiogroup--two-cols label:before {
@@ -7504,14 +7565,14 @@ input.contains-error {
   top: 2.1rem;
 }
 
-/* line 92, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_prompt-and-response.scss */
+/* line 110, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_question-and-response.scss */
 .response__radiogroup input[type="radio"],
 .response__radiogroup--inline input[type="radio"],
 .response__radiogroup--two-cols input[type="radio"] {
   width: auto;
 }
 
-/* line 98, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_prompt-and-response.scss */
+/* line 116, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_question-and-response.scss */
 .response__radiogroup input[type="radio"]:checked + label,
 .response__radiogroup--inline input[type="radio"]:checked + label,
 .response__radiogroup--two-cols input[type="radio"]:checked + label {
@@ -7520,14 +7581,14 @@ input.contains-error {
 }
 
 /* Inline radiogroups */
-/* line 106, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_prompt-and-response.scss */
+/* line 124, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_question-and-response.scss */
 .response__radiogroup--inline > li {
   display: inline-block;
   margin-right: .2rem;
 }
 
 @media screen and (min-width: 600px) {
-  /* line 111, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_prompt-and-response.scss */
+  /* line 129, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_question-and-response.scss */
   .response__radiogroup--two-cols > li {
     display: inline-block;
     margin-right: .2rem;
@@ -7535,49 +7596,55 @@ input.contains-error {
   }
 }
 
-/* line 120, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_prompt-and-response.scss */
-.response__radio-group--unstyled .dependent-field {
+/* line 138, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_question-and-response.scss */
+.response__radio-group--unstyled .dependent-field,
+.response__radio-group--unstyled .inline-follow-up {
   border-left: 3px solid #e4e2e0;
   margin-left: 3rem;
   padding-left: 1.5rem;
 }
 
 /* Checkbox Group ----------------------------------------------*/
-/* line 127, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_prompt-and-response.scss */
+/* line 146, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_question-and-response.scss */
 .checkbox-group .prompt,
+.checkbox-group .question,
 .checkbox-group .response {
   margin-top: 0;
   margin-left: 1.5rem;
 }
-/* line 132, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_prompt-and-response.scss */
+/* line 152, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_question-and-response.scss */
 .checkbox-group .prompt label,
 .checkbox-group .prompt .prompt__primary-text,
 .checkbox-group .prompt .prompt__secondary-text,
+.checkbox-group .question label,
+.checkbox-group .question .prompt__primary-text,
+.checkbox-group .question .prompt__secondary-text,
 .checkbox-group .response label,
 .checkbox-group .response .prompt__primary-text,
 .checkbox-group .response .prompt__secondary-text {
   margin-top: 0;
 }
 
-/* line 139, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_prompt-and-response.scss */
-.checkbox-group .dependent-field {
+/* line 159, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_question-and-response.scss */
+.checkbox-group .dependent-field,
+.checkbox-group .inline-follow-up {
   border-left: 3px solid #e4e2e0;
   margin-left: 3rem;
 }
 
-/* line 144, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_prompt-and-response.scss */
+/* line 165, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_question-and-response.scss */
 .checkbox-group li > label {
   padding-left: 3rem;
   position: relative;
 }
-/* line 148, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_prompt-and-response.scss */
+/* line 169, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_question-and-response.scss */
 .checkbox-group li > label:before {
   left: 0;
   position: absolute;
   top: .3rem;
 }
 
-/* line 155, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_prompt-and-response.scss */
+/* line 176, /Users/irs/work/benefits-enrollment-demo/app/assets/stylesheets/benefits_enrollment/components/_question-and-response.scss */
 .checkbox-group .explainer {
   margin-left: 3rem;
 }

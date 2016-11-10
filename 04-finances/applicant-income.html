@@ -4,13 +4,15 @@ step: 4
 title: Let’s start with you.
 ---
 
-<div class="prompt">
-  <p class="prompt__primary-text"><label for="householdSavings">How much money do you have on hand today?</label></p>
-  <p class="prompt__secondary-text">Give your best estimate. This includes money in checking accounts, savings accounts, and any other cash you have available.</p>
-</div>
-<div class="response">
-	<div class="response__input-prefix" aria-hidden="true">$</div>
-  <input type="tel" class="input--medium" id="householdSavings" />
+<div class="field-group">
+  <div class="question">
+    <p class="question__primary-text"><label for="householdSavings">How much money do you have on hand today?</label></p>
+    <p class="question__secondary-text">Give your best estimate. This includes money in checking accounts, savings accounts, and any other cash you have available.</p>
+  </div>
+  <div class="response">
+  	<div class="response__input-prefix" aria-hidden="true">$</div>
+    <input type="tel" class="input--medium" id="householdSavings" />
+  </div>
 </div>
 
 <script>

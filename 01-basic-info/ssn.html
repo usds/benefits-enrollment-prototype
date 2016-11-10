@@ -4,54 +4,55 @@ step: 1
 title: Now, a few more questions about you.
 ---
 
-<fieldset>
-  <div class="prompt">
-  	<legend class="prompt__primary-text">What is your Social Security Number (SSN)?</legend>
-    <p class="prompt__secondary-text">You can leave this blank if you don't know it or don't have one. Providing one will help verify and move you faster in the application process.</p>
-  </div>
-  <div class="response">
-    <div>
-      <div class="usa-form-group usa-form-group-year">
-        <label class="usa-sr-only" for="applicantSSN1">Social Security Number First 3 Numbers</label>
-        <input class="usa-input-inline auto-advance-3" class="usa-form-control" id="applicantSSN1" pattern="[0-9]{3}" type="password">
-      </div>
-      <div class="usa-form-group usa-form-group-day">
-        <label class="usa-sr-only"  for="applicantSSN2">Social Security Number Middle 2 Numbers</label>
-        <input class="usa-input-inline auto-advance"  class="usa-form-control" id="applicantSSN2" pattern="[0-9]{2}" type="password" >
-      </div>
-      <div class="usa-form-group usa-form-group-year">
-        <label class="usa-sr-only"  for="applicantSSN3">Social Security Number Last 4 Numbers</label>
-        <input class="usa-input-inline auto-advance-4" class="usa-form-control" id="applicantSSN3" pattern="[0-9]{4}" type="password">
+<div class="field-group">
+  <fieldset>
+    <div class="question">
+    	<legend class="question__primary-text">What is your Social Security Number (SSN)?</legend>
+      <p class="question__secondary-text">You can leave this blank if you don't know it or don't have one. Providing one will help verify and move you faster in the application process.</p>
+    </div>
+    <div class="response">
+      <div>
+        <div class="usa-form-group usa-form-group-year">
+          <label class="usa-sr-only" for="applicantSSN1">Social Security Number First 3 Numbers</label>
+          <input class="usa-input-inline auto-advance-3" class="usa-form-control" id="applicantSSN1" pattern="[0-9]{3}" type="password">
+        </div>
+        <div class="usa-form-group usa-form-group-day">
+          <label class="usa-sr-only"  for="applicantSSN2">Social Security Number Middle 2 Numbers</label>
+          <input class="usa-input-inline auto-advance"  class="usa-form-control" id="applicantSSN2" pattern="[0-9]{2}" type="password" >
+        </div>
+        <div class="usa-form-group usa-form-group-year">
+          <label class="usa-sr-only"  for="applicantSSN3">Social Security Number Last 4 Numbers</label>
+          <input class="usa-input-inline auto-advance-4" class="usa-form-control" id="applicantSSN3" pattern="[0-9]{4}" type="password">
+        </div>
       </div>
     </div>
-  </div>
-  <div class="response">
-    <div class="note note--has-icon">
-      <i class="fa fa-lock note__icon" aria-hidden="true"></i>
-      <p class="note__text">This information is kept confidential and secure as required by law. <a href="https://www.cms.gov/about-cms/agency-information/aboutwebsite/privacy-policy.html" target="_blank">Learn more.</a></p>
-    </div>
-  </div>
-</fieldset>
+  </fieldset>
+</div>
 
-<div class="prompt">
-  <div class="explainer">
-    <a href="#" class="explainer__toggle" aria-expanded="false" aria-controls="explainer-1">Why do we ask this?</a>
-    <div class="explainer__content" id="explainer-1">
-      <p>We use your Social Security Number to check information about to find out what you qualify for as we go through these steps. With your Social Security Number, we may be able to sign you up for services today.</p>
-      <p>You do not have to provide your Social Security Number right now, but if you choose not to, you will be asked to provide documents that prove things like your income sources.</p>
-    </div>
+<div class="note note--has-icon">
+  <i class="fa fa-lock note__icon" aria-hidden="true"></i>
+  <p class="note__text">This information is kept confidential and secure as required by law. <a href="https://www.cms.gov/about-cms/agency-information/aboutwebsite/privacy-policy.html" target="_blank">Learn more.</a></p>
+</div>
+
+
+<div class="explainer">
+  <a href="#" class="explainer__toggle" aria-expanded="false" aria-controls="explainer-1">Why do we ask this?</a>
+  <div class="explainer__content" id="explainer-1">
+    <p>We use your Social Security Number to check information about to find out what you qualify for as we go through these steps. With your Social Security Number, we may be able to sign you up for services today.</p>
+    <p>You do not have to provide your Social Security Number right now, but if you choose not to, you will be asked to provide documents that prove things like your income sources.</p>
   </div>
 </div>
 
-<div class="prompt">
-  <div class="explainer">
-    <a href="#" class="explainer__toggle" aria-expanded="false" aria-controls="explainer-2">For designers and developers</a>
-    <div class="explainer__content" id="explainer-2">
-      <p>A note on requesting SSN: you will need to ensure that at some point before verifying the applicant's info that you proof their identity. </p>
-      <p>We recommend doing that later in the user flow as it is often felt to be a burdensome step that can slow progress through the application.</p>
-    </div>
+
+
+<div class="explainer">
+  <a href="#" class="explainer__toggle" aria-expanded="false" aria-controls="explainer-2">For designers and developers</a>
+  <div class="explainer__content" id="explainer-2">
+    <p>A note on requesting SSN: you will need to ensure that at some point before verifying the applicant's info that you proof their identity. </p>
+    <p>We recommend doing that later in the user flow as it is often felt to be a burdensome step that can slow progress through the application.</p>
   </div>
 </div>
+
 
 
 
