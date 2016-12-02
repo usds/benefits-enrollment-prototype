@@ -18,6 +18,14 @@ title: OK <span id="print-applicantFirstName"></span>, you file federal taxes wi
   </div>
   <div class="field-group">
     <div class="question">
+      <p class="question__primary-text"><label for="householdMember1MiddleName">Middle name</label></p>
+    </div>
+    <div class="response">
+      <input type="text" id="householdMember1MiddleName" />
+    </div>
+  </div>
+  <div class="field-group">
+    <div class="question">
       <p class="question__primary-text"><label for="householdMember1LastName">Last name</label></p>
     </div>
     <div class="response">
@@ -44,6 +52,14 @@ title: OK <span id="print-applicantFirstName"></span>, you file federal taxes wi
     </div>
     <div class="response">
       <input type="text" id="householdMember2FirstName" required />
+    </div>
+  </div>
+  <div class="field-group">
+    <div class="question">
+      <p class="question__primary-text"><label for="householdMember2MiddleName">Middle name</label></p>
+    </div>
+    <div class="response">
+      <input type="text" id="householdMember2MiddleName" />
     </div>
   </div>
   <div class="field-group">
@@ -78,6 +94,14 @@ title: OK <span id="print-applicantFirstName"></span>, you file federal taxes wi
   </div>
   <div class="field-group">
     <div class="question">
+      <p class="question__primary-text"><label for="householdMember3MiddleName">Middle name</label></p>
+    </div>
+    <div class="response">
+      <input type="text" id="householdMember3MiddleName" />
+    </div>
+  </div>
+  <div class="field-group">
+    <div class="question">
       <p class="question__primary-text"><label for="householdMember3LastName">Last name</label></p>
     </div>
     <div class="response">
@@ -104,6 +128,14 @@ title: OK <span id="print-applicantFirstName"></span>, you file federal taxes wi
     </div>
     <div class="response">
       <input type="text" id="householdMember4FirstName" required />
+    </div>
+  </div>
+  <div class="field-group">
+    <div class="question">
+      <p class="question__primary-text"><label for="householdMember4MiddleName">Middle name</label></p>
+    </div>
+    <div class="response">
+      <input type="text" id="householdMember4MiddleName" />
     </div>
   </div>
   <div class="field-group">
@@ -138,6 +170,14 @@ title: OK <span id="print-applicantFirstName"></span>, you file federal taxes wi
   </div>
   <div class="field-group">
     <div class="question">
+      <p class="question__primary-text"><label for="householdMember5MiddleName">Middle name</label></p>
+    </div>
+    <div class="response">
+      <input type="text" id="householdMember5MiddleName" />
+    </div>
+  </div>
+  <div class="field-group">
+    <div class="question">
       <p class="question__primary-text"><label for="householdMember5LastName">Last name</label></p>
     </div>
     <div class="response">
@@ -164,6 +204,14 @@ title: OK <span id="print-applicantFirstName"></span>, you file federal taxes wi
     </div>
     <div class="response">
       <input type="text" id="householdMember6FirstName" required />
+    </div>
+  </div>
+  <div class="field-group">
+    <div class="question">
+      <p class="question__primary-text"><label for="householdMember6MiddleName">Middle name</label></p>
+    </div>
+    <div class="response">
+      <input type="text" id="householdMember6MiddleName" />
     </div>
   </div>
   <div class="field-group">
@@ -206,7 +254,7 @@ title: OK <span id="print-applicantFirstName"></span>, you file federal taxes wi
     for(x = 6; x > parseInt(householdSize-1); x--) {
       $('#person-' + x).remove();
     }
-  	
+
     $('form').on('submit', function() {
 
         if (!checkValidityIfSupported($('form').get(0))) {
