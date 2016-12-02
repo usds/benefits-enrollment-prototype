@@ -53,6 +53,14 @@ title: OK <span id="print-applicantFirstName"></span>, you share meals with <spa
 	</div>
 	<div class="field-group">
 		<div class="question">
+		  <p class="question__primary-text"><label for="householShareMealsAddedMiddle1">Legal first name</label></p>
+		</div>
+		<div class="response">
+		  <input type="text" id="householShareMealsAddedMiddle1" />
+		</div>
+	</div>
+	<div class="field-group">
+		<div class="question">
 		  <p class="question__primary-text"><label for="householShareMealsAddedLast1">Last name</label></p>
 		</div>
 		<div class="response">
@@ -72,6 +80,14 @@ title: OK <span id="print-applicantFirstName"></span>, you share meals with <spa
 	</div>
 	<div class="field-group">
 		<div class="question">
+		  <p class="question__primary-text"><label for="householShareMealsAddedMiddle2">Legal first name</label></p>
+		</div>
+		<div class="response">
+		  <input type="text" id="householShareMealsAddedMiddle2" />
+		</div>
+	</div>
+	<div class="field-group">
+		<div class="question">
 		  <p class="question__primary-text"><label for="householShareMealsAddedLast2">Last name</label></p>
 		</div>
 		<div class="response">
@@ -87,6 +103,14 @@ title: OK <span id="print-applicantFirstName"></span>, you share meals with <spa
 		</div>
 		<div class="response">
 		  <input type="text" id="householShareMealsAddedFirst3" />
+		</div>
+	</div>
+	<div class="field-group">
+		<div class="question">
+		  <p class="question__primary-text"><label for="householShareMealsAddedMiddle3">Legal first name</label></p>
+		</div>
+		<div class="response">
+		  <input type="text" id="householShareMealsAddedMiddle3" />
 		</div>
 	</div>
 	<div class="field-group">
@@ -111,6 +135,14 @@ title: OK <span id="print-applicantFirstName"></span>, you share meals with <spa
 	</div>
 	<div class="field-group">
 		<div class="question">
+		  <p class="question__primary-text"><label for="householShareMealsAddedMiddle4">Legal first name</label></p>
+		</div>
+		<div class="response">
+		  <input type="text" id="householShareMealsAddedMiddle4" />
+		</div>
+	</div>
+	<div class="field-group">
+		<div class="question">
 		  <p class="question__primary-text"><label for="householShareMealsAddedLast4">Last name</label></p>
 		</div>
 		<div class="response">
@@ -131,6 +163,14 @@ title: OK <span id="print-applicantFirstName"></span>, you share meals with <spa
 	</div>
 	<div class="field-group">
 		<div class="question">
+		  <p class="question__primary-text"><label for="householShareMealsAddedMiddle5">Legal first name</label></p>
+		</div>
+		<div class="response">
+		  <input type="text" id="householShareMealsAddedMiddle5" />
+		</div>
+	</div>
+	<div class="field-group">
+		<div class="question">
 		  <p class="question__primary-text"><label for="householShareMealsAddedLast5">Last name</label></p>
 		</div>
 		<div class="response">
@@ -147,6 +187,14 @@ title: OK <span id="print-applicantFirstName"></span>, you share meals with <spa
 		</div>
 		<div class="response">
 		  <input type="text" id="householShareMealsAddedFirst6" />
+		</div>
+	</div>
+	<div class="field-group">
+		<div class="question">
+		  <p class="question__primary-text"><label for="householShareMealsAddedMiddle6">Legal first name</label></p>
+		</div>
+		<div class="response">
+		  <input type="text" id="householShareMealsAddedMiddle6" />
 		</div>
 	</div>
 	<div class="field-group">
@@ -200,28 +248,28 @@ title: OK <span id="print-applicantFirstName"></span>, you share meals with <spa
       $('#print-householdShareMeals').text(householdShareMeals + " people");
     }
 
-    for(x = 6; x > parseInt(householdSize)-1; x--) { 
+    for(x = 6; x > parseInt(householdSize)-1; x--) {
       $('#person-' + x).remove();
     }
 
     for(i = 1; i < parseInt(householdSize)+1; i++) {
     	var firstName = "householdMember" + i + "FirstName";
-    	var lastName = "householdMember" + i + "LastName"; 
+    	var lastName = "householdMember" + i + "LastName";
 
       $('#print-householdMemberName' + i).text(window[firstName] + " " + window[lastName]);
     }
 
-    for(x = 6; x > parseInt(householdShareMeals); x--) { 
+    for(x = 6; x > parseInt(householdShareMeals); x--) {
 	    $('#persona-' + x).remove();
 	   }
 
-	  
-  	
+
+
     $(".usa-button-big").click(function(event) {
         event.preventDefault();
 
         var existingPeople = $('input[name="shareMealsWith"]:checked').length;
-        
+
 
         storeData();
         getData();
