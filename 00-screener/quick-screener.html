@@ -13,14 +13,16 @@ button_text: Next
 	</div>
 </div>
 
-<div class="field-group">
-	<div class="question">
-		<p class="question__primary-text"><label for="householdIncome">About how much money did your household make in the last 30 days?</label></p>
-		<p class="question__secondary-text">Give your best estimate. Add up income from things like your job, social security, unemployment and other benefits.</p>
-	</div>
-	<div class="response">
-		<div class="response__input-prefix" aria-hidden="true">$</div>
-		<input type="tel" id="householdIncome" class="input--medium" />
+<div class="snap-only">
+	<div class="field-group">
+		<div class="question">
+			<p class="question__primary-text"><label for="householdIncome">About how much money did your household make in the last 30 days?</label></p>
+			<p class="question__secondary-text">Give your best estimate. Add up income from things like your job, social security, unemployment and other benefits.</p>
+		</div>
+		<div class="response">
+			<div class="response__input-prefix" aria-hidden="true">$</div>
+			<input type="tel" id="householdIncome" class="input--medium" />
+		</div>
 	</div>
 </div>
 
@@ -50,12 +52,10 @@ button_text: Next
 
 <script>
 	$(document).ready(function() {
-
 		$('form').on('submit', function() {
 
-
-                if (!checkValidityIfSupported($('form').get(0))) {
-          	  return false;
+        if (!checkValidityIfSupported($('form').get(0))) {
+        	return false;
     		}
 
     		else {
@@ -76,7 +76,7 @@ button_text: Next
 					storeData();
 					getData();
 
-			    if (householdIncome <= 10000) {
+			    if (((typeof householdIncome == "undefined") && (benefitChoiceFoodAssistance == "no")) || (householdIncome <= 10000)) {
 				    window.location.href = "eligible.html";
 				  }
 

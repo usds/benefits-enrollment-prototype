@@ -7,8 +7,10 @@ button_text: Start the application
 
 
 <div class="data-list">
-	<h3 class="data-list__heading">Your monthly income</h3>
-	<p class="data-list__text"><i class="fa fa-money data-list__icon" aria-hidden="true"></i> $<span id="print-householdIncome"></span></p>
+	<div class="snap-only">
+		<h3 class="data-list__heading">Your monthly income</h3>
+		<p class="data-list__text"><i class="fa fa-money data-list__icon" aria-hidden="true"></i> $<span id="print-householdIncome"></span></p>
+	</div>
 	<div class="medicaid-only">
 		<h3 class="data-list__heading">Your household size (including you)</h3>
 		<p class="data-list__text"><i class="fa fa-users data-list__icon" aria-hidden="true"></i> <span id="print-householdSize"></span></p>
@@ -29,7 +31,7 @@ button_text: Start the application
 		var householdIncome = sessionStorage.getItem("householdIncome");
 		var householdSize = sessionStorage.getItem("householdSize");
 		var householdShareMeals = sessionStorage.getItem("householdShareMeals");
-		
+
 
 		$('#print-householdZipCode').text(householdZipCode);
 		$('#print-householdIncome').text(householdIncome);
@@ -43,7 +45,7 @@ button_text: Start the application
 		if ((benefitChoiceHealthcare == "yes") && (benefitChoiceFoodAssistance == "no")) {
 			$('#print-benefits').text("healthcare coverage (Medicaid)")
 		}
-		
+
 		householdSize = parseInt(householdSize);
 
 		if (householdSize == 1) {
@@ -60,7 +62,7 @@ button_text: Start the application
 			$('#print-householdShareMeals').text(householdShareMeals + " people");
 		}
 
-		
+
 
 		$(".usa-button-big").click(function(event) {
 			event.preventDefault();
