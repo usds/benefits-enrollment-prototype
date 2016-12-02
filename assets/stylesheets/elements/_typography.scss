@@ -1,0 +1,88 @@
+/* Highlight */
+.highlight--positive {
+	color: $color-green;
+}
+
+/* Current Step */
+.current-step {
+	color: $color-green;
+	font-size: 1.2rem;
+	font-weight: $font-bold;
+	margin: 0;
+
+	@include media($medium-screen) {
+		font-size: 1.4rem;
+	}
+
+	@include media($medium-screen) {
+		font-size: 1.6rem;
+		margin-bottom: .5rem;
+	}
+}
+
+/* Notes */
+.note {
+	background: $color-gold-lightest;
+	border-radius: 4px;
+	color: $color-gray;
+	padding: 1rem 2rem;
+}
+
+.note--has-icon {
+	padding-left: 5rem;
+	position: relative;
+}
+
+.note__icon {
+	font-size: 2rem;
+	left: 2rem;
+	position: absolute;
+}
+
+.note__text {
+	font-size: 1.4rem;
+	line-height: 1.2;
+	margin: 0;
+
+	@include media($medium-screen) {
+		font-size: 1.6rem;
+	}
+}
+
+/* Data List */
+.data-list__heading {
+	color: $color-gray;
+	font-size: 1.7rem;
+	font-weight: $font-normal;
+	margin: 1.5em 0 0 0;
+}
+
+.data-list__text {
+	color: $color-green;
+	font-size: 2rem;
+	font-weight: $font-bold;
+	margin: 0;
+}
+
+.data-list__icon {
+	display: inline-block;
+	margin-right: .5em;
+}
+
+/* Striped List */
+.list-striped {
+	border: 1px solid $color-gray-lighter;
+	list-style: none;
+	padding: 0;
+	width: 100%;
+
+	> li {
+		color: $color-gray;
+		margin: 0;
+		padding: .5rem 2rem;
+
+		&:nth-of-type(odd) {
+			background-color: $color-gray-lightest;
+		}
+	}
+}

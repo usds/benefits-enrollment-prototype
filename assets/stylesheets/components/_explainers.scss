@@ -7,7 +7,7 @@
 }
 
 .explainer__toggle {
-	background: #31a78b url('plus.svg') no-repeat 95% center;
+	background: #31a78b url('../images/plus.svg') no-repeat 95% center;
 	background-size: 13px;
 	display: block;
 	color: white;
@@ -22,7 +22,7 @@
 }
 
 .explainer__toggle[aria-expanded="true"] {
-	background-image: url('minus.svg');
+	background-image: url('../images/minus.svg');
 }
 
 .explainer__toggle:visited {

@@ -1,0 +1,63 @@
+.hero,
+.hero--darker  {
+	background-color: $color-primary;
+	border-top: 1px solid white;
+	color: white;
+	padding: 10rem 0;
+
+	h1 {
+		margin-top: 0;
+	}
+
+	.usa-alert {
+		color: $color-base;
+		margin-top: -2.5em;
+    margin-bottom: 2em;
+
+    @include media($medium-screen) {
+    	margin-top: -2.5em;
+    	margin-bottom: 2em;
+    }
+
+    @include media($large-screen) {
+    	margin-top: -2.5em;
+    	margin-bottom: 2em;
+    }
+
+    .usa-alert-text {
+    	max-width: 77rem;
+    }
+	}
+}
+
+.hero--darker {
+	background-color: $color-gray-dark;
+	border-top: 0;
+	font-family: $font-serif;
+	padding: 6rem 0;
+
+	a {
+		color: $color-primary-alt;
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	.usa-button-secondary {
+		color: white;
+	}
+
+	h1 {
+		font-family: $font-serif;
+		font-size: 3rem;
+		font-weight: $font-normal;
+		margin-bottom: 1em;
+	}
+
+	p {
+		line-height: 1.7;
+		margin: 3rem 0;
+	}
+}

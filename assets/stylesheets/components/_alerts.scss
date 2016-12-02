@@ -1,0 +1,21 @@
+.alert,
+.alert--positive {
+	border: 1px solid;
+	margin: 3rem 0;
+	max-width: 56rem;
+	padding: 0 1em;
+
+	p {
+		font-family: $font-serif;
+	}
+}
+
+.alert--positive {
+	border-color: $color-green;
+	color: $color-green;
+}
+
+.usa-alert {
+	  background-image: url(../images/alerts/info.png);
+    background-image: url(../images/alerts/info.svg);
+}

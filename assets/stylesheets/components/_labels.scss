@@ -1,0 +1,15 @@
+.label,
+.label-big {
+	background: $color-primary-alt;
+	color: $color-gray-dark;
+	display: inline-block;
+	font-family: $font-sans;
+	font-weight: $font-bold;
+	margin: 0 0 3rem;
+	padding: .5em 1em;
+	text-transform: uppercase;
+
+	a {
+		color: $color-gray-dark;
+	}
+}

@@ -4,8 +4,7 @@
 {% assign lvl = page.url | append:'X' | split:'/' | size %}
 {% capture relative %}{% for i in (3..lvl) %}../{% endfor %}{% endcapture %}
 
-<link rel="stylesheet" href="{{ relative }}assets/style.css">
-<link rel="stylesheet" href="{{ relative }}assets/explainer.css">
+<link rel="stylesheet" href="{{ site.baseurl }}/assets/stylesheets/application.css">
 <script src="{{ relative }}assets/jquery.js"></script>
 <script src="{{ relative }}assets/prep-storage.js"></script>
 <script src="{{ relative }}assets/scripts.js"></script>

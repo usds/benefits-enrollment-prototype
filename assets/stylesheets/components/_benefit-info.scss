@@ -1,0 +1,16 @@
+.benefit-info__primary-heading {
+	border-bottom: 1rem solid $color-green;
+	color: $color-green;
+}
+
+.benefit-info > h3 {
+	margin-bottom: 0;
+
+	+ p {
+		margin-top: 0;
+	}
+}
+
+.benefit-info > ul {
+	color: $color-gray;
+}

@@ -1,0 +1,16 @@
+legend {
+	font-size: 1em;
+	font-weight: $font-normal
+}
+
+input.input--short {
+	width: 25%;
+}
+
+input.input--medium {
+	width: 50%;
+}
+
+input.contains-error {
+	border: 3px solid $color-secondary-dark;
+}
