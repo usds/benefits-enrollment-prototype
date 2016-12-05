@@ -1,4 +1,3 @@
-
 $(document).ready(function(){
   'use strict';
   var $inputs = $('input:not([type="hidden"]), input:not([type="submit"])'),
@@ -9,10 +8,11 @@ $(document).ready(function(){
 
   var displayErrors = function($el) {
     var errorMessage = $el.attr('data-custom-validity') || $el[0].validationMessage,
-        errorFieldName = $el.attr('id'),
-        $label = $('label[for="'+errorFieldName+'"]'),
-        $container = $el.closest('.field-group'),
-        errorID = "error";
+      errorFieldName = $el.attr('id'),
+      $label = $('label[for="'+errorFieldName+'"]'),
+      $container = $el.closest('.field-group'),
+      errorID = "error";
+
     if (($el.attr("type") != "radio") && ($el.attr("type") != "checkbox")) {
       $el.addClass(errorClass);
       $label.addClass(errorClass);
@@ -36,6 +36,10 @@ $(document).ready(function(){
   };
 
   var checkValidations = function(event) {
+    // Redefine the inputs since some will be removed on page load
+    $inputs = $('input:not([type="hidden"]), input:not([type="submit"])');
+
+    // Validate each input
     $inputs.each(function() {
       var $el = $(this);
       if (!this.checkValidity()) {
@@ -49,8 +53,8 @@ $(document).ready(function(){
     });
   };
 
+  // checkValidity() will crash IE9, so we need to bypass it there.
   var hasBrowserValidation = (typeof document.createElement('input').checkValidity == 'function');
-
 
   if (hasBrowserValidation) {
     $submit.on("click", checkValidations);
@@ -60,5 +64,5 @@ $(document).ready(function(){
       }
     });
   }
-  
+
 });

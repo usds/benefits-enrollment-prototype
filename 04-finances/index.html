@@ -62,7 +62,13 @@ title: Now, we need to ask you some money questions.
 
         storeData();
 
-        window.location.href = "applicant-income.html";
+        if (benefitChoiceHealthcare == "no"){
+          window.location.href = "applicant-details.html";
+        }
+        else {
+          window.location.href = "applicant-income.html";
+        }
+
 
         return false;
       }

@@ -59,10 +59,10 @@ $(document).ready(function() {
     // For now, if browser does not support HTML5 validation, allow form data to be submitted without validation.
     // In practice, this should be replaced with a shim for IE9.
     checkValidityIfSupported = function(elem) {
-	if (typeof elem.checkValidity == 'function') {
-	    return elem.checkValidity();
-	} else {
-	    return true;
-	}
-    }
+			if (typeof elem.checkValidity == 'function') {
+			    return elem.checkValidity();
+			} else {
+			    return true;
+			}
+	  }
 });
