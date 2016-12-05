@@ -9,7 +9,7 @@ button_text: Next
 		<p class="question__primary-text"><label for="householdZipCode">What is your zip code?</label></p>
 	</div>
 	<div class="response">
-		<input class="input--medium" type="tel" id="householdZipCode" required/>
+		<input class="input--medium" type="text" data-custom-validity="Please fill out with 5-digit zip code" id="householdZipCode" required pattern="(\d{5}([\-]\d{4})?)"/>
 	</div>
 </div>
 
@@ -21,7 +21,7 @@ button_text: Next
 		</div>
 		<div class="response">
 			<div class="response__input-prefix" aria-hidden="true">$</div>
-			<input type="tel" id="householdIncome" class="input--medium" />
+			<input type="number" id="householdIncome" pattern="\d*" class="input--medium" />
 		</div>
 	</div>
 </div>
@@ -33,7 +33,7 @@ button_text: Next
 			<p class="question__secondary-text">This is usually family members who you live with.</p>
 		</div>
 		<div class="response">
-			<input class="input--short" type="tel" id="householdSize" required />
+			<input class="input--short" type="number" pattern="\d*" min="1" id="householdSize" required />
 		</div>
 	</div>
 </div>
@@ -45,7 +45,7 @@ button_text: Next
 			<p class="question__secondary-text">Count your roommates if you often buy food and cook together.</p>
 		</div>
 		<div class="response">
-			<input type="tel" class="input--short" id="householdShareMeals" required />
+			<input type="number" class="input--short" pattern="\d*" min="0" id="householdShareMeals" required />
 		</div>
 	</div>
 </div>

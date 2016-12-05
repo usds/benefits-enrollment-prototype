@@ -14,3 +14,15 @@ input.input--medium {
 input.contains-error {
 	border: 3px solid $color-secondary-dark;
 }
+
+.form-feedback--error {
+	color: $color-secondary-dark;
+	font-weight: $font-bold;
+}
+
+// Hide Spinners on Number inputs
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
