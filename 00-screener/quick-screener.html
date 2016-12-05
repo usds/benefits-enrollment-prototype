@@ -9,7 +9,7 @@ button_text: Next
 		<p class="question__primary-text"><label for="householdZipCode">What is your zip code?</label></p>
 	</div>
 	<div class="response">
-		<input class="input--medium" type="text" data-custom-validity="Please fill out with 5-digit zip code" id="householdZipCode" required pattern="(\d{5}([\-]\d{4})?)"/>
+		<input class="input--medium" type="text" data-custom-validity="Please fill out with 5-digit zip code" id="householdZipCode" required pattern="(\d{5}([\-]\d{4})?)" title="Use 5 digit zip code"/>
 	</div>
 </div>
 
@@ -33,7 +33,7 @@ button_text: Next
 			<p class="question__secondary-text">This is usually family members who you live with.</p>
 		</div>
 		<div class="response">
-			<input class="input--short" type="number" pattern="\d*" min="1" id="householdSize" required />
+			<input class="input--short" type="number" pattern="\d*" min="1" id="householdSize" data-custom-validity='Please enter minumum of "1" since this number includes you' title='Please enter minumum of "1" since this number includes you' required />
 		</div>
 	</div>
 </div>

@@ -9,16 +9,30 @@ $(document).ready(function(){
 
   var displayErrors = function($el) {
     var errorMessage = $el.attr('data-custom-validity') || $el[0].validationMessage,
-        errorLocation = $el.attr('id');
-    $el.addClass(errorClass);
-    $el.next().remove('.form-feedback');
-    $el.after('<p aria-atomic="true" class="form-feedback form-feedback--error" role="alert">'+errorMessage+'</p>');
-    location.href = "#" + errorLocation;
+        errorFieldName = $el.attr('id'),
+        $label = $('label[for="'+errorFieldName+'"'),
+        $container = $el.closest('.field-group'),
+        errorID = "error";
+    if (($el.attr("type") != "radio") && ($el.attr("type") != "checkbox")) {
+      $el.addClass(errorClass);
+      $label.addClass(errorClass);
+      $el.next().remove('.form-feedback');
+      $el.after('<p aria-atomic="true" class="form-feedback form-feedback--error" role="alert">'+errorMessage+'</p>');
+    }
+    else {
+      $el.parent().parent().parent().find('.form-feedback').remove();
+      $el.parent().parent().before('<p aria-atomic="true" class="form-feedback form-feedback--error" role="alert">'+errorMessage+'</p>');
+    }
+    $el.focus();
+    $container.attr('id',  errorID);
+    location.href = "#" + errorID;
   };
 
   var clearErrors = function($el) {
     $el.removeClass(errorClass);
     $el.next().remove(feedbackSelector);
+    $('label.'+errorClass).removeClass(errorClass);
+    $('#error').removeAttr('id');
   };
 
   var checkValidations = function(event) {
@@ -35,11 +49,16 @@ $(document).ready(function(){
     });
   };
 
-  $submit.on("click", checkValidations);
-  $inputs.on("keyup", function(){
-    if ($(this).val()){
-      clearErrors($(this));
-    }
-  });
-  console.log($submit.length);
+  var hasBrowserValidation = (typeof document.createElement('input').checkValidity == 'function');
+
+
+  if (hasBrowserValidation) {
+    $submit.on("click", checkValidations);
+    $inputs.on("keyup", function(){
+      if ($(this).val()){
+        clearErrors($(this));
+      }
+    });
+  }
+  
 });
