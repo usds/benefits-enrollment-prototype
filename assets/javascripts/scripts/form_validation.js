@@ -10,7 +10,7 @@ $(document).ready(function(){
   var displayErrors = function($el) {
     var errorMessage = $el.attr('data-custom-validity') || $el[0].validationMessage,
         errorFieldName = $el.attr('id'),
-        $label = $('label[for="'+errorFieldName+'"'),
+        $label = $('label[for="'+errorFieldName+'"]'),
         $container = $el.closest('.field-group'),
         errorID = "error";
     if (($el.attr("type") != "radio") && ($el.attr("type") != "checkbox")) {
