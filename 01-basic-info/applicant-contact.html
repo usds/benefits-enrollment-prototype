@@ -115,7 +115,7 @@ title: Where can we send you mail?
   	<p class="question__secondary-text">This is the best way for us to follow-up regarding your application.</p>
   </div>
   <div class="response">
-  	<input type="tel" id="applicantPhone" />
+  	<input type="tel" id="applicantPhone" pattern="^\(?([0-9]{3})\)?[-.]?([0-9]{3})[-.]?([0-9]{4})$"/>
   </div>
 </div>
 
@@ -132,7 +132,7 @@ title: Where can we send you mail?
 
 <script>
 	$(document).ready(function() {
-		
+
 		$('#applicantZip').val(householdZipCode);
 
 		$('form').on('submit', function() {
