@@ -17,11 +17,11 @@ title: How would you like us to keep in touch?
 					<label for="notificationPreferenceText">Text me</label>
 
 					<div class="inline-follow-up usa-sr-only" aria-hidden="true">
-						<div class="question" > 
+						<div class="question" >
 							<p class="question__secondary-text"><label for="applicantSMSPhone">What is your phone number for text messages?</label></p>
 						</div>
 						<div class="response">
-							<input type="tel" id="applicantSMSPhone" />
+							<input type="tel" id="applicantSMSPhone" pattern="(\d{5}([\-]\d{4})?)" />
 						</div>
 					</div>
 				</li>
@@ -29,11 +29,11 @@ title: How would you like us to keep in touch?
 					<input id="notificationPreferenceCall" class="open-follow-up"  type="checkbox" name="notificationPreference" value="Call">
 					<label for="notificationPreferenceCall">Call me</label>
 					<div class="inline-follow-up usa-sr-only" aria-hidden="true">
-						<div class="question" > 
+						<div class="question" >
 							<p class="question__secondary-text"><label for="applicantPhone">What is your phone number?</label></p>
 						</div>
 						<div class="response">
-							<input type="tel" id="applicantPhone" />
+							<input type="tel" id="applicantPhone" pattern="(\d{5}([\-]\d{4})?)" />
 						</div>
 					</div>
 				</li>
@@ -93,7 +93,7 @@ title: How would you like us to keep in touch?
 				$(this).siblings('.inline-follow-up').removeClass('usa-sr-only').attr("aria-hidden", "false");
 			}
 		});
-		
+
 
 		$('#applicantPhone').val(applicantPhone);
 		$('#applicantSMSPhone').val(applicantPhone);
@@ -103,7 +103,7 @@ title: How would you like us to keep in touch?
 
 			applicantPhone = $("#applicantPhone").val().replace(/(\d{3})(\d{3})(\d{4})/, "$1-$2-$3");
 			$("#applicantPhone").val(applicantPhone);
-			
+
 			applicantSMSPhone = $("#applicantSMSPhone").val().replace(/(\d{3})(\d{3})(\d{4})/, "$1-$2-$3");
 			$("#applicantSMSPhone").val(applicantSMSPhone);
 
@@ -123,7 +123,7 @@ title: How would you like us to keep in touch?
 				window.location.href = "ssn.html";
 			}
 
-			
+
 		});
 	});
 </script>
