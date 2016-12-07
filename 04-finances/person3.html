@@ -18,18 +18,18 @@ title: We need some details about <span class="print-householdMember3FirstName">
 					<input id="householdMember3_incomeTypeSelf" type="checkbox" name="householdMember3_incomeType" value="Is self-employed" class="open-dependent">
 					<label for="householdMember3_incomeTypeSelf">Is self-employed</label>
 					<div class="dependent-field usa-sr-only" aria-hidden="true">
-						<div class="question" > 
+						<div class="question" >
 							<p class="question__secondary-text"><label for="householdMember3_selfType">What type of work does <span class="print-householdMember3FirstName"></span> do?</label></p>
 						</div>
 						<div class="response">
 							<input type="text" id="householdMember3_SelfType" />
 						</div>
-						<div class="question" > 
+						<div class="question" >
 							<p class="question__secondary-text"><label for="selfAmount">How much will <span class="print-householdMember3FirstName"></span> earn this month after expenses?</label></p>
 						</div>
 						<div class="response">
 							<div class="response__input-prefix" aria-hidden="true">$</div>
-							<input type="tel" id="householdMember3_selfAmount" />
+							<input {% include _valid_dollar_amount.html %} id="householdMember3_selfAmount" />
 						</div>
 					</div>
 				</li>
@@ -37,12 +37,12 @@ title: We need some details about <span class="print-householdMember3FirstName">
 					<input id="householdMember3_incomeTypeUnemployment" type="checkbox" name="householdMember3_incomeType" value="Gets unemployment benefits" class="open-dependent">
 					<label for="householdMember3_incomeTypeUnemployment">Gets unemployment benefits</label>
 					<div class="dependent-field usa-sr-only" aria-hidden="true">
-						<div class="question" > 
+						<div class="question" >
 							<p class="question__secondary-text"><label for="householdMember3_unemploymentAmount">How much?</label></p>
 						</div>
 						<div class="response">
 							<div class="response__input-prefix" aria-hidden="true">$</div>
-							<input type="tel" id="householdMember3_unemploymentAmount" />
+							<input {% include _valid_dollar_amount.html %} id="householdMember3_unemploymentAmount" />
 						</div>
 						<div class="question">
 							<label for="householdMember3_unemploymentFrequency" class="question__secondary-text">How often?</label>
@@ -64,12 +64,12 @@ title: We need some details about <span class="print-householdMember3FirstName">
 					<input id="householdMember3_incomeTypeDisability" type="checkbox" name="householdMember3_incomeType" value="I get Social Security payments" class="open-dependent">
 					<label for="householdMember3_incomeTypeDisability">Gets disability reimbursements</label>
 					<div class="dependent-field usa-sr-only" aria-hidden="true">
-						<div class="question" > 
+						<div class="question" >
 							<p class="question__secondary-text"><label for="householdMember3_DisabilityAmount">How much?</label></p>
 						</div>
 						<div class="response">
 							<div class="response__input-prefix" aria-hidden="true">$</div>
-							<input type="tel" id="householdMember3_DisabilityAmount" />
+							<input {% include _valid_dollar_amount.html %} id="householdMember3_DisabilityAmount" />
 						</div>
 						<div class="question">
 							<label for="householdMember3_DisabilityFrequency" class="question__secondary-text">How often?</label>
@@ -91,12 +91,12 @@ title: We need some details about <span class="print-householdMember3FirstName">
 					<input id="householdMember3_incomeTypeSocialSecurity" type="checkbox" name="householdMember3_incomeType" value="Gets Social Security payments" class="open-dependent">
 					<label for="householdMember3_incomeTypeSocialSecurity">Gets Social Security payments</label>
 					<div class="dependent-field usa-sr-only" aria-hidden="true">
-						<div class="question" > 
+						<div class="question" >
 							<p class="question__secondary-text"><label for="householdMember3_ssAmount">How much?</label></p>
 						</div>
 						<div class="response">
 							<div class="response__input-prefix" aria-hidden="true">$</div>
-							<input type="tel" id="householdMember3_ssAmount" />
+							<input {% include _valid_dollar_amount.html %} id="householdMember3_ssAmount" />
 						</div>
 						<div class="question">
 							<label for="householdMember3_ssFrequency" class="question__secondary-text">How often?</label>
@@ -118,12 +118,12 @@ title: We need some details about <span class="print-householdMember3FirstName">
 					<input id="householdMember3_incomeTypeRetirement" type="checkbox" name="householdMember3_incomeType" value="Gets retirement account payments" class="open-dependent">
 					<label for="householdMember3_incomeTypeRetirement">Gets retirement account payments</label>
 					<div class="dependent-field usa-sr-only" aria-hidden="true">
-						<div class="question" > 
+						<div class="question" >
 							<p class="question__secondary-text"><label for="householdMember3_retirementAmount">How much?</label></p>
 						</div>
 						<div class="response">
 							<div class="response__input-prefix" aria-hidden="true">$</div>
-							<input type="tel" id="householdMember3_retirementAmount" />
+							<input {% include _valid_dollar_amount.html %} id="householdMember3_retirementAmount" />
 						</div>
 						<div class="question">
 							<label for="householdMember3_retirementFrequency" class="question__secondary-text">How often?</label>
@@ -145,12 +145,12 @@ title: We need some details about <span class="print-householdMember3FirstName">
 					<input id="householdMember3_incomeTypePension" type="checkbox" name="householdMember3_incomeType" value="Has a pension" class="open-dependent">
 					<label for="householdMember3_incomeTypePension">Has a pension</label>
 					<div class="dependent-field usa-sr-only" aria-hidden="true">
-						<div class="question" > 
+						<div class="question" >
 							<p class="question__secondary-text"><label for="householdMember3_pensionAmount">How much?</label></p>
 						</div>
 						<div class="response">
 							<div class="response__input-prefix" aria-hidden="true">$</div>
-							<input type="tel" id="householdMember3_pensionAmount" />
+							<input {% include _valid_dollar_amount.html %} id="householdMember3_pensionAmount" />
 						</div>
 						<div class="question">
 							<label for="householdMember3_pensionFrequency" class="question__secondary-text">How often?</label>
@@ -172,12 +172,12 @@ title: We need some details about <span class="print-householdMember3FirstName">
 					<input id="householdMember3_incomeTypeAlimony" type="checkbox" name="householdMember3_incomeType" value="Gets alimony" class="open-dependent">
 					<label for="householdMember3_incomeTypeAlimony">Gets alimony</label>
 					<div class="dependent-field usa-sr-only" aria-hidden="true">
-						<div class="question" > 
+						<div class="question" >
 							<p class="question__secondary-text"><label for="householdMember3_alimonyAmount">How much?</label></p>
 						</div>
 						<div class="response">
 							<div class="response__input-prefix" aria-hidden="true">$</div>
-							<input type="tel" id="householdMember3_alimonyAmount" />
+							<input {% include _valid_dollar_amount.html %} id="householdMember3_alimonyAmount" />
 						</div>
 						<div class="question">
 							<label for="householdMember3_alimonyFrequency" class="question__secondary-text">How often?</label>
@@ -199,18 +199,18 @@ title: We need some details about <span class="print-householdMember3FirstName">
 					<input id="householdMember3_incomeTypeOther" type="checkbox" name="householdMember3_incomeType" value="Other kinds of income" class="open-dependent">
 					<label for="householdMember3_incomeTypeOther">Has other sources of income</label>
 					<div class="dependent-field usa-sr-only" aria-hidden="true">
-						<div class="question"> 
+						<div class="question">
 							<p class="question__secondary-text"><label for="householdMember3_otherType">What type?</label></p>
 						</div>
 						<div class="response">
 							<input type="text" id="householdMember3_otherType" />
 						</div>
-						<div class="question"> 
+						<div class="question">
 							<p class="question__secondary-text"><label for="householdMember3_otherAmount">How much?</label></p>
 						</div>
 						<div class="response">
 							<div class="response__input-prefix" aria-hidden="true">$</div>
-							<input type="tel" id="householdMember3_otherAmount" />
+							<input {% include _valid_dollar_amount.html %} id="householdMember3_otherAmount" />
 						</div>
 						<div class="question">
 							<label for="householdMember3_otherFrequency" class="question__secondary-text">How often?</label>

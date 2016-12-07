@@ -9,7 +9,7 @@ title: Tell us more about your job(s).
   	<p class="usa-font-lead">Where do you currently work?</p>
   	<p class="question__primary-text"><label for="employerName">Employer name</label></p>
   </div>
-  	
+
   <div class="response">
   	<input type="text" id="employerName" />
   </div>
@@ -92,7 +92,7 @@ title: Tell us more about your job(s).
         </div>
   		<div class="usa-input-grid usa-input-grid-small">
   	  <label for="employerZip">Zip code</label>
-  	  <input class="usa-input-medium" id="employerZip" name="employerZip" type="text" pattern="[\d]{5}(-[\d]{4})?" data-grouplength="5,4" data-delimiter="-" data-politespace >
+  	  <input class="usa-input-medium" id="employerZip" name="employerZip" {% include _valid_zipcode.html %} data-grouplength="5,4" data-delimiter="-" data-politespace >
   	  </div>
     </div>
   </fieldset>
@@ -103,7 +103,7 @@ title: Tell us more about your job(s).
   	<p class="question__primary-text"><label for="employerPhone">Employer phone number</label></p>
   </div>
   <div class="response">
-  	<input type="tel" id="employerPhone" />
+  	<input {% include _valid_dollar_amount.html %} id="employerPhone" />
   </div>
 </div>
 
@@ -149,7 +149,7 @@ title: Tell us more about your job(s).
   </div>
   <div class="response">
   	<div class="response__input-prefix" aria-hidden="true">$</div>
-  	<input class="input--medium" type="tel" id="employerWages"/>
+  	<input class="input--medium" id="employerWages" {% include _valid_dollar_amount.html %} />
   </div>
 </div>
 
@@ -158,7 +158,7 @@ title: Tell us more about your job(s).
   	<p class="question__primary-text"><label for="employerWorkHours">On average, how many hours do you work a week at this job?</label></p>
   </div>
   <div class="response">
-  	<input type="tel" class="input--short" id="employerWorkHours" />
+  	<input class="input--short" id="employerWorkHours" {% include _valid_hours.html %} />
   </div>
 </div>
 
@@ -188,7 +188,7 @@ title: Tell us more about your job(s).
 		$('input[name="employerPayFrequency"]').on('change', function(){
 			var v = $(this).val().toLowerCase();
 			$("#print-employerPayFrequency").text(v);
-		});		
+		});
 
 		$('form').on('submit', function() {
 

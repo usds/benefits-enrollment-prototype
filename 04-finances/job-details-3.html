@@ -92,7 +92,7 @@ title: Tell us more about your other job.
         </div>
   		<div class="usa-input-grid usa-input-grid-small">
   	  <label for="employerZip3">Zip code</label>
-  	  <input class="usa-input-medium" id="employerZip3" name="employerZip3" type="text" pattern="[\d]{5}(-[\d]{4})?" data-grouplength="5,4" data-delimiter="-" data-politespace >
+  	  <input class="usa-input-medium" id="employerZip3" name="employerZip3" {% include _valid_zipcode.html %} data-grouplength="5,4" data-delimiter="-" data-politespace >
   	  </div>
     </div>
   </fieldset>
@@ -103,7 +103,7 @@ title: Tell us more about your other job.
   	<p class="question__primary-text"><label for="employerPhone3">Employer phone number</label></p>
   </div>
   <div class="response">
-  	<input type="tel" id="employerPhone3"  />
+  	<input id="employerPhone3" {% include _valid_phone.html %} />
   </div>
 </div>
 
@@ -149,7 +149,7 @@ title: Tell us more about your other job.
   </div>
   <div class="response">
   	<div class="response__input-prefix" aria-hidden="true">$</div>
-  	<input type="tel" id="employerWages3" />
+  	<input {% include _valid_dollar_amount.html %} id="employerWages3" />
   </div>
 </div>
 
@@ -158,7 +158,7 @@ title: Tell us more about your other job.
   	<p class="question__primary-text"><label for="employerWorkHours3">On average, how many hours do you work a week at this job?</label></p>
   </div>
   <div class="response">
-  	<input type="tel" class="input--short" id="employerWorkHours3" />
+  	<input {% include _valid_hours.html %} class="input--short" id="employerWorkHours3" />
   </div>
 </div>
 
@@ -168,7 +168,7 @@ title: Tell us more about your other job.
 		$('input[name="employerPayFrequency3"]').on('change', function(){
 			var v = $(this).val().toLowerCase();
 			$("#print-employerPayFrequency3").text(v);
-		});		
+		});
 
 		$('form').on('submit', function() {
 
@@ -191,7 +191,7 @@ title: Tell us more about your other job.
 
           return false;
         }
-			
+
 		});
 	});
 </script>

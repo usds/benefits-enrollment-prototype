@@ -15,15 +15,15 @@ title: Hello, <span id="print-applicantFirstName"></span>!
     	<div class="usa-date-of-birth">
         <div class="usa-form-group usa-form-group-month">
           <label for="applicantDOBMonth">Month</label>
-          <input class="usa-input-inline auto-advance" aria-describedby="dobHint" class="usa-form-control" id="applicantDOBMonth" name="applicantDOBMonth" pattern="[0-9]*" type="number" min="1" max="12" required>
+          <input class="usa-input-inline auto-advance" aria-describedby="dobHint" class="usa-form-control" id="applicantDOBMonth" name="applicantDOBMonth" {% include _valid_month.html %} required>
         </div>
         <div class="usa-form-group usa-form-group-day">
           <label for="applicantDOBDay">Day</label>
-          <input class="usa-input-inline auto-advance" aria-describedby="dobHint" class="usa-form-control" id="applicantDOBDay" name="applicantDOBDay" pattern="[0-9]*" type="number" min="1" max="31"  required>
+          <input class="usa-input-inline auto-advance" aria-describedby="dobHint" class="usa-form-control" id="applicantDOBDay" name="applicantDOBDay" {% include _valid_day.html %}  required>
         </div>
         <div class="usa-form-group usa-form-group-year">
           <label for="applicantDOBYear">Year</label>
-          <input class="usa-input-inline auto-advance-4" aria-describedby="dobHint" class="usa-form-control" id="applicantDOBYear" name="applicantDOBYear" pattern="[0-9]*" type="number" min="1900" max="2016" required>
+          <input class="usa-input-inline auto-advance-4" aria-describedby="dobHint" class="usa-form-control" id="applicantDOBYear" name="applicantDOBYear" {% include _valid_year.html %} required>
         </div>
       </div>
      </div>

@@ -45,7 +45,7 @@ title: Tell us more about <span class="print-householdMember6FirstName"></span>â
 	</div>
 	<div class="response">
 		<div class="response__input-prefix" aria-hidden="true">$</div>
-		<input class="input--medium" type="tel" id="householdMember6_employerWages3"/>
+		<input class="input--medium" id="householdMember6_employerWages3" {% include _valid_dollar_amount.html %}/>
 	</div>
 </div>
 
@@ -57,7 +57,7 @@ title: Tell us more about <span class="print-householdMember6FirstName"></span>â
 		$('input[name="employerPayFrequency"]').on('change', function(){
 			var v = $(this).val().toLowerCase();
 			$("#print-employerPayFrequency").text(v);
-		});		
+		});
 
 		$('form').on('submit', function() {
 
@@ -79,7 +79,7 @@ title: Tell us more about <span class="print-householdMember6FirstName"></span>â
 					}
 					return false;
 				}
-			
+
 		});
 	});
 </script>

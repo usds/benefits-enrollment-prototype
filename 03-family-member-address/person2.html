@@ -97,7 +97,7 @@ title: Where does <span class="print-householdMember2FirstName"></span> live?
         </div>
   		<div class="usa-input-grid usa-input-grid-small">
   	  <label for="householdMember2Zip">Zip code</label>
-  	  <input class="usa-input-medium" id="householdMember2Zip" name="ouseholdMember2Zip" type="text" pattern="[\d]{5}(-[\d]{4})?" data-grouplength="5,4" data-delimiter="-" data-politespace >
+  	  <input class="usa-input-medium" id="householdMember2Zip" name="householdMember2Zip" {% include _valid_zipcode.html %} data-grouplength="5,4" data-delimiter="-" data-politespace >
   	  </div>
     </div>
   </fieldset>
@@ -125,7 +125,7 @@ title: Where does <span class="print-householdMember2FirstName"></span> live?
 				$('#householdMember2Zip').val("");
 			}
 		})
-		
+
 		$(".usa-button-big").click(function(event) {
 			event.preventDefault();
 
@@ -138,7 +138,7 @@ title: Where does <span class="print-householdMember2FirstName"></span> live?
 			else {
 				window.location.href = "../04-finances/index.html";
 			}
-			
+
 		});
 	});
 </script>

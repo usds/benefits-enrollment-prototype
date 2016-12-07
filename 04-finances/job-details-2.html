@@ -91,7 +91,7 @@ title: Tell us more about your other job.
 	      </div>
 			<div class="usa-input-grid usa-input-grid-small">
 		  <label for="employerZip2">Zip code</label>
-		  <input class="usa-input-medium" id="employerZip2" name="employerZip2" type="text" pattern="[\d]{5}(-[\d]{4})?" data-grouplength="5,4" data-delimiter="-" data-politespace >
+		  <input class="usa-input-medium" id="employerZip2" name="employerZip2" {% include _valid_zipcode.html %} data-grouplength="5,4" data-delimiter="-" data-politespace >
 		  </div>
 	  </div>
 	</fieldset>
@@ -101,9 +101,9 @@ title: Tell us more about your other job.
 	<div class="question">
 		<p class="question__primary-text"><label for="employerPhone2">Employer phone number</label></p>
 	</div>
-		
+
 	<div class="response">
-		<input type="tel" id="employerPhone2" />
+		<input id="employerPhone2" {% include _valid_phone.html %} />
 	</div>
 </div>
 
@@ -149,7 +149,7 @@ title: Tell us more about your other job.
 	</div>
 	<div class="response">
 		<div class="response__input-prefix" aria-hidden="true">$</div>
-		<input type="tel" id="employerWages2"/>
+		<input id="employerWages2" {% include _valid_dollar_amount.html %} />
 	</div>
 </div>
 
@@ -158,7 +158,7 @@ title: Tell us more about your other job.
 		<p class="question__primary-text"><label for="employerWorkHours2">On average, how many hours do you work a week at this job?</label></p>
 	</div>
 	<div class="response">
-		<input type="tel" class="input--short" id="employerWorkHours2"/>
+		<input class="input--short" id="employerWorkHours2" {% include _valid_hours.html %}/>
 	</div>
 </div>
 
@@ -188,7 +188,7 @@ title: Tell us more about your other job.
 		$('input[name="employerPayFrequency2"]').on('change', function(){
 			var v = $(this).val().toLowerCase();
 			$("#print-employerPayFrequency2").text(v);
-		});		
+		});
 
 		$('form').on('submit', function() {
 
@@ -204,7 +204,7 @@ title: Tell us more about your other job.
 					if (haveThirdJob == "Yes") {
 						window.location.href = "job-details-3.html";
 					}
-					
+
 					else if (typeof applyForHouseholdMember1 != 'undefined' ) {
 						window.location.href = "person1.html";
 					}
@@ -216,7 +216,7 @@ title: Tell us more about your other job.
 					return false;
 
 				}
-			
+
 		});
 	});
 </script>

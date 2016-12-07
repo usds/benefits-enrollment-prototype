@@ -14,15 +14,15 @@ title: A couple of questions about  <span class="print-householdMember6FirstName
 			<div class="usa-date-of-birth">
 		    <div class="usa-form-group usa-form-group-month">
 		      <label for="householdMember6DueMonth">Month</label>
-		      <input class="usa-input-inline auto-advance" aria-describedby="dueHint" id="householdMember6DueMonth" name="householdMember6DueMonth" pattern="0?[1-9]|1[012]" type="tel" min="1" max="12" value="">
+		      <input class="usa-input-inline auto-advance" aria-describedby="dueHint" id="householdMember6DueMonth" name="householdMember6DueMonth" {% include _valid_month.html %} required>
 		    </div>
 		    <div class="usa-form-group usa-form-group-day">
 		      <label for="householdMember6DueDay">Day</label>
-		      <input class="usa-input-inline auto-advance" aria-describedby="dueHint" id="householdMember6DueDay" name="householdMember6DueDay" pattern="0?[1-9]|1[0-9]|2[0-9]|3[01]" type="tel" min="1" max="31" value="">
+		      <input class="usa-input-inline auto-advance" aria-describedby="dueHint" id="householdMember6DueDay" name="householdMember6DueDay" {% include _valid_day.html %} required>
 		    </div>
 		    <div class="usa-form-group usa-form-group-year">
 		      <label for="householdMember6DueYear">Year</label>
-		      <input class="usa-input-inline auto-advance-4" aria-describedby="dueHint" id="householdMember6DueYear" name="householdMember6DueYear" pattern="[0-9]{4}" type="tel" min="1900" max="2000" value="">
+		      <input class="usa-input-inline auto-advance-4" aria-describedby="dueHint" id="householdMember6DueYear" name="householdMember6DueYear" {% include _valid_year.html %} required>
 		    </div>
 		  </div>
 		</div>
@@ -34,7 +34,7 @@ title: A couple of questions about  <span class="print-householdMember6FirstName
 		<p class="question__primary-text"><label for="householdMember6BabiesExpected">How many babies is <span class="print-householdMember6FirstName"></span> expecting?</label></p>
 	</div>
 	<div class="response">
-		<input class="input--short" type="tel" id="householdMember6BabiesExpected" required />
+		<input class="input--short" id="householdMember6BabiesExpected" {% include _valid_babies.html %} required />
 	</div>
 </div>
 
@@ -59,7 +59,7 @@ title: A couple of questions about  <span class="print-householdMember6FirstName
 			if ((typeof householdMember6CaseInsurance != 'undefined') && (householdMember6CaseInsurance == "yes")) {
 				window.location.href = "person6-step3-insurance.html";
 			}
-			
+
 		});
 	});
 </script>

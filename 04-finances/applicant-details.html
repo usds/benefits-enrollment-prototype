@@ -19,18 +19,18 @@ title: We need some details about your income.
 					<input id="applicant_incomeTypeSelf" type="checkbox" name="applicant_incomeType" value="I am self-employed" class="open-dependent">
 					<label for="applicant_incomeTypeSelf">I am self-employed</label>
 					<div class="dependent-field usa-sr-only" aria-hidden="true">
-						<div class="question" > 
+						<div class="question" >
 							<p class="question__secondary-text"><label for="applicant_selfType">What type of work do you do?</label></p>
 						</div>
 						<div class="response">
 							<input type="text" id="applicant_SelfType" />
 						</div>
-						<div class="question" > 
+						<div class="question" >
 							<p class="question__secondary-text"><label for="selfAmount">How much will you earn this month after expenses?</label></p>
 						</div>
 						<div class="response">
 							<div class="response__input-prefix" aria-hidden="true">$</div>
-							<input type="tel" id="applicant_selfAmount" />
+							<input id="applicant_selfAmount" {% include _valid_dollar_amount.html %} />
 						</div>
 					</div>
 				</li>
@@ -38,12 +38,12 @@ title: We need some details about your income.
 					<input id="applicant_incomeTypeUnemployment" type="checkbox" name="applicant_incomeType" value="I get unemployment benefits" class="open-dependent">
 					<label for="applicant_incomeTypeUnemployment">I get unemployment benefits</label>
 					<div class="dependent-field usa-sr-only" aria-hidden="true">
-						<div class="question" > 
+						<div class="question" >
 							<p class="question__secondary-text"><label for="applicant_unemploymentAmount">How much?</label></p>
 						</div>
 						<div class="response">
 							<div class="response__input-prefix" aria-hidden="true">$</div>
-							<input type="tel" id="applicant_unemploymentAmount" />
+							<input id="applicant_unemploymentAmount" {% include _valid_dollar_amount.html %} />
 						</div>
 						<div class="question">
 							<label for="applicant_unemploymentFrequency" class="question__secondary-text">How often?</label>
@@ -65,12 +65,12 @@ title: We need some details about your income.
 					<input id="applicant_incomeTypeDisability" type="checkbox" name="applicant_incomeType" value="I get Social Security payments" class="open-dependent">
 					<label for="applicant_incomeTypeDisability">I get disability reimbursements</label>
 					<div class="dependent-field usa-sr-only" aria-hidden="true">
-						<div class="question" > 
+						<div class="question" >
 							<p class="question__secondary-text"><label for="applicant_DisabilityAmount">How much?</label></p>
 						</div>
 						<div class="response">
 							<div class="response__input-prefix" aria-hidden="true">$</div>
-							<input type="tel" id="applicant_DisabilityAmount" />
+							<input id="applicant_DisabilityAmount" {% include _valid_dollar_amount.html %} />
 						</div>
 						<div class="question">
 							<label for="applicant_DisabilityFrequency" class="question__secondary-text">How often?</label>
@@ -92,12 +92,12 @@ title: We need some details about your income.
 					<input id="applicant_incomeTypeSocialSecurity" type="checkbox" name="applicant_incomeType" value="I get Social Security payments" class="open-dependent">
 					<label for="applicant_incomeTypeSocialSecurity">I get Social Security payments</label>
 					<div class="dependent-field usa-sr-only" aria-hidden="true">
-						<div class="question" > 
+						<div class="question" >
 							<p class="question__secondary-text"><label for="applicant_ssAmount">How much?</label></p>
 						</div>
 						<div class="response">
 							<div class="response__input-prefix" aria-hidden="true">$</div>
-							<input type="tel" id="applicant_ssAmount" />
+							<input id="applicant_ssAmount" {% include _valid_dollar_amount.html %} />
 						</div>
 						<div class="question">
 							<label for="applicant_ssFrequency" class="question__secondary-text">How often?</label>
@@ -119,12 +119,12 @@ title: We need some details about your income.
 					<input id="applicant_incomeTypeRetirement" type="checkbox" name="applicant_incomeType" value="I get retirement account payments" class="open-dependent">
 					<label for="applicant_incomeTypeRetirement">I get retirement account payments</label>
 					<div class="dependent-field usa-sr-only" aria-hidden="true">
-						<div class="question" > 
+						<div class="question" >
 							<p class="question__secondary-text"><label for="applicant_retirementAmount">How much?</label></p>
 						</div>
 						<div class="response">
 							<div class="response__input-prefix" aria-hidden="true">$</div>
-							<input type="tel" id="applicant_retirementAmount" />
+							<input id="applicant_retirementAmount" {% include _valid_dollar_amount.html %} />
 						</div>
 						<div class="question">
 							<label for="applicant_retirementFrequency" class="question__secondary-text">How often?</label>
@@ -146,12 +146,12 @@ title: We need some details about your income.
 					<input id="applicant_incomeTypePension" type="checkbox" name="applicant_incomeType" value="I have a pension" class="open-dependent">
 					<label for="applicant_incomeTypePension">I have a pension</label>
 					<div class="dependent-field usa-sr-only" aria-hidden="true">
-						<div class="question" > 
+						<div class="question" >
 							<p class="question__secondary-text"><label for="applicant_pensionAmount">How much?</label></p>
 						</div>
 						<div class="response">
 							<div class="response__input-prefix" aria-hidden="true">$</div>
-							<input type="tel" id="applicant_pensionAmount" />
+							<input id="applicant_pensionAmount" {% include _valid_dollar_amount.html %} />
 						</div>
 						<div class="question">
 							<label for="applicant_pensionFrequency" class="question__secondary-text">How often?</label>
@@ -173,12 +173,12 @@ title: We need some details about your income.
 					<input id="applicant_incomeTypeAlimony" type="checkbox" name="applicant_incomeType" value="Someone is pregnant" class="open-dependent">
 					<label for="applicant_incomeTypeAlimony">I get alimony</label>
 					<div class="dependent-field usa-sr-only" aria-hidden="true">
-						<div class="question" > 
+						<div class="question" >
 							<p class="question__secondary-text"><label for="applicant_alimonyAmount">How much?</label></p>
 						</div>
 						<div class="response">
 							<div class="response__input-prefix" aria-hidden="true">$</div>
-							<input type="tel" id="applicant_alimonyAmount" />
+							<input id="applicant_alimonyAmount" {% include _valid_dollar_amount.html %} />
 						</div>
 						<div class="question">
 							<label for="applicant_alimonyFrequency" class="question__secondary-text">How often?</label>
@@ -200,18 +200,18 @@ title: We need some details about your income.
 					<input id="applicant_incomeTypeOther" type="checkbox" name="applicant_incomeType" value="Other kinds of income" class="open-dependent">
 					<label for="applicant_incomeTypeOther">I have other other sources of income</label>
 					<div class="dependent-field usa-sr-only" aria-hidden="true">
-						<div class="question"> 
+						<div class="question">
 							<p class="question__secondary-text"><label for="applicant_otherType">What type?</label></p>
 						</div>
 						<div class="response">
 							<input type="text" id="applicant_otherType" />
 						</div>
-						<div class="question"> 
+						<div class="question">
 							<p class="question__secondary-text"><label for="applicant_otherAmount">How much?</label></p>
 						</div>
 						<div class="response">
 							<div class="response__input-prefix" aria-hidden="true">$</div>
-							<input type="tel" id="applicant_otherAmount" />
+							<input id="applicant_otherAmount" {% include _valid_dollar_amount.html %} />
 						</div>
 						<div class="question">
 							<label for="applicant_otherFrequency" class="question__secondary-text">How often?</legend>

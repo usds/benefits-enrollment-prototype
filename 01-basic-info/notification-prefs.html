@@ -21,7 +21,7 @@ title: How would you like us to keep in touch?
 							<p class="question__secondary-text"><label for="applicantSMSPhone">What is your phone number for text messages?</label></p>
 						</div>
 						<div class="response">
-							<input type="tel" id="applicantSMSPhone" pattern="(\d{5}([\-]\d{4})?)" />
+							<input id="applicantSMSPhone" {% include _valid_phone.html %} />
 						</div>
 					</div>
 				</li>
@@ -33,7 +33,7 @@ title: How would you like us to keep in touch?
 							<p class="question__secondary-text"><label for="applicantPhone">What is your phone number?</label></p>
 						</div>
 						<div class="response">
-							<input type="tel" id="applicantPhone" pattern="(\d{5}([\-]\d{4})?)" />
+							<input id="applicantPhone" {% include _valid_phone.html %} />
 						</div>
 					</div>
 				</li>

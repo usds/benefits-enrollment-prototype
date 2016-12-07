@@ -25,7 +25,7 @@ title: Where can we send you mail?
 
   	    <div class="usa-input-grid usa-input-grid-small">
   	      <label for="applicantState" >State</label>
-            <select id="applicantState" name="applicantState" required="">
+            <select id="applicantState" name="applicantState">
               <option value></option>
               <option value="AL">Alabama</option>
               <option value="AK">Alaska</option>
@@ -83,7 +83,7 @@ title: Where can we send you mail?
   	  </div>
   		<div class="usa-input-grid usa-input-grid-small">
     	  <label for="applicantZip">Zip code</label>
-    	  <input class="usa-input-medium" id="applicantZip" name="applicant-zip" type="text" pattern="[\d]{5}(-[\d]{4})?" data-grouplength="5,4" data-delimiter="-" data-politespace >
+    	  <input class="usa-input-medium" id="applicantZip" name="applicant-zip" {% include _valid_zipcode.html %} data-grouplength="5,4" data-delimiter="-" data-politespace >
   	  </div>
     </div>
   </fieldset>
@@ -115,7 +115,7 @@ title: Where can we send you mail?
   	<p class="question__secondary-text">This is the best way for us to follow-up regarding your application.</p>
   </div>
   <div class="response">
-  	<input type="tel" id="applicantPhone" pattern="^\(?([0-9]{3})\)?[-.]?([0-9]{3})[-.]?([0-9]{4})$"/>
+  	<input id="applicantPhone" {% include _valid_phone.html %}/>
   </div>
 </div>
 

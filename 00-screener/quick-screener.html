@@ -9,7 +9,7 @@ button_text: Next
 		<p class="question__primary-text"><label for="householdZipCode">What is your zip code?</label></p>
 	</div>
 	<div class="response">
-		<input class="input--medium" type="tel" data-custom-validity="Please fill out with 5-digit zip code" id="householdZipCode" required pattern="(\d{5}([\-]\d{4})?)" title="Use 5 digit zip code"/>
+		<input class="input--medium" id="householdZipCode" 	{% include _valid_zipcode.html %} required />
 	</div>
 </div>
 
@@ -21,7 +21,7 @@ button_text: Next
 		</div>
 		<div class="response">
 			<div class="response__input-prefix" aria-hidden="true">$</div>
-			<input type="number" id="householdIncome" class="input--medium" step="0.01" min="0" />
+			<input id="householdIncome" class="input--medium" {% include _valid_dollar_amount.html %} />
 		</div>
 	</div>
 </div>
