@@ -1,10 +1,15 @@
-/* 
+/*
 	Note:
-	We'll be replacing the name "prompt" with quesitons. 
+	We'll be replacing the name "prompt" with quesitons.
 */
 
 .field-group {
 	margin: 4rem 0;
+}
+
+.field-group.contains-error	{
+	border-left: 3px solid $color-secondary-dark;
+	padding-left: 2rem; 
 }
 
 .question {

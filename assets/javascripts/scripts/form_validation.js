@@ -1,49 +1,58 @@
 $(document).ready(function(){
   'use strict';
-  var $inputs = $('input:not([type="hidden"]), input:not([type="submit"])'),
+  var $inputs = $('input:not([type="hidden"]), input:not([type="submit"]), select'),
       $form = $('form'),
       $submit = $('.usa-button-big'),
       errorClass = "contains-error",
-      feedbackSelector = ".form-feedback";
+      feedbackSelector = ".form-feedback",
+      errorID = "error",
+      $errorplaceholder = $('.error-placeholder');
 
   var displayErrors = function($el) {
     var errorMessage = $el.attr('data-custom-validity') || $el[0].validationMessage,
       errorFieldName = $el.attr('id'),
       $label = $('label[for="'+errorFieldName+'"]'),
-      $container = $el.closest('.field-group'),
-      errorID = "error";
+      $container = $el.closest('.field-group');
 
     if (($el.attr("type") != "radio") && ($el.attr("type") != "checkbox")) {
+      var errorMessage = '<p aria-atomic="true" class="form-feedback form-feedback--error" role="alert">'+errorMessage+'</p>';
       $el.addClass(errorClass);
       $label.addClass(errorClass);
       $el.next().remove('.form-feedback');
-      $el.after('<p aria-atomic="true" class="form-feedback form-feedback--error" role="alert">'+errorMessage+'</p>');
+      console.log($el.parents().find($errorplaceholder).length);
+      if ($el.parents().find($errorplaceholder).length) {
+        $errorplaceholder.html(errorMessage);
+      }
+      else {
+        $el.after(errorMessage);
+      }
     }
     else {
       $el.parent().parent().parent().find('.form-feedback').remove();
       $el.parent().parent().before('<p aria-atomic="true" class="form-feedback form-feedback--error" role="alert">'+errorMessage+'</p>');
     }
     $el.focus();
-    $container.attr('id',  errorID);
+    $container.attr('id',  errorID).addClass(errorClass);
     location.href = "#" + errorID;
   };
 
   var clearErrors = function($el) {
     $el.removeClass(errorClass);
-    $el.next().remove(feedbackSelector);
-    $('label.'+errorClass).removeClass(errorClass);
-    $('#error').removeAttr('id');
+    $(feedbackSelector).remove();
+    $('label.'+ errorClass).removeClass(errorClass);
+    $('#error').removeClass(errorClass).removeAttr('id');
   };
 
   var checkValidations = function(event) {
     // Redefine the inputs since some will be removed on page load
-    $inputs = $('input:not([type="hidden"]), input:not([type="submit"])');
+    $inputs = $('input:not([type="hidden"]), input:not([type="submit"]), select');
 
     // Validate each input
     $inputs.each(function() {
       var $el = $(this);
       if (!this.checkValidity()) {
         event.preventDefault();
+        clearErrors($el);
         displayErrors($el);
         return false;
       }
@@ -58,11 +67,11 @@ $(document).ready(function(){
 
   if (hasBrowserValidation) {
     $submit.on("click", checkValidations);
-    $inputs.on("keyup", function(){
+    /*$inputs.on("keyup", function(){
       if ($(this).val()){
         clearErrors($(this));
       }
-    });
+    });*/
   }
 
 });

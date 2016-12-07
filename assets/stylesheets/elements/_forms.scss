@@ -11,20 +11,39 @@ input.input--medium {
 	width: 50%;
 }
 
-input.contains-error {
+input.contains-error,
+select.contains-error {
 	border: 3px solid $color-secondary-dark;
 }
 
-label.contains-error,
 .form-feedback--error {
 	color: $color-secondary-dark;
+	font-weight: $font-bold;
+	margin: 0;
 }
 
+// Overrule USA styling
+.usa-input-grid-medium input,
+.usa-input-grid-small select {
+	margin: 0.2em 0;
+}
 
+// Hide autofill button
 input::-webkit-contacts-auto-fill-button {
   visibility: hidden;
   display: none !important;
   pointer-events: none;
   position: absolute;
   right: 0;
+}
+
+// Hide the spinner from number inputs
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number'] {
+    -moz-appearance:textfield;
 }

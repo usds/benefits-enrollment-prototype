@@ -12,20 +12,20 @@ title: Where can we send you mail?
 
     <div class="response">
   	  <label for="applicantMailingAddress1">Street address 1</label>
-  	  <input id="applicantMailingAddress1" name="applicant-mailing-address-1" type="text" >
+  	  <input id="applicantMailingAddress1" name="applicant-mailing-address-1" type="text">
 
   	  <label for="applicantMailingAddress2">Street address 2 <span class="usa-additional_text">Optional</span></label>
   	  <input id="applicantMailingAddress2" name="applicant-mailing-address-2" type="text">
 
-  	  <div>
+  	  <div class="usa-grid-full">
   	    <div class="usa-input-grid usa-input-grid-medium">
   	      <label for="applicantCity">City</label>
-  	      <input id="applicantCity" name="applicant-city" type="text" >
+  	      <input id="applicantCity" name="applicant-city" type="text">
   	    </div>
 
   	    <div class="usa-input-grid usa-input-grid-small">
   	      <label for="applicantState" >State</label>
-            <select id="applicantState" name="applicantState">
+            <select id="applicantState" name="applicantState" required="">
               <option value></option>
               <option value="AL">Alabama</option>
               <option value="AK">Alaska</option>
@@ -82,8 +82,8 @@ title: Where can we send you mail?
   	    </div>
   	  </div>
   		<div class="usa-input-grid usa-input-grid-small">
-  	  <label for="applicantZip">Zip code</label>
-  	  <input class="usa-input-medium" id="applicantZip" name="applicant-zip" type="text" pattern="[\d]{5}(-[\d]{4})?" data-grouplength="5,4" data-delimiter="-" data-politespace >
+    	  <label for="applicantZip">Zip code</label>
+    	  <input class="usa-input-medium" id="applicantZip" name="applicant-zip" type="text" pattern="[\d]{5}(-[\d]{4})?" data-grouplength="5,4" data-delimiter="-" data-politespace >
   	  </div>
     </div>
   </fieldset>
