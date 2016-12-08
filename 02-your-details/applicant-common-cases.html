@@ -2,88 +2,88 @@
 layout: application
 step: 2
 title: OK, let’s review some common cases that may apply to you.
+script: |
+  <script>
+    $(document).ready(function() {
+
+      if (applicantSex === "Male") {
+        $('.female-only').remove();
+      };
+
+      $(".usa-button-big").click(function(event) {
+        event.preventDefault();
+
+        storeData();
+        getData();
+
+
+
+        if ((applyingFor == "Myself") && ((householdSize == 1) && (householdShareMeals == 0))) {
+          window.location.href = "../04-finances/index.html";
+        }
+
+        else if (benefitChoiceHealthcare == "no") {
+          window.location.href = "../03-basic-family/household-mealshare-review.html";
+        }
+
+        else if ($('#commonCasePregnant').is(':checked')) {
+          window.location.href = "common-case-pregnant.html";
+        }
+
+        else if ($('#commonCaseInsurance').is(':checked')) {
+          window.location.href = "common-case-insurance.html";
+        }
+
+        else {
+          window.location.href = "../03-basic-family/household-members-review.html";
+        }
+
+      });
+    });
+  </script>
 ---
 
 <div class="field-group">
-	<fieldset>
-		<div class="question">
-			<legend class="question__primary-text">Check all that are true.</legend>
-		</div>
-		<div class="response">
-		<ul class="usa-unstyled-list checkbox-group">
-			<li class="female-only">
-				<input id="commonCasePregnant" type="checkbox" name="common-cases" value="Someone is pregnant">
-				<label for="commonCasePregnant">I am pregnant</label>
-			</li>
-			<li class="female-only">
-				<input id="commonCaseHadBaby" type="checkbox" name="common-cases" value="I have had a baby within the last 6 months">
-				<label for="commonCaseHadBaby">I had a baby within the last 6 months</label>
-			</li>
-			<li>
-				<input id="commonCaseStudent" type="checkbox" name="common-cases" value="I am a full-time student">
-				<label for="commonCaseStudent">I am a full-time student</label>
-			</li>
-			<li>
-				<input id="commonCaseFoster" type="checkbox" name="common-cases" value="I was in foster care at age 18 or older">
-				<label for="commonCaseFoster">I was in foster care at age 18 or older</label>
-			</li>
-			<li>
-				<input id="commonCaseDisability" type="checkbox" name="common-cases" value="I has a disability">
-				<label for="commonCaseDisability">I have a disability (physical, emotional, or mental health condition) or live in a medical facility or nursing home</label>
-			</li>
-			<li>
-				<input id="commonCaseInsurance" type="checkbox" name="common-cases" value="I have health insurance or Medicaid">
-				<label for="commonCaseInsurance">I have health insurance</label>
-			</li>
-			<li class="medicaid-only">
-				<input id="commonCaseCashAssistance" type="checkbox" name="common-cases" value="I currently get cash assistance">
-				<label for="commonCaseCashAssistance">I currently get Cash Assistance (also known as TANF or XX)</label>
-			</li>
-			<li>
-				<input id="commonCaseMedical" type="checkbox" name="common-cases" value="I want help paying for medical bills from the past 3 months">
-				<label for="commonCaseMedical">I want help paying for medical bills from the past 3 months</label>
-			</li>
-		</ul>
-		<p class="question__primary-text">We will now follow up with specific questions that may help you qualify for more benefits.</p>
-		</div>
-	</fieldset>
+  <fieldset>
+    <div class="question">
+      <legend class="question__primary-text">Check all that are true.</legend>
+    </div>
+    <div class="response">
+    <ul class="usa-unstyled-list checkbox-group">
+      <li class="female-only">
+        <input id="commonCasePregnant" type="checkbox" name="common-cases" value="Someone is pregnant">
+        <label for="commonCasePregnant">I am pregnant</label>
+      </li>
+      <li class="female-only">
+        <input id="commonCaseHadBaby" type="checkbox" name="common-cases" value="I have had a baby within the last 6 months">
+        <label for="commonCaseHadBaby">I had a baby within the last 6 months</label>
+      </li>
+      <li>
+        <input id="commonCaseStudent" type="checkbox" name="common-cases" value="I am a full-time student">
+        <label for="commonCaseStudent">I am a full-time student</label>
+      </li>
+      <li>
+        <input id="commonCaseFoster" type="checkbox" name="common-cases" value="I was in foster care at age 18 or older">
+        <label for="commonCaseFoster">I was in foster care at age 18 or older</label>
+      </li>
+      <li>
+        <input id="commonCaseDisability" type="checkbox" name="common-cases" value="I has a disability">
+        <label for="commonCaseDisability">I have a disability (physical, emotional, or mental health condition) or live in a medical facility or nursing home</label>
+      </li>
+      <li>
+        <input id="commonCaseInsurance" type="checkbox" name="common-cases" value="I have health insurance or Medicaid">
+        <label for="commonCaseInsurance">I have health insurance</label>
+      </li>
+      <li class="medicaid-only">
+        <input id="commonCaseCashAssistance" type="checkbox" name="common-cases" value="I currently get cash assistance">
+        <label for="commonCaseCashAssistance">I currently get Cash Assistance (also known as TANF or XX)</label>
+      </li>
+      <li>
+        <input id="commonCaseMedical" type="checkbox" name="common-cases" value="I want help paying for medical bills from the past 3 months">
+        <label for="commonCaseMedical">I want help paying for medical bills from the past 3 months</label>
+      </li>
+    </ul>
+    <p class="question__primary-text">We will now follow up with specific questions that may help you qualify for more benefits.</p>
+    </div>
+  </fieldset>
 </div>
-
-<script>
-	$(document).ready(function() {
-
-  	if (applicantSex === "Male") {
-  		$('.female-only').remove();
-  	};
-
-		$(".usa-button-big").click(function(event) {
-			event.preventDefault();
-
-			storeData();
-			getData();
-
-			
-
-			if ((applyingFor == "Myself") && ((householdSize == 1) && (householdShareMeals == 0))) {
-				window.location.href = "../04-finances/index.html";
-			}
-
-			else if (benefitChoiceHealthcare == "no") {
-				window.location.href = "../03-basic-family/household-mealshare-review.html";
-			}
-
-			else if ($('#commonCasePregnant').is(':checked')) {
-				window.location.href = "common-case-pregnant.html";
-			}
-
-			else if ($('#commonCaseInsurance').is(':checked')) {
-				window.location.href = "common-case-insurance.html";
-			}
-			
-			else {
-				window.location.href = "../03-basic-family/household-members-review.html";
-			}
-			
-		});
-	});
-</script>

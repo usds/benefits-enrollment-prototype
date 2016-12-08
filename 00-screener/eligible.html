@@ -3,70 +3,70 @@ layout: application
 title: Great! It looks like you <em>may qualify</em> for <span id="print-benefits"></span>.
 title_style: success
 button_text: Start the application
+script: |
+  <script>
+    $(document).ready(function() {
+      var householdZipCode = sessionStorage.getItem("householdZipCode");
+      var householdIncome = sessionStorage.getItem("householdIncome");
+      var householdSize = sessionStorage.getItem("householdSize");
+      var householdShareMeals = sessionStorage.getItem("householdShareMeals");
+
+
+      $('#print-householdZipCode').text(householdZipCode);
+      $('#print-householdIncome').text(householdIncome);
+
+      if ((benefitChoiceHealthcare == "yes") && (benefitChoiceFoodAssistance == "yes")) {
+        $('#print-benefits').text("food assistance (SNAP) and healthcare coverage (Medicaid)")
+      }
+      if ((benefitChoiceHealthcare == "no") && (benefitChoiceFoodAssistance == "yes")) {
+        $('#print-benefits').text("food assistance (SNAP)")
+      }
+      if ((benefitChoiceHealthcare == "yes") && (benefitChoiceFoodAssistance == "no")) {
+        $('#print-benefits').text("healthcare coverage (Medicaid)")
+      }
+
+      householdSize = parseInt(householdSize);
+
+      if (householdSize == 1) {
+        $('#print-householdSize').text(householdSize + " person");
+      }
+      else {
+        $('#print-householdSize').text(householdSize + " people");
+      }
+
+      if (householdShareMeals == 1) {
+        $('#print-householdShareMeals').text(householdShareMeals + " person");
+      }
+      else {
+        $('#print-householdShareMeals').text(householdShareMeals + " people");
+      }
+
+
+
+      $(".usa-button-big").click(function(event) {
+        event.preventDefault();
+        window.location.href = "info-needed.html";
+      });
+    });
+  </script>
 ---
 
 
 <div class="data-list">
-	<div class="snap-only">
-		<h3 class="data-list__heading">Your monthly income</h3>
-		<p class="data-list__text"><i class="fa fa-money data-list__icon" aria-hidden="true"></i> $<span id="print-householdIncome"></span></p>
-	</div>
-	<div class="medicaid-only">
-		<h3 class="data-list__heading">Your household size (including you)</h3>
-		<p class="data-list__text"><i class="fa fa-users data-list__icon" aria-hidden="true"></i> <span id="print-householdSize"></span></p>
-	</div>
-	<div class="snap-only">
-		<h3 class="data-list__heading">You regularly buy and prepare food with</h3>
-		<p class="data-list__text"><i class="fa fa-cutlery data-list__icon" aria-hidden="true"></i> <span id="print-householdShareMeals"></span></p>
-	</div>
-	<h3 class="data-list__heading">Your zip code</h3>
-	<p class="data-list__text"><i class="fa fa-home data-list__icon" aria-hidden="true"></i> <span id="print-householdZipCode"></span></p>
+  <div class="snap-only">
+    <h3 class="data-list__heading">Your monthly income</h3>
+    <p class="data-list__text"><i class="fa fa-money data-list__icon" aria-hidden="true"></i> $<span id="print-householdIncome"></span></p>
+  </div>
+  <div class="medicaid-only">
+    <h3 class="data-list__heading">Your household size (including you)</h3>
+    <p class="data-list__text"><i class="fa fa-users data-list__icon" aria-hidden="true"></i> <span id="print-householdSize"></span></p>
+  </div>
+  <div class="snap-only">
+    <h3 class="data-list__heading">You regularly buy and prepare food with</h3>
+    <p class="data-list__text"><i class="fa fa-cutlery data-list__icon" aria-hidden="true"></i> <span id="print-householdShareMeals"></span></p>
+  </div>
+  <h3 class="data-list__heading">Your zip code</h3>
+  <p class="data-list__text"><i class="fa fa-home data-list__icon" aria-hidden="true"></i> <span id="print-householdZipCode"></span></p>
 </div>
 
 <h3>We will now start the application. This will take about 20 to 30 minutes.</h3>
-
-<script>
-	$(document).ready(function() {
-		var householdZipCode = sessionStorage.getItem("householdZipCode");
-		var householdIncome = sessionStorage.getItem("householdIncome");
-		var householdSize = sessionStorage.getItem("householdSize");
-		var householdShareMeals = sessionStorage.getItem("householdShareMeals");
-
-
-		$('#print-householdZipCode').text(householdZipCode);
-		$('#print-householdIncome').text(householdIncome);
-
-		if ((benefitChoiceHealthcare == "yes") && (benefitChoiceFoodAssistance == "yes")) {
-			$('#print-benefits').text("food assistance (SNAP) and healthcare coverage (Medicaid)")
-		}
-		if ((benefitChoiceHealthcare == "no") && (benefitChoiceFoodAssistance == "yes")) {
-			$('#print-benefits').text("food assistance (SNAP)")
-		}
-		if ((benefitChoiceHealthcare == "yes") && (benefitChoiceFoodAssistance == "no")) {
-			$('#print-benefits').text("healthcare coverage (Medicaid)")
-		}
-
-		householdSize = parseInt(householdSize);
-
-		if (householdSize == 1) {
-			$('#print-householdSize').text(householdSize + " person");
-		}
-		else {
-			$('#print-householdSize').text(householdSize + " people");
-		}
-
-		if (householdShareMeals == 1) {
-			$('#print-householdShareMeals').text(householdShareMeals + " person");
-		}
-		else {
-			$('#print-householdShareMeals').text(householdShareMeals + " people");
-		}
-
-
-
-		$(".usa-button-big").click(function(event) {
-			event.preventDefault();
-			window.location.href = "info-needed.html";
-		});
-	});
-</script>

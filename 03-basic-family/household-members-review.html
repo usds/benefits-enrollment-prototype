@@ -2,6 +2,32 @@
 layout: application
 step: 3
 title: Great! Let’s find out more about your household.
+script: |
+  <script>
+    $(document).ready(function() {
+
+      $('#householdSize').val(householdSize);
+      $('#householdShareMeals').val(householdShareMeals);
+
+      $(".usa-button-big").click(function(event) {
+          event.preventDefault();
+
+          storeData();
+          getData();
+
+          if (householdSize > 1 ) {
+            window.location.href = "household-names.html";
+          }
+          else if ((householdSize == 1) && (householdShareMeals > 0)) {
+            window.location.href = "household-mealshare-review.html";
+          }
+          else {
+            window.location.href = "../04-finances/index.html";
+          }
+      });
+    });
+  </script>
+
 ---
 
 
@@ -29,28 +55,3 @@ title: Great! Let’s find out more about your household.
     <input class="input--short" type="number" id="householdSize" pattern="[0-9]*" required />
   </div>
 </div>
-
-<script>
-  $(document).ready(function() {
-
-    $('#householdSize').val(householdSize);
-    $('#householdShareMeals').val(householdShareMeals);
-
-    $(".usa-button-big").click(function(event) {
-        event.preventDefault();
-
-        storeData();
-        getData();
-
-        if (householdSize > 1 ) {
-          window.location.href = "household-names.html";
-        }
-        else if ((householdSize == 1) && (householdShareMeals > 0)) {
-          window.location.href = "household-mealshare-review.html";
-        }
-        else {
-          window.location.href = "../04-finances/index.html";
-        }
-    });
-  });
-</script>

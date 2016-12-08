@@ -2,17 +2,33 @@
 layout: application
 step: 1
 title: Hello, <span id="print-applicantFirstName"></span>!
+script: |
+  <script>
+    $(document).ready(function() {
+      $('#print-applicantFirstName').text(applicantFirstName);
+      $('form').on('submit', function() {
+        if (!checkValidityIfSupported($('form').get(0))) {
+          return false;
+        }
+        else {
+          storeData();
+          window.location.href = "applicant-contact.html";
+          return false;
+        }
+      });
+    });
+  </script>
 ---
 
 <div class="field-group">
   <fieldset>
     <div class="question">
-    	<legend class="question__primary-text">What is your date of birth?</legend>
-    	<p class="question__secondary-text" id="dobHint">For example: 12 28 1986</p>
+      <legend class="question__primary-text">What is your date of birth?</legend>
+      <p class="question__secondary-text" id="dobHint">For example: 12 28 1986</p>
     </div>
     <div class="response" >
       <div class="error-placeholder"></div>
-    	<div class="usa-date-of-birth">
+      <div class="usa-date-of-birth">
         <div class="usa-form-group usa-form-group-month">
           <label for="applicantDOBMonth">Month</label>
           <input class="usa-input-inline auto-advance" aria-describedby="dobHint" class="usa-form-control" id="applicantDOBMonth" name="applicantDOBMonth" {% include _valid_month.html %} required>
@@ -50,25 +66,3 @@ title: Hello, <span id="print-applicantFirstName"></span>!
     </div>
   </fieldset>
 </div>
-
-<script>
-  $(document).ready(function() {
-
-  	$('#print-applicantFirstName').text(applicantFirstName);
-
-    $('form').on('submit', function() {
-
-        if (!checkValidityIfSupported($('form').get(0))) {
-          return false;
-        }
-
-        else {
-        storeData();
-
-        window.location.href = "applicant-contact.html";
-
-        return false;
-      }
-    });
-  });
-</script>

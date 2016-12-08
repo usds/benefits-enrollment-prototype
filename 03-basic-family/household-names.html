@@ -2,6 +2,52 @@
 layout: application
 step: 3
 title: OK <span id="print-applicantFirstName"></span>, you file federal taxes with <span id="print-householdSize"></span>.
+script: |
+  <script>
+    $(document).ready(function() {
+
+      $('#print-applicantFirstName').text(applicantFirstName);
+
+      if (householdSize == 2) {
+        $('#print-householdSize').text("one other person");
+      }
+      else {
+        $('#print-householdSize').text(parseInt(householdSize)-1 + " people");
+      }
+
+      if (applyingFor != "Me and someone else") {
+        $('.potential-recipient').remove();
+      }
+
+      for(x = 6; x > parseInt(householdSize-1); x--) {
+        $('#person-' + x).remove();
+      }
+
+      $('form').on('submit', function() {
+
+          if (!checkValidityIfSupported($('form').get(0))) {
+            return false;
+          }
+
+          else {
+
+          storeData();
+          getData();
+
+          if ((householdShareMeals > 0) && (benefitChoiceFoodAssistance == "yes")) {
+            window.location.href = "household-mealshare-review.html";
+          }
+          else if (benefitChoiceFoodAssistance == "no") {
+             window.location.href = "../03-family-details/index.html";
+          }
+          else {
+            window.location.href = "../03-family-details/index.html";
+          }
+          return false;
+        }
+      });
+    });
+  </script>
 ---
 
 <p class="usa-font-lead">Who are they?</p>
@@ -233,50 +279,3 @@ title: OK <span id="print-applicantFirstName"></span>, you file federal taxes wi
     </div>
   </div>
 </div>
-
-
-<script>
-  $(document).ready(function() {
-
-    $('#print-applicantFirstName').text(applicantFirstName);
-
-    if (householdSize == 2) {
-      $('#print-householdSize').text("one other person");
-    }
-    else {
-      $('#print-householdSize').text(parseInt(householdSize)-1 + " people");
-    }
-
-    if (applyingFor != "Me and someone else") {
-      $('.potential-recipient').remove();
-    }
-
-    for(x = 6; x > parseInt(householdSize-1); x--) {
-      $('#person-' + x).remove();
-    }
-
-    $('form').on('submit', function() {
-
-        if (!checkValidityIfSupported($('form').get(0))) {
-          return false;
-        }
-
-        else {
-
-        storeData();
-        getData();
-
-        if ((householdShareMeals > 0) && (benefitChoiceFoodAssistance == "yes")) {
-          window.location.href = "household-mealshare-review.html";
-        }
-        else if (benefitChoiceFoodAssistance == "no") {
-           window.location.href = "../03-family-details/index.html";
-        }
-        else {
-          window.location.href = "../03-family-details/index.html";
-        }
-        return false;
-      }
-    });
-  });
-</script>
