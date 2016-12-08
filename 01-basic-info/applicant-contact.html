@@ -2,29 +2,53 @@
 layout: application
 step: 1
 title: Where can we send you mail?
+script: |
+  <script>
+  $(document).ready(function() {
+    $('#applicantZip').val(householdZipCode);
+    $('form').on('submit', function() {
+      if (!checkValidityIfSupported($('form').get(0))) {
+        return false;
+      }
+      else {
+        applicantPhone = $("#applicantPhone").val().replace(/(\d{3})(\d{3})(\d{4})/, "$1-$2-$3");
+        $("#applicantPhone").val(applicantPhone);
+        storeData();
+        getData();
+        if (isMailAndHomeTheSame == "Yes") {
+          window.location.href = "notification-prefs.html";
+        }
+        else {
+          window.location.href = "home-address.html";
+        }
+        return false;
+      }
+    });
+  });
+  </script>
 ---
 
 <div class="field-group">
   <fieldset>
-  	<div class="question usa-sr-only">
-    	<legend class="question__primary-text">What is your address and/or email</legend>
+    <div class="question usa-sr-only">
+      <legend class="question__primary-text">What is your address and/or email</legend>
     </div>
 
     <div class="response">
-  	  <label for="applicantMailingAddress1">Street address 1</label>
-  	  <input id="applicantMailingAddress1" name="applicant-mailing-address-1" type="text">
+      <label for="applicantMailingAddress1">Street address 1</label>
+      <input id="applicantMailingAddress1" name="applicant-mailing-address-1" type="text">
 
-  	  <label for="applicantMailingAddress2">Street address 2 <span class="usa-additional_text">Optional</span></label>
-  	  <input id="applicantMailingAddress2" name="applicant-mailing-address-2" type="text">
+      <label for="applicantMailingAddress2">Street address 2 <span class="usa-additional_text">Optional</span></label>
+      <input id="applicantMailingAddress2" name="applicant-mailing-address-2" type="text">
 
-  	  <div class="usa-grid-full">
-  	    <div class="usa-input-grid usa-input-grid-medium">
-  	      <label for="applicantCity">City</label>
-  	      <input id="applicantCity" name="applicant-city" type="text">
-  	    </div>
+      <div class="usa-grid-full">
+        <div class="usa-input-grid usa-input-grid-medium">
+          <label for="applicantCity">City</label>
+          <input id="applicantCity" name="applicant-city" type="text">
+        </div>
 
-  	    <div class="usa-input-grid usa-input-grid-small">
-  	      <label for="applicantState" >State</label>
+        <div class="usa-input-grid usa-input-grid-small">
+          <label for="applicantState" >State</label>
             <select id="applicantState" name="applicantState">
               <option value></option>
               <option value="AL">Alabama</option>
@@ -79,12 +103,12 @@ title: Where can we send you mail?
               <option value="WI">Wisconsin</option>
               <option value="WY">Wyoming</option>
             </select>
-  	    </div>
-  	  </div>
-  		<div class="usa-input-grid usa-input-grid-small">
-    	  <label for="applicantZip">Zip code</label>
-    	  <input class="usa-input-medium" id="applicantZip" name="applicant-zip" {% include _valid_zipcode.html %} data-grouplength="5,4" data-delimiter="-" data-politespace >
-  	  </div>
+        </div>
+      </div>
+      <div class="usa-input-grid usa-input-grid-small">
+        <label for="applicantZip">Zip code</label>
+        <input class="usa-input-medium" id="applicantZip" name="applicant-zip" {% include _valid_zipcode.html %} data-grouplength="5,4" data-delimiter="-" data-politespace >
+      </div>
     </div>
   </fieldset>
 </div>
@@ -111,53 +135,19 @@ title: Where can we send you mail?
 
 <div class="field-group">
   <div class="question">
-  	<p class="question__primary-text"><label for="applicantPhone">What is your phone number?</label></p>
-  	<p class="question__secondary-text">This is the best way for us to follow-up regarding your application.</p>
+    <p class="question__primary-text"><label for="applicantPhone">What is your phone number?</label></p>
+    <p class="question__secondary-text">This is the best way for us to follow-up regarding your application.</p>
   </div>
   <div class="response">
-  	<input id="applicantPhone" {% include _valid_phone.html %}/>
+    <input id="applicantPhone" {% include _valid_phone.html %}/>
   </div>
 </div>
 
 <div class="field-group">
   <div class="question">
-  	<p class="question__primary-text"><label for="applicantEmail">What is your email address, if you have one?</label></p>
+    <p class="question__primary-text"><label for="applicantEmail">What is your email address, if you have one?</label></p>
   </div>
   <div class="response">
-  	<input type="email" id="applicantEmail" />
+    <input type="email" id="applicantEmail" />
   </div>
 </div>
-
-
-
-<script>
-	$(document).ready(function() {
-
-		$('#applicantZip').val(householdZipCode);
-
-		$('form').on('submit', function() {
-
-   	        if (!checkValidityIfSupported($('form').get(0))) {
-        	  return false;
-    		}
-
-    		else {
-
-			applicantPhone = $("#applicantPhone").val().replace(/(\d{3})(\d{3})(\d{4})/, "$1-$2-$3");
-			$("#applicantPhone").val(applicantPhone);
-
-			storeData();
-			getData();
-
-			if (isMailAndHomeTheSame == "Yes") {
-				window.location.href = "notification-prefs.html";
-			}
-			else {
-				window.location.href = "home-address.html";
-			}
-
-            return false;
-		}
-		});
-	});
-</script>

@@ -2,6 +2,36 @@
 layout: application
 title: First, let’s see if you may qualify.
 button_text: Next
+script: |
+  <script>
+    $(document).ready(function() {
+      $('form').on('submit', function() {
+        if (!checkValidityIfSupported($('form').get(0))) {
+          return false;
+        }
+        else {
+          var householdShareMeals = $('#householdShareMeals').val();
+          if (typeof householdSize == "undefined") {
+            householdSize = householdShareMeals;
+            sessionStorage.setItem("householdSize", householdSize);
+          }
+          if (typeof householdShareMeals == "undefined") {
+            householdShareMeals = 0;
+            sessionStorage.setItem("householdShareMeals", householdShareMeals);
+          }
+          storeData();
+          getData();
+          if (((typeof householdIncome == "undefined") && (benefitChoiceFoodAssistance == "no")) || (householdIncome <= 10000)) {
+            window.location.href = "eligible.html";
+          }
+          else {
+            window.location.href = "not-eligible.html";
+          }
+          return false;
+        }
+      });
+    });
+  </script>
 ---
 
 <div class="field-group">
@@ -49,42 +79,3 @@ button_text: Next
 		</div>
 	</div>
 </div>
-
-<script>
-	$(document).ready(function() {
-		$('form').on('submit', function() {
-
-        if (!checkValidityIfSupported($('form').get(0))) {
-        	return false;
-    		}
-
-    		else {
-
-    			var householdShareMeals = $('#householdShareMeals').val();
-
-    			if (typeof householdSize == "undefined") {
-    				householdSize = householdShareMeals;
-    				sessionStorage.setItem("householdSize", householdSize);
-    			}
-
-    			if (typeof householdShareMeals == "undefined") {
-    				householdShareMeals = 0;
-    				sessionStorage.setItem("householdShareMeals", householdShareMeals);
-    			}
-
-
-					storeData();
-					getData();
-
-			    if (((typeof householdIncome == "undefined") && (benefitChoiceFoodAssistance == "no")) || (householdIncome <= 10000)) {
-				    window.location.href = "eligible.html";
-				  }
-
-				  else {
-				  	window.location.href = "not-eligible.html";
-				  }
-				  return false;
-			  }
-		});
-	});
-</script>

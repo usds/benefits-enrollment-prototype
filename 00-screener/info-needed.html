@@ -2,21 +2,30 @@
 layout: application
 title: Before you apply, we’ll need some more info. This helps us get you benefits faster.
 button_text: Get started!
+script: |
+  <script>
+    $(document).ready(function() {
+      $(".usa-button-big").click(function(event) {
+        event.preventDefault();
+        window.location.href = "../01-basic-info/who-is-applying.html";
+      });
+    });
+  </script>
 ---
 
 <p class="usa-font-lead">
-	Use this list to help you gather what you may need to apply. 
+  Use this list to help you gather what you may need to apply.
 </p>
 
 <h3>Here’s some info we need:</h3>
 <ul class="bulleted-list">
-	<li>You and your household, addresses, and date of birth</li>
-	<li>Phone number to follow-up, which helps you get benefits quicker</li>
-	<li>Money from jobs or other sources, and employer info</li>
-	<li>Housing expenses</li>
-	<li>Social Security Numbers for anyone you’re applying for</li>
-	<li>Government benefits such as unemployment or retirement account payments</li>
-	<li>Any medical coverage, disabilities, and/or pregnancies</li>
+  <li>You and your household, addresses, and date of birth</li>
+  <li>Phone number to follow-up, which helps you get benefits quicker</li>
+  <li>Money from jobs or other sources, and employer info</li>
+  <li>Housing expenses</li>
+  <li>Social Security Numbers for anyone you’re applying for</li>
+  <li>Government benefits such as unemployment or retirement account payments</li>
+  <li>Any medical coverage, disabilities, and/or pregnancies</li>
 </ul>
 
 
@@ -37,13 +46,3 @@ button_text: Get started!
 </div>
 
 <p><em>We’ll take you through step-by-step.</em></p>
-
-
-<script>
-	$(document).ready(function() {
-		$(".usa-button-big").click(function(event) {
-			event.preventDefault();
-			window.location.href = "../01-basic-info/who-is-applying.html";
-		});
-	});
-</script>

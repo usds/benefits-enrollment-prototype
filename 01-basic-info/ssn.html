@@ -2,12 +2,22 @@
 layout: application
 step: 1
 title: Now, a few more questions about you.
+script: |
+  <script>
+    $(document).ready(function() {
+      $(".usa-button-big").click(function(event) {
+        event.preventDefault();
+        storeData();
+        window.location.href = "../02-your-details/applicant-common-cases.html";
+      });
+    });
+  </script>
 ---
 
 <div class="field-group">
   <fieldset>
     <div class="question">
-    	<legend class="question__primary-text">What is your Social Security Number (SSN)?</legend>
+      <legend class="question__primary-text">What is your Social Security Number (SSN)?</legend>
       <p class="question__secondary-text">You can leave this blank if you don't know it or don't have one. Providing one will help verify and move you faster in the application process.</p>
     </div>
     <div class="response">
@@ -50,19 +60,3 @@ title: Now, a few more questions about you.
     <p>We recommend doing that later in the user flow as it is often felt to be a burdensome step that can slow progress through the application.</p>
   </div>
 </div>
-
-
-
-
-
-<script>
-  $(document).ready(function() {
-    $(".usa-button-big").click(function(event) {
-        event.preventDefault();
-
-        storeData();
-
-        window.location.href = "../02-your-details/applicant-common-cases.html";
-    });
-  });
-</script>
