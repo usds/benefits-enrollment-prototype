@@ -2,6 +2,30 @@
 layout: application
 step: 4
 title: Now, we need to ask you some money questions.
+script: |
+  <script>
+    $(document).ready(function() {
+      if(householdSize == 1) {
+        $('.household-members-only').remove();
+      }
+      $('form').on('submit', function() {
+          if (!checkValidityIfSupported($('form').get(0))) {
+            return false;
+          }
+          else {
+          storeData();
+          if (benefitChoiceFoodAssistance == "no"){
+            window.location.href = "applicant-details.html";
+          }
+          else {
+            window.location.href = "applicant-income.html";
+          }
+          return false;
+        }
+      });
+    });
+  </script>
+
 ---
 
 <p class="usa-lead-font">In this section, we will ask for info about income, jobs, and expenses for you and your household.</p>
@@ -44,34 +68,3 @@ title: Now, we need to ask you some money questions.
   <i class="fa fa-lock note__icon" aria-hidden="true"></i>
   <p class="note__text">This information is kept confidential and secure as required by law. <a href="https://www.cms.gov/about-cms/agency-information/aboutwebsite/privacy-policy.html" target="_blank">Learn more.</a></p>
 </div>
-
-<script>
-  $(document).ready(function() {
-
-    if(householdSize == 1) {
-      $('.household-members-only').remove();
-    }
-
-    $('form').on('submit', function() {
-
-        if (!checkValidityIfSupported($('form').get(0))) {
-          return false;
-        }
-
-        else {
-
-        storeData();
-
-        if (benefitChoiceFoodAssistance == "no"){
-          window.location.href = "applicant-details.html";
-        }
-        else {
-          window.location.href = "applicant-income.html";
-        }
-
-
-        return false;
-      }
-    });
-  });
-</script>

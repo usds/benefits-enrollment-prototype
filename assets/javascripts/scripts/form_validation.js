@@ -19,7 +19,6 @@ $(document).ready(function(){
       $el.addClass(errorClass);
       $label.addClass(errorClass);
       $el.next().remove('.form-feedback');
-      console.log($el.parents().find($errorplaceholder).length);
       if ($el.parents().find($errorplaceholder).length) {
         $errorplaceholder.html(errorMessage);
       }

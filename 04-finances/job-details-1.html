@@ -2,31 +2,59 @@
 layout: application
 step: 4
 title: Tell us more about your job(s).
+script: |
+  <script>
+    $(document).ready(function() {
+      $('input[name="employerPayFrequency"]').on('change', function(){
+        var v = $(this).val().toLowerCase();
+        $("#print-employerPayFrequency").text(v);
+      });
+      $('form').on('submit', function() {
+          if (!checkValidityIfSupported($('form').get(0))) {
+            return false;
+          }
+          else {
+            storeData();
+            getData();
+            if (haveSecondJob == "Yes") {
+              window.location.href = "job-details-2.html";
+            }
+            else if (typeof applyForHouseholdMember1 != 'undefined' ) {
+              window.location.href = "person1.html";
+            }
+            else {
+              window.location.href = "expenses.html";
+            }
+            return false;
+          }
+      });
+    });
+  </script>
 ---
 
 <div class="field-group">
   <div class="question">
-  	<p class="usa-font-lead">Where do you currently work?</p>
-  	<p class="question__primary-text"><label for="employerName">Employer name</label></p>
+    <p class="usa-font-lead">Where do you currently work?</p>
+    <p class="question__primary-text"><label for="employerName">Employer name</label></p>
   </div>
 
   <div class="response">
-  	<input type="text" id="employerName" />
+    <input type="text" id="employerName" />
   </div>
 </div>
 
 <div class="field-group">
   <fieldset>
-  	<div class="question">
-    	<legend class="question__primary-text">Employer Address</legend>
+    <div class="question">
+      <legend class="question__primary-text">Employer Address</legend>
     </div>
 
     <div class="response">
-  	  <label for="EmployerAddress">Address 1</label>
-  	  <input id="EmployerAddress" name="EmployerAddress" type="text" >
+      <label for="EmployerAddress">Address 1</label>
+      <input id="EmployerAddress" name="EmployerAddress" type="text" >
       <label for="EmployerAddress_2">Address 2 <span class="usa-additional_text">Optional</span></label>
       <input id="EmployerAddress_2" name="EmployerAddress2" type="text" >
-  	  <div>
+      <div>
           <div class="usa-input-grid usa-input-grid-medium">
             <label for="employerCity">City</label>
             <input id="employerCity" name="employerCity" type="text">
@@ -90,131 +118,94 @@ title: Tell us more about your job(s).
             </select>
           </div>
         </div>
-  		<div class="usa-input-grid usa-input-grid-small">
-  	  <label for="employerZip">Zip code</label>
-  	  <input class="usa-input-medium" id="employerZip" name="employerZip" {% include _valid_zipcode.html %} data-grouplength="5,4" data-delimiter="-" data-politespace >
-  	  </div>
+      <div class="usa-input-grid usa-input-grid-small">
+      <label for="employerZip">Zip code</label>
+      <input class="usa-input-medium" id="employerZip" name="employerZip" {% include _valid_zipcode.html %} data-grouplength="5,4" data-delimiter="-" data-politespace >
+      </div>
     </div>
   </fieldset>
 </div>
 
 <div class="field-group">
   <div class="question">
-  	<p class="question__primary-text"><label for="employerPhone">Employer phone number</label></p>
+    <p class="question__primary-text"><label for="employerPhone">Employer phone number</label></p>
   </div>
   <div class="response">
-  	<input {% include _valid_dollar_amount.html %} id="employerPhone" />
+    <input {% include _valid_dollar_amount.html %} id="employerPhone" />
   </div>
 </div>
 
 <div class="field-group">
   <fieldset>
-  	<div class="question">
-  		<legend class="question__primary-text">How often do you get paid?</legend>
-  	</div>
-  	<div class="response">
-  		<ul class="usa-unstyled-list response__radiogroup--two-cols">
-  			<li>
-  				<input id="applicantPayFrequencyDaily" type="radio" name="employerPayFrequency" value="Daily" >
-        	<label for="applicantPayFrequencyDaily">Daily</label>
-  			</li>
-  			<li>
-  				<input id="applicantPayFrequencyWeekly" type="radio" name="employerPayFrequency" value="Weekly" >
-        	<label for="applicantPayFrequencyWeekly">Weekly</label>
-  			</li>
-  			<li>
-  				<input id="applicantPayFrequencyBiweekly" type="radio" name="employerPayFrequency" value="Every 2 weeks" >
-        	<label for="applicantPayFrequencyBiweekly">Every 2 weeks</label>
-  			</li>
-  			<li>
-  				<input id="applicantPayFrequencyTwiceMonthly" type="radio" name="employerPayFrequency" value="Twice a month" >
-        	<label for="applicantPayFrequencyTwiceMonthly">Twice a month</label>
-  			</li>
-  			<li>
-  				<input id="applicantPayFrequencyMonthly" type="radio" name="employerPayFrequency" value="Monthly" >
-        	<label for="applicantPayFrequencyMonthly">Monthly</label>
-  			</li>
-  			<li>
-  				<input id="applicantPayFrequencyYearly" type="radio" name="employerPayFrequency" value="Yearly" >
-        	<label for="applicantPayFrequencyYearly">Yearly</label>
-  			</li>
-  		</ul>
-  	</div>
+    <div class="question">
+      <legend class="question__primary-text">How often do you get paid?</legend>
+    </div>
+    <div class="response">
+      <ul class="usa-unstyled-list response__radiogroup--two-cols">
+        <li>
+          <input id="applicantPayFrequencyDaily" type="radio" name="employerPayFrequency" value="Daily" >
+          <label for="applicantPayFrequencyDaily">Daily</label>
+        </li>
+        <li>
+          <input id="applicantPayFrequencyWeekly" type="radio" name="employerPayFrequency" value="Weekly" >
+          <label for="applicantPayFrequencyWeekly">Weekly</label>
+        </li>
+        <li>
+          <input id="applicantPayFrequencyBiweekly" type="radio" name="employerPayFrequency" value="Every 2 weeks" >
+          <label for="applicantPayFrequencyBiweekly">Every 2 weeks</label>
+        </li>
+        <li>
+          <input id="applicantPayFrequencyTwiceMonthly" type="radio" name="employerPayFrequency" value="Twice a month" >
+          <label for="applicantPayFrequencyTwiceMonthly">Twice a month</label>
+        </li>
+        <li>
+          <input id="applicantPayFrequencyMonthly" type="radio" name="employerPayFrequency" value="Monthly" >
+          <label for="applicantPayFrequencyMonthly">Monthly</label>
+        </li>
+        <li>
+          <input id="applicantPayFrequencyYearly" type="radio" name="employerPayFrequency" value="Yearly" >
+          <label for="applicantPayFrequencyYearly">Yearly</label>
+        </li>
+      </ul>
+    </div>
   </fieldset>
 </div>
 
 <div class="field-group">
   <div class="question">
-  	<p class="question__primary-text"><label for="employerWages">How much do you make <span id="print-employerPayFrequency"></span> (before taxes)?</label></p>
+    <p class="question__primary-text"><label for="employerWages">How much do you make <span id="print-employerPayFrequency"></span> (before taxes)?</label></p>
   </div>
   <div class="response">
-  	<div class="response__input-prefix" aria-hidden="true">$</div>
-  	<input class="input--medium" id="employerWages" {% include _valid_dollar_amount.html %} />
+    <div class="response__input-prefix" aria-hidden="true">$</div>
+    <input class="input--medium" id="employerWages" {% include _valid_dollar_amount.html %} />
   </div>
 </div>
 
 <div class="field-group">
   <div class="question">
-  	<p class="question__primary-text"><label for="employerWorkHours">On average, how many hours do you work a week at this job?</label></p>
+    <p class="question__primary-text"><label for="employerWorkHours">On average, how many hours do you work a week at this job?</label></p>
   </div>
   <div class="response">
-  	<input class="input--short" id="employerWorkHours" {% include _valid_hours.html %} />
+    <input class="input--short" id="employerWorkHours" {% include _valid_hours.html %} />
   </div>
 </div>
 
 <div class="field-group">
   <fieldset>
-  	<div class="question">
-  		<legend class="question__primary-text">Do you have another job?</legend>
-  	</div>
-  	<div class="response">
-  		<ul class="usa-unstyled-list response__radiogroup--inline">
-  			<li>
-  				<input id="haveSecondJobYes" type="radio" name="haveSecondJob" value="Yes" required>
-        	<label for="haveSecondJobYes">Yes</label>
-  			</li>
-  			<li>
-  				<input id="haveSecondJobNo" type="radio" name="haveSecondJob" value="No" required>
-        	<label for="haveSecondJobNo">No</label>
-  			</li>
-  		</ul>
-  	</div>
+    <div class="question">
+      <legend class="question__primary-text">Do you have another job?</legend>
+    </div>
+    <div class="response">
+      <ul class="usa-unstyled-list response__radiogroup--inline">
+        <li>
+          <input id="haveSecondJobYes" type="radio" name="haveSecondJob" value="Yes" required>
+          <label for="haveSecondJobYes">Yes</label>
+        </li>
+        <li>
+          <input id="haveSecondJobNo" type="radio" name="haveSecondJob" value="No" required>
+          <label for="haveSecondJobNo">No</label>
+        </li>
+      </ul>
+    </div>
   </fieldset>
 </div>
-
-<script>
-	$(document).ready(function() {
-
-		$('input[name="employerPayFrequency"]').on('change', function(){
-			var v = $(this).val().toLowerCase();
-			$("#print-employerPayFrequency").text(v);
-		});
-
-		$('form').on('submit', function() {
-
-        if (!checkValidityIfSupported($('form').get(0))) {
-          return false;
-        }
-
-        else {
-
-					storeData();
-					getData();
-
-					if (haveSecondJob == "Yes") {
-						window.location.href = "job-details-2.html";
-					}
-
-					else if (typeof applyForHouseholdMember1 != 'undefined' ) {
-						window.location.href = "person1.html";
-					}
-
-					else {
-						window.location.href = "expenses.html";
-					}
-
-          return false;
-				}
-		});
-	});
-</script>
