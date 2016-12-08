@@ -2,74 +2,74 @@
 layout: application
 step: 3
 title: You said <span class="print-householdMember1FirstName"></span> has health insurance.
+script: |
+  <script>
+    $(document).ready(function() {
+
+      $('.print-householdMember1FirstName').text(householdMember1FirstName);
+
+
+      $(".usa-button-big").click(function(event) {
+        event.preventDefault();
+
+        storeData();
+        getData();
+
+        window.location.href = "../03-family-member-address/person1.html";
+
+        if (typeof householdMember2FirstName != 'undefined' ) {
+          window.location.href = "person2-step1.html";
+        }
+
+      });
+    });
+  </script>
 ---
 
 <div class="field-group">
-	<fieldset>
-		<div class="question">
-			<legend class="question__primary-text">What kind of insurance do you have?</legend>
-			</div>
-			<div class="response">
-			<ul class="usa-unstyled-list checkbox-group">
-				<li>
-					<input id="householdMember1Medicare" type="checkbox" name="householdMember1-insurance" value="Medicare">
-					<label for="householdMember1Medicare">Medicare</label>
-				</li>
-				<li>
-					<input id="householdMember1-insuranceMedicaid" type="checkbox" name="householdMember1-insurance" value="Medicaid">
-					<label for="householdMember1-insuranceMedicaid">Medicaid (You also may know this as XX Care)</label>
-				</li>
-				<li>
-					<input id="householdMember1-insuranceOtherPublic" type="checkbox" name="householdMember1-insurance" value="Other public health insurance">
-					<label for="householdMember1-insuranceOtherPublic">Other public health insurance</label>
-				</li>
-				<li>
-					<input id="householdMember1-insuranceVA" type="checkbox" name="householdMember1-insurance" value="VA gealthcare or TRICARE">
-					<label for="householdMember1-insuranceVA">VA healthcare or TRICARE</label>
-				</li>
-				<li>
-					<input id="householdMember1-insuranceEmployer" type="checkbox" name="householdMember1-insurance" value="Employer-based health insurance">
-					<label for="householdMember1-insuranceEmployer">Employer-based health insurance</label>
-				</li>
-				<li>
-					<input id="householdMember1-insurancePrivate" type="checkbox" name="householdMember1-insurance" value="Private health insurance">
-					<label for="householdMember1-insurancePrivate">Private health insurance</label>
-				</li>
-				<li>
-					<input id="householdMember1-insurancePeacecorps" type="checkbox" name="householdMember1-insurance" value="PeaceCorps">
-					<label for="householdMember1-insurancePeacecorps">PeaceCorps</label>
-				</li>
-				<li>
-					<input id="householdMember1-insuranceLimited" type="checkbox" name="householdMember1-insurance" value="Limited-benefit plan (school accident policy)">
-					<label for="householdMember1-insuranceLimited">Limited-benefit plan (school accident policy)</label>
-				</li>
-				<li>
-					<input id="householdMember1-insuranceUnknown" type="checkbox" name="householdMember1-insurance" value="I don’t know">
-					<label for="householdMember1-insuranceUnknown">I don’t know</label>
-				</li>
-			</ul>
-			</div>
-	</fieldset>
+  <fieldset>
+    <div class="question">
+      <legend class="question__primary-text">What kind of insurance do you have?</legend>
+      </div>
+      <div class="response">
+      <ul class="usa-unstyled-list checkbox-group">
+        <li>
+          <input id="householdMember1Medicare" type="checkbox" name="householdMember1-insurance" value="Medicare">
+          <label for="householdMember1Medicare">Medicare</label>
+        </li>
+        <li>
+          <input id="householdMember1-insuranceMedicaid" type="checkbox" name="householdMember1-insurance" value="Medicaid">
+          <label for="householdMember1-insuranceMedicaid">Medicaid (You also may know this as XX Care)</label>
+        </li>
+        <li>
+          <input id="householdMember1-insuranceOtherPublic" type="checkbox" name="householdMember1-insurance" value="Other public health insurance">
+          <label for="householdMember1-insuranceOtherPublic">Other public health insurance</label>
+        </li>
+        <li>
+          <input id="householdMember1-insuranceVA" type="checkbox" name="householdMember1-insurance" value="VA gealthcare or TRICARE">
+          <label for="householdMember1-insuranceVA">VA healthcare or TRICARE</label>
+        </li>
+        <li>
+          <input id="householdMember1-insuranceEmployer" type="checkbox" name="householdMember1-insurance" value="Employer-based health insurance">
+          <label for="householdMember1-insuranceEmployer">Employer-based health insurance</label>
+        </li>
+        <li>
+          <input id="householdMember1-insurancePrivate" type="checkbox" name="householdMember1-insurance" value="Private health insurance">
+          <label for="householdMember1-insurancePrivate">Private health insurance</label>
+        </li>
+        <li>
+          <input id="householdMember1-insurancePeacecorps" type="checkbox" name="householdMember1-insurance" value="PeaceCorps">
+          <label for="householdMember1-insurancePeacecorps">PeaceCorps</label>
+        </li>
+        <li>
+          <input id="householdMember1-insuranceLimited" type="checkbox" name="householdMember1-insurance" value="Limited-benefit plan (school accident policy)">
+          <label for="householdMember1-insuranceLimited">Limited-benefit plan (school accident policy)</label>
+        </li>
+        <li>
+          <input id="householdMember1-insuranceUnknown" type="checkbox" name="householdMember1-insurance" value="I don’t know">
+          <label for="householdMember1-insuranceUnknown">I don’t know</label>
+        </li>
+      </ul>
+      </div>
+  </fieldset>
 </div>
-
-<script>
-	$(document).ready(function() {
-
-		$('.print-householdMember1FirstName').text(householdMember1FirstName);
-
-
-		$(".usa-button-big").click(function(event) {
-			event.preventDefault();
-
-			storeData();
-			getData();
-
-			window.location.href = "../03-family-member-address/person1.html";
-
-			if (typeof householdMember2FirstName != 'undefined' ) {
-				window.location.href = "person2-step1.html";
-			}
-			
-		});
-	});
-</script>

@@ -2,64 +2,63 @@
 layout: application
 step: 2
 title: A couple of questions about  <span class="print-householdMember5FirstName"></span>’s pregnancy.
+script: |
+  <script>
+    $(document).ready(function() {
+
+      $('.print-householdMember5FirstName').text(householdMember5FirstName);
+
+
+      $(".usa-button-big").click(function(event) {
+        event.preventDefault();
+
+        storeData();
+
+        window.location.href = "../03-family-member-address/person1.html";
+
+        if (typeof householdMember6FirstName != 'undefined' ) {
+          window.location.href = "person6-step1.html";
+        }
+
+        if ((typeof householdMember5CaseInsurance != 'undefined') && (householdMember5CaseInsurance == "yes")) {
+          window.location.href = "person5-step3-insurance.html";
+        }
+
+      });
+    });
+  </script>
 ---
 
 <div class="field-group">
-	<fieldset>
-		<div class="question">
-			<legend class="question__primary-text">When is <span class="print-householdMember5FirstName"></span>’s due date?</legend>
-			<p class="question__secondary-text" id="dueHint">For example: 04 28 1986</p>
-		</div>
-		<div class="response" >
-			<div class="usa-date-of-birth">
-		    <div class="usa-form-group usa-form-group-month">
-		      <label for="householdMember5DueMonth">Month</label>
-		      <input class="usa-input-inline auto-advance" aria-describedby="dueHint" id="householdMember5DueMonth" name="householdMember5DueMonth" {% include _valid_month.html %} required>
-		    </div>
-		    <div class="usa-form-group usa-form-group-day">
-		      <label for="householdMember5DueDay">Day</label>
-		      <input class="usa-input-inline auto-advance" aria-describedby="dueHint" id="householdMember5DueDay" name="householdMember5DueDay" {% include _valid_day.html %} required>
-		    </div>
-		    <div class="usa-form-group usa-form-group-year">
-		      <label for="householdMember5DueYear">Year</label>
-		      <input class="usa-input-inline auto-advance-4" aria-describedby="dueHint" id="householdMember5DueYear" name="householdMember5DueYear" {% include _valid_year.html %} required>
-		    </div>
-		  </div>
-		</div>
-	</fieldset>
+  <fieldset>
+    <div class="question">
+      <legend class="question__primary-text">When is <span class="print-householdMember5FirstName"></span>’s due date?</legend>
+      <p class="question__secondary-text" id="dueHint">For example: 04 28 1986</p>
+    </div>
+    <div class="response" >
+      <div class="usa-date-of-birth">
+        <div class="usa-form-group usa-form-group-month">
+          <label for="householdMember5DueMonth">Month</label>
+          <input class="usa-input-inline auto-advance" aria-describedby="dueHint" id="householdMember5DueMonth" name="householdMember5DueMonth" {% include _valid_month.html %} required>
+        </div>
+        <div class="usa-form-group usa-form-group-day">
+          <label for="householdMember5DueDay">Day</label>
+          <input class="usa-input-inline auto-advance" aria-describedby="dueHint" id="householdMember5DueDay" name="householdMember5DueDay" {% include _valid_day.html %} required>
+        </div>
+        <div class="usa-form-group usa-form-group-year">
+          <label for="householdMember5DueYear">Year</label>
+          <input class="usa-input-inline auto-advance-4" aria-describedby="dueHint" id="householdMember5DueYear" name="householdMember5DueYear" {% include _valid_year.html %} required>
+        </div>
+      </div>
+    </div>
+  </fieldset>
 </div>
 
 <div class="field-group">
-	<div class="question">
-		<p class="question__primary-text"><label for="householdMember5BabiesExpected">How many babies is <span class="print-householdMember5FirstName"></span> expecting?</label></p>
-	</div>
-	<div class="response">
-		<input class="input--short" id="householdMember5BabiesExpected" {% include _valid_babies.html %} required />
-	</div>
+  <div class="question">
+    <p class="question__primary-text"><label for="householdMember5BabiesExpected">How many babies is <span class="print-householdMember5FirstName"></span> expecting?</label></p>
+  </div>
+  <div class="response">
+    <input class="input--short" id="householdMember5BabiesExpected" {% include _valid_babies.html %} required />
+  </div>
 </div>
-
-
-<script>
-	$(document).ready(function() {
-
-		$('.print-householdMember5FirstName').text(householdMember5FirstName);
-
-
-		$(".usa-button-big").click(function(event) {
-			event.preventDefault();
-
-      storeData();
-
-      window.location.href = "../03-family-member-address/person1.html";
-
-      if (typeof householdMember6FirstName != 'undefined' ) {
-				window.location.href = "person6-step1.html";
-			}
-
-			if ((typeof householdMember5CaseInsurance != 'undefined') && (householdMember5CaseInsurance == "yes")) {
-				window.location.href = "person5-step3-insurance.html";
-			}
-
-		});
-	});
-</script>

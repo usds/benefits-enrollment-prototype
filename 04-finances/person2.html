@@ -2,275 +2,274 @@
 layout: application
 step: 4
 title: We need some details about <span class="print-householdMember2FirstName"></span>’s income.
+script: |
+  <script>
+    $(document).ready(function() {
+
+      $('.print-householdMember2FirstName').text(householdMember2FirstName);
+
+      $("input.open-dependent").on('change', function(){
+        if ($(this).is(":checked")) {
+          $(this).siblings('.dependent-field').removeClass('usa-sr-only').attr("aria-hidden", "false");
+        }
+        else {
+          $(this).siblings('.dependent-field').addClass('usa-sr-only').attr("aria-hidden", "true");
+        }
+      });
+
+      $("input.open-dependent").each(function(){
+        if ($(this).is(":checked")) {
+          $(this).siblings('.dependent-field').removeClass('usa-sr-only').attr("aria-hidden", "false");
+        }
+      });
+
+      $(".usa-button-big").click(function(event) {
+        event.preventDefault();
+
+        storeData();
+        getData();
+
+        if (householdMember2_incomeTypeJob == "yes") {
+          window.location.href = "person2-job-details-1.html";
+        }
+
+        else if (typeof applyForHouseholdMember3 != 'undefined' ) {
+          window.location.href = "person3.html";
+        }
+
+        else {
+          window.location.href = "expenses.html";
+        }
+      });
+    });
+  </script>
 ---
 <div class="field-group">
-	<fieldset>
-		<div class="question">
-			<legend class="question__primary-text">Check all your sources of income for <span class="print-householdMember2FirstName"></span>.</legend>
-			</div>
-			<div class="response">
-			<ul class="usa-unstyled-list checkbox-group">
-				<li>
-					<input id="householdMember2_incomeTypeJob" type="checkbox" name="householdMember2_incomeType" value="Has one or more jobs">
-					<label for="householdMember2_incomeTypeJob">Has one or more jobs</label>
-				</li>
-				<li>
-					<input id="householdMember2_incomeTypeSelf" type="checkbox" name="householdMember2_incomeType" value="Is self-employed" class="open-dependent">
-					<label for="householdMember2_incomeTypeSelf">Is self-employed</label>
-					<div class="dependent-field usa-sr-only" aria-hidden="true">
-						<div class="question" >
-							<p class="question__secondary-text"><label for="householdMember2_selfType">What type of work does <span class="print-householdMember2FirstName"></span> do?</label></p>
-						</div>
-						<div class="response">
-							<input type="text" id="householdMember2_SelfType" />
-						</div>
-						<div class="question" >
-							<p class="question__secondary-text"><label for="selfAmount">How much will <span class="print-householdMember2FirstName"></span> earn this month after expenses?</label></p>
-						</div>
-						<div class="response">
-							<div class="response__input-prefix" aria-hidden="true">$</div>
-							<input {% include _valid_dollar_amount.html %} id="householdMember2_selfAmount" />
-						</div>
-					</div>
-				</li>
-				<li>
-					<input id="householdMember2_incomeTypeUnemployment" type="checkbox" name="householdMember2_incomeType" value="Gets unemployment benefits" class="open-dependent">
-					<label for="householdMember2_incomeTypeUnemployment">Gets unemployment benefits</label>
-					<div class="dependent-field usa-sr-only" aria-hidden="true">
-						<div class="question" >
-							<p class="question__secondary-text"><label for="householdMember2_unemploymentAmount">How much?</label></p>
-						</div>
-						<div class="response">
-							<div class="response__input-prefix" aria-hidden="true">$</div>
-							<input {% include _valid_dollar_amount.html %} id="householdMember2_unemploymentAmount" />
-						</div>
-						<div class="question">
-							<label for="householdMember2_unemploymentFrequency" class="question__secondary-text">How often?</label>
-						</div>
-						<div class="response">
-							<select id="householdMember2_unemploymentFrequency">
-								<option value=""></option>
-								<option value="Daily">Daily</option>
-								<option value="Weekly">Weekly</option>
-								<option value="Every 2 weeks">Every 2 weeks</option>
-								<option value="Twice a month">Twice a month</option>
-								<option value="Monthly">Monthly</option>
-								<option value="Yearly">Yearly</option>
-							</select>
-						</div>
-					</div>
-				</li>
-				<li class="snap-only">
-					<input id="householdMember2_incomeTypeDisability" type="checkbox" name="householdMember2_incomeType" value="I get Social Security payments" class="open-dependent">
-					<label for="householdMember2_incomeTypeDisability">Gets disability reimbursements</label>
-					<div class="dependent-field usa-sr-only" aria-hidden="true">
-						<div class="question" >
-							<p class="question__secondary-text"><label for="householdMember2_DisabilityAmount">How much?</label></p>
-						</div>
-						<div class="response">
-							<div class="response__input-prefix" aria-hidden="true">$</div>
-							<input {% include _valid_dollar_amount.html %} id="householdMember2_DisabilityAmount" />
-						</div>
-						<div class="question">
-							<label for="householdMember2_DisabilityFrequency" class="question__secondary-text">How often?</label>
-						</div>
-						<div class="response">
-							<select id="householdMember2_DisabilityFrequency">
-								<option value=""></option>
-								<option value="Daily">Daily</option>
-								<option value="Weekly">Weekly</option>
-								<option value="Every 2 weeks">Every 2 weeks</option>
-								<option value="Twice a month">Twice a month</option>
-								<option value="Monthly">Monthly</option>
-								<option value="Yearly">Yearly</option>
-							</select>
-						</div>
-					</div>
-				</li>
-				<li>
-					<input id="householdMember2_incomeTypeSocialSecurity" type="checkbox" name="householdMember2_incomeType" value="Gets Social Security payments" class="open-dependent">
-					<label for="householdMember2_incomeTypeSocialSecurity">Gets Social Security payments</label>
-					<div class="dependent-field usa-sr-only" aria-hidden="true">
-						<div class="question" >
-							<p class="question__secondary-text"><label for="householdMember2_ssAmount">How much?</label></p>
-						</div>
-						<div class="response">
-							<div class="response__input-prefix" aria-hidden="true">$</div>
-							<input {% include _valid_dollar_amount.html %} id="householdMember2_ssAmount" />
-						</div>
-						<div class="question">
-							<label for="householdMember2_ssFrequency" class="question__secondary-text">How often?</label>
-						</div>
-						<div class="response">
-							<select id="householdMember2_ssFrequency">
-								<option value=""></option>
-								<option value="Daily">Daily</option>
-								<option value="Weekly">Weekly</option>
-								<option value="Every 2 weeks">Every 2 weeks</option>
-								<option value="Twice a month">Twice a month</option>
-								<option value="Monthly">Monthly</option>
-								<option value="Yearly">Yearly</option>
-							</select>
-						</div>
-					</div>
-				</li>
-				<li>
-					<input id="householdMember2_incomeTypeRetirement" type="checkbox" name="householdMember2_incomeType" value="Gets retirement account payments" class="open-dependent">
-					<label for="householdMember2_incomeTypeRetirement">Gets retirement account payments</label>
-					<div class="dependent-field usa-sr-only" aria-hidden="true">
-						<div class="question" >
-							<p class="question__secondary-text"><label for="householdMember2_retirementAmount">How much?</label></p>
-						</div>
-						<div class="response">
-							<div class="response__input-prefix" aria-hidden="true">$</div>
-							<input {% include _valid_dollar_amount.html %} id="householdMember2_retirementAmount" />
-						</div>
-						<div class="question">
-							<label for="householdMember2_retirementFrequency" class="question__secondary-text">How often?</label>
-						</div>
-						<div class="response">
-							<select id="householdMember2_retirementFrequency">
-								<option value=""></option>
-								<option value="Daily">Daily</option>
-								<option value="Weekly">Weekly</option>
-								<option value="Every 2 weeks">Every 2 weeks</option>
-								<option value="Twice a month">Twice a month</option>
-								<option value="Monthly">Monthly</option>
-								<option value="Yearly">Yearly</option>
-							</select>
-						</div>
-					</div>
-				</li>
-				<li>
-					<input id="householdMember2_incomeTypePension" type="checkbox" name="householdMember2_incomeType" value="Has a pension" class="open-dependent">
-					<label for="householdMember2_incomeTypePension">Has a pension</label>
-					<div class="dependent-field usa-sr-only" aria-hidden="true">
-						<div class="question" >
-							<p class="question__secondary-text"><label for="householdMember2_pensionAmount">How much?</label></p>
-						</div>
-						<div class="response">
-							<div class="response__input-prefix" aria-hidden="true">$</div>
-							<input {% include _valid_dollar_amount.html %} id="householdMember2_pensionAmount" />
-						</div>
-						<div class="question">
-							<label for="householdMember2_pensionFrequency" class="question__secondary-text">How often?</label>
-						</div>
-						<div class="response">
-							<select id="householdMember2_pensionFrequency">
-								<option value=""></option>
-								<option value="Daily">Daily</option>
-								<option value="Weekly">Weekly</option>
-								<option value="Every 2 weeks">Every 2 weeks</option>
-								<option value="Twice a month">Twice a month</option>
-								<option value="Monthly">Monthly</option>
-								<option value="Yearly">Yearly</option>
-							</select>
-						</div>
-					</div>
-				</li>
-				<li>
-					<input id="householdMember2_incomeTypeAlimony" type="checkbox" name="householdMember2_incomeType" value="Gets alimony" class="open-dependent">
-					<label for="householdMember2_incomeTypeAlimony">Gets alimony</label>
-					<div class="dependent-field usa-sr-only" aria-hidden="true">
-						<div class="question" >
-							<p class="question__secondary-text"><label for="householdMember2_alimonyAmount">How much?</label></p>
-						</div>
-						<div class="response">
-							<div class="response__input-prefix" aria-hidden="true">$</div>
-							<input {% include _valid_dollar_amount.html %} id="householdMember2_alimonyAmount" />
-						</div>
-						<div class="question">
-							<label for="householdMember2_alimonyFrequency" class="question__secondary-text">How often?</label>
-						</div>
-						<div class="response">
-							<select name="alimonyFrequency" id="householdMember2_alimonyFrequency">
-								<option value=""></option>
-								<option value="Daily">Daily</option>
-								<option value="Weekly">Weekly</option>
-								<option value="Every 2 weeks">Every 2 weeks</option>
-								<option value="Twice a month">Twice a month</option>
-								<option value="Monthly">Monthly</option>
-								<option value="Yearly">Yearly</option>
-							</select>
-						</div>
-					</div>
-				</li>
-				<li>
-					<input id="householdMember2_incomeTypeOther" type="checkbox" name="householdMember2_incomeType" value="Other kinds of income" class="open-dependent">
-					<label for="householdMember2_incomeTypeOther">Has other sources of income</label>
-					<div class="dependent-field usa-sr-only" aria-hidden="true">
-						<div class="question">
-							<p class="question__secondary-text"><label for="householdMember2_otherType">What type?</label></p>
-						</div>
-						<div class="response">
-							<input type="text" id="householdMember2_otherType" />
-						</div>
-						<div class="question">
-							<p class="question__secondary-text"><label for="householdMember2_otherAmount">How much?</label></p>
-						</div>
-						<div class="response">
-							<div class="response__input-prefix" aria-hidden="true">$</div>
-							<input {% include _valid_dollar_amount.html %} id="householdMember2_otherAmount" />
-						</div>
-						<div class="question">
-							<label for="householdMember2_otherFrequency" class="question__secondary-text">How often?</label>
-						</div>
-						<div class="response">
-							<select id="householdMember2_otherFrequency">
-								<option value=""></option>
-								<option value="Daily">Daily</option>
-								<option value="Weekly">Weekly</option>
-								<option value="Every 2 weeks">Every 2 weeks</option>
-								<option value="Twice a month">Twice a month</option>
-								<option value="Monthly">Monthly</option>
-								<option value="Yearly">Yearly</option>
-							</select>
-						</div>
-					</div>
-				</li>
-			</ul>
-			</div>
-	</fieldset>
+  <fieldset>
+    <div class="question">
+      <legend class="question__primary-text">Check all your sources of income for <span class="print-householdMember2FirstName"></span>.</legend>
+      </div>
+      <div class="response">
+      <ul class="usa-unstyled-list checkbox-group">
+        <li>
+          <input id="householdMember2_incomeTypeJob" type="checkbox" name="householdMember2_incomeType" value="Has one or more jobs">
+          <label for="householdMember2_incomeTypeJob">Has one or more jobs</label>
+        </li>
+        <li>
+          <input id="householdMember2_incomeTypeSelf" type="checkbox" name="householdMember2_incomeType" value="Is self-employed" class="open-dependent">
+          <label for="householdMember2_incomeTypeSelf">Is self-employed</label>
+          <div class="dependent-field usa-sr-only" aria-hidden="true">
+            <div class="question" >
+              <p class="question__secondary-text"><label for="householdMember2_selfType">What type of work does <span class="print-householdMember2FirstName"></span> do?</label></p>
+            </div>
+            <div class="response">
+              <input type="text" id="householdMember2_SelfType" />
+            </div>
+            <div class="question" >
+              <p class="question__secondary-text"><label for="selfAmount">How much will <span class="print-householdMember2FirstName"></span> earn this month after expenses?</label></p>
+            </div>
+            <div class="response">
+              <div class="response__input-prefix" aria-hidden="true">$</div>
+              <input {% include _valid_dollar_amount.html %} id="householdMember2_selfAmount" />
+            </div>
+          </div>
+        </li>
+        <li>
+          <input id="householdMember2_incomeTypeUnemployment" type="checkbox" name="householdMember2_incomeType" value="Gets unemployment benefits" class="open-dependent">
+          <label for="householdMember2_incomeTypeUnemployment">Gets unemployment benefits</label>
+          <div class="dependent-field usa-sr-only" aria-hidden="true">
+            <div class="question" >
+              <p class="question__secondary-text"><label for="householdMember2_unemploymentAmount">How much?</label></p>
+            </div>
+            <div class="response">
+              <div class="response__input-prefix" aria-hidden="true">$</div>
+              <input {% include _valid_dollar_amount.html %} id="householdMember2_unemploymentAmount" />
+            </div>
+            <div class="question">
+              <label for="householdMember2_unemploymentFrequency" class="question__secondary-text">How often?</label>
+            </div>
+            <div class="response">
+              <select id="householdMember2_unemploymentFrequency">
+                <option value=""></option>
+                <option value="Daily">Daily</option>
+                <option value="Weekly">Weekly</option>
+                <option value="Every 2 weeks">Every 2 weeks</option>
+                <option value="Twice a month">Twice a month</option>
+                <option value="Monthly">Monthly</option>
+                <option value="Yearly">Yearly</option>
+              </select>
+            </div>
+          </div>
+        </li>
+        <li class="snap-only">
+          <input id="householdMember2_incomeTypeDisability" type="checkbox" name="householdMember2_incomeType" value="I get Social Security payments" class="open-dependent">
+          <label for="householdMember2_incomeTypeDisability">Gets disability reimbursements</label>
+          <div class="dependent-field usa-sr-only" aria-hidden="true">
+            <div class="question" >
+              <p class="question__secondary-text"><label for="householdMember2_DisabilityAmount">How much?</label></p>
+            </div>
+            <div class="response">
+              <div class="response__input-prefix" aria-hidden="true">$</div>
+              <input {% include _valid_dollar_amount.html %} id="householdMember2_DisabilityAmount" />
+            </div>
+            <div class="question">
+              <label for="householdMember2_DisabilityFrequency" class="question__secondary-text">How often?</label>
+            </div>
+            <div class="response">
+              <select id="householdMember2_DisabilityFrequency">
+                <option value=""></option>
+                <option value="Daily">Daily</option>
+                <option value="Weekly">Weekly</option>
+                <option value="Every 2 weeks">Every 2 weeks</option>
+                <option value="Twice a month">Twice a month</option>
+                <option value="Monthly">Monthly</option>
+                <option value="Yearly">Yearly</option>
+              </select>
+            </div>
+          </div>
+        </li>
+        <li>
+          <input id="householdMember2_incomeTypeSocialSecurity" type="checkbox" name="householdMember2_incomeType" value="Gets Social Security payments" class="open-dependent">
+          <label for="householdMember2_incomeTypeSocialSecurity">Gets Social Security payments</label>
+          <div class="dependent-field usa-sr-only" aria-hidden="true">
+            <div class="question" >
+              <p class="question__secondary-text"><label for="householdMember2_ssAmount">How much?</label></p>
+            </div>
+            <div class="response">
+              <div class="response__input-prefix" aria-hidden="true">$</div>
+              <input {% include _valid_dollar_amount.html %} id="householdMember2_ssAmount" />
+            </div>
+            <div class="question">
+              <label for="householdMember2_ssFrequency" class="question__secondary-text">How often?</label>
+            </div>
+            <div class="response">
+              <select id="householdMember2_ssFrequency">
+                <option value=""></option>
+                <option value="Daily">Daily</option>
+                <option value="Weekly">Weekly</option>
+                <option value="Every 2 weeks">Every 2 weeks</option>
+                <option value="Twice a month">Twice a month</option>
+                <option value="Monthly">Monthly</option>
+                <option value="Yearly">Yearly</option>
+              </select>
+            </div>
+          </div>
+        </li>
+        <li>
+          <input id="householdMember2_incomeTypeRetirement" type="checkbox" name="householdMember2_incomeType" value="Gets retirement account payments" class="open-dependent">
+          <label for="householdMember2_incomeTypeRetirement">Gets retirement account payments</label>
+          <div class="dependent-field usa-sr-only" aria-hidden="true">
+            <div class="question" >
+              <p class="question__secondary-text"><label for="householdMember2_retirementAmount">How much?</label></p>
+            </div>
+            <div class="response">
+              <div class="response__input-prefix" aria-hidden="true">$</div>
+              <input {% include _valid_dollar_amount.html %} id="householdMember2_retirementAmount" />
+            </div>
+            <div class="question">
+              <label for="householdMember2_retirementFrequency" class="question__secondary-text">How often?</label>
+            </div>
+            <div class="response">
+              <select id="householdMember2_retirementFrequency">
+                <option value=""></option>
+                <option value="Daily">Daily</option>
+                <option value="Weekly">Weekly</option>
+                <option value="Every 2 weeks">Every 2 weeks</option>
+                <option value="Twice a month">Twice a month</option>
+                <option value="Monthly">Monthly</option>
+                <option value="Yearly">Yearly</option>
+              </select>
+            </div>
+          </div>
+        </li>
+        <li>
+          <input id="householdMember2_incomeTypePension" type="checkbox" name="householdMember2_incomeType" value="Has a pension" class="open-dependent">
+          <label for="householdMember2_incomeTypePension">Has a pension</label>
+          <div class="dependent-field usa-sr-only" aria-hidden="true">
+            <div class="question" >
+              <p class="question__secondary-text"><label for="householdMember2_pensionAmount">How much?</label></p>
+            </div>
+            <div class="response">
+              <div class="response__input-prefix" aria-hidden="true">$</div>
+              <input {% include _valid_dollar_amount.html %} id="householdMember2_pensionAmount" />
+            </div>
+            <div class="question">
+              <label for="householdMember2_pensionFrequency" class="question__secondary-text">How often?</label>
+            </div>
+            <div class="response">
+              <select id="householdMember2_pensionFrequency">
+                <option value=""></option>
+                <option value="Daily">Daily</option>
+                <option value="Weekly">Weekly</option>
+                <option value="Every 2 weeks">Every 2 weeks</option>
+                <option value="Twice a month">Twice a month</option>
+                <option value="Monthly">Monthly</option>
+                <option value="Yearly">Yearly</option>
+              </select>
+            </div>
+          </div>
+        </li>
+        <li>
+          <input id="householdMember2_incomeTypeAlimony" type="checkbox" name="householdMember2_incomeType" value="Gets alimony" class="open-dependent">
+          <label for="householdMember2_incomeTypeAlimony">Gets alimony</label>
+          <div class="dependent-field usa-sr-only" aria-hidden="true">
+            <div class="question" >
+              <p class="question__secondary-text"><label for="householdMember2_alimonyAmount">How much?</label></p>
+            </div>
+            <div class="response">
+              <div class="response__input-prefix" aria-hidden="true">$</div>
+              <input {% include _valid_dollar_amount.html %} id="householdMember2_alimonyAmount" />
+            </div>
+            <div class="question">
+              <label for="householdMember2_alimonyFrequency" class="question__secondary-text">How often?</label>
+            </div>
+            <div class="response">
+              <select name="alimonyFrequency" id="householdMember2_alimonyFrequency">
+                <option value=""></option>
+                <option value="Daily">Daily</option>
+                <option value="Weekly">Weekly</option>
+                <option value="Every 2 weeks">Every 2 weeks</option>
+                <option value="Twice a month">Twice a month</option>
+                <option value="Monthly">Monthly</option>
+                <option value="Yearly">Yearly</option>
+              </select>
+            </div>
+          </div>
+        </li>
+        <li>
+          <input id="householdMember2_incomeTypeOther" type="checkbox" name="householdMember2_incomeType" value="Other kinds of income" class="open-dependent">
+          <label for="householdMember2_incomeTypeOther">Has other sources of income</label>
+          <div class="dependent-field usa-sr-only" aria-hidden="true">
+            <div class="question">
+              <p class="question__secondary-text"><label for="householdMember2_otherType">What type?</label></p>
+            </div>
+            <div class="response">
+              <input type="text" id="householdMember2_otherType" />
+            </div>
+            <div class="question">
+              <p class="question__secondary-text"><label for="householdMember2_otherAmount">How much?</label></p>
+            </div>
+            <div class="response">
+              <div class="response__input-prefix" aria-hidden="true">$</div>
+              <input {% include _valid_dollar_amount.html %} id="householdMember2_otherAmount" />
+            </div>
+            <div class="question">
+              <label for="householdMember2_otherFrequency" class="question__secondary-text">How often?</label>
+            </div>
+            <div class="response">
+              <select id="householdMember2_otherFrequency">
+                <option value=""></option>
+                <option value="Daily">Daily</option>
+                <option value="Weekly">Weekly</option>
+                <option value="Every 2 weeks">Every 2 weeks</option>
+                <option value="Twice a month">Twice a month</option>
+                <option value="Monthly">Monthly</option>
+                <option value="Yearly">Yearly</option>
+              </select>
+            </div>
+          </div>
+        </li>
+      </ul>
+      </div>
+  </fieldset>
 </div>
-
-
-<script>
-	$(document).ready(function() {
-
-		$('.print-householdMember2FirstName').text(householdMember2FirstName);
-
-		$("input.open-dependent").on('change', function(){
-			if ($(this).is(":checked")) {
-				$(this).siblings('.dependent-field').removeClass('usa-sr-only').attr("aria-hidden", "false");
-			}
-			else {
-				$(this).siblings('.dependent-field').addClass('usa-sr-only').attr("aria-hidden", "true");
-			}
-		});
-
-		$("input.open-dependent").each(function(){
-			if ($(this).is(":checked")) {
-				$(this).siblings('.dependent-field').removeClass('usa-sr-only').attr("aria-hidden", "false");
-			}
-		});
-
-		$(".usa-button-big").click(function(event) {
-			event.preventDefault();
-
-			storeData();
-			getData();
-
-	    if (householdMember2_incomeTypeJob == "yes") {
-				window.location.href = "person2-job-details-1.html";
-			}
-
-			else if (typeof applyForHouseholdMember3 != 'undefined' ) {
-				window.location.href = "person3.html";
-			}
-
-			else {
-				window.location.href = "expenses.html";
-			}
-		});
-	});
-</script>

@@ -2,6 +2,21 @@
 layout: application
 step: 4
 title: Let’s start with you.
+script: |
+  <script>
+    $(document).ready(function() {
+      $('form').on('submit', function() {
+          if (!checkValidityIfSupported($('form').get(0))) {
+            return false;
+          }
+          else {
+          storeData();
+          window.location.href = "applicant-details.html";
+          return false;
+        }
+      });
+    });
+  </script>
 ---
 
 <div class="field-group">
@@ -10,29 +25,7 @@ title: Let’s start with you.
     <p class="question__secondary-text">Give your best estimate. This includes money in checking accounts, savings accounts, and any other cash you have available.</p>
   </div>
   <div class="response">
-  	<div class="response__input-prefix" aria-hidden="true">$</div>
+    <div class="response__input-prefix" aria-hidden="true">$</div>
     <input class="input--medium" id="householdSavings" {% include _valid_dollar_amount.html %} />
   </div>
 </div>
-
-<script>
-  $(document).ready(function() {
-
-    $('form').on('submit', function() {
-
-
-        if (!checkValidityIfSupported($('form').get(0))) {
-          return false;
-        }
-
-        else {
-
-        storeData();
-
-        window.location.href = "applicant-details.html";
-
-        return false;
-      }
-    });
-  });
-</script>

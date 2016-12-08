@@ -2,11 +2,37 @@
 layout: application
 step: 5
 title: Now, tell us about your citizenship and immigration status.
+script: |
+  <script>
+    $(document).ready(function() {
+
+      $('form').on('submit', function() {
+
+          if (!checkValidityIfSupported($('form').get(0))) {
+            return false;
+          }
+
+          else {
+
+          storeData();
+          getData();
+
+          if (applicantCitizenship == 'yes') {
+            window.location.href = "../07-application/review.html";
+          }
+          else {
+            window.location.href = "determine-who.html";
+          }
+          return false;
+          }
+      });
+    });
+  </script>
 ---
 
 <div class="alert--positive">
-	<p>You <strong>do not</strong> have to be a citizen to qualify for all benefits. </p>
-	<p>Answering these questions will <strong>not</strong> affect your immigration status.</p>
+  <p>You <strong>do not</strong> have to be a citizen to qualify for all benefits. </p>
+  <p>Answering these questions will <strong>not</strong> affect your immigration status.</p>
 </div>
 
 <div class="field-group">
@@ -39,30 +65,3 @@ title: Now, tell us about your citizenship and immigration status.
 </div>
 
 <p>To sign up for these services, we may need to ask for immigration document numbers. </p>
-
-
-<script>
-  $(document).ready(function() {
-
-    $('form').on('submit', function() {
-
-        if (!checkValidityIfSupported($('form').get(0))) {
-          return false;
-        }
-
-        else {
-
-        storeData();
-        getData();
-
-        if (applicantCitizenship == 'yes') {
-        	window.location.href = "../07-application/review.html";
-        }
-        else {
-        	window.location.href = "determine-who.html";
-        }
-        return false;
-        }
-    });
-  });
-</script>

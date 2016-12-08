@@ -2,11 +2,49 @@
 layout: application
 step: 3
 title: Where does <span class="print-householdMember1FirstName"></span> live?
+script: |
+  <script>
+    $(document).ready(function() {
+
+      $('.print-householdMember1FirstName').text(householdMember1FirstName);
+
+      $('#householdMember1SameAddress').on('change', function(){
+        if ($(this).is(':checked')) {
+          $('#householdMember1Address1').val(applicantMailingAddress1);
+          $('#householdMember1Address2').val(applicantMailingAddress2);
+          $('#householdMember1City').val(applicantCity);
+          $('#householdMember1State').val(applicantState);
+          $('#householdMember1Zip').val(applicantZip);
+        }
+        else {
+          $('#householdMember1Address1').val("");
+          $('#householdMember1Address2').val("");
+          $('#householdMember1City').val("");
+          $('#householdMember1State').val("");
+          $('#householdMember1Zip').val("");
+        }
+      })
+
+      $(".usa-button-big").click(function(event) {
+        event.preventDefault();
+
+        storeData();
+        getData();
+
+        if (typeof householdMember2FirstName != 'undefined' ) {
+          window.location.href = "person2.html";
+        }
+        else {
+          window.location.href = "../04-finances/index.html";
+        }
+      });
+    });
+  </script>
 ---
 
 <div class="field-group">
   <div class="question">
-  	<p  class="question__primary-text">Does <span class="print-householdMember1FirstName"></span> live at the same address as you?</p>
+    <p  class="question__primary-text">Does <span class="print-householdMember1FirstName"></span> live at the same address as you?</p>
   </div>
   <div class="response">
     <ul class="usa-unstyled-list checkbox-group">
@@ -20,18 +58,18 @@ title: Where does <span class="print-householdMember1FirstName"></span> live?
 
 <div class="field-group">
   <fieldset>
-  	<div class="question usa-sr-only">
-    	<legend class="question__primary-text">Address</legend>
+    <div class="question usa-sr-only">
+      <legend class="question__primary-text">Address</legend>
     </div>
 
     <div class="response">
-  	  <label for="householdMember1Address1" >Address 1</label>
-  	  <input id="householdMember1Address1" name="householdMember1Address" type="text" >
+      <label for="householdMember1Address1" >Address 1</label>
+      <input id="householdMember1Address1" name="householdMember1Address" type="text" >
 
-  	  <label for="householdMember1Address2">Address 2 <span class="usa-additional_text">Optional</span></label>
-  	  <input id="householdMember1Address2" name="householdMember1Address" type="text" >
+      <label for="householdMember1Address2">Address 2 <span class="usa-additional_text">Optional</span></label>
+      <input id="householdMember1Address2" name="householdMember1Address" type="text" >
 
-  	  <div>
+      <div>
           <div class="usa-input-grid usa-input-grid-medium">
             <label for="householdMember1City" >City</label>
             <input id="householdMember1City" name="householdMember1City" type="text">
@@ -95,50 +133,10 @@ title: Where does <span class="print-householdMember1FirstName"></span> live?
             </select>
           </div>
         </div>
-  		<div class="usa-input-grid usa-input-grid-small">
-  	  <label for="householdMember1Zip" >Zip code</label>
-  	  <input class="usa-input-medium" id="householdMember1Zip" name="householdMember1Zip" {% include _valid_zipcode.html %} data-grouplength="5,4" data-delimiter="-" data-politespace >
-  	  </div>
+      <div class="usa-input-grid usa-input-grid-small">
+      <label for="householdMember1Zip" >Zip code</label>
+      <input class="usa-input-medium" id="householdMember1Zip" name="householdMember1Zip" {% include _valid_zipcode.html %} data-grouplength="5,4" data-delimiter="-" data-politespace >
+      </div>
     </div>
   </fieldset>
 </div>
-
-
-<script>
-	$(document).ready(function() {
-
-		$('.print-householdMember1FirstName').text(householdMember1FirstName);
-
-		$('#householdMember1SameAddress').on('change', function(){
-			if ($(this).is(':checked')) {
-				$('#householdMember1Address1').val(applicantMailingAddress1);
-				$('#householdMember1Address2').val(applicantMailingAddress2);
-				$('#householdMember1City').val(applicantCity);
-                $('#householdMember1State').val(applicantState);
-				$('#householdMember1Zip').val(applicantZip);
-			}
-			else {
-				$('#householdMember1Address1').val("");
-				$('#householdMember1Address2').val("");
-				$('#householdMember1City').val("");
-                $('#householdMember1State').val("");
-				$('#householdMember1Zip').val("");
-			}
-		})
-
-		$(".usa-button-big").click(function(event) {
-			event.preventDefault();
-
-			storeData();
-			getData();
-
-			if (typeof householdMember2FirstName != 'undefined' ) {
-				window.location.href = "person2.html";
-			}
-			else {
-				window.location.href = "../04-finances/index.html";
-			}
-
-		});
-	});
-</script>

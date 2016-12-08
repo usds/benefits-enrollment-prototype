@@ -2,6 +2,24 @@
 layout: application
 step: 5
 title: Last money question. Tell us about your expenses.
+script: |
+  <script>
+    $(document).ready(function() {
+      if (householdShareMeals == 0) {
+        $('#if-shares-meals').remove();
+      }
+      $('form').on('submit', function() {
+        if (!checkValidityIfSupported($('form').get(0))) {
+          return false;
+        }
+        else {
+          storeData();
+          window.location.href = "../05-citizenship/index.html";
+          return false;
+        }
+      });
+    });
+  </script>
 ---
 
 <div class="field-group">
@@ -9,7 +27,7 @@ title: Last money question. Tell us about your expenses.
     <p class="question__primary-text"><label for="householdRentMortgage">How much rent or mortgage do you pay each month?</label></p>
   </div>
   <div class="response">
-  	<div class="response__input-prefix" aria-hidden="true">$</div>
+    <div class="response__input-prefix" aria-hidden="true">$</div>
     <input class="input--medium" id="householdRentMortgage" {% include _valid_dollar_amount.html %} required />
   </div>
 </div>
@@ -83,29 +101,3 @@ title: Last money question. Tell us about your expenses.
     </div>
   </div>
 </div>
-
-<script>
-  $(document).ready(function() {
-
-    if (householdShareMeals == 0) {
-      $('#if-shares-meals').remove();
-    }
-
-
-    $('form').on('submit', function() {
-
-        if (!checkValidityIfSupported($('form').get(0))) {
-          return false;
-        }
-
-        else {
-
-        storeData();
-
-        window.location.href = "../05-citizenship/index.html";
-
-        return false;
-      }
-    });
-  });
-</script>

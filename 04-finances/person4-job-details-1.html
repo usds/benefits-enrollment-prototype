@@ -2,109 +2,109 @@
 layout: application
 step: 4
 title: Tell us more about <span class="print-householdMember4FirstName"></span>’s job(s).
+script: |
+  <script>
+    $(document).ready(function() {
+
+      $('.print-householdMember4FirstName').text(householdMember4FirstName);
+
+      $('input[name="employerPayFrequency"]').on('change', function(){
+        var v = $(this).val().toLowerCase();
+        $("#print-employerPayFrequency").text(v);
+      });
+
+      $('form').on('submit', function() {
+
+          if (!checkValidityIfSupported($('form').get(0))) {
+            return false;
+          }
+
+          else {
+
+            storeData();
+            getData();
+
+            if (householdMember4_haveSecondJob == "Yes") {
+              window.location.href = "person4-job-details-2.html";
+            }
+
+            else if (typeof applyForHouseholdMember5 != 'undefined' ) {
+              window.location.href = "person5.html";
+            }
+
+            else {
+              window.location.href = "expenses.html";
+            }
+
+            return false;
+          }
+
+      });
+    });
+  </script>
 ---
 <div class="field-group">
-	<fieldset>
-		<div class="question">
-			<legend class="question__primary-text">How often does <span class="print-householdMember4FirstName"></span> get paid?</legend>
-		</div>
-		<div class="response">
-			<ul class="usa-unstyled-list response__radiogroup--two-cols">
-				<li>
-					<input id="householdMember4_PayFrequencyDaily" type="radio" name="employerPayFrequency" value="Daily">
-	      	<label for="householdMember4_PayFrequencyDaily">Daily</label>
-				</li>
-				<li>
-					<input id="householdMember4_PayFrequencyWeekly" type="radio" name="employerPayFrequency" value="Weekly">
-	      	<label for="householdMember4_PayFrequencyWeekly">Weekly</label>
-				</li>
-				<li>
-					<input id="householdMember4_PayFrequencyBiweekly" type="radio" name="employerPayFrequency" value="Every 2 weeks">
-	      	<label for="householdMember4_PayFrequencyBiweekly">Every 2 weeks</label>
-				</li>
-				<li>
-					<input id="householdMember4_PayFrequencyTwiceMonthly" type="radio" name="employerPayFrequency" value="Twice a month">
-	      	<label for="householdMember4_PayFrequencyTwiceMonthly">Twice a month</label>
-				</li>
-				<li>
-					<input id="householdMember4_PayFrequencyMonthly" type="radio" name="employerPayFrequency" value="Monthly">
-	      	<label for="householdMember4_PayFrequencyMonthly">Monthly</label>
-				</li>
-				<li>
-					<input id="householdMember4_PayFrequencyYearly" type="radio" name="employerPayFrequency" value="Yearly">
-	      	<label for="householdMember4_PayFrequencyYearly">Yearly</label>
-				</li>
-			</ul>
-		</div>
-	</fieldset>
+  <fieldset>
+    <div class="question">
+      <legend class="question__primary-text">How often does <span class="print-householdMember4FirstName"></span> get paid?</legend>
+    </div>
+    <div class="response">
+      <ul class="usa-unstyled-list response__radiogroup--two-cols">
+        <li>
+          <input id="householdMember4_PayFrequencyDaily" type="radio" name="employerPayFrequency" value="Daily">
+          <label for="householdMember4_PayFrequencyDaily">Daily</label>
+        </li>
+        <li>
+          <input id="householdMember4_PayFrequencyWeekly" type="radio" name="employerPayFrequency" value="Weekly">
+          <label for="householdMember4_PayFrequencyWeekly">Weekly</label>
+        </li>
+        <li>
+          <input id="householdMember4_PayFrequencyBiweekly" type="radio" name="employerPayFrequency" value="Every 2 weeks">
+          <label for="householdMember4_PayFrequencyBiweekly">Every 2 weeks</label>
+        </li>
+        <li>
+          <input id="householdMember4_PayFrequencyTwiceMonthly" type="radio" name="employerPayFrequency" value="Twice a month">
+          <label for="householdMember4_PayFrequencyTwiceMonthly">Twice a month</label>
+        </li>
+        <li>
+          <input id="householdMember4_PayFrequencyMonthly" type="radio" name="employerPayFrequency" value="Monthly">
+          <label for="householdMember4_PayFrequencyMonthly">Monthly</label>
+        </li>
+        <li>
+          <input id="householdMember4_PayFrequencyYearly" type="radio" name="employerPayFrequency" value="Yearly">
+          <label for="householdMember4_PayFrequencyYearly">Yearly</label>
+        </li>
+      </ul>
+    </div>
+  </fieldset>
 </div>
 
 <div class="field-group">
-	<div class="question">
-		<p class="question__primary-text"><label for="householdMember4_employerWages">How much wages/tips does <span class="print-householdMember4FirstName"></span> make <span id="print-employerPayFrequency"></span> (before taxes)?</label></p>
-	</div>
-	<div class="response">
-		<div class="response__input-prefix" aria-hidden="true">$</div>
-		<input class="input--medium" {% include _valid_dollar_amount.html %} id="householdMember4_employerWages"/>
-	</div>
+  <div class="question">
+    <p class="question__primary-text"><label for="householdMember4_employerWages">How much wages/tips does <span class="print-householdMember4FirstName"></span> make <span id="print-employerPayFrequency"></span> (before taxes)?</label></p>
+  </div>
+  <div class="response">
+    <div class="response__input-prefix" aria-hidden="true">$</div>
+    <input class="input--medium" {% include _valid_dollar_amount.html %} id="householdMember4_employerWages"/>
+  </div>
 </div>
 
 <div class="field-group">
-	<fieldset>
-		<div class="question">
-			<legend class="question__primary-text">Does <span class="print-householdMember4FirstName"></span> have another job?</legend>
-		</div>
-		<div class="response">
-			<ul class="usa-unstyled-list response__radiogroup--inline">
-				<li>
-					<input id="householdMember4_haveSecondJobYes" type="radio" name="householdMember4_haveSecondJob" value="Yes" required>
-	      	<label for="householdMember4_haveSecondJobYes">Yes</label>
-				</li>
-				<li>
-					<input id="householdMember4_haveSecondJobNo" type="radio" name="householdMember4_haveSecondJob" value="No" required>
-	      	<label for="householdMember4_haveSecondJobNo">No</label>
-				</li>
-			</ul>
-		</div>
-	</fieldset>
+  <fieldset>
+    <div class="question">
+      <legend class="question__primary-text">Does <span class="print-householdMember4FirstName"></span> have another job?</legend>
+    </div>
+    <div class="response">
+      <ul class="usa-unstyled-list response__radiogroup--inline">
+        <li>
+          <input id="householdMember4_haveSecondJobYes" type="radio" name="householdMember4_haveSecondJob" value="Yes" required>
+          <label for="householdMember4_haveSecondJobYes">Yes</label>
+        </li>
+        <li>
+          <input id="householdMember4_haveSecondJobNo" type="radio" name="householdMember4_haveSecondJob" value="No" required>
+          <label for="householdMember4_haveSecondJobNo">No</label>
+        </li>
+      </ul>
+    </div>
+  </fieldset>
 </div>
-
-<script>
-	$(document).ready(function() {
-
-		$('.print-householdMember4FirstName').text(householdMember4FirstName);
-
-		$('input[name="employerPayFrequency"]').on('change', function(){
-			var v = $(this).val().toLowerCase();
-			$("#print-employerPayFrequency").text(v);
-		});
-
-		$('form').on('submit', function() {
-
-        if (!checkValidityIfSupported($('form').get(0))) {
-          return false;
-        }
-
-        else {
-
-					storeData();
-					getData();
-
-					if (householdMember4_haveSecondJob == "Yes") {
-						window.location.href = "person4-job-details-2.html";
-					}
-
-					else if (typeof applyForHouseholdMember5 != 'undefined' ) {
-						window.location.href = "person5.html";
-					}
-
-					else {
-						window.location.href = "expenses.html";
-					}
-
-					return false;
-				}
-
-		});
-	});
-</script>

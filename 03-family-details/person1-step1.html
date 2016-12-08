@@ -2,15 +2,49 @@
 layout: application
 step: 3
 title: Great! Let’s get more info about <span class="print-householdMember1FirstName"></span> <span class="print-householdMember1LastName"></span>.
+script: |
+  <script>
+    $(document).ready(function() {
+
+      $('.print-householdMember1FirstName').text(householdMember1FirstName);
+      $('.print-householdMember1LastName').text(householdMember1LastName);
+
+
+      if ((typeof applyForHouseholdMember1 == 'undefined') || (applyForHouseholdMember1 == "no")) {
+        $('.applicant-only').remove();
+      }
+
+      $("select").on('change', function(){
+        if ($(this).val() == "Other") {
+          $(this).next('.dependent-field').removeClass('usa-sr-only').attr("aria-hidden", "false");
+        }
+        else {
+          $('.dependent-field').addClass('usa-sr-only').attr("aria-hidden", "true");
+        }
+      });
+
+      $('form').on('submit', function() {
+        if (!checkValidityIfSupported($('form').get(0))) {
+          return false;
+        }
+        else {
+          storeData();
+          window.location.href = "person1-step2.html";
+          return false;
+        }
+        return false;
+      });
+    });
+  </script>
 ---
 
 <div class="field-group">
   <div class="question">
-  	<p class="question__primary-text"><label for="householdMember1Relationship">How is <span class="print-householdMember1FirstName"></span> related to you?</label></p>
+    <p class="question__primary-text"><label for="householdMember1Relationship">How is <span class="print-householdMember1FirstName"></span> related to you?</label></p>
   </div>
   <div class="response">
-  	<select name="householdMemberName1Relationship" id="householdMember1Relationship" required>
-  		<option>Relationship type</option>
+    <select name="householdMemberName1Relationship" id="householdMember1Relationship" required>
+      <option>Relationship type</option>
       <option value="My spouse">My spouse</option>
       <option value="My parent">My parent</option>
       <option value="My child">My child (adopted or natural)</option>
@@ -22,27 +56,27 @@ title: Great! Let’s get more info about <span class="print-householdMember1Fir
       <option value="My cousin">My cousin</option>
       <option value="Not a relative">Not a relative</option>
       <option value="Other">Other</option>
-  	</select>
+    </select>
 
-  	<div class="dependent-field usa-sr-only" aria-hidden="true">
-  		<div class="question" >
-  			<p class="question__secondary-text"><label for="householdMember1RelationshipOther">Please specify</label></p>
-  		</div>
-  		<div class="response">
-  			<input type="text" id="householdMember1RelationshipOther" />
-  		</div>
-  	</div>
+    <div class="dependent-field usa-sr-only" aria-hidden="true">
+      <div class="question" >
+        <p class="question__secondary-text"><label for="householdMember1RelationshipOther">Please specify</label></p>
+      </div>
+      <div class="response">
+        <input type="text" id="householdMember1RelationshipOther" />
+      </div>
+    </div>
   </div>
 </div>
 
 <div class="field-group">
   <fieldset>
     <div class="question">
-    	<legend class="question__primary-text">What is <span class="print-householdMember1FirstName"></span>’s date of birth?</legend>
-    	<p class="question__secondary-text" id="dobHint">For example: 12 28 1986</p>
+      <legend class="question__primary-text">What is <span class="print-householdMember1FirstName"></span>’s date of birth?</legend>
+      <p class="question__secondary-text" id="dobHint">For example: 12 28 1986</p>
     </div>
     <div class="response" >
-    	<div class="usa-date-of-birth">
+      <div class="usa-date-of-birth">
         <div class="usa-form-group usa-form-group-year">
           <label for="householdMember1DOBMonth">Month</label>
           <input class="usa-input-inline usa-form-control auto-advance" aria-describedby="dobHint"  id="householdMember1DOBMonth" name="householdMember1DOBMonth" {% include _valid_month.html %} required>
@@ -84,7 +118,7 @@ title: Great! Let’s get more info about <span class="print-householdMember1Fir
   <div class="field-group">
     <fieldset>
     <div class="question">
-    	<legend class="question__primary-text">What is <span class="print-householdMember1FirstName"></span>’s Social Security Number (SSN)?</legend>
+      <legend class="question__primary-text">What is <span class="print-householdMember1FirstName"></span>’s Social Security Number (SSN)?</legend>
       <p class="question__secondary-text">You can leave this blank if you don't know it or <span class="print-householdMember1FirstName"></span>’s doesn’t have one. </p>
     </div>
     <div class="response">
@@ -111,45 +145,3 @@ title: Great! Let’s get more info about <span class="print-householdMember1Fir
   <i class="fa fa-lock note__icon" aria-hidden="true"></i>
   <p class="note__text">This information is kept confidential and secure as required by law. <a href="https://www.cms.gov/about-cms/agency-information/aboutwebsite/privacy-policy.html" target="_blank">Learn more.</a></p>
 </div>
-
-
-<script>
-  $(document).ready(function() {
-
-  	$('.print-householdMember1FirstName').text(householdMember1FirstName);
-  	$('.print-householdMember1LastName').text(householdMember1LastName);
-
-
-    if ((typeof applyForHouseholdMember1 == 'undefined') || (applyForHouseholdMember1 == "no")) {
-      $('.applicant-only').remove();
-    }
-
-
-  	$("select").on('change', function(){
-			if ($(this).val() == "Other") {
-				$(this).next('.dependent-field').removeClass('usa-sr-only').attr("aria-hidden", "false");
-			}
-			else {
-				$('.dependent-field').addClass('usa-sr-only').attr("aria-hidden", "true");
-			}
-		});
-
-    $('form').on('submit', function() {
-
-  	if (!checkValidityIfSupported($('form').get(0))) {
-          return false;
-        }
-
-        else {
-
-          storeData();
-
-          window.location.href = "person1-step2.html";
-          return false;
-        }
-
-        return false;
-
-    });
-  });
-</script>
