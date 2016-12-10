@@ -12,7 +12,7 @@ To explore the prototype, you can
 To run a local demo,
 
 1. Install [Ruby](https://www.ruby-lang.org) and [Bundler](http://bundler.io) if  they are not already installed.
-2. Run `bundle exec jekyll serve`
+2. Run `bundle exec jekyll serve --baseurl ''`
 3. Visit `http://localhost:4000`
 
 More info: [Using Jekyll as a static site generator with GitHub Pages](https://help.github.com/articles/using-jekyll-as-a-static-site-generator-with-github-pages)
@@ -31,5 +31,3 @@ This prototype demonstrates a user-centered enrollment model that leverages data
 In our research, we saw a common need from state programs for an online application template which offices can customize to meet their own policy and user requirements.
 
 The alpha version of the prototype is designed to model how one or more applicants can apply for SNAP and/or Medicaid — two of the largest programs with demographic eligibility overlap.
-
-
