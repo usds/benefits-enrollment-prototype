@@ -34,3 +34,6 @@ gems:
 exclude:
   - Gemfile
   - Gemfile.lock
+  - .sass-cache
+  - README.md
+  - DOCS.md
