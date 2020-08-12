@@ -2,39 +2,47 @@
 layout: application
 step: 1
 title: Let’s start with the basics.
----
-
-<div class="prompt">
-	<p class="prompt__primary-text"><label for="applicantFirstName">What is your legal first name?</label></p>
-  <p class="prompt__secondary-text">As shown on legal documents such as a birth certificate. This helps us verify who you are.</p>
-</div>
-<div class="response">
-	<input type="text" id="applicantFirstName" required />
-</div>
-
-<div class="prompt">
-	<p class="prompt__primary-text"><label for="applicantLastName">What is your last name?</label></p>
-</div>
-<div class="response">
-	<input type="text" id="applicantLastName" required />
-</div>
-
-<script>
-  $(document).ready(function() {
-    $('form').on('submit', function() {
-
+script: |
+  <script>
+    $(document).ready(function() {
+      $('form').on('submit', function() {
         if (!checkValidityIfSupported($('form').get(0))) {
           return false;
         }
-
         else {
-        storeData();
-
-        window.location.href = "applicant-dob-sex.html";
-
-        return false;
-
-      }
+          storeData();
+          window.location.href = "applicant-dob-sex.html";
+          return false;
+        }
+      });
     });
-  });
-</script>
+  </script>
+---
+
+<div class="field-group">
+  <div class="question">
+    <p class="question__primary-text"><label for="applicantFirstName">What is your legal first name?</label></p>
+    <p class="question__secondary-text">As shown on legal documents such as a birth certificate. This helps us verify who you are.</p>
+  </div>
+  <div class="response">
+    <input type="text" id="applicantFirstName" required />
+  </div>
+</div>
+
+<div class="field-group">
+  <div class="question">
+    <p class="question__primary-text"><label for="applicantMiddleName">What is your middle name?</label></p>
+  </div>
+  <div class="response">
+    <input type="text" id="applicantMiddleName" />
+  </div>
+</div>
+
+<div class="field-group">
+  <div class="question">
+    <p class="question__primary-text"><label for="applicantLastName">What is your last name?</label></p>
+  </div>
+  <div class="response">
+    <input type="text" id="applicantLastName" required />
+  </div>
+</div>

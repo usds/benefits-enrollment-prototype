@@ -1,67 +1,67 @@
 ---
 layout: basic
+script: |
+  <script>
+    $(document).ready(function() {
+      sessionStorage.clear();
+    });
+  </script>
 ---
 
 <div class="hero">
-	<div class="usa-grid">
+  <div class="usa-grid">
 
-		<div class="usa-alert usa-alert-info">
-	    <div class="usa-alert-body">
-	      <h3 class="usa-alert-heading">This is not a real application.</h3>
-	      <p class="usa-alert-text">This site is a generic template designed for local government benefit administrators to customize for their enrollment applications. No data entered on this will be shared or stored.</p>
-	      <p class="usa-alert-text"><a href="{{ base }}">Learn more</a></p>
-	    </div>
-	  </div>
+    <div class="usa-alert usa-alert-info">
+      <div class="usa-alert-body">
+        <h3 class="usa-alert-heading">This is not a real application.</h3>
+        <p class="usa-alert-text">This site is a generic template designed for local government benefit administrators to customize for their enrollment applications. No data entered on this will be shared or stored.</p>
+        <p class="usa-alert-text"><a href="{{ base }}">Learn more</a></p>
+      </div>
+    </div>
 
-		<h1>Welcome!</h1>
-		<p class="usa-font-lead">This site will help you apply for food assistance (SNAP) and healthcare coverage (Medicaid).</p>
-	</div>
+    <h1>Welcome!</h1>
+    <p class="usa-font-lead">This site will help you apply for food assistance (SNAP) and healthcare coverage (Medicaid).</p>
+  </div>
 </div>
 
 <div class="panel">
-	<div class="usa-grid">
-		<h2 class="benefits-highlights-header">Programs that can help you:</h2>
-		<div class="benefits-highlights">
-			<div class="usa-width-one-half">
-				<h2>Food Assistance</h2>
-				<h3>Supplemental Nutrition Assistance Program (SNAP)</h3>
-				<p>Money for food at supermarkets, farmer’s markets, and convenience stores</p>
-			</div>
-			<div class="usa-width-one-half">
-				<h2>Healthcare Coverage</h2>
-				<h3>Medicaid, CHIP and Marketplace health insurance</h3>
-				<p>Free or low-cost health coverage may help pay for medical bills, doctor visits, or prescriptions</p>
-			</div>
-		</div>
+  <div class="usa-grid">
+    <h2 class="benefits-highlights-header">Programs that can help you:</h2>
+    <div class="benefits-highlights">
+      <div class="usa-width-one-half">
+        <h2>Food Assistance</h2>
+        <h3>Supplemental Nutrition Assistance Program (SNAP)</h3>
+        <p>Money for food at supermarkets, farmer’s markets, and convenience stores</p>
+      </div>
+      <div class="usa-width-one-half">
+        <h2>Healthcare Coverage</h2>
+        <h3>Medicaid, CHIP and Marketplace health insurance</h3>
+        <p>Free or low-cost health coverage may help pay for medical bills, doctor visits, or prescriptions</p>
+      </div>
+    </div>
 
-		<h2>Apply for these programs in 3 steps</h2>
-		<ul class="styled-numbered-list">
-			<li>Check to see what benefits you may qualify for.</li>
-			<li>Answer questions about you and your household.</li>
-			<li>Submit an application for one or more programs. It will go to your local benefit office for review and follow-up.</li>
-		</ul>
+    <h2>Apply for these programs in 3 steps</h2>
+    <ul class="styled-numbered-list">
+      <li>Check to see what benefits you may qualify for.</li>
+      <li>Answer questions about you and your household.</li>
+      <li>Submit an application for one or more programs. It will go to your local benefit office for review and follow-up.</li>
+    </ul>
 
-		
 
-		<div class="prompt">
-			<p class="prompt__primary-text"><label for="language">What language do you prefer?</label></p>
-		</div>
-		<div class="response">
-			<select name="laguage" id="">
-		    <option value="English">English</option>
-		    <option value="Spanish">Spanish</option>
-		    <option value="Russian">Russian</option>
-			</select>
-		</div>
 
-		<p>
-			<a href="00-screener/select-benefits.html" class="usa-button usa-button-big">Get started!</a>
-		</p>
-	</div>
+    <div class="prompt">
+      <p class="prompt__primary-text"><label for="language">What language do you prefer?</label></p>
+    </div>
+    <div class="response">
+      <select name="laguage" id="">
+        <option value="English">English</option>
+        <option value="Spanish">Spanish</option>
+        <option value="Russian">Russian</option>
+      </select>
+    </div>
+
+    <p>
+      <a href="00-screener/select-benefits.html" class="usa-button usa-button-big">Get started!</a>
+    </p>
+  </div>
 </div>
-
-<script>
-	$(document).ready(function() {
-		sessionStorage.clear();
-	});
-</script>

@@ -3,10 +3,45 @@ step: 7
 layout: application
 title: Please review the terms and sign below, then you’re done!
 button_text: Submit application
+script: |
+  <script>
+    $(document).ready(function() {
+
+      if ((benefitChoiceHealthcare == "yes") && (benefitChoiceFoodAssistance == "yes")) {
+        $('#print-nextStepsText').text("SNAP and Medicaid")
+      }
+      if ((benefitChoiceHealthcare == "no") && (benefitChoiceFoodAssistance == "yes")) {
+        $('#print-nextStepsText').text("SNAP")
+      }
+      if ((benefitChoiceHealthcare == "yes") && (benefitChoiceFoodAssistance == "no")) {
+        $('#print-nextStepsText').text("Medicaid")
+      }
+
+      $('form').on('submit', function() {
+
+          if (!checkValidityIfSupported($('form').get(0))) {
+            return false;
+          }
+
+          else {
+            storeData();
+            getData();
+
+            if (agreeToTerms == "Yes") {
+              window.location.href = "done.html";
+            }
+            else {
+              alert("You must agree to the terms.")
+            }
+            return false;
+          }
+      });
+    });
+  </script>
 ---
 
 <p class="usa-font-lead">
-	Scroll down to agree and sign below.
+  Scroll down to agree and sign below.
 </p>
 
 
@@ -18,7 +53,7 @@ button_text: Submit application
 <li>If you do not agree with these terms you can use other online applications found elsewhere.</li>
 </ul>
 <h4>Details</h4>
-	<ul>
+  <ul>
 <li>
 <p>I read, or had read to me, the information in the official application and my answers to the questions in this application.</p>
 </li>
@@ -68,28 +103,30 @@ To appeal your benefits eligibility results, visit the website, local office, ca
 </ul>
 </div>
 
-<fieldset>
-  <div class="prompt usa-sr-only">
-    <legend class="prompt__primary-text">Do you agree to the terms above?</legend>
-  </div>
-  <div class="response">
-    <ul class="usa-unstyled-list response__radiogroup--inline">
-      <li>
-        <input id="agreeToTermsYes" type="radio" name="agreeToTerms" value="Yes" required="">
-        <label for="agreeToTermsYes">I agree</label>
-      </li>
-      <li>
-        <input id="agreeToTermsNo" type="radio" name="agreeToTerms" value="No">
-        <label for="agreeToTermsNo">I do not agree</label>
-      </li>
-    </ul>
-  </div>
-</fieldset>
+<div class="field-group">
+  <fieldset>
+    <div class="question usa-sr-only">
+      <legend class="question__primary-text">Do you agree to the terms above?</legend>
+    </div>
+    <div class="response">
+      <ul class="usa-unstyled-list response__radiogroup--inline">
+        <li>
+          <input id="agreeToTermsYes" type="radio" name="agreeToTerms" value="Yes" required="">
+          <label for="agreeToTermsYes">I agree</label>
+        </li>
+        <li>
+          <input id="agreeToTermsNo" type="radio" name="agreeToTerms" value="No">
+          <label for="agreeToTermsNo">I do not agree</label>
+        </li>
+      </ul>
+    </div>
+  </fieldset>
+</div>
 
-<div class="prompt">
-	<h2><label for="applicantSignature">Enter your full legal name to sign this application</label></h2>
-	<p>By submitting this application, you agree that:</p>
-  <div class="prompt__secondary-text">
+<div class="question">
+  <h2><label for="applicantSignature">Enter your full legal name to sign this application</label></h2>
+  <p>By submitting this application, you agree that:</p>
+  <div class="question__secondary-text">
     <ul>
       <li>You want to apply for <span id="print-nextStepsText"></span>.</li>
       <li>You have been honest on this application.</li>
@@ -100,46 +137,13 @@ To appeal your benefits eligibility results, visit the website, local office, ca
 </div>
 
 
-
-<div class="prompt">
-	<input type="text" id="applicantSignature" required />
-	<div class="note note--has-icon">
-    <i class="fa fa-lock note__icon" aria-hidden="true"></i>
-    <p class="note__text">This information is kept confidential and secure as required by law. <a href="https://www.cms.gov/about-cms/agency-information/aboutwebsite/privacy-policy.html" target="_blank">Learn more.</a></p>
+<div class="field-group">
+  <div class="question">
+    <input type="text" id="applicantSignature" required />
   </div>
 </div>
 
-<script>
-  $(document).ready(function() {
-
-    if ((benefitChoiceHealthcare == "yes") && (benefitChoiceFoodAssistance == "yes")) {
-      $('#print-nextStepsText').text("SNAP and Medicaid")
-    }
-    if ((benefitChoiceHealthcare == "no") && (benefitChoiceFoodAssistance == "yes")) {
-      $('#print-nextStepsText').text("SNAP")
-    }
-    if ((benefitChoiceHealthcare == "yes") && (benefitChoiceFoodAssistance == "no")) {
-      $('#print-nextStepsText').text("Medicaid")
-    }
-
-    $('form').on('submit', function() {
-
-        if (!checkValidityIfSupported($('form').get(0))) {
-          return false;
-        }
-
-        else {
-          storeData();
-          getData();
-
-          if (agreeToTerms == "Yes") {
-            window.location.href = "done.html";
-          }
-          else {
-            alert("You must agree to the terms.")
-          }
-          return false;
-        }
-    });
-  });
-</script>
+<div class="note note--has-icon">
+  <i class="fa fa-lock note__icon" aria-hidden="true"></i>
+  <p class="note__text">This information is kept confidential and secure as required by law. <a href="https://www.cms.gov/about-cms/agency-information/aboutwebsite/privacy-policy.html" target="_blank">Learn more.</a></p>
+</div>

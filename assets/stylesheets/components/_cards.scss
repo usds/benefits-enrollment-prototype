@@ -1,0 +1,132 @@
+/* =============================================
+	Card Wrapper
+===============================================*/
+.card-wrap {
+	margin: 0 auto;
+	padding: 0;
+
+	@include media($medium-screen) {
+		@include span-columns(10);
+		float: none;
+		margin-right: auto;
+		padding: 4rem 0 0 0;
+
+		&:last-child {
+			margin-right: auto;
+		}
+	}
+
+	@include media($large-screen) {
+		@include span-columns(8);
+		float: none;
+		margin-right: auto;
+		&:last-child {
+			margin-right: auto;
+		}
+	}
+}
+
+/* Card =========================================*/
+.card {
+	background: white;
+	padding: 0 2rem;
+
+	@include media($medium-screen) {
+		border: 1px solid $color-gray-lighter;
+		margin: 1rem 0;
+		padding: 0 6rem;
+	}
+}
+
+/* Card Headers*/
+.card__header,
+.card__header--success-message  {
+	border-bottom: 1px solid $color-gray-lighter;
+	padding-bottom: 3rem;
+	padding-top: 3rem;
+}
+
+.card__primary-heading {
+	font-size: $h2-font-size;
+	margin: 0;
+
+	@include media($medium-screen) {
+		font-size: $h1-font-size;
+	}
+}
+
+.card__header--success-message {
+	border-bottom: none;
+}
+
+.card__header--success-message .card__primary-heading {
+	background: $color-green;
+	color: white;
+	padding: .75em;
+}
+
+/* Card Body =========================================*/
+.card__body {
+	max-width: 53rem;
+	
+	fieldset {
+		@include clearfix;
+		max-width: 46rem;
+	}
+
+	.bulleted-list {
+		color: $color-gray;
+		list-style: none;
+		padding: 0 0 0 2rem;
+
+		> li {
+			padding-left: 1em;
+			position: relative;
+
+			&:before {
+				background-color: $color-green;
+				border-radius: 50%;
+				content: "";
+				display: block;
+				height: 8px;
+				left: 0;
+				position: absolute;
+				top: .5em;
+				width: 8px;
+			}
+		}
+	}
+}
+
+/* Card Footer =========================================*/
+.card__footer {
+	clear: both;
+	padding-bottom: 3rem;
+	padding-top: 3rem;
+}
+
+.card__box {
+	border: 1px solid $color-gray-lighter;
+	max-height: 30rem;
+	margin: 1.5rem 0 3rem;
+	padding: 0 2rem;
+	overflow-y: scroll; /* has to be scroll, not auto */
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ============================================= 
+	Sectioned Items 
+	Note: These will be become card__panels
+===============================================*/
+.sectioned-item + .sectioned-item,
+.card__panel + .card__panel {
+	border-top: 1px dashed $color-gray-light;
+	margin-top: 6rem;
+	padding-top: 1.5rem;
+}
+
+.sectioned-item__heading,
+.card__panel__heading {
+	font-size: 1.8rem;
+	color: $color-gray-dark;
+}

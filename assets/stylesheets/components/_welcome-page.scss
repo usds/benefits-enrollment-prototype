@@ -1,0 +1,74 @@
+.panel {
+	background: white;
+	padding: 4rem 0 10rem 0;
+}
+
+.benefits-highlights-header {
+	color: $color-green-light;
+	font-size: 1.8rem;
+	margin: 0 0 2rem;
+}
+
+.benefits-highlights {
+	@include clearfix;
+	background: $color-green-light;
+	color: white;
+	padding: 2rem 5%;
+
+	> div + div {
+		border-top: 1px solid rgba(255,255,255, .2);
+		margin-top: 3rem;
+		padding-top: 3rem;
+
+		@include media($medium-screen) {
+			border-top: none;
+			margin-top: 0;
+			padding-top: 0;
+		}
+	}
+
+	h2,
+	h3 {
+		margin-top: 0;
+	}
+
+	h3 {
+		margin-bottom: 0;
+
+		+ p {
+			margin-top: 0;
+		}
+	}
+}
+
+.styled-numbered-list {
+	margin: 0;
+	padding: 1rem 0 0 0;
+  list-style-type: none;
+
+  > li {
+  	counter-increment: step-counter;
+  	position: relative;
+  	padding-left: 5.2rem;
+  	margin-bottom: 3rem;
+
+  	&:before {
+  		border-radius: 50%;
+  		content: counter(step-counter);
+  		display: block;
+	    font-size: 2rem;
+	    background-color: $color-gold;
+	    color: white;
+	    position: absolute;
+	    left: 0;
+	    text-align: center;
+	    line-height: 40px;
+	    width: 40px;
+	    height: 40px;
+
+	    @include media($medium-screen) {
+	    	top:-1rem;
+	    }
+  	}
+  }
+}

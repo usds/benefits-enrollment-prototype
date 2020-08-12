@@ -1,0 +1,115 @@
+.summary {
+	margin: 3rem 0;
+
+	fieldset {
+		margin: 3rem 0;
+	}
+
+	.fieldset-summary {
+		display: none;
+	}
+}
+
+.summary__header {
+	border-bottom: 1px solid $color-gray-lighter;
+	height: 1%;
+	margin: 0 0 2rem;
+	overflow: hidden; 
+}
+
+.summary__heading {
+	float: left;
+	font-size: 2rem;
+}
+
+.summary__edit-btn {
+	display: none;
+	float: right;
+	margin-top: 2rem;
+
+	button {
+		font-size: 1.2rem;
+	}
+}
+
+.summary__item {
+	margin: 1.5rem 0;
+
+	input[disabled] {
+		color: $color-base;
+		-webkit-text-fill-color: $color-base;
+		-webkit-opacity:1;
+	}
+}
+/* Read Only Properties */
+
+.read-only {
+
+	.summary__edit-btn {
+		display: block;
+	}
+
+	.summary__update-btn {
+		display: none;
+	}
+
+	.summary__data {
+		border: 1px solid $color-gray-lighter;
+	}
+
+	.summary__item {
+		height: 1%;
+		margin: 0;
+		overflow:hidden;
+		padding: 1rem 2rem;
+
+		&:nth-child(odd) {
+			background: $color-gray-lightest;
+		}
+
+		fieldset {
+			display: none;
+		}
+
+		.fieldset-summary {
+			display: block;
+		}
+
+		label,
+		.fake-label {
+			font-size: 1.7rem;
+			font-weight: $font-bold;
+			margin-bottom: 0;
+			margin-top: 0;
+
+			@include media($medium-screen) {
+				display: inline-block;
+				float: left;
+				padding-right: 1.5rem;
+				width: 40%;
+			}
+		}
+
+		input[type="text"],
+		input[type="email"],
+		input[type="tel"],
+		input[type="number"],
+		.fake-input {
+			background: transparent;
+			border: none;
+			height: auto;
+    	line-height: 1.3;
+			margin: 0;
+			padding: 0;
+			width: 50%;
+
+			@include media($medium-screen) {
+				display: inline-block;
+			}
+		}
+
+		.fake-input {
+			line-height: auto;
+		}
+	}
+}

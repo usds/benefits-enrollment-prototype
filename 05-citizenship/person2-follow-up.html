@@ -2,97 +2,97 @@
 layout: application
 step: 5
 title: Now, tell us about <span class="print-householdMember2FirstName"></span>’s citizenship and immigration status.
----
+script: |
+  <script>
+    $(document).ready(function() {
 
-<fieldset>
-	<div class="prompt">
-		<legend class="prompt__primary-text">Does <span class="print-householdMember2FirstName"></span> fit any of these immigration categories?</legend>
+      $('.print-householdMember2FirstName').text(householdMember2FirstName);
 
-		<ul class="list-striped">
-			<li>Lawful Permanent Resident (LPR / Green Card Holder)</li>
-			<li>Asylee</li>
-			<li>Refugee</li>
-			<li>Cuban / Haitian entrant</li>
-			<li>Paroled into the U.S. for at least one year</li>
-			<li>Conditional entrant granted before 1980</li>
-			<li>Non-citizen spouse, child, or parent survivor of domestic violence</li>
-			<li>Victim of trafficking</li>
-			<li>A trafficking victim’s spouse, child, sibling, or parent</li>
-			<li>Have a pending application for a victim of trafficking visa</li>
-			<li>Granted witholding of deportation</li>
-			<li>Member of a federally recognized Indian tribe or American Indian born in Canada</li>
-			<li>Honorably discharged veteran or active service member of the U.S. military</li>
-			<li>Spouse or parent of an honorably discharged veteran or active service member of the U.S. military</li>
-      <li>Lived in the U.S. since 1996</li>
-		</ul>
+      $('form').on('submit', function() {
 
-	</div>
+          if (!checkValidityIfSupported($('form').get(0))) {
+            return false;
+          }
 
-	<div class="response">
-    <ul class="usa-unstyled-list response__radiogroup">
-      <li>
-        <input id="householdMember2CitizenshipStatusYes" type="radio" name="householdMember2CitizenshipStatus" value="Yes" required="">
-        <label for="householdMember2CitizenshipStatusYes">Yes, one of these applies to <span class="print-householdMember2FirstName"></span></label>
-      </li>
-      <li>
-        <input id="householdMember2CitizenshipStatusNo" type="radio" name="householdMember2CitizenshipStatus" value="No" required="">
-        <label for="householdMember2CitizenshipStatusNo">No, none of these apply to <span class="print-householdMember2FirstName"></span></label>
-      </li>
-    </ul>
-    <div class="explainer">
-	    <a href="#" class="explainer__toggle" aria-expanded="false" aria-controls="explainer-1">Why do we ask this?</a>
-	    <div class="explainer__content" id="explainer-1">
-	      <p>Immigrants in these categories may qualify for some programs. We ask about your immigration status so that we can find out what you may qualify for.</p>
-	      <p>Applying for these programs will not affect your or your family's immigration status.</p>
-	      <p>This information is private and kept confidential. It will not be shared with any agency for any reason other than checking your eligibility.</p>
-	    </div>
-	  </div>
-  </div>
-<fieldset>
+          else {
 
-<script>
-  $(document).ready(function() {
+          storeData();
+          getData();
 
-    $('.print-householdMember2FirstName').text(householdMember2FirstName);
+          if ( householdMember2CitizenshipStatus == 'Yes') {
+            window.location.href = "person2-document.html";
+          }
 
-    $('form').on('submit', function() {
+          else if ((typeof immigrant_householdMember3 != 'undefined' ) && (immigrant_householdMember3 == 'yes')) {
+            window.location.href = "person3-follow-up.html";
+          }
 
-        if (!checkValidityIfSupported($('form').get(0))) {
+          else if ((typeof immigrant_householdMember4 != 'undefined' ) && (immigrant_householdMember4 == 'yes')) {
+            window.location.href = "person4-follow-up.html";
+          }
+
+          else if ((typeof immigrant_householdMember5 != 'undefined' ) && (immigrant_householdMember5 == 'yes')) {
+            window.location.href = "person5-follow-up.html";
+          }
+
+          else if ((typeof immigrant_householdMember6 != 'undefined' ) && (immigrant_householdMember6 == 'yes')) {
+            window.location.href = "person6-follow-up.html";
+          }
+
+          else {
+            window.location.href = "../07-application/review.html";
+          }
+
           return false;
         }
-
-        else {
-
-        storeData();
-        getData();
-        
-        if ( householdMember2CitizenshipStatus == 'Yes') {
-          window.location.href = "person2-document.html";
-        }
-
-        else if ((typeof immigrant_householdMember3 != 'undefined' ) && (immigrant_householdMember3 == 'yes')) {
-          window.location.href = "person3-follow-up.html";
-        }
-
-        else if ((typeof immigrant_householdMember4 != 'undefined' ) && (immigrant_householdMember4 == 'yes')) {
-          window.location.href = "person4-follow-up.html";
-        }
-
-        else if ((typeof immigrant_householdMember5 != 'undefined' ) && (immigrant_householdMember5 == 'yes')) {
-          window.location.href = "person5-follow-up.html";
-        }
-
-        else if ((typeof immigrant_householdMember6 != 'undefined' ) && (immigrant_householdMember6 == 'yes')) {
-          window.location.href = "person6-follow-up.html";
-        }
-
-        else {
-          window.location.href = "../07-application/review.html";
-        }
-
-        return false;
-      }
+      });
     });
-  });
-</script>
-  
+  </script>
+---
+<div class="field-group">
+  <fieldset>
+    <div class="question">
+      <legend class="question__primary-text">Does <span class="print-householdMember2FirstName"></span> fit any of these immigration categories?</legend>
+
+      <ul class="list-striped">
+        <li>Lawful Permanent Resident (LPR / Green Card Holder)</li>
+        <li>Asylee</li>
+        <li>Refugee</li>
+        <li>Cuban / Haitian entrant</li>
+        <li>Paroled into the U.S. for at least one year</li>
+        <li>Conditional entrant granted before 1980</li>
+        <li>Non-citizen spouse, child, or parent survivor of domestic violence</li>
+        <li>Victim of trafficking</li>
+        <li>A trafficking victim’s spouse, child, sibling, or parent</li>
+        <li>Have a pending application for a victim of trafficking visa</li>
+        <li>Granted witholding of deportation</li>
+        <li>Member of a federally recognized Indian tribe or American Indian born in Canada</li>
+        <li>Honorably discharged veteran or active service member of the U.S. military</li>
+        <li>Spouse or parent of an honorably discharged veteran or active service member of the U.S. military</li>
+        <li>Lived in the U.S. since 1996</li>
+      </ul>
+
+    </div>
+
+    <div class="response">
+      <ul class="usa-unstyled-list response__radiogroup">
+        <li>
+          <input id="householdMember2CitizenshipStatusYes" type="radio" name="householdMember2CitizenshipStatus" value="Yes" required="">
+          <label for="householdMember2CitizenshipStatusYes">Yes, one of these applies to <span class="print-householdMember2FirstName"></span></label>
+        </li>
+        <li>
+          <input id="householdMember2CitizenshipStatusNo" type="radio" name="householdMember2CitizenshipStatus" value="No" required="">
+          <label for="householdMember2CitizenshipStatusNo">No, none of these apply to <span class="print-householdMember2FirstName"></span></label>
+        </li>
+      </ul>
+      <div class="explainer">
+        <a href="#" class="explainer__toggle" aria-expanded="false" aria-controls="explainer-1">Why do we ask this?</a>
+        <div class="explainer__content" id="explainer-1">
+          <p>Immigrants in these categories may qualify for some programs. We ask about your immigration status so that we can find out what you may qualify for.</p>
+          <p>Applying for these programs will not affect your or your family's immigration status.</p>
+          <p>This information is private and kept confidential. It will not be shared with any agency for any reason other than checking your eligibility.</p>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</div>

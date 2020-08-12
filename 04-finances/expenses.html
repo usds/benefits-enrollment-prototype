@@ -2,96 +2,102 @@
 layout: application
 step: 5
 title: Last money question. Tell us about your expenses.
----
-
-<div class="prompt">
-  <p class="prompt__primary-text"><label for="householdRentMortgage">How much rent or mortgage do you pay each month?</label></p>
-</div>
-<div class="response">
-	<div class="response__input-prefix" aria-hidden="true">$</div>
-  <input class="input--medium" type="tel" id="householdRentMortgage" required />
-</div>
-
-<div id="if-shares-meals">
-  <div class="prompt">
-    <p class="prompt__primary-text"><label for="expensesPeopleWhoShareFoodWith">In addition to what you pay, how much do other people you purchase and prepare meals with pay toward the rent or mortgage?</label></p>
-  </div>
-  <div class="response">
-    <div class="response__input-prefix" aria-hidden="true">$</div>
-    <input class="input--medium" type="tel" id="expensesPeopleWhoShareFoodWith" required />
-  </div>
-</div>
-
-<fieldset class="snap-only">
-  <div class="prompt">
-    <legend class="prompt__primary-text">Do you pay for heating and/or cooling utilities?</legend>
-  </div>
-  <div class="response">
-    <ul class="usa-unstyled-list response__radiogroup--inline">
-      <li>
-        <input id="heatingCoolingYes" type="radio" name="heatingCoolingExpenses" value="Yes" required="">
-        <label for="heatingCoolingYes">Yes</label>
-      </li>
-      <li>
-        <input id="heatingCoolingNo" type="radio" name="heatingCoolingExpenses" value="No" required="">
-        <label for="heatingCoolingNo">No</label>
-      </li>
-    </ul>
-  </div>
-</fieldset>
-
-<fieldset class="snap-only">
-  <div class="prompt">
-    <legend class="prompt__primary-text">Do you pay for any other utilities?</legend>
-    <p class="prompt__secondary-text">Such as gas, electricity, water, sewer.</p>
-  </div>
-  <div class="response">
-    <ul class="usa-unstyled-list response__radiogroup--inline">
-      <li>
-        <input id="otherUtilitiesYes" type="radio" name="otherUtilities" value="Yes" required="">
-        <label for="otherUtilitiesYes">Yes</label>
-      </li>
-      <li>
-        <input id="otherUtilitiesNo" type="radio" name="otherUtilities" value="No" required="">
-        <label for="otherUtilitiesNo">No</label>
-      </li>
-    </ul>
-  </div>
-</fieldset>
-
-<div class="snap-only">
-  <div class="prompt">
-    <p class="prompt__primary-text"><label for="expensesMedical">How much do you spend on medical expenses each month?</label></p>
-    <p class="prompt__secondary-text">For elderly or disabled household members.</p>
-  </div>
-  <div class="response">
-    <div class="response__input-prefix" aria-hidden="true">$</div>
-    <input class="input--medium" type="tel" id="expensesMedical" required />
-  </div>
-</div>
-
-<script>
-  $(document).ready(function() {
-
-    if (householdShareMeals == 0) {
-      $('#if-shares-meals').remove();
-    }
-
-
-    $('form').on('submit', function() {
-
+script: |
+  <script>
+    $(document).ready(function() {
+      if (householdShareMeals == 0) {
+        $('#if-shares-meals').remove();
+      }
+      $('form').on('submit', function() {
         if (!checkValidityIfSupported($('form').get(0))) {
           return false;
         }
-
         else {
-
-        storeData();
-
-        window.location.href = "../05-citizenship/index.html";
-
-        return false;
-      }
+          storeData();
+          window.location.href = "../05-citizenship/index.html";
+          return false;
+        }
+      });
     });
-  });
-</script>
+  </script>
+---
+
+<div class="field-group">
+  <div class="question">
+    <p class="question__primary-text"><label for="householdRentMortgage">How much rent or mortgage do you pay each month?</label></p>
+  </div>
+  <div class="response">
+    <div class="response__input-prefix" aria-hidden="true">$</div>
+    <input class="input--medium" id="householdRentMortgage" {% include _valid_dollar_amount.html %} required />
+  </div>
+</div>
+
+<div id="if-shares-meals">
+  <div class="field-group">
+    <div class="question">
+      <p class="question__primary-text"><label for="expensesPeopleWhoShareFoodWith">In addition to what you pay, how much do other people you purchase and prepare meals with pay toward the rent or mortgage?</label></p>
+    </div>
+    <div class="response">
+      <div class="response__input-prefix" aria-hidden="true">$</div>
+      <input class="input--medium" id="expensesPeopleWhoShareFoodWith" {% include _valid_dollar_amount.html %} required />
+    </div>
+  </div>
+</div>
+
+<div class="snap-only">
+  <div class="field-group">
+    <fieldset>
+      <div class="question">
+        <legend class="question__primary-text">Do you pay for heating and/or cooling utilities?</legend>
+      </div>
+      <div class="response">
+        <ul class="usa-unstyled-list response__radiogroup--inline">
+          <li>
+            <input id="heatingCoolingYes" type="radio" name="heatingCoolingExpenses" value="Yes" required="">
+            <label for="heatingCoolingYes">Yes</label>
+          </li>
+          <li>
+            <input id="heatingCoolingNo" type="radio" name="heatingCoolingExpenses" value="No" required="">
+            <label for="heatingCoolingNo">No</label>
+          </li>
+        </ul>
+      </div>
+    </fieldset>
+  </div>
+</div>
+
+<div class="snap-only">
+  <div class="field-group">
+    <fieldset>
+      <div class="question">
+        <legend class="question__primary-text">Do you pay for any other utilities?</legend>
+        <p class="question__secondary-text">Such as gas, electricity, water, sewer.</p>
+      </div>
+      <div class="response">
+        <ul class="usa-unstyled-list response__radiogroup--inline">
+          <li>
+            <input id="otherUtilitiesYes" type="radio" name="otherUtilities" value="Yes" required="">
+            <label for="otherUtilitiesYes">Yes</label>
+          </li>
+          <li>
+            <input id="otherUtilitiesNo" type="radio" name="otherUtilities" value="No" required="">
+            <label for="otherUtilitiesNo">No</label>
+          </li>
+        </ul>
+      </div>
+    </fieldset>
+  </div>
+</div>
+
+<div class="snap-only">
+  <div class="field-group">
+    <div class="question">
+      <p class="question__primary-text"><label for="expensesMedical">How much do you spend on medical expenses each month?</label></p>
+      <p class="question__secondary-text">For elderly or disabled household members.</p>
+    </div>
+    <div class="response">
+      <div class="response__input-prefix" aria-hidden="true">$</div>
+      <input class="input--medium" type="tel" id="expensesMedical" required />
+    </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+.benefit-selection label {
+	color: $color-green;
+	font-size: 2.4rem;
+	font-weight: $font-bold !important;
+	line-height: 1;
+}
+
+.benefit-name {
+	color: $color-gray-dark;
+	display: block;
+	font-size: 1.7rem;
+	line-height: 1.5;
+	margin-top: .5em;
+}
+
+.benefit-description {
+	color: $color-gray-dark;
+	display: block;
+	font-size: 1.7rem;
+	font-weight: $font-normal;
+	line-height: 1.5;
+}

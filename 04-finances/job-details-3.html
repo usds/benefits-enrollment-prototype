@@ -2,187 +2,188 @@
 layout: application
 step: 4
 title: Tell us more about your other job.
----
-
-<div class="prompt">
-	<p class="usa-font-lead">Where do you currently work?</p>
-	<p class="prompt__primary-text"><label for="employerName3">Employer name</label></p>
-</div>
-	
-<div class="response">
-	<input type="text" id="employerName3" />
-</div>
-
-<fieldset>
-	<div class="prompt">
-  	<legend class="prompt__primary-text">Employer Address</legend>
-  </div>
-
-  <div class="response">
-	  <label for="EmployerAddress3">Address 1</label>
-	  <input id="EmployerAddress3" name="EmployerAddress3" type="text" >
-    <label for="EmployerAddress3_2">Address 2 <span class="usa-additional_text">Optional</span></label>
-    <input id="EmployerAddress3_2" name="EmployerAddress3_2" type="text" >
-
-	  <div>
-        <div class="usa-input-grid usa-input-grid-medium">
-          <label for="employerCity3">City</label>
-          <input id="employerCity3" name="employerCity3" type="text">
-        </div>
-
-        <div class="usa-input-grid usa-input-grid-small">
-          <label for="employerState3">State</label>
-          <select id="employerState3" name="employerState3">
-            <option value></option>
-            <option value="AL">Alabama</option>
-            <option value="AK">Alaska</option>
-            <option value="AZ">Arizona</option>
-            <option value="AR">Arkansas</option>
-            <option value="CA">California</option>
-            <option value="CO">Colorado</option>
-            <option value="CT">Connecticut</option>
-            <option value="DE">Delaware</option>
-            <option value="DC">District of Columbia</option>
-            <option value="FL">Florida</option>
-            <option value="GA">Georgia</option>
-            <option value="HI">Hawaii</option>
-            <option value="ID">Idaho</option>
-            <option value="IL">Illinois</option>
-            <option value="IN">Indiana</option>
-            <option value="IA">Iowa</option>
-            <option value="KS">Kansas</option>
-            <option value="KY">Kentucky</option>
-            <option value="LA">Louisiana</option>
-            <option value="ME">Maine</option>
-            <option value="MD">Maryland</option>
-            <option value="MA">Massachusetts</option>
-            <option value="MI">Michigan</option>
-            <option value="MN">Minnesota</option>
-            <option value="MS">Mississippi</option>
-            <option value="MO">Missouri</option>
-            <option value="MT">Montana</option>
-            <option value="NE">Nebraska</option>
-            <option value="NV">Nevada</option>
-            <option value="NH">New Hampshire</option>
-            <option value="NJ">New Jersey</option>
-            <option value="NM">New Mexico</option>
-            <option value="NY">New York</option>
-            <option value="NC">North Carolina</option>
-            <option value="ND">North Dakota</option>
-            <option value="OH">Ohio</option>
-            <option value="OK">Oklahoma</option>
-            <option value="OR">Oregon</option>
-            <option value="PA">Pennsylvania</option>
-            <option value="RI">Rhode Island</option>
-            <option value="SC">South Carolina</option>
-            <option value="SD">South Dakota</option>
-            <option value="TN">Tennessee</option>
-            <option value="TX">Texas</option>
-            <option value="UT">Utah</option>
-            <option value="VT">Vermont</option>
-            <option value="VA">Virginia</option>
-            <option value="WA">Washington</option>
-            <option value="WV">West Virginia</option>
-            <option value="WI">Wisconsin</option>
-            <option value="WY">Wyoming</option>
-          </select>
-        </div>
-      </div>
-		<div class="usa-input-grid usa-input-grid-small">
-	  <label for="employerZip3">Zip code</label>
-	  <input class="usa-input-medium" id="employerZip3" name="employerZip3" type="text" pattern="[\d]{5}(-[\d]{4})?" data-grouplength="5,4" data-delimiter="-" data-politespace >
-	  </div>
-  </div>
-</fieldset>
-
-<div class="prompt">
-	<p class="prompt__primary-text"><label for="employerPhone3">Employer phone number</label></p>
-</div>
-	
-<div class="response">
-	<input type="tel" id="employerPhone3"  />
-</div>
-
-<fieldset>
-	<div class="prompt">
-		<legend class="prompt__primary-text">How often do you get paid?</legend>
-	</div>
-	<div class="response">
-		<ul class="usa-unstyled-list response__radiogroup--two-cols">
-			<li>
-				<input id="applicantPayFrequencyDaily3" type="radio" name="employerPayFrequency3" value="Daily" >
-      	<label for="applicantPayFrequencyDaily3">Daily</label>
-			</li>
-			<li>
-				<input id="applicantPayFrequencyWeekly3" type="radio" name="employerPayFrequency3" value="Weekly" >
-      	<label for="applicantPayFrequencyWeekly3">Weekly</label>
-			</li>
-			<li>
-				<input id="applicantPayFrequencyBiweekly3" type="radio" name="employerPayFrequency3" value="Every 2 weeks" >
-      	<label for="applicantPayFrequencyBiweekly3">Every 2 weeks</label>
-			</li>
-			<li>
-				<input id="applicantPayFrequencyTwiceMonthly3" type="radio" name="employerPayFrequency3" value="Twice a month">
-      	<label for="applicantPayFrequencyTwiceMonthly3">Twice a month</label>
-			</li>
-			<li>
-				<input id="applicantPayFrequencyMonthly3" type="radio" name="employerPayFrequency3" value="Monthly">
-      	<label for="applicantPayFrequencyMonthly3">Monthly</label>
-			</li>
-			<li>
-				<input id="applicantPayFrequencyYearly3" type="radio" name="employerPayFrequency3" value="Yearly">
-      	<label for="applicantPayFrequencyYearly3">Yearly</label>
-			</li>
-		</ul>
-	</div>
-</fieldset>
-
-<div class="prompt">
-	<p class="prompt__primary-text"><label for="employerWages3">How much do you make <span id="print-employerPayFrequency3"></span> (before taxes)?</label></p>
-</div>
-<div class="response">
-	<div class="response__input-prefix" aria-hidden="true">$</div>
-	<input type="tel" id="employerWages3" />
-</div>
-
-<div class="prompt">
-	<p class="prompt__primary-text"><label for="employerWorkHours3">On average, how many hours do you work a week at this job?</label></p>
-</div>
-<div class="response">
-	<input type="tel" class="input--short" id="employerWorkHours3" />
-</div>
-
-
-<script>
-	$(document).ready(function() {
-
-		$('input[name="employerPayFrequency3"]').on('change', function(){
-			var v = $(this).val().toLowerCase();
-			$("#print-employerPayFrequency3").text(v);
-		});		
-
-		$('form').on('submit', function() {
-
-	    if (!checkValidityIfSupported($('form').get(0))) {
+script: |
+  <script>
+    $(document).ready(function() {
+      $('input[name="employerPayFrequency3"]').on('change', function(){
+        var v = $(this).val().toLowerCase();
+        $("#print-employerPayFrequency3").text(v);
+      });
+      $('form').on('submit', function() {
+        if (!checkValidityIfSupported($('form').get(0))) {
           return false;
         }
-
         else {
-
-    			storeData();
-    			getData();
-
-    			if (typeof applyForHouseholdMember1 != 'undefined' ) {
+          storeData();
+          getData();
+          if (typeof applyForHouseholdMember1 != 'undefined' ) {
             window.location.href = "person1.html";
           }
-
           else {
             window.location.href = "expenses.html";
           }
-
           return false;
         }
-			
-		});
-	});
-</script>
+      });
+    });
+  </script>
+
+---
+
+<div class="field-group">
+  <div class="question">
+    <p class="usa-font-lead">Where do you currently work?</p>
+    <p class="question__primary-text"><label for="employerName3">Employer name</label></p>
+  </div>
+  <div class="response">
+    <input type="text" id="employerName3" />
+  </div>
+</div>
+
+<div class="field-group">
+  <fieldset>
+    <div class="question">
+      <legend class="question__primary-text">Employer Address</legend>
+    </div>
+
+    <div class="response">
+      <label for="EmployerAddress3">Address 1</label>
+      <input id="EmployerAddress3" name="EmployerAddress3" type="text" >
+      <label for="EmployerAddress3_2">Address 2 <span class="usa-additional_text">Optional</span></label>
+      <input id="EmployerAddress3_2" name="EmployerAddress3_2" type="text" >
+
+      <div>
+          <div class="usa-input-grid usa-input-grid-medium">
+            <label for="employerCity3">City</label>
+            <input id="employerCity3" name="employerCity3" type="text">
+          </div>
+
+          <div class="usa-input-grid usa-input-grid-small">
+            <label for="employerState3">State</label>
+            <select id="employerState3" name="employerState3">
+              <option value></option>
+              <option value="AL">Alabama</option>
+              <option value="AK">Alaska</option>
+              <option value="AZ">Arizona</option>
+              <option value="AR">Arkansas</option>
+              <option value="CA">California</option>
+              <option value="CO">Colorado</option>
+              <option value="CT">Connecticut</option>
+              <option value="DE">Delaware</option>
+              <option value="DC">District of Columbia</option>
+              <option value="FL">Florida</option>
+              <option value="GA">Georgia</option>
+              <option value="HI">Hawaii</option>
+              <option value="ID">Idaho</option>
+              <option value="IL">Illinois</option>
+              <option value="IN">Indiana</option>
+              <option value="IA">Iowa</option>
+              <option value="KS">Kansas</option>
+              <option value="KY">Kentucky</option>
+              <option value="LA">Louisiana</option>
+              <option value="ME">Maine</option>
+              <option value="MD">Maryland</option>
+              <option value="MA">Massachusetts</option>
+              <option value="MI">Michigan</option>
+              <option value="MN">Minnesota</option>
+              <option value="MS">Mississippi</option>
+              <option value="MO">Missouri</option>
+              <option value="MT">Montana</option>
+              <option value="NE">Nebraska</option>
+              <option value="NV">Nevada</option>
+              <option value="NH">New Hampshire</option>
+              <option value="NJ">New Jersey</option>
+              <option value="NM">New Mexico</option>
+              <option value="NY">New York</option>
+              <option value="NC">North Carolina</option>
+              <option value="ND">North Dakota</option>
+              <option value="OH">Ohio</option>
+              <option value="OK">Oklahoma</option>
+              <option value="OR">Oregon</option>
+              <option value="PA">Pennsylvania</option>
+              <option value="RI">Rhode Island</option>
+              <option value="SC">South Carolina</option>
+              <option value="SD">South Dakota</option>
+              <option value="TN">Tennessee</option>
+              <option value="TX">Texas</option>
+              <option value="UT">Utah</option>
+              <option value="VT">Vermont</option>
+              <option value="VA">Virginia</option>
+              <option value="WA">Washington</option>
+              <option value="WV">West Virginia</option>
+              <option value="WI">Wisconsin</option>
+              <option value="WY">Wyoming</option>
+            </select>
+          </div>
+        </div>
+      <div class="usa-input-grid usa-input-grid-small">
+      <label for="employerZip3">Zip code</label>
+      <input class="usa-input-medium" id="employerZip3" name="employerZip3" {% include _valid_zipcode.html %} data-grouplength="5,4" data-delimiter="-" data-politespace >
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+<div class="field-group">
+  <div class="question">
+    <p class="question__primary-text"><label for="employerPhone3">Employer phone number</label></p>
+  </div>
+  <div class="response">
+    <input id="employerPhone3" {% include _valid_phone.html %} />
+  </div>
+</div>
+
+<div class="field-group">
+  <fieldset>
+    <div class="question">
+      <legend class="question__primary-text">How often do you get paid?</legend>
+    </div>
+    <div class="response">
+      <ul class="usa-unstyled-list response__radiogroup--two-cols">
+        <li>
+          <input id="applicantPayFrequencyDaily3" type="radio" name="employerPayFrequency3" value="Daily" >
+          <label for="applicantPayFrequencyDaily3">Daily</label>
+        </li>
+        <li>
+          <input id="applicantPayFrequencyWeekly3" type="radio" name="employerPayFrequency3" value="Weekly" >
+          <label for="applicantPayFrequencyWeekly3">Weekly</label>
+        </li>
+        <li>
+          <input id="applicantPayFrequencyBiweekly3" type="radio" name="employerPayFrequency3" value="Every 2 weeks" >
+          <label for="applicantPayFrequencyBiweekly3">Every 2 weeks</label>
+        </li>
+        <li>
+          <input id="applicantPayFrequencyTwiceMonthly3" type="radio" name="employerPayFrequency3" value="Twice a month">
+          <label for="applicantPayFrequencyTwiceMonthly3">Twice a month</label>
+        </li>
+        <li>
+          <input id="applicantPayFrequencyMonthly3" type="radio" name="employerPayFrequency3" value="Monthly">
+          <label for="applicantPayFrequencyMonthly3">Monthly</label>
+        </li>
+        <li>
+          <input id="applicantPayFrequencyYearly3" type="radio" name="employerPayFrequency3" value="Yearly">
+          <label for="applicantPayFrequencyYearly3">Yearly</label>
+        </li>
+      </ul>
+    </div>
+  </fieldset>
+</div>
+
+<div class="field-group">
+  <div class="question">
+    <p class="question__primary-text"><label for="employerWages3">How much do you make <span id="print-employerPayFrequency3"></span> (before taxes)?</label></p>
+  </div>
+  <div class="response">
+    <div class="response__input-prefix" aria-hidden="true">$</div>
+    <input {% include _valid_dollar_amount.html %} id="employerWages3" />
+  </div>
+</div>
+
+<div class="field-group">
+  <div class="question">
+    <p class="question__primary-text"><label for="employerWorkHours3">On average, how many hours do you work a week at this job?</label></p>
+  </div>
+  <div class="response">
+    <input {% include _valid_hours.html %} class="input--short" id="employerWorkHours3" />
+  </div>
+</div>

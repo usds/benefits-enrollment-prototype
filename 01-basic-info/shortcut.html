@@ -2,6 +2,20 @@
 layout: application-shortcut
 step: 2
 title: Great start, <span id="print-applicantFirstName"></span>! Let’s keep going.
+script: |
+  <script>
+    $(document).ready(function() {
+      $('#print-applicantFirstName').text(applicantFirstName);
+      $(".usa-button-big").click(function(event) {
+          event.preventDefault();
+
+          storeData();
+
+          window.location.href = "ssn.html";
+      });
+    });
+  </script>
+
 ---
 
 <p>You are legally allowed to submit your application with your name and address. This will take longer as we will mail you the rest of the paperwork to complete.</p>
@@ -9,17 +23,3 @@ title: Great start, <span id="print-applicantFirstName"></span>! Let’s keep go
 <div class="alert--positive">
 <p>It will be easier and faster to finish applying online now.</p>
 </div>
-
-
-<script>
-  $(document).ready(function() {
-    $('#print-applicantFirstName').text(applicantFirstName);
-    $(".usa-button-big").click(function(event) {
-        event.preventDefault();
-
-        storeData();
-
-        window.location.href = "ssn.html";
-    });
-  });
-</script>

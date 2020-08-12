@@ -1,0 +1,18 @@
+.usa-accordion-bordered {
+	max-width: 56rem;
+}
+
+.usa-accordion-button {
+	background-color: #317a8b;
+	color: white;
+	
+
+	&:focus {
+    box-shadow: $focus-shadow;
+  }
+
+  &:hover {
+  	background-color: #317a8b;    
+  	color: white;
+  }
+}

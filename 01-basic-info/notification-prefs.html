@@ -3,123 +3,125 @@ layout: application
 step: 1
 section: Who is applying?
 title: How would you like us to keep in touch?
+script: |
+  <script>
+    $(document).ready(function() {
+
+      $("input.open-follow-up").on('change', function(){
+        if ($(this).is(":checked")) {
+          $(this).siblings('.inline-follow-up').removeClass('usa-sr-only').attr("aria-hidden", "false");
+        }
+        else {
+          $(this).siblings('.inline-follow-up').addClass('usa-sr-only').attr("aria-hidden", "true");
+        }
+      });
+
+      $("input.open-follow-up").each(function(){
+        if ($(this).is(":checked")) {
+          $(this).siblings('.inline-follow-up').removeClass('usa-sr-only').attr("aria-hidden", "false");
+        }
+      });
+
+
+      $('#applicantPhone').val(applicantPhone);
+      $('#applicantSMSPhone').val(applicantPhone);
+
+      $(".usa-button-big").click(function(event) {
+        event.preventDefault();
+
+        applicantPhone = $("#applicantPhone").val().replace(/(\d{3})(\d{3})(\d{4})/, "$1-$2-$3");
+        $("#applicantPhone").val(applicantPhone);
+
+        applicantSMSPhone = $("#applicantSMSPhone").val().replace(/(\d{3})(\d{3})(\d{4})/, "$1-$2-$3");
+        $("#applicantSMSPhone").val(applicantSMSPhone);
+
+        storeData();
+        getData();
+
+
+        if (notificationPreferenceText == "yes") {
+          window.location.href = "confirm-text.html";
+        }
+
+        else if (benefitChoiceHealthcare == "no") {
+          window.location.href = "shortcut.html";
+        }
+
+        else {
+          window.location.href = "ssn.html";
+        }
+
+
+      });
+    });
+  </script>
 ---
 
-<fieldset>
-	<div class="prompt">
-		<legend class="prompt__primary-text">Select all of the ways you’d like to get important updates:</legend>
-	</div>
-	<div class="response">
-		<ul class="usa-unstyled-list checkbox-group">
-			<li>
-				<input id="notificationPreferenceText" class="open-dependent" type="checkbox" name="notificationPreference" value="Text">
-				<label for="notificationPreferenceText">Text me</label>
+<div class="field-group">
+  <fieldset>
+    <div class="question">
+      <legend class="question__primary-text">Select all of the ways you’d like to get important updates:</legend>
+    </div>
+    <div class="response">
+      <ul class="usa-unstyled-list checkbox-group">
+        <li>
+          <input id="notificationPreferenceText" class="open-follow-up" type="checkbox" name="notificationPreference" value="Text">
+          <label for="notificationPreferenceText">Text me</label>
 
-				<div class="dependent-field usa-sr-only" aria-hidden="true">
-					<div class="prompt" > 
-						<p class="prompt__secondary-text"><label for="applicantSMSPhone">What is your phone number for text messages?</label></p>
-					</div>
-					<div class="response">
-						<input type="tel" id="applicantSMSPhone" />
-					</div>
-				</div>
-			</li>
-			<li>
-				<input id="notificationPreferenceCall" class="open-dependent"  type="checkbox" name="notificationPreference" value="Call">
-				<label for="notificationPreferenceCall">Call me</label>
-				<div class="dependent-field usa-sr-only" aria-hidden="true">
-					<div class="prompt" > 
-						<p class="prompt__secondary-text"><label for="applicantPhone">What is your phone number?</label></p>
-					</div>
-					<div class="response">
-						<input type="tel" id="applicantPhone" />
-					</div>
-				</div>
-			</li>
-			<li id="email-block">
-				<input id="notificationPreferenceEmail" type="checkbox" name="notificationPreference" value="Email">
-				<label for="notificationPreferenceEmail">Email me</label>
-			</li>
-			<li>
-				<input id="notificationPreferenceMail" type="checkbox" name="notificationPreference" value="Mail">
-				<label for="notificationPreferenceMail">Send me mail</label>
-			</li>
-		</ul>
-	</div>
-</fieldset>
+          <div class="inline-follow-up usa-sr-only" aria-hidden="true">
+            <div class="question" >
+              <p class="question__secondary-text"><label for="applicantSMSPhone">What is your phone number for text messages?</label></p>
+            </div>
+            <div class="response">
+              <input id="applicantSMSPhone" {% include _valid_phone.html %} />
+            </div>
+          </div>
+        </li>
+        <li>
+          <input id="notificationPreferenceCall" class="open-follow-up"  type="checkbox" name="notificationPreference" value="Call">
+          <label for="notificationPreferenceCall">Call me</label>
+          <div class="inline-follow-up usa-sr-only" aria-hidden="true">
+            <div class="question" >
+              <p class="question__secondary-text"><label for="applicantPhone">What is your phone number?</label></p>
+            </div>
+            <div class="response">
+              <input id="applicantPhone" {% include _valid_phone.html %} />
+            </div>
+          </div>
+        </li>
+        <li id="email-block">
+          <input id="notificationPreferenceEmail" type="checkbox" name="notificationPreference" value="Email">
+          <label for="notificationPreferenceEmail">Email me</label>
+        </li>
+        <li>
+          <input id="notificationPreferenceMail" type="checkbox" name="notificationPreference" value="Mail">
+          <label for="notificationPreferenceMail">Send me mail</label>
+        </li>
+      </ul>
+    </div>
+  </fieldset>
+</div>
 
-<fieldset>
-	<div class="prompt">
-		<legend class="prompt__primary-text">Select the best times to reach you:</legend>
-	</div>
-	<div class="response">
-		<ul class="usa-unstyled-list checkbox-group">
-			<li>
-				<input id="notificationTime1" type="checkbox" name="notificationTime" value="8am to 11am">
-				<label for="notificationTime1">8am to 11am</label>
-			</li>
-			<li>
-				<input id="notificationTime2" type="checkbox" name="notificationTime" value="11am to 2pm">
-				<label for="notificationTime2">11am to 2pm</label>
-			</li>
-			<li>
-				<input id="notificationTime3" type="checkbox" name="notificationTime" value="2pm to 5pm">
-				<label for="notificationTime3">2pm to 5pm</label>
-			</li>
-		</ul>
-	</div>
-</fieldset>
-
-
-
-<script>
-	$(document).ready(function() {
-
-		$("input.open-dependent").on('change', function(){
-			if ($(this).is(":checked")) {
-				$(this).siblings('.dependent-field').removeClass('usa-sr-only').attr("aria-hidden", "false");
-			}
-			else {
-				$(this).siblings('.dependent-field').addClass('usa-sr-only').attr("aria-hidden", "true");
-			}
-		});
-
-		$("input.open-dependent").each(function(){
-			if ($(this).is(":checked")) {
-				$(this).siblings('.dependent-field').removeClass('usa-sr-only').attr("aria-hidden", "false");
-			}
-		});
-		
-
-		$('#applicantPhone').val(applicantPhone);
-		$('#applicantSMSPhone').val(applicantPhone);
-
-		$(".usa-button-big").click(function(event) {
-			event.preventDefault();
-
-			applicantPhone = $("#applicantPhone").val().replace(/(\d{3})(\d{3})(\d{4})/, "$1-$2-$3");
-			$("#applicantPhone").val(applicantPhone);
-			
-			applicantSMSPhone = $("#applicantSMSPhone").val().replace(/(\d{3})(\d{3})(\d{4})/, "$1-$2-$3");
-			$("#applicantSMSPhone").val(applicantSMSPhone);
-
-			storeData();
-			getData();
-
-
-			if (notificationPreferenceText == "yes") {
-				window.location.href = "confirm-text.html";
-			}
-
-			else if (benefitChoiceHealthcare == "no") {
-				window.location.href = "shortcut.html";
-			}
-
-			else {
-				window.location.href = "ssn.html";
-			}
-
-			
-		});
-	});
-</script>
+<div class="field-group">
+  <fieldset>
+    <div class="question">
+      <legend class="question__primary-text">Select the best times to reach you:</legend>
+    </div>
+    <div class="response">
+      <ul class="usa-unstyled-list checkbox-group">
+        <li>
+          <input id="notificationTime1" type="checkbox" name="notificationTime" value="8am to 11am">
+          <label for="notificationTime1">8am to 11am</label>
+        </li>
+        <li>
+          <input id="notificationTime2" type="checkbox" name="notificationTime" value="11am to 2pm">
+          <label for="notificationTime2">11am to 2pm</label>
+        </li>
+        <li>
+          <input id="notificationTime3" type="checkbox" name="notificationTime" value="2pm to 5pm">
+          <label for="notificationTime3">2pm to 5pm</label>
+        </li>
+      </ul>
+    </div>
+  </fieldset>
+</div>

@@ -3,6 +3,49 @@ layout: application-no-button
 title: Congrats, <span id="print-applicantFirstName"></span>! You've successfully completed your application for <span class="print-nextStepsText"></span>.
 title_style: success
 hide_button: true
+script: |
+  <script>
+    $(document).ready(function() {
+
+      if (benefitChoiceFoodAssistance == "no") {
+        $('.food-assistance').remove();
+      }
+
+      if (benefitChoiceHealthcare == "no") {
+        $('.health-assistance').remove();
+      }
+
+      if ((benefitChoiceHealthcare == "yes") && (benefitChoiceFoodAssistance == "yes")) {
+        $('.print-nextStepsText').text("SNAP and Medicaid")
+      }
+      if ((benefitChoiceHealthcare == "no") && (benefitChoiceFoodAssistance == "yes")) {
+        $('.print-nextStepsText').text("SNAP")
+      }
+      if ((benefitChoiceHealthcare == "yes") && (benefitChoiceFoodAssistance == "no")) {
+        $('.print-nextStepsText').text("Medicaid")
+      }
+
+      var today = new Date();
+      var dd = today.getDate();
+      var mm = today.getMonth()+1; //January is 0!
+      var yyyy = today.getFullYear();
+
+      if(dd<10) {
+          dd='0'+dd
+      }
+
+      if(mm<10) {
+          mm='0'+mm
+      }
+
+      today = mm+'/'+dd+'/'+yyyy;
+      $('#print-date').text(today);
+
+      $('#print-applicantFirstName').text(applicantFirstName);
+
+
+    });
+  </script>
 ---
 
 <div class="alert--positive">
@@ -19,114 +62,70 @@ hide_button: true
 <h2>You applied for <span class="print-nextStepsText"></span>. Here’s what you need to know about next steps:</h2>
 
 <div class="food-assistance benefit-info">
-	<h2 class="benefit-info__primary-heading">SNAP <i class="fa fa-cutlery data-list__icon" aria-hidden="true"></i> </h2>
+  <h2 class="benefit-info__primary-heading">SNAP <i class="fa fa-cutlery data-list__icon" aria-hidden="true"></i> </h2>
 
-	<h3>What happens next:</h3>
-	<p>Before you can get your SNAP benefits, you'll get a call to setup an eligibility interview with more info. This will be over the phone or at the local SNAP office.</p>
+  <h3>What happens next:</h3>
+  <p>Before you can get your SNAP benefits, you'll get a call to setup an eligibility interview with more info. This will be over the phone or at the local SNAP office.</p>
 
-	<h3>Next steps for you:</h3>
-	<p>Prepare documents to send in:</p>
-	<ul>
-		<li>IDs for everyone on the application</li>
-		<li>Proof of income in the last 30 days, like pay stubs or bank statements</li>
-		<li>Proof of expenses, like rent, utilities, and certain medical</li>
-		<li>Any medical and housing expenses</li>
-	</ul>
+  <h3>Next steps for you:</h3>
+  <p>Prepare documents to send in:</p>
+  <ul>
+    <li>IDs for everyone on the application</li>
+    <li>Proof of income in the last 30 days, like pay stubs or bank statements</li>
+    <li>Proof of expenses, like rent, utilities, and certain medical</li>
+    <li>Any medical and housing expenses</li>
+  </ul>
 
-	<p>It looks like you may qualify for emergency SNAP. During your interview, ask about Expedited Service benefits.</p>
+  <p>It looks like you may qualify for emergency SNAP. During your interview, ask about Expedited Service benefits.</p>
 
 
-	<p>If you have any questions and/or you haven’t heard from them in 30 days, call <a href="tel:555-123-1234">(555) 123-1234</a>.</p>
+  <p>If you have any questions and/or you haven’t heard from them in 30 days, call <a href="tel:555-123-1234">(555) 123-1234</a>.</p>
 
-	<div class="explainer">
+  <div class="explainer">
     <a href="#" class="explainer__toggle" aria-expanded="false" aria-controls="explainer-1">SNAP Office contact info</a>
     <div class="explainer__content" id="explainer-1">
       <h4>SNAP Address</h4>
-			<p>1234 Main St.<br/ >
-			Newark, NJ 12345</p>
+      <p>1234 Main St.<br/ >
+      Newark, NJ 12345</p>
 
-			<h4>Office Hours</h4>
-			<p>Mon to Fri: 9am-5pm<br/ >
-			   Sat: 10am-3pm<br/ >
-			   Sun: Closed</p>
+      <h4>Office Hours</h4>
+      <p>Mon to Fri: 9am-5pm<br/ >
+         Sat: 10am-3pm<br/ >
+         Sun: Closed</p>
     </div>
   </div>
 
 
 </div>
 <div class="health-assistance benefit-info">
-	<h2 class="benefit-info__primary-heading">Medicaid <i class="fa fa-medkit" aria-hidden="true"></i></h2>
+  <h2 class="benefit-info__primary-heading">Medicaid <i class="fa fa-medkit" aria-hidden="true"></i></h2>
 
-	<h3>What happens next:</h3>
-	<p>In the next 7 to 10 days, you’ll get a Medicaid card in the mail and your healthcare will begin. You’ll be asked to choose a healthcare plan.</p>
+  <h3>What happens next:</h3>
+  <p>In the next 7 to 10 days, you’ll get a Medicaid card in the mail and your healthcare will begin. You’ll be asked to choose a healthcare plan.</p>
 
-	<h3>Next steps for you:</h3>
-	<p>Prepare documents you may need to send in as proof:</p>
-	<ul>
-		<li>IDs for everyone on the application</li>
-		<li>Income, like pay stubs or bank statements</li>
-		<li>Address in your state you’re applying for</li><li>Other insurance cards and disability</li>
-	</ul>
+  <h3>Next steps for you:</h3>
+  <p>Prepare documents you may need to send in as proof:</p>
+  <ul>
+    <li>IDs for everyone on the application</li>
+    <li>Income, like pay stubs or bank statements</li>
+    <li>Address in your state you’re applying for</li><li>Other insurance cards and disability</li>
+  </ul>
 
-	<p>If you have any questions and/or you haven’t heard from them in 30 days, call <a href="tel:555-123-1234">(555) 123-1234</a>.</p>
+  <p>If you have any questions and/or you haven’t heard from them in 30 days, call <a href="tel:555-123-1234">(555) 123-1234</a>.</p>
 
-	<div class="explainer">
+  <div class="explainer">
     <a href="#" class="explainer__toggle" aria-expanded="false" aria-controls="explainer-2">Medicaid Office contact info</a>
     <div class="explainer__content" id="explainer-2">
       <h4>Medicaid Address</h4>
-			<p>1234 Main St.<br/ >
-			Newark, NJ 12345</p>
+      <p>1234 Main St.<br/ >
+      Newark, NJ 12345</p>
 
-			<h4>Office Hours</h4>
-			<p>Mon to Fri: 9am-5pm<br/ >
-			   Sat: 10am-5pm<br/ >
-			   Sun: Closed</p>
+      <h4>Office Hours</h4>
+      <p>Mon to Fri: 9am-5pm<br/ >
+         Sat: 10am-5pm<br/ >
+         Sun: Closed</p>
     </div>
   </div>
 
-	
+
 </div>
-
-
-<script>
-	$(document).ready(function() {
-
-		if (benefitChoiceFoodAssistance == "no") {
-			$('.food-assistance').remove();
-		}
-
-		if (benefitChoiceHealthcare == "no") {
-			$('.health-assistance').remove();
-		}
-
-		if ((benefitChoiceHealthcare == "yes") && (benefitChoiceFoodAssistance == "yes")) {
-			$('.print-nextStepsText').text("SNAP and Medicaid")
-		}
-		if ((benefitChoiceHealthcare == "no") && (benefitChoiceFoodAssistance == "yes")) {
-			$('.print-nextStepsText').text("SNAP")
-		}
-		if ((benefitChoiceHealthcare == "yes") && (benefitChoiceFoodAssistance == "no")) {
-			$('.print-nextStepsText').text("Medicaid")
-		}
-
-		var today = new Date();
-		var dd = today.getDate();
-		var mm = today.getMonth()+1; //January is 0!
-		var yyyy = today.getFullYear();
-
-		if(dd<10) {
-		    dd='0'+dd
-		} 
-
-		if(mm<10) {
-		    mm='0'+mm
-		} 
-
-		today = mm+'/'+dd+'/'+yyyy;
-		$('#print-date').text(today);
-
-		$('#print-applicantFirstName').text(applicantFirstName);
-
-
-	});
-</script>

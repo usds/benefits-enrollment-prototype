@@ -2,44 +2,46 @@
 layout: application
 step: 3
 title: Now tell us about the people you share food with.
+script: |
+  <script>
+    $(document).ready(function() {
+
+
+      $('#print-applicantFirstName').text(applicantFirstName);
+      $('#householdSize').val(householdSize);
+      $('#householdShareMeals').val(householdShareMeals);
+
+      $(".usa-button-big").click(function(event) {
+          event.preventDefault();
+
+          storeData();
+          getData();
+
+          if ((householdShareMeals == 0) && (benefitChoiceHealthcare == "no")) {
+            window.location.href = "../04-finances/index.html";
+          }
+
+          else if (householdShareMeals == 0) {
+            window.location.href = "../03-family-details/index.html";
+          }
+
+          else if (householdSize > 1 ) {
+            window.location.href = "household-share-meals-from-names.html";
+          }
+          else {
+            window.location.href = "household-meals-only-names.html";
+          }
+      });
+    });
+  </script>
 ---
 
-<div class="prompt">
-  <p class="prompt__primary-text"><label for="householdShareMeals">In your home, how many people do you regularly buy food for and prepare meals with?</label></p>
-  <p class="prompt__secondary-text">Count your roommates if you often buy food and cook together.</p>
+<div class="field-group">
+  <div class="question">
+    <p class="question__primary-text"><label for="householdShareMeals">In your home, how many people do you regularly buy food for and prepare meals with?</label></p>
+    <p class="question__secondary-text">Count your roommates if you often buy food and cook together.</p>
+  </div>
+  <div class="response">
+    <input class="input--short" type="number" pattern="[0-9]*" id="householdShareMeals" required />
+  </div>
 </div>
-<div class="response">
-  <input class="input--short" type="tel" id="householdShareMeals" required />
-</div>
-
-<script>
-  $(document).ready(function() {
-
-
-  	$('#print-applicantFirstName').text(applicantFirstName);
-    $('#householdSize').val(householdSize);
-    $('#householdShareMeals').val(householdShareMeals);
-
-    $(".usa-button-big").click(function(event) {
-        event.preventDefault();
-
-        storeData();
-        getData();
-
-        if ((householdShareMeals == 0) && (benefitChoiceHealthcare == "no")) {
-          window.location.href = "../04-finances/index.html";
-        }
-
-        else if (householdShareMeals == 0) {
-          window.location.href = "../03-family-details/index.html";
-        }
-
-        else if (householdSize > 1 ) {
-          window.location.href = "household-share-meals-from-names.html";
-        }
-        else {
-          window.location.href = "household-meals-only-names.html";
-        }
-    });
-  });
-</script>

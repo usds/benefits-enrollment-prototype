@@ -2,153 +2,224 @@
 layout: application
 step: 3
 title: Tell us about the <span id="print-householdShareMeals"></span> who you share food with.
+script: |
+  <script>
+    $(document).ready(function() {
+      if (benefitChoiceHealthcare == "no") {
+        $('#householdMealOnlyFirst1').attr("id", "householdMember1FirstName");
+        $('#householdMealOnlyFirst2').attr("id", "householdMember2FirstName");
+        $('#householdMealOnlyFirst3').attr("id", "householdMember3FirstName");
+        $('#householdMealOnlyFirst4').attr("id", "householdMember4FirstName");
+        $('#householdMealOnlyFirst5').attr("id", "householdMember5FirstName");
+        $('#householdMealOnlyFirst6').attr("id", "householdMember6FirstName");
+        $('label[for="householdMealOnlyFirst1"]').attr("for", "householdMember1FirstName");
+        $('label[for="householdMealOnlyFirst2"]').attr("for", "householdMember2FirstName");
+        $('label[for="householdMealOnlyFirst3"]').attr("for", "householdMember3FirstName");
+        $('label[for="householdMealOnlyFirst4"]').attr("for", "householdMember4FirstName");
+        $('label[for="householdMealOnlyFirst5"]').attr("for", "householdMember5FirstName");
+        $('label[for="householdMealOnlyFirst6"]').attr("for", "householdMember6FirstName");
+
+        $('#householdMealOnlyLast1').attr("id", "householdMember1LastName");
+        $('#householdMealOnlyLast2').attr("id", "householdMember2LastName");
+        $('#householdMealOnlyLast3').attr("id", "householdMember3LastName");
+        $('#householdMealOnlyLast4').attr("id", "householdMember4LastName");
+        $('#householdMealOnlyLast5').attr("id", "householdMember5LastName");
+        $('#householdMealOnlyLast6').attr("id", "householdMember6LastName");
+        $('label[for="householdMealOnlyLast1"]').attr("for", "householdMember1LastName");
+        $('label[for="householdMealOnlyLast2"]').attr("for", "householdMember2LastName");
+        $('label[for="householdMealOnlyLast3"]').attr("for", "householdMember3LastName");
+        $('label[for="householdMealOnlyLast4"]').attr("for", "householdMember4LastName");
+        $('label[for="householdMealOnlyLast5"]').attr("for", "householdMember5LastName");
+        $('label[for="householdMealOnlyLast6"]').attr("for", "householdMember6LastName");
+      }
+
+      if (householdShareMeals == 1) {
+        $('#print-householdShareMeals').text("person");
+      }
+      else {
+        $('#print-householdShareMeals').text(householdShareMeals + " people");
+      }
+
+      for(x = 6; x > parseInt(householdShareMeals); x--) {
+        $('#person-' + x).remove();
+      }
+
+      $(".usa-button-big").click(function(event) {
+          event.preventDefault();
+
+          storeData();
+          getData();
+
+          window.location.href = "../03-family-details/index.html";
+      });
+    });
+  </script>
 ---
 
-<div id="person-1" class="sectioned-item">
-  <h2 class="sectioned-item__heading">Person 1</h2>
-  <div class="prompt">
-    <p class="prompt__primary-text"><label for="householdMealOnlyFirst1">Legal First Name</label></p>
+<div id="person-1" class="card__panel">
+  <h2 class="card__panel__heading">Person 1</h2>
+  <div class="field-group">
+    <div class="question">
+      <p class="question__primary-text"><label for="householdMealOnlyFirst1">Legal First Name</label></p>
+    </div>
+    <div class="response">
+      <input type="text" id="householdMealOnlyFirst1" required />
+    </div>
   </div>
-  <div class="response">
-    <input type="text" id="householdMealOnlyFirst1" required />
+  <div class="field-group">
+    <div class="question">
+      <p class="question__primary-text"><label for="householdMealOnlyMiddle1">Middle name</label></p>
+    </div>
+    <div class="response">
+      <input type="text" id="householdMealOnlyMiddle1" />
+    </div>
   </div>
-  <div class="prompt">
-    <p class="prompt__primary-text"><label for="householdMealOnlyLast1">Last name</label></p>
-  </div>
-  <div class="response">
-    <input type="text" id="householdMealOnlyLast1" required />
-  </div>
-</div>
-
-<div id="person-2" class="sectioned-item">
-  <h2 class="sectioned-item__heading">Person 2</h2>
-  <div class="prompt">
-    <p class="prompt__primary-text"><label for="householdMealOnlyFirst2">Legal First Name</label></p>
-  </div>
-  <div class="response">
-    <input type="text" id="householdMealOnlyFirst2" required />
-  </div>
-  <div class="prompt">
-    <p class="prompt__primary-text"><label for="householdMealOnlyLast2">Last name</label></p>
-  </div>
-  <div class="response">
-    <input type="text" id="householdMealOnlyLast2" required />
+  <div class="field-group">
+    <div class="question">
+      <p class="question__primary-text"><label for="householdMealOnlyLast1">Last name</label></p>
+    </div>
+    <div class="response">
+      <input type="text" id="householdMealOnlyLast1" required />
+    </div>
   </div>
 </div>
 
-<div id="person-3" class="sectioned-item">
-  <h2 class="sectioned-item__heading">Person 3</h2>
-  <div class="prompt">
-    <p class="prompt__primary-text"><label for="householdMealOnlyFirst3">Legal First Name</label></p>
+<div id="person-2" class="card__panel">
+  <h2 class="card__panel__heading">Person 2</h2>
+  <div class="field-group">
+    <div class="question">
+      <p class="question__primary-text"><label for="householdMealOnlyFirst2">Legal First Name</label></p>
+    </div>
+    <div class="response">
+      <input type="text" id="householdMealOnlyFirst2" required />
+    </div>
   </div>
-  <div class="response">
-    <input type="text" id="householdMealOnlyFirst3" required />
+  <div class="field-group">
+    <div class="question">
+      <p class="question__primary-text"><label for="householdMealOnlyMiddle2">Middle name</label></p>
+    </div>
+    <div class="response">
+      <input type="text" id="householdMealOnlyMiddle2" />
+    </div>
   </div>
-  <div class="prompt">
-    <p class="prompt__primary-text"><label for="householdMealOnlyLast3">Last name</label></p>
-  </div>
-  <div class="response">
-    <input type="text" id="householdMealOnlyLast3" required />
-  </div>
-</div>
-
-<div id="person-4" class="sectioned-item">
-  <h2 class="sectioned-item__heading">Person 4</h2>
-  <div class="prompt">
-    <p class="prompt__primary-text"><label for="householdMealOnlyFirst4">Legal First Name</label></p>
-  </div>
-  <div class="response">
-    <input type="text" id="householdMealOnlyFirst4" required />
-  </div>
-  <div class="prompt">
-    <p class="prompt__primary-text"><label for="householdMealOnlyLast4">Last name</label></p>
-  </div>
-  <div class="response">
-    <input type="text" id="householdMealOnlyLast4" required />
+  <div class="field-group">
+    <div class="question">
+      <p class="question__primary-text"><label for="householdMealOnlyLast2">Last name</label></p>
+    </div>
+    <div class="response">
+      <input type="text" id="householdMealOnlyLast2" required />
+    </div>
   </div>
 </div>
 
-<div id="person-5" class="sectioned-item">
-  <h2 class="sectioned-item__heading">Person 5</h2>
-  <div class="prompt">
-    <p class="prompt__primary-text"><label for="householdMealOnlyFirst5">Legal First Name</label></p>
+<div id="person-3" class="card__panel">
+  <h2 class="card__panel__heading">Person 3</h2>
+  <div class="field-group">
+    <div class="question">
+      <p class="question__primary-text"><label for="householdMealOnlyFirst3">Legal First Name</label></p>
+    </div>
+    <div class="response">
+      <input type="text" id="householdMealOnlyFirst3" required />
+    </div>
   </div>
-  <div class="response">
-    <input type="text" id="householdMealOnlyFirst5" required />
+  <div class="field-group">
+    <div class="question">
+      <p class="question__primary-text"><label for="householdMealOnlyMiddle3">Middle name</label></p>
+    </div>
+    <div class="response">
+      <input type="text" id="householdMealOnlyMiddle3" />
+    </div>
   </div>
-  <div class="prompt">
-    <p class="prompt__primary-text"><label for="householdMealOnlyLast5">Last name</label></p>
-  </div>
-  <div class="response">
-    <input type="text" id="householdMealOnlyLast5" required />
-  </div>
-</div>
-
-<div id="person-6" class="sectioned-item">
-  <h2 class="sectioned-item__heading">Person 6</h2>
-  <div class="prompt">
-    <p class="prompt__primary-text"><label for="householdMealOnlyFirst6">Legal First Name</label></p>
-  </div>
-  <div class="response">
-    <input type="text" id="householdMealOnlyFirst6" required />
-  </div>
-  <div class="prompt">
-    <p class="prompt__primary-text"><label for="householdMealOnlyLast6">Last name</label></p>
-  </div>
-  <div class="response">
-    <input type="text" id="householdMealOnlyLast6" required />
+  <div class="field-group">
+    <div class="question">
+      <p class="question__primary-text"><label for="householdMealOnlyLast3">Last name</label></p>
+    </div>
+    <div class="response">
+      <input type="text" id="householdMealOnlyLast3" required />
+    </div>
   </div>
 </div>
 
-<script>
-  $(document).ready(function() {
+<div id="person-4" class="card__panel">
+  <h2 class="card__panel__heading">Person 4</h2>
+  <div class="field-group">
+    <div class="question">
+      <p class="question__primary-text"><label for="householdMealOnlyFirst4">Legal First Name</label></p>
+    </div>
+    <div class="response">
+      <input type="text" id="householdMealOnlyFirst4" required />
+    </div>
+  </div>
+  <div class="field-group">
+    <div class="question">
+      <p class="question__primary-text"><label for="householdMealOnlyMiddle4">Middle name</label></p>
+    </div>
+    <div class="response">
+      <input type="text" id="householdMealOnlyMiddle4" />
+    </div>
+  </div>
+  <div class="field-group">
+    <div class="question">
+      <p class="question__primary-text"><label for="householdMealOnlyLast4">Last name</label></p>
+    </div>
+    <div class="response">
+      <input type="text" id="householdMealOnlyLast4" required />
+    </div>
+  </div>
+</div>
 
-    if (benefitChoiceHealthcare == "no") {
-      $('#householdMealOnlyFirst1').attr("id", "householdMember1FirstName");
-      $('#householdMealOnlyFirst2').attr("id", "householdMember2FirstName");
-      $('#householdMealOnlyFirst3').attr("id", "householdMember3FirstName");
-      $('#householdMealOnlyFirst4').attr("id", "householdMember4FirstName");
-      $('#householdMealOnlyFirst5').attr("id", "householdMember5FirstName");
-      $('#householdMealOnlyFirst6').attr("id", "householdMember6FirstName");
-      $('label[for="householdMealOnlyFirst1"]').attr("for", "householdMember1FirstName");
-      $('label[for="householdMealOnlyFirst2"]').attr("for", "householdMember2FirstName");
-      $('label[for="householdMealOnlyFirst3"]').attr("for", "householdMember3FirstName");
-      $('label[for="householdMealOnlyFirst4"]').attr("for", "householdMember4FirstName");
-      $('label[for="householdMealOnlyFirst5"]').attr("for", "householdMember5FirstName");
-      $('label[for="householdMealOnlyFirst6"]').attr("for", "householdMember6FirstName");
+<div id="person-5" class="card__panel">
+  <h2 class="card__panel__heading">Person 5</h2>
+  <div class="field-group">
+    <div class="question">
+      <p class="question__primary-text"><label for="householdMealOnlyFirst5">Legal First Name</label></p>
+    </div>
+    <div class="response">
+      <input type="text" id="householdMealOnlyFirst5" required />
+    </div>
+  </div>
+  <div class="field-group">
+    <div class="question">
+      <p class="question__primary-text"><label for="householdMealOnlyMiddle5">Middle name</label></p>
+    </div>
+    <div class="response">
+      <input type="text" id="householdMealOnlyMiddle5" />
+    </div>
+  </div>
+  <div class="field-group">
+    <div class="question">
+      <p class="question__primary-text"><label for="householdMealOnlyLast5">Last name</label></p>
+    </div>
+    <div class="response">
+      <input type="text" id="householdMealOnlyLast5" required />
+    </div>
+  </div>
+</div>
 
-      $('#householdMealOnlyLast1').attr("id", "householdMember1LastName");
-      $('#householdMealOnlyLast2').attr("id", "householdMember2LastName");
-      $('#householdMealOnlyLast3').attr("id", "householdMember3LastName");
-      $('#householdMealOnlyLast4').attr("id", "householdMember4LastName");
-      $('#householdMealOnlyLast5').attr("id", "householdMember5LastName");
-      $('#householdMealOnlyLast6').attr("id", "householdMember6LastName");
-      $('label[for="householdMealOnlyLast1"]').attr("for", "householdMember1LastName");
-      $('label[for="householdMealOnlyLast2"]').attr("for", "householdMember2LastName");
-      $('label[for="householdMealOnlyLast3"]').attr("for", "householdMember3LastName");
-      $('label[for="householdMealOnlyLast4"]').attr("for", "householdMember4LastName");
-      $('label[for="householdMealOnlyLast5"]').attr("for", "householdMember5LastName");
-      $('label[for="householdMealOnlyLast6"]').attr("for", "householdMember6LastName");
-    }
-
-    if (householdShareMeals == 1) {
-      $('#print-householdShareMeals').text("person");
-    }
-    else {
-      $('#print-householdShareMeals').text(householdShareMeals + " people");
-    }
-
-    for(x = 6; x > parseInt(householdShareMeals); x--) {
-      $('#person-' + x).remove();
-    }
-  	
-    $(".usa-button-big").click(function(event) {
-        event.preventDefault();
-
-        storeData();
-        getData();
-
-        window.location.href = "../03-family-details/index.html";
-    });
-  });
-</script>
+<div id="person-6" class="card__panel">
+  <h2 class="card__panel__heading">Person 6</h2>
+  <div class="field-group">
+    <div class="question">
+      <p class="question__primary-text"><label for="householdMealOnlyFirst6">Legal First Name</label></p>
+    </div>
+    <div class="response">
+      <input type="text" id="householdMealOnlyFirst6" required />
+    </div>
+  </div>
+  <div class="field-group">
+    <div class="question">
+      <p class="question__primary-text"><label for="householdMealOnlyMiddle6">Middle name</label></p>
+    </div>
+    <div class="response">
+      <input type="text" id="householdMealOnlyMiddle6" />
+    </div>
+  </div>
+  <div class="field-group">
+    <div class="question">
+      <p class="question__primary-text"><label for="householdMealOnlyLast6">Last name</label></p>
+    </div>
+    <div class="response">
+      <input type="text" id="householdMealOnlyLast6" required />
+    </div>
+  </div>
+</div>

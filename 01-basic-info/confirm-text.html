@@ -2,26 +2,26 @@
 layout: application
 step: 1
 title: Great! You’ll receive a confirmation message.
+script: |
+  <script>
+    $(document).ready(function() {
+
+      var applicantPhone = sessionStorage.getItem("applicantPhone");
+      $('#print-applicantSMSPhone').text(applicantSMSPhone);
+
+      $(".usa-button-big").click(function(event) {
+        event.preventDefault();
+
+        if (benefitChoiceHealthcare == "no") {
+          window.location.href = "shortcut.html";
+        }
+
+        else {
+          window.location.href = "ssn.html";
+        }
+      });
+    });
+  </script>
 ---
 
 <p class="usa-font-lead">We’ll only send you important text messages to <br><span id="print-applicantSMSPhone"></span>.</p>
-
-<script>
-	$(document).ready(function() {
-		
-		var applicantPhone = sessionStorage.getItem("applicantPhone");
-		$('#print-applicantSMSPhone').text(applicantSMSPhone);
-
-		$(".usa-button-big").click(function(event) {
-			event.preventDefault();
-
-			if (benefitChoiceHealthcare == "no") {
-				window.location.href = "shortcut.html";
-			}
-
-			else {
-				window.location.href = "ssn.html";
-			}
-		});
-	});
-</script>

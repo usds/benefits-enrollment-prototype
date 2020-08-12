@@ -2,50 +2,51 @@
 layout: application
 step: 3
 title: Now we'll need some info about each person.
+script: |
+  <script>
+    $(document).ready(function() {
+
+      var haveApplicants = 0;
+      for (x =1; x < 6; x++) {
+        if (window["applyForHouseholdMember"+x] == "yes"){
+          haveApplicants++;
+          $('.applicants-listed').append('<li>' + window["householdMember" + x + "FirstName"] + " " + window["householdMember" + x + "LastName"] + '</li>')
+        };
+      };
+
+      if (haveApplicants == 0) {
+        $('.applicants-only').remove();
+      }
+
+      $(".usa-button-big").click(function(event) {
+          event.preventDefault();
+
+          storeData();
+
+          window.location.href = "person1-step1.html";
+      });
+    });
+  </script>
+
 ---
 
 <h3>We’ll ask about the following from the people you listed so far:</h3>
-<ul>
-	<li>How you are related</li>
-	<li>Date of birth</li>
-	<li>Sex</li>
-	<li>Address</li>
-	<li>Disability</li>
-	<li>Pregnancy (for women)</li>
+<ul class="bulleted-list">
+  <li>How you are related</li>
+  <li>Date of birth</li>
+  <li>Sex</li>
+  <li>Address</li>
+  <li>Disability</li>
+  <li>Pregnancy (for women)</li>
 </ul>
 
 <div class="applicants-only">
-	<h3>We need additional information from any applicants you’ve listed.</h3>
-	<p>For the following people:</p>
-	<ul class="applicants-listed">
-	</ul>
-	<p>We’ll also ask you to tell us about:</p>
-	<ul>
-		<li>SSN</li>
-	</ul>
+  <h3>We need additional information from any applicants you’ve listed.</h3>
+  <p>For the following people:</p>
+  <ul class="bulleted-list applicants-listed">
+  </ul>
+  <p>We’ll also ask you to tell us about:</p>
+  <ul class="bulleted-list">
+    <li>SSN</li>
+  </ul>
 </div>
-
-<script>
-  $(document).ready(function() {
-
-  	var haveApplicants = 0;
-  	for (x =1; x < 6; x++) {
-  		if (window["applyForHouseholdMember"+x] == "yes"){
-  			haveApplicants++;
-  			$('.applicants-listed').append('<li>' + window["householdMember" + x + "FirstName"] + " " + window["householdMember" + x + "LastName"] + '</li>')
-  		};
-  	};
-
-  	if (haveApplicants == 0) {
-  		$('.applicants-only').remove();
-  	}
-  	
-    $(".usa-button-big").click(function(event) {
-        event.preventDefault();
-
-        storeData();
-
-        window.location.href = "person1-step1.html";
-    });
-  });
-</script>

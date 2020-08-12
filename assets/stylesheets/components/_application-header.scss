@@ -1,0 +1,47 @@
+.application-header {
+	@include clearfix;
+	background-color: $color-primary-darkest;
+	color: white;
+	padding: 2rem 2rem;
+}
+
+.application-header__seal {
+	display: inline-block;
+	margin-right: 1rem;
+	width: 30px;
+}
+
+.application-header__primary-heading {
+	display: inline-block;
+	font-family: $font-serif;
+	font-size: 1.4rem;
+	margin: 0;
+
+	@include media($medium-screen) {
+		font-size: 1.6rem;
+	}
+
+	@include media($large-screen) {
+		font-size: 1.8rem;
+	}
+
+	a,
+	a:hover,
+	a:visited {
+		color: white;
+		text-decoration: none;	
+	}
+}
+
+.usa-disclaimer,
+.landing-page .usa-disclaimer {
+	@include clearfix;
+	padding-left: 2rem;
+	padding-right: 2rem;
+
+	p {
+		font-family: $font-sans;
+		line-height: 1.5;
+		margin: 2px 0 0;
+	}
+}

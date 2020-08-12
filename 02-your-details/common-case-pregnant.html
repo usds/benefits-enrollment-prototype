@@ -2,60 +2,66 @@
 layout: application
 step: 2
 title: A couple of questions about your pregnancy.
+script: |
+  <script>
+    $(document).ready(function() {
+
+
+      $(".usa-button-big").click(function(event) {
+        event.preventDefault();
+
+        storeData();
+
+        window.location.href = "../03-basic-family/household-members-review.html";
+
+        if ((applyingFor == "Myself") && ((householdSize == 1) && (householdShareMeals == 0))) {
+          window.location.href = "../04-finances/index.html";
+        }
+
+        if (benefitChoiceHealthcare == "no") {
+          window.location.href = "../03-basic-family/household-mealshare-review.html";
+        }
+
+        if (commonCaseInsurance == "yes") {
+          window.location.href = "common-case-insurance.html";
+        }
+
+      });
+    });
+  </script>
 ---
 
-<div class="prompt">
-	<legend class="prompt__primary-text">When is your due date?</legend>
-	<p class="prompt__secondary-text" id="dueHint">For example: 04 28 1986</p>
+<div class="field-group">
+  <fieldset>
+    <div class="question">
+      <legend class="question__primary-text">When is your due date?</legend>
+      <p class="question__secondary-text" id="dueHint">For example: 04 28 1986</p>
+    </div>
+    <div class="response" >
+      <div class="error-placeholder"></div>
+      <div class="usa-date-of-birth">
+        <div class="usa-form-group usa-form-group-month">
+          <label for="applicantDueMonth">Month</label>
+          <input class="usa-input-inline auto-advance" aria-describedby="dueHint"  id="applicantDueMonth" name="applicantDueMonth" {% include _valid_month.html %} value="">
+        </div>
+        <div class="usa-form-group usa-form-group-day">
+          <label for="applicantDueDay">Day</label>
+          <input class="usa-input-inline auto-advance" aria-describedby="dueHint" id="applicantDueDay" name="applicantDueDay" {% include _valid_day.html %} >
+        </div>
+        <div class="usa-form-group usa-form-group-year">
+          <label for="applicantDueYear">Year</label>
+          <input class="usa-input-inline auto-advance-4" aria-describedby="dueHint"  id="applicantDueYear" name="applicant-due-year" {% include _valid_year.html %} >
+        </div>
+      </div>
+    </div>
+  </fieldset>
 </div>
-<div class="response" >
-	<div class="usa-date-of-birth">
-    <div class="usa-form-group usa-form-group-month">
-      <label for="applicantDueMonth">Month</label>
-      <input class="usa-input-inline auto-advance" aria-describedby="dueHint"  id="applicantDueMonth" name="applicantDueMonth" pattern="0?[1-9]|1[012]" type="tel" min="1" max="12" value="">
-    </div>
-    <div class="usa-form-group usa-form-group-day">
-      <label for="applicantDueDay">Day</label>
-      <input class="usa-input-inline auto-advance" aria-describedby="dueHint" id="applicantDueDay" name="applicantDueDay" pattern="0?[1-9]|1[0-9]|2[0-9]|3[01]" type="tel" min="1" max="31" value="">
-    </div>
-    <div class="usa-form-group usa-form-group-year">
-      <label for="applicantDueYear">Year</label>
-      <input class="usa-input-inline auto-advance-4" aria-describedby="dueHint"  id="applicantDueYear" name="applicant-due-year" pattern="[0-9]{4}" type="tel" min="1900" max="2000" value="">
-    </div>
+
+<div class="field-group">
+  <div class="question">
+    <p class="question__primary-text"><label for="applicantBabiesExpected">How many babies are you expecting?</label></p>
+  </div>
+  <div class="response">
+    <input class="input--short" {% include _valid_babies.html %} id="applicantBabiesExpected" required />
   </div>
 </div>
-
-<div class="prompt">
-	<p class="prompt__primary-text"><label for="applicantBabiesExpected">How many babies are you expecting?</label></p>
-</div>
-<div class="response">
-	<input class="input--short" type="tel" id="applicantBabiesExpected" required />
-</div>
-
-
-<script>
-	$(document).ready(function() {
-
-
-		$(".usa-button-big").click(function(event) {
-			event.preventDefault();
-
-      storeData();
-
-      window.location.href = "../03-basic-family/household-members-review.html";
-
-      if ((applyingFor == "Myself") && ((householdSize == 1) && (householdShareMeals == 0))) {
-				window.location.href = "../04-finances/index.html";
-			}
-
-			if (benefitChoiceHealthcare == "no") {
-				window.location.href = "../03-basic-family/household-mealshare-review.html";
-			}
-
-			if (commonCaseInsurance == "yes") {
-				window.location.href = "common-case-insurance.html";
-			}
-			
-		});
-	});
-</script>

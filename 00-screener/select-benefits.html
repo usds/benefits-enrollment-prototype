@@ -2,55 +2,56 @@
 layout: application
 title: Select the benefits you would like to apply for.
 step: 1
+script: |
+  <script>
+    $(document).ready(function() {
+      $(".usa-button-big").click(function(event) {
+          event.preventDefault();
+
+          storeData();
+
+          if ($('input:checked').length) {
+            window.location.href = "quick-screener.html";
+          }
+          else {
+            alert("Please select one benefit you'd like to apply for. ");
+          }
+
+      });
+    });
+  </script>
 ---
+<div class="field-group">
+  <fieldset>
+    <div class="question">
+      <legend class="question__primary-text">You can apply for all or just one program. Check all the benefits you want to apply for:</legend>
+    </div>
+    <div class="response">
+      <ul class="usa-unstyled-list checkbox-group benefit-selection">
+        <li>
+          <input id="benefitChoiceHealthcare" type="checkbox" name="benefitChoice" value="Text">
+          <label for="benefitChoiceHealthcare">Healthcare Coverage <span class="benefit-name">Medicaid</span> <span class="benefit-description">Free or low-cost health coverage may help pay for medical bills, doctor visits, or prescriptions.</span></label>
+        </li>
+        <li>
+          <input id="benefitChoiceFoodAssistance" type="checkbox" name="benefitChoice" value="Text">
+          <label for="benefitChoiceFoodAssistance">Food Assistance <span class="benefit-name">SNAP</span> <span class="benefit-description">Money for food at supermarkets, farmer’s market, and convenience stores.<br>We can check if you may qualify for 3 day Expedited Service benefit.</span></label>
 
-<fieldset>
-	<div class="prompt">
-		<legend class="prompt__primary-text">You can apply for all or just one program. Check all the benefits you want to apply for:</legend>
-	</div>
-	<div class="response">
-		<ul class="usa-unstyled-list checkbox-group benefit-selection">
-			<li>
-				<input id="benefitChoiceHealthcare" type="checkbox" name="benefitChoice" value="Text">
-				<label for="benefitChoiceHealthcare">Healthcare Coverage <span class="benefit-name">Medicaid</span> <span class="benefit-description">Free or low-cost health coverage may help pay for medical bills, doctor visits, or prescriptions.</span></label>
-			</li>
-			<li>
-				<input id="benefitChoiceFoodAssistance" type="checkbox" name="benefitChoice" value="Text">
-				<label for="benefitChoiceFoodAssistance">Food Assistance <span class="benefit-name">SNAP</span> <span class="benefit-description">Money for food at supermarkets, farmer’s market, and convenience stores.<br>We can check if you may qualify for 3 day Expedited Service benefit.</span></label>
+          <div class="explainer">
+            <a href="#" class="explainer__toggle" aria-expanded="false" aria-controls="explainer-1">What is 3 Day SNAP Expedited Service?</a>
+            <div class="explainer__content" id="explainer-1">
+              <p>To qualify for 3 Day Expedited Service, your income is:</p>
 
-				<div class="explainer">
-				  <a href="#" class="explainer__toggle" aria-expanded="false" aria-controls="explainer-1">What is 3 Day SNAP Expedited Service?</a>
-				  <div class="explainer__content" id="explainer-1">
-				    <p>To qualify for 3 Day Expedited Service, your income is:</p>
-
-				    <div class="prompt__secondary-text">
-				    	<ul>
-				    		<li>less than $150 in monthly income and have less than $100 on hand right now</li>
-				    		<li>or your household’s combined monthly income and money on hand are less than your household’s combined monthly rent and utilities</li>
-				    		<li>or you are a migrant or seasonal farm worker and have less $100 on hand right now</li>
-				    	</ul>
-				    </div>
-				  </div>
-				</div>
-			</li>
-		</ul>
-	</div>
-</fieldset>
-
-<script>
-	$(document).ready(function() {
-		$(".usa-button-big").click(function(event) {
-				event.preventDefault();
-
-				storeData();
-
-				if ($('input:checked').length) {
-					window.location.href = "quick-screener.html";
-				}
-				else {
-					alert("Please select one benefit you'd like to apply for. ");
-				}
-		    
-		});
-	});
-</script>
+              <div class="question__secondary-text">
+                <ul>
+                  <li>less than $150 in monthly income and have less than $100 on hand right now</li>
+                  <li>or your household’s combined monthly income and money on hand are less than your household’s combined monthly rent and utilities</li>
+                  <li>or you are a migrant or seasonal farm worker and have less $100 on hand right now</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </fieldset>
+</div>

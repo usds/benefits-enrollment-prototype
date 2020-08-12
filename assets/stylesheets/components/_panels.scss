@@ -1,0 +1,22 @@
+.panel,
+.panel--light-gray,
+.panel--dark-gray {
+	padding: 4rem 0;
+}
+
+.panel--light-gray {
+	background-color: $color-gray-lightest;
+}
+
+.panel--dark-gray {
+	background-color: $color-gray-dark;
+	color: white;
+
+	h2 {
+		color: white;
+	}
+
+	h3 {
+		color: $color-primary-alt;
+	}
+}

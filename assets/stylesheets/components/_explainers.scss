@@ -1,0 +1,39 @@
+/* Can throw this out later */
+
+.explainer {
+	background: #e8ecee;
+	margin: 1.5em 0;
+	max-width: 53rem;
+}
+
+.explainer__toggle {
+	background: #31a78b url('../images/plus.svg') no-repeat 95% center;
+	background-size: 13px;
+	display: block;
+	color: white;
+	padding: 1em;
+	text-decoration: none;
+	width: 100%;
+}
+
+.explainer__toggle:hover {
+	color: white;
+	text-decoration: underline;
+}
+
+.explainer__toggle[aria-expanded="true"] {
+	background-image: url('../images/minus.svg');
+}
+
+.explainer__toggle:visited {
+	color: white;
+}
+
+.explainer__content {
+	padding: 0 1.5em 1.5em;
+}
+
+
+.explainer__content.hide {
+	display: none;
+}

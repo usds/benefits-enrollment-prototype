@@ -1,0 +1,183 @@
+/*
+	Note:
+	We'll be replacing the name "prompt" with quesitons.
+*/
+
+.field-group {
+	margin: 4rem 0;
+}
+
+.field-group.contains-error	{
+	border-left: 3px solid $color-secondary-dark;
+	padding-left: 2rem; 
+}
+
+.question {
+	margin: 0;
+}
+
+.prompt {
+	margin-top: 3rem;
+}
+
+.prompt__primary-text,
+.question__primary-text,
+legend {
+	font-size: $h3-font-size;
+	font-weight: $font-bold;
+	line-height: 1.5;
+	margin-bottom: .5rem;
+  margin-top: 0;
+}
+
+.prompt__secondary-text,
+.question__secondary-text{
+	color: $color-gray;
+	margin-top: 0;
+
+	ul {
+		list-style: none;
+		padding: 0 0 0 2rem;
+
+		> li {
+			padding-left: 1em;
+			position: relative;
+
+			&:before {
+				background-color: $color-green;
+				border-radius: 50%;
+				content: "";
+				display: block;
+				height: 8px;
+				left: 0;
+				position: absolute;
+				top: .5em;
+				width: 8px;
+			}
+		}
+	}
+}
+
+.response {
+	@include clearfix;
+	position: relative;
+}
+
+.response__input-prefix {
+	color: $color-green;
+	font-size: 2.4rem;
+	font-weight: $font-bold;
+	left: 1rem;
+	top: .4rem;
+	position: absolute;
+
+	+ input {
+		padding-left: 3rem;
+	}
+}
+
+.response__note {
+	color: $color-gray;
+	font-style: italic;
+	margin: 3rem 0 0;
+}
+
+/* Radio Groups ----------------------------------------------*/
+.response__radiogroup,
+.response__radiogroup--inline,
+.response__radiogroup--two-cols {
+	margin-top: 1rem;
+}
+
+.response__radiogroup > li {
+	margin: 0;
+}
+
+.response__radiogroup label,
+.response__radiogroup--inline label,
+.response__radiogroup--two-cols label {
+	@include transition(background-color .08s ease-in-out);
+	background-color: white;
+	border: 1px solid #999;
+  border-radius: 4px;
+	margin-top: 0;
+  margin-bottom: .5em;
+  padding: 1em 2rem 1.5rem 4.5rem;
+  position: relative;
+
+  &:before {
+  	left: 1.6rem;
+  	position: absolute;
+  	top: 2.1rem;
+  }
+}
+
+.response__radiogroup input[type="radio"],
+.response__radiogroup--inline input[type="radio"],
+.response__radiogroup--two-cols input[type="radio"] {
+	width: auto;
+}
+
+.response__radiogroup input[type="radio"]:checked + label,
+.response__radiogroup--inline input[type="radio"]:checked + label,
+.response__radiogroup--two-cols input[type="radio"]:checked + label  {
+	background-color: $color-gray-warm-light;
+	width: auto;
+}
+
+/* Inline radiogroups */
+.response__radiogroup--inline > li {
+	display: inline-block;
+	margin-right: .2rem;
+}
+
+.response__radiogroup--two-cols > li {
+
+	@include media($medium-screen) {
+		display: inline-block;
+		margin-right: .2rem;
+		width: 48%;
+	}
+}
+
+.response__radio-group--unstyled .dependent-field,
+.response__radio-group--unstyled .inline-follow-up {
+	border-left: 3px solid $color-gray-warm-light;
+	margin-left: 3rem;
+	padding-left: 1.5rem;
+}
+
+/* Checkbox Group ----------------------------------------------*/
+.checkbox-group .prompt,
+.checkbox-group .question,
+.checkbox-group .response {
+	margin-top: 0;
+	margin-left: 1.5rem;
+
+	label,
+	.prompt__primary-text,
+	.prompt__secondary-text {
+		margin-top: 0;
+	}
+}
+
+.checkbox-group .dependent-field,
+.checkbox-group .inline-follow-up {
+	border-left: 3px solid $color-gray-warm-light;
+	margin-left: 3rem;
+}
+
+.checkbox-group li > label {
+	padding-left: 3rem;
+	position: relative;
+
+	&:before {
+  	left: 0;
+  	position: absolute;
+  	top: .3rem;
+  }
+}
+
+.checkbox-group .explainer {
+	margin-left: 3rem;
+}

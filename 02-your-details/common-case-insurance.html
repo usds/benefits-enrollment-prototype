@@ -2,77 +2,79 @@
 layout: application
 step: 2
 title: You said you have health insurance.
+script: |
+  <script>
+    $(document).ready(function() {
+
+      $(".usa-button-big").click(function(event) {
+        event.preventDefault();
+
+        storeData();
+
+        var insuranceTypes = $('input[name="insurance"]:checked').map(function(){
+          return $(this).val();
+        }).get();
+
+        sessionStorage.setItem("applicantInsuranceTypes", insuranceTypes);
+
+        window.location.href = "../03-basic-family/household-members-review.html";
+
+        if ((applyingFor == "Myself") && ((householdSize == 1) && (householdShareMeals == 0))) {
+          window.location.href = "../04-finances/index.html";
+        }
+
+        if (benefitChoiceHealthcare == "no") {
+          window.location.href = "../03-basic-family/household-mealshare-review.html";
+        }
+      });
+    });
+  </script>
 ---
 
-<fieldset>
-	<div class="prompt">
-		<legend class="prompt__primary-text">What kind of insurance do you have?</legend>
-		</div>
-		<div class="response">
-		<ul class="usa-unstyled-list checkbox-group">
-			<li>
-				<input id="insuranceMedicare" type="checkbox" name="insurance" value="Medicare">
-				<label for="insuranceMedicare">Medicare</label>
-			</li>
-			<li>
-				<input id="insuranceMedicaid" type="checkbox" name="insurance" value="Medicaid">
-				<label for="insuranceMedicaid">Medicaid (You also may know this as XX Care)</label>
-			</li>
-			<li>
-				<input id="insuranceOtherPublic" type="checkbox" name="insurance" value="Other public health insurance">
-				<label for="insuranceOtherPublic">Other public health insurance</label>
-			</li>
-			<li>
-				<input id="insuranceVA" type="checkbox" name="insurance" value="VA gealthcare or TRICARE">
-				<label for="insuranceVA">VA healthcare or TRICARE</label>
-			</li>
-			<li>
-				<input id="insuranceEmployer" type="checkbox" name="insurance" value="Employer-based health insurance">
-				<label for="insuranceEmployer">Employer-based health insurance</label>
-			</li>
-			<li>
-				<input id="insurancePrivate" type="checkbox" name="insurance" value="Private health insurance">
-				<label for="insurancePrivate">Private health insurance</label>
-			</li>
-			<li>
-				<input id="insurancePeacecorps" type="checkbox" name="insurance" value="PeaceCorps">
-				<label for="insurancePeacecorps">PeaceCorps</label>
-			</li>
-			<li>
-				<input id="insuranceLimited" type="checkbox" name="insurance" value="Limited-benefit plan (school accident policy)">
-				<label for="insuranceLimited">Limited-benefit plan (school accident policy)</label>
-			</li>
-			<li>
-				<input id="insuranceUnknown" type="checkbox" name="insurance" value="I don’t know">
-				<label for="insuranceUnknown">I don’t know</label>
-			</li>
-		</ul>
-		</div>
-</fieldset>
-
-<script>
-	$(document).ready(function() {
-
-		$(".usa-button-big").click(function(event) {
-			event.preventDefault();
-
-			storeData();
-
-			var insuranceTypes = $('input[name="insurance"]:checked').map(function(){
-	      return $(this).val();
-	    }).get(); 
-
-			sessionStorage.setItem("applicantInsuranceTypes", insuranceTypes);
-
-			window.location.href = "../03-basic-family/household-members-review.html";
-
-			if ((applyingFor == "Myself") && ((householdSize == 1) && (householdShareMeals == 0))) {
-				window.location.href = "../04-finances/index.html";
-			}
-			
-			if (benefitChoiceHealthcare == "no") {
-				window.location.href = "../03-basic-family/household-mealshare-review.html";
-			}
-		});
-	});
-</script>
+<div class="field-group">
+  <fieldset>
+    <div class="question">
+      <legend class="question__primary-text">What kind of insurance do you have?</legend>
+      </div>
+      <div class="response">
+      <ul class="usa-unstyled-list checkbox-group">
+        <li>
+          <input id="insuranceMedicare" type="checkbox" name="insurance" value="Medicare">
+          <label for="insuranceMedicare">Medicare</label>
+        </li>
+        <li>
+          <input id="insuranceMedicaid" type="checkbox" name="insurance" value="Medicaid">
+          <label for="insuranceMedicaid">Medicaid (You also may know this as XX Care)</label>
+        </li>
+        <li>
+          <input id="insuranceOtherPublic" type="checkbox" name="insurance" value="Other public health insurance">
+          <label for="insuranceOtherPublic">Other public health insurance</label>
+        </li>
+        <li>
+          <input id="insuranceVA" type="checkbox" name="insurance" value="VA gealthcare or TRICARE">
+          <label for="insuranceVA">VA healthcare or TRICARE</label>
+        </li>
+        <li>
+          <input id="insuranceEmployer" type="checkbox" name="insurance" value="Employer-based health insurance">
+          <label for="insuranceEmployer">Employer-based health insurance</label>
+        </li>
+        <li>
+          <input id="insurancePrivate" type="checkbox" name="insurance" value="Private health insurance">
+          <label for="insurancePrivate">Private health insurance</label>
+        </li>
+        <li>
+          <input id="insurancePeacecorps" type="checkbox" name="insurance" value="PeaceCorps">
+          <label for="insurancePeacecorps">PeaceCorps</label>
+        </li>
+        <li>
+          <input id="insuranceLimited" type="checkbox" name="insurance" value="Limited-benefit plan (school accident policy)">
+          <label for="insuranceLimited">Limited-benefit plan (school accident policy)</label>
+        </li>
+        <li>
+          <input id="insuranceUnknown" type="checkbox" name="insurance" value="I don’t know">
+          <label for="insuranceUnknown">I don’t know</label>
+        </li>
+      </ul>
+      </div>
+  </fieldset>
+</div>
